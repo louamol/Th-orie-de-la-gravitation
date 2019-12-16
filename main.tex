@@ -4789,7 +4789,7 @@ Louan \textsc{Mol}
         \begin{equation}
             r^2 = \tilde{C}(\tilde{r},\tilde{t})
         \end{equation}
-        et une coordonnée $t(\tilde{t},r)$ qui élimine le terme croisé. La métrique invariante par rotation la plus générale est
+        et une coordonnée $t(\tilde{t},r)$ qui élimine le terme croisé. La métrique invariante par rotation la plus générale est donc
         \begin{equation}
             ds^2 = -A(r,t)dt^2+B(r,t)dr^2+r^2(d\theta^2+\sin^2\theta d\phi^2).
         \end{equation}
@@ -4869,8 +4869,22 @@ Louan \textsc{Mol}
             \end{bmatrix}
         \end{equation}
         Calculons $\Gamma\wedge\Gamma$.
+        {\tiny
         \begin{align}
             \Gamma\wedge\Gamma &=
+            \begin{bmatrix}
+                \frac{A'}{2A}~dr & \frac{A'}{2A}~dt & 0 & 0\\
+                \frac{A'}{2B}~dt & \frac{B'}{2B}~dr & -\frac{r}{B}~d\theta & -\frac{r}{B}\sin^2\theta~d\phi \\
+                0 & \frac{d\theta}{r} & \frac{dr}{r} & -\sin\theta\cos\theta~d\phi\\
+                0 & \frac{d\phi}{r} & \frac{\cos\theta}{\sin\theta}~d\phi & \frac{\cos\theta}{\sin\theta}~d\theta+\frac{dr}{r}
+            \end{bmatrix}\wedge
+            \begin{bmatrix}
+                \frac{A'}{2A}~dr & \frac{A'}{2A}~dt & 0 & 0\\
+                \frac{A'}{2B}~dt & \frac{B'}{2B}~dr & -\frac{r}{B}~d\theta & -\frac{r}{B}\sin^2\theta~d\phi \\
+                0 & \frac{d\theta}{r} & \frac{dr}{r} & -\sin\theta\cos\theta~d\phi\\
+                0 & \frac{d\phi}{r} & \frac{\cos\theta}{\sin\theta}~d\phi & \frac{\cos\theta}{\sin\theta}~d\theta+\frac{dr}{r}
+            \end{bmatrix}\\
+            &=
             \begin{bmatrix}
                 * & * & * & * \\
                 \frac{A'^2}{4AB}~dt\wedge dr+\frac{A'B'}{4B^2}~dr\wedge dt & * & * & * \\
@@ -4884,7 +4898,7 @@ Louan \textsc{Mol}
                 \frac{A'}{2rB}~d\theta\wedge dt & \left(\frac{B'}{2rB} - \frac{1}{r^2}\right)~d\theta\wedge dr & * & * \\
                 \frac{A'}{2rB} d\phi\wedge dt & \left( \frac{B'}{2rB}-\frac{1}{r^2} \right)~d\phi\wedge dr & \frac{\cos\theta}{r\sin\theta}~d\phi\wedge dr + \left( \left( \frac{\cos\theta}{\sin\theta} \right)^2+\frac{2}{B} \right)~d\theta\wedge d\phi & *
             \end{bmatrix}
-        \end{align}
+        \end{align}}
         Le tenseur de Riemann étant donné par $R=d\Gamma+\Gamma\wedge\Gamma$, ses éléments de matrices, que nous noterons par $(R)^\mu_{~\nu}$, sont définis comme
         \begin{equation}
             (R)^\mu_{~\nu} = (d\Gamma+\Gamma\wedge\Gamma)^\mu_{~\nu}
