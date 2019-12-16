@@ -181,26 +181,17 @@ Louan \textsc{Mol}
 \nocite{lee}
 \nocite{gutt}
 
-\section*{Avant-propos}
+\chapter*{Avant-propos}
 
-    Je reprends ici mes notes du cours de \textit{Théorie de la gravitation} donné par le professeur F. Ferrari à l'Université Libre de Bruxelles (ULB) durant l'année 2019-2020. Ce cours est destiné aux étudiants de première année de master en physique. Certains détails, rappels et applications trouvés dans les différentes références de ce cours seront ajoutés.\\
+    Ce document reprend mes notes du cours de \textit{Théorie de la gravitation} donné par le professeur \textit{F. Ferrari} à l'Université Libre de Bruxelles (ULB) durant l'année 2019-2020. Ce cours est destiné aux étudiants de première année de master en physique. Je me suis permis de rajouter certains détails, rappels et applications trouvés dans les différentes références.\\
     
-    Ce cours est très mathématique, nous utiliserons des notions de géométrie différentielle, de géométrie riemanienne, d'algèbre tensorielle, etc. Les notions nécessaires seront définies de la manière la plus rigoureuse possible, tout en y apportant une interprétation physique. Le but étant d'avoir un fondement mathématique solide nécessaire au physicien voulant comprendre cette théorie.\\
+    Les notions mathématiques seront le plus rigoureusement possible, tout en y apportant une interprétation physique. Le but étant d'avoir un fondement mathématique solide. Beaucoup de notations et de définitions sont tirées du cours de Géométrie différentielle de \textit{S. Gutt}. \\
     
-    Je n'ai aucunement la prétention de faire de ce document une référence pour ce cours, le but étant simplement de transcrire mes notes sous une forme qui m'est agréable.\\
+    Je n'ai pas la prétention de faire de ce document une référence, le but est simplement de transcrire mes notes sous une forme qui m'est agréable.\\
     
-    Merci à Eliott Van Steirteghem et à Guillaume Houyoux pour les schémas ainsi que pour leurs relectures attentives.\\
-    
-    Les paragraphes "remarque" servent à donner des informations supplémentaires sur les notions discutées. Ces informations ne sont a priori pas nécessaires pour comprendre le développement du cours mais elles donnent une idée des concepts de géométrie différentielle sous-jacents.\\
-    
-    Beaucoup de notations et de définitions sont tirées du cours de Géométrie différentielle de S. Gutt. 
+    Merci à \textit{Eliott Van Steirteghem} et à \textit{Guillaume Houyoux} pour les schémas ainsi que pour leurs relectures attentives. Pour les fautes qui nous aurons échappées, vous pouvez me contacter via mon adresse mail \verb?louamol@ulb.ac.be?.
 
 \printbibliography[title=Références]
-
-\pagebreak
-
-\chapter*{Table des symboles}
-
 \pagebreak
 \tableofcontents
 \pagebreak
@@ -209,7 +200,7 @@ Louan \textsc{Mol}
 
     \section{Les interactions fondamentales}
     
-        Historiquement, il est apparut qu'il y avait quatre interactions fondamentales dans la nature : les interactions nucléaires forte et faible, l'interaction électromagnétique et l'interaction gravitationnelle. Les interactions nucléaires ont toutes les deux des portées faibles de l'ordre du fermi ($\sim10^{-15}\meter$), alors que  l'électromagnétisme et la gravitation semblent avoir une portée infinie. De par leur nature, les interactions nucléaires sont essentiellement décrites dans des théories quantiques alors que les deux dernières peuvent être décrites de manière classique. L'électromagnétisme ayant certains effets quantiques, nous pouvons les décrire via l'électrodynamique quantique. Au cours du $20^{\text{ème}}$ siècle, il a été découvert que l'interaction nucléaire faible et l'électromagnétisme pouvaient être vues comme deux faces d'une même pièce : l'interaction électrofaible.\\
+        Historiquement, il est apparut qu'il y a quatre interactions fondamentales dans la nature : les interactions nucléaires forte et faible, l'interaction électromagnétique et l'interaction gravitationnelle. Les interactions nucléaires ont toutes les deux des portées faibles de l'ordre du fermi ($\sim10^{-15}\meter$), alors que  l'électromagnétisme et la gravitation semblent avoir une portée infinie. De par leur nature, les interactions nucléaires sont essentiellement décrites dans des théories quantiques alors que les deux dernières peuvent être décrites de manière classique. L'électromagnétisme ayant certains effets quantiques, nous pouvons les décrire via l'électrodynamique quantique. Au cours du $20^{\text{ème}}$ siècle, il a été découvert que l'interaction nucléaire faible et l'électromagnétisme pouvaient être vues comme deux faces d'une même pièce : l'interaction électrofaible.\\
         
         L'interaction gravitationnelle se distingue des autres à plusieurs niveaux. Premièrement, la gravitation est une interaction extrêmement faible par rapport aux autres. Pour illustrer cela, imaginons deux électrons séparés d'une distance $r$. Comparons les ordres de grandeur de l'interaction gravitationnelle et de l'interaction électromagnétique, on voit que
         \begin{equation}
@@ -2320,7 +2311,7 @@ Louan \textsc{Mol}
                 ce qui définit bien un pseudo-produit scalaire.
                 \end{proof}
                 
-                Un tel tenseur est caractérisé par sa signature $(r,s)$, où $r+s = \text{dim}(\M) = n$. Dans le cas Euclidien, nous avons $(r,s) = (0,n)$. Dans le cas Lorentzien, $(r,s) = (1,n-1)$.
+                Un tel tenseur est caractérisé par sa signature $(r,s)$, où $r+s = \text{dim}(\M) = n$. Dans le cas euclidien, nous avons $(r,s) = (0,n)$. Dans le cas lorentzien, $(r,s) = (1,n-1)$.
                 
                 \begin{prop}
                     Le tenseur inverse $g^{ab}$ (tenseur dont les composantes sont celle de la matrice inverse de $g_{ab}$) définit, en chaque point $P\in\M$, un produit scalaire sur $(T_P\M)^*$.
@@ -4766,7 +4757,7 @@ Louan \textsc{Mol}
                 \pdv[2]{N^i}{t} = R^i_{~00j}N^j = -R^i_{~0j0}N^j = -\p_i\p_j\phi N^j.
             \end{equation}
         
-\chapter{Champ de gravitation à symétrie sphérique dans le vide}
+\chapter{Champ de gravitation à symétrie sphérique}
 
     \section{Solution de Schwarzschild}
     
@@ -5179,9 +5170,9 @@ Louan \textsc{Mol}
                 \begin{itemize}[label = $\triangleright$]
                     \item $\boldsymbol{\mathscr{E}<0}$ : la trajectoire est bornée et périodique en la variable radiale mais plus fermée (plus comme dans le cas newtonnien). Ceci veut dire que, sur une période du mouvement radiale l'angle azimutale $\phi$ évoluera comme 
                     \begin{equation}
-                        \phi\to\phi+2\pi+\Delta\phi.
+                        \phi\to\phi+\Delta\phi.
                     \end{equation}
-                    C'est l'avancée du périastre (ou du périhélie dans le cas où le soleil est l'astre central).
+                    avec $\Delta\phi > 2\pi$. C'est l'avancée du périastre (ou du périhélie dans le cas où le soleil est l'astre central).
                     
                     %schéma eliott
                     
@@ -5210,9 +5201,6 @@ Louan \textsc{Mol}
                     
                     \item $\boldsymbol{\mathscr{E}>0}$ : on a une trajectoire de type hyperbolique 
                 \end{itemize}
-                
-               
-                
                 \item $\boldsymbol{12\left( \frac{GM}{c^} \right)^2<L^2<16\left( \frac{GM}{c^2} \right)^2}$ : les trajectoires sont les même que précédemment mais il en existe certaine qui n'ont pas de $r_m$ (crash dans l'astre central).
                 
                 %schéma eliott
@@ -5232,12 +5220,264 @@ Louan \textsc{Mol}
     
     \section{Calcul de l'avancée du périastre}
     
+        Pour rappel, l'énergie
+        \begin{equation}
+            \mathscr{E} = \frac{1}{2}\dot{r}^2+V_{\text{eff}}(r)
+        \end{equation}
+        avec
+        \begin{equation}
+            V_{\text{eff}}(r) = \frac{1}{2}\left( 1-\frac{M}{r} \right)\frac{L^2}{r^2}-\frac{M}{r}
+        \end{equation}
+        est une constante du mouvement. Calculons l'évolution de l'angle $\phi$ après une période complète du mouvement radial. On peut déjà s'attendre à ce que $\Delta\phi = 2\pi$ dans le cas newtonien et $\Delta\phi>2\pi$ dans le cas de la relativité générale.\\
+        
+        Nous savons que, 
+        \begin{equation}
+            \frac{d\phi}{dr} = \frac{L}{r^2}
+        \end{equation}
+        ce qui permet d'exprimer $\Delta\phi$ comme
+        \begin{equation}
+            \Delta\phi = \int_{\text{1 période}}\frac{d\phi}{dr} = L\int_{\text{1 période}}\frac{d\tau}{r^2}.
+        \end{equation}
+        En utilisant l'expression de $\mathscr{E}$, on voit que
+        \begin{align}
+            \left( \frac{r}{\tau} \right)^2 &= 2(\mathscr{E}-V_{\text{eff}}(r))\\
+            \Leftrightarrow\qquad dr &= \pm\sqrt{2\mathscr{E}-V_{\text{eff}}(r)}d\tau
+        \end{align}
+        et donc
+        \begin{equation}
+            \Delta\phi = L\int_{\text{1 période}}\frac{dr}{r^2\sqrt{2\mathscr{E}-V_{\text{eff}}(r)}} = 2L\int_{r_m}^{r_M}\frac{dr}{r^2\sqrt{2\mathscr{E}-V_{\text{eff}}(r)}}
+        \end{equation}
+        où $r_m$ et $r_M$ sont respectivement le périastre et l'apoastre, c'est-à-dire les racines positives de l'équation $V_{\text{eff}}(r)=\mathscr{E}$. Pour simplifier les calculs, posons $\rho=\frac{1}{r}$. Dans ce cas, $\frac{dr}{r^2} = -d\rho$ et 
+        \begin{equation}
+            \mathscr{E}-V_{\text{eff}}(r) = \underbrace{\mathscr{E}-\frac{1}{2}L^2\rho^2+M\rho}_{\text{Newton}}+\underbrace{\frac{1}{2}ML^2\rho^3}_{\text{perturbation}}.
+        \end{equation}
+        Notre stratégie pour aborder ce problème sera de considérer la terme en $\rho^3$ comme une petite perturbation au terme présent en mécanique newtonienne. Si l'on note
+        \begin{align}
+            \rho^{(0)}_M &\equiv \frac{1}{r^{(0)}_m}\\
+            \rho^{(0)}_m &\equiv \frac{1}{r^{(0)}_M}
+        \end{align}
+        où $r^{(0)}_m$ et $r^{(0)}_M$ désignent respectivement le périastre et l'apoastre newtonniens, on peut réécrire
+        \begin{equation}
+            \mathscr{E}-V_{\text{eff}}(r) = \frac{1}{2}L^2\left( \rho-\rho^{(0)_m} \right)\left( \rho^{(0)_M}-\rho \right)+2M\rho^3.
+        \end{equation}
+        On obtient finalement l'intégrale suivante.
+        \begin{equation}
+            \Delta\phi = 2\int^{\rho_M}_{\rho_m}\frac{d\rho}{\sqrt{\left( \rho-\rho^{(0)}_m \right)\left( \rho^{(0)}_M-\rho \right)+2M\rho^3}}
+        \end{equation}
+        
         \subsection{Cas de Newton}
+        
+            Dans le cas newtonnien, le terme perturbatif est nul. L'intégrale est donc al suivante :
+            \begin{equation}
+                \Delta\phi = 2\int^{\rho_M}_{\rho_m}\frac{d\rho}{\sqrt{\left( \rho-\rho^{(0)}_m \right)\left( \rho^{(0)}_M-\rho \right)}}.
+            \end{equation}
+            Cet intégrale est bien convergente et peut être effectuée par calcul direct. Cependant, utilisons une autre approche qui, bien que plus compliquée dans ce cas-ci, pourra être ré-utilisée dans le cas de la relativité générale.\\
+            
+            Considérons la fonction à variable complexe
+            \begin{equation*}
+                z\mapsto \frac{1}{\sqrt{\left( z-\rho^{(0)}_m \right)\left( \rho^{(0)}_M-z \right)}}.
+            \end{equation*}
+            Celle-ci possède deux pôles ( en $\rho^{(0)}_m$ et en $\rho^{(0)}_M$) et une coupure entre les deux où elle n'est pas définie. Pour résoudre cette intégrale nous utilisons le théorème des résidus qui affirme que l'on peut faire cette intégrale en intégrant sur un chemin fermé dans le plan complexe qui entoure les deux pôles. De plus, l'intégrale est indépendante du chemin choisit. Premièrement, prenons un chemin $\gamma_1$ entourant les deux pôles et la coupure le plus proche possible. Dans ce cas, $z-\rho^{(0)}_M<0$ et donc
+            \begin{equation}
+                \sqrt{z-\rho^{(0)}_M} = \sqrt{\abs{z-\rho^{(0)}_M}}e^{-i\frac{\pi}{2}} = \sqrt{z-\rho^{(0)}_M}e^{-i\frac{\pi}{2}} = -i\sqrt{z-\rho^{(0)}_M}.
+            \end{equation}
+            Le problème ne se pose pas pour le deuxième terme car $z-\rho^{(0)}_m>0$. Nous obtenons alors
+            \begin{align}
+                \oint_{\gamma_1} \frac{1}{\sqrt{\left( z-\rho^{(0)}_m \right)\left( \rho^{(0)}_M-z \right)}}~\frac{dz}{2\pi} &= \frac{1}{2\pi i} \int^{\rho_M}_{\rho_m}\frac{1}{-i\sqrt{\left( z-\rho^{(0)}_m \right)\left( \rho^{(0)}_M-z \right)}}~dz\\
+                &= \frac{1}{\pi} \int^{\rho_M}_{\rho_m}\frac{d\rho}{\sqrt{\left( \rho-\rho^{(0)}_m \right)\left( \rho^{(0)}_M-\rho \right)}}
+            \end{align}
+            Deuxièmement, prenons un chemin $\gamma_2$ qui tend vers l'infini. Dans ce cas,
+            \begin{equation}
+                \oint_{\gamma_2} \frac{1}{\sqrt{\left( z-\rho^{(0)}_m \right)\left( \rho^{(0)}_M-z \right)}}~\frac{dz}{2\pi} = \oint_{\gamma_2}\frac{1}{z}~\frac{dz}{2\pi} = 1.
+            \end{equation}
+            Or, la valeur de l'intégrale ne doit pas dépendre du chemin. Ceci permet de conclure que
+            \begin{equation}
+                \frac{1}{\pi} \int^{\rho_M}_{\rho_m}\frac{d\rho}{\sqrt{\left( \rho-\rho^{(0)}_m \right)\left( \rho^{(0)}_M-\rho \right)}} = 1
+            \end{equation}
+            et donc que
+            \begin{equation}
+                \Delta\phi = 2 \frac{1}{\pi} \int^{\rho_M}_{\rho_m}\frac{d\rho}{\sqrt{\left( \rho-\rho^{(0)}_m \right)\left( \rho^{(0)}_M-\rho \right)}} = 2\pi.
+            \end{equation}
         
         \subsection{Cas d'Einstein}
         
+            Traitons le terme $M\rho^3$ perturbativement. C'est-à-dire que l'on peut se limiter au développement au premier ordre. Pour rappel, si $\varepsilon\ll1$,
+            \begin{equation}
+                \frac{1}{\sqrt{1-\varepsilon}}\approx1-\frac{\varepsilon}{2}
+            \end{equation}
+            et donc
+            \begin{align}
+                \Delta\phi &= 2\int^{\rho_M}_{\rho_m}\frac{d\rho}{\sqrt{\left( \rho-\rho^{(0)}_m \right)\left( \rho^{(0)}_M-\rho \right)+2M\rho^3}}\\
+                &= 2\int^{\rho_M}_{\rho_m}\frac{d\rho}{\sqrt{\left( \rho-\rho^{(0)}_m \right)\left( \rho^{(0)}_M-\rho \right)}\left( 1+\frac{2M\rho^3}{\left( \rho-\rho^{(0)}_m \right)\left( \rho^{(0)}_M-\rho \right)} \right)^{\frac{1}{2}}} \\
+                &\approx 2\pi + 2\int^{\rho^{(0)}_M}_{\rho^{(0)}_m}\frac{1}{\sqrt{\left( \rho-\rho^{(0)}_m \right)\left( \rho^{(0)}_M-\rho \right)}}\frac{M\rho^2}{\left( \rho-\rho^{(0)}_m \right)\left( \rho^{(0)}_M-\rho \right)} ~d\rho
+            \end{align}
+            Nous obtenons une intégrale divergente. Pour résoudre cette difficulté, on écrit
+            \begin{align}
+                \Delta\phi &= \frac{2}{2i}\oint_{\gamma_1}\frac{dz}{\sqrt{\left( z-\rho^{(0)}_m \right)\left( z-\rho^{(0)}_M \right)}-Mz^3}\\
+                &\approx 2\phi+\frac{1}{i}\frac{2}{2i}\oint_{\gamma_1}\frac{1}{\sqrt{\left( z-\rho^{(0)}_m \right)\left( z-\rho^{(0)}_M \right)}}\frac{Mz^3}{2\left( z-\rho^{(0)}_m \right)\left( z-\rho^{(0)}_M \right)}~dz\\
+                &= 2\pi-\frac{i}{2}\oint_{\gamma_1}\frac{Mz^3}{\left(\left( z-\rho^{(0)}_m \right)\left( z-\rho^{(0)}_M \right)\right)^{\frac{3}{2}}}~dz
+            \end{align}
+            pour un chemin $\gamma_1$ contour de la coupure. Comme pour le cas newtonnien, on peu prendre un second chemin $\gamma_2$ partant à l'infini pour lequel
+            \begin{equation}
+                \frac{1}{\left(\left( 1-\frac{\rho^{(0)}_m}{z} \right)\left( 1-\frac{\rho^{(0)}_M}{z} \right)\right)^{\frac{3}{2}}} = 1+\frac{1}{z}(\rho^{(0)}_m+\rho^{(0)}_M)^{\frac{3}{2}}+\dots
+            \end{equation}
+            En égalant les deux résultats, nous obtenons
+            \begin{align}
+                \Delta\phi &= 2\pi-\frac{2iM}{2}(2i\pi)\frac{3}{2}(\rho^{(0)}_m+\rho^{(0)}_M)^{\frac{3}{2}}\\
+                &= 2\pi+3\pi M\left( \frac{1}{r^{(0)}_m}+\frac{1}{r^{(0)}_M} \right)
+            \end{align}
+            Or, pour rappel,
+            \begin{equation}
+                r = \frac{a(1-e^2)}{1-e\cos\theta}
+            \end{equation}
+            donc
+            \begin{align}
+                r_m &= \frac{a(1-e^2)}{1+e} = a(1-e)\\
+                r_M &= \frac{a(1-e^2)}{1-e} = a(1+e)
+            \end{align}
+            En utilisant ces expressions, on trouve que
+            \begin{equation}
+                \frac{1}{r^{(0)}_m}+\frac{1}{r^{(0)}_M} = \frac{1}{a}\left( \frac{1}{1+e}+\frac{1}{1-e} \right) = \frac{2}{a(1-e^2)}
+            \end{equation}
+            ce qui permet de réécrire l'avance du périastre comme
+            \begin{equation}
+                \boxed{\Delta\phi = 2\pi+\frac{6\pi GM}{ac^2(1-e^2)}}
+            \end{equation}
+            
+        \subsection{Applications numériques}
+                
+            Le phénomène d'avancée du périastre prédit par la relativité générale a permis d'expliquer l'avancée du périhélie de Mercure qui, observé depuis longtemps, n'avait jamais pu être réellement expliqué. L'avancée prédite par la théorie correspond exactement à ce qui est observé. Ceci a joué un grand rôle dans l'acceptation de cette théorie dans la communauté scientifique. Dans le cas de mercure,
+            \begin{align}
+                a &= 57.91\cdot10^8\meter\\
+                e &= 0.2056\\
+                \frac{GM_{\oplus}}{c^2} &= 1.475\kilo\meter
+            \end{align}
+            donc, si $\Delta\phi = 2\pi+(\Delta\phi)_{\text{Einstein}}$, on trouve
+            \begin{equation}
+                (\Delta\phi)_{\text{Einstein}} = 0.104''/\text{tour} = 43''/\text{siècle}.
+            \end{equation}
+            En réalité, la non-sphéricité du soleil joue également un rôle important dans l'avance du périhélie de Mercure ($\sim 532''/\text{siècle}$) mais cet effet avait déjà pu être calculé en mécanique newtonienne.\\
+            
+            Un autre astre a joué un rôle important lors de la validation de la théorie : la pulsar relativiste PSR 1913+16 constitué de deux étoiles à neutrons. Dans cas-ci,
+            \begin{align}
+                R &= 20\kilo\meter\\
+                M_1 &\approx M_2 \approx 1.4M_{\odot}\\
+                T &= 7.75\text{ heures}\\
+                e &= 0.62
+            \end{align}
+            donc
+            \begin{equation}
+                (\Delta\phi)_{\text{Einstein}} = 6.3\cdot10^{-5}\radian/\text{révolution} = 0.071~\radian/\text{an}.
+            \end{equation}
+            
+    \section{Déformation du temps}
     
-    \section{Trous noirs}
+        Dans cette partie, nous calculerons la déformation du temps subit par une horloge atomique embarquée dans un satellite. Supposons que la trajectoire est parfaitement circulaire.\\
+        
+        En relativité restreinte, le temps propre de l'horloge $\tau_h$ et le temps propre sur Terre $\tau_{\text{Terre}}$ sont reliés par
+        \begin{equation}
+            d\tau_h = \sqrt{1-v^2}~d\tau_{\text{Terre}} < d\tau_{\text{Terre}}
+        \end{equation}
+        où $v$ est la vitesse du satellite. L'horloge embarque retarde par rapport à l'horloge terrestre (dilatation du temps).\\
+        
+        Considérons maintenant le cas avec un champ de gravitation décrit par la métrique de Schwarzschild.
+        
+        \begin{prop}[troisième loi de Kepler]
+            Pour une trajectoire circulaire, 
+            \begin{equation}
+                \frac{r^3}{T^2_S} = \frac{M}{4\pi^2}
+            \end{equation}
+            où $T_S$ est la période de révolution dans les coordonnées de Schwarzschild.
+        \end{prop}
+        
+        \begin{proof}
+            Pour une trajectoire circulaire : $r_m=r_M$. Le rayon est donc donné par $V_{\text{eff}}'(r) = 0$.
+            \begin{align}
+                V_{\text{eff}}'(r) &= 0\\
+                \Leftrightarrow\qquad -\frac{L^2}{r^3}+\frac{3ML^2}{r^4}+\frac{M}{r^2} &= 0\\
+                \Leftrightarrow\qquad \frac{1}{r^3}\left( -L^2\left( 1-\frac{3M}{r}\right)+Mr \right) &= 0 \\
+                \Leftrightarrow\qquad L^2 = \frac{Mr}{1-\frac{3M}{r}}\label{eq:L}
+            \end{align}
+            De plus, 
+            \begin{equation}
+                \frac{d\phi}{dt} = \frac{d\phi}{d\tau}\frac{d\tau}{dt} = \frac{\dot{\phi}}{\dot{t}} = \frac{L}{r^2}\frac{1}{\dot{t}}.
+            \end{equation}
+            Pour une trajectoire circulaire et la métrique de Schwarzschild, nous avons
+            \begin{equation}
+                d\tau^2 = \left( 1-\frac{2M}{r} \right)dt^2-r^2 d\phi^2.
+            \end{equation}
+            En utilisant la relation précédente, 
+            \begin{alignat}{3}
+                && d\tau^2 &= \left( 1-\frac{2M}{r} \right)dt^2-r^2 d\phi^2\\
+                \Leftrightarrow&& \left(\frac{d\tau}{dt}\right)^2 &= \left( 1-\frac{2M}{r} \right)dt^2-r^2 \left(\frac{d\phi}{dt}\right)^2 \\
+                \Leftrightarrow&& \frac{1}{\dot{t}^2} &= \left( 1-\frac{2M}{r} \right)-r^2\left(\frac{d\phi}{dt}\right)^2\\
+                \Leftrightarrow&& \frac{r^4}{L^2}\left(\frac{d\phi}{dt}\right)^2 &= \left( 1-\frac{2M}{r} \right)-r^2\left(\frac{d\phi}{dt}\right)^2\\
+                \Leftrightarrow&&~~ \left( \frac{r^4}{L^2} + r^2 \right)\left(\frac{d\phi}{dt}\right)^2 &= \left( 1-\frac{2M}{r} \right)\\
+                \Leftrightarrow&& \left(\frac{d\phi}{dt}\right)^2 &= \left( 1-\frac{2M}{r} \right) \left( \frac{r^4}{L^2} + r^2 \right)^{-1}\label{eq:findevphit}
+            \end{alignat}
+            D'après la relation \ref{eq:L}, 
+            \begin{equation}
+                \frac{r^4}{L^2}+r^2 = \frac{r^4}{Mr}\left( 1-\frac{3M}{r} \right)+r^2 = \frac{r^3}{M}\left( 1-\frac{2M}{r} \right).
+            \end{equation}
+            En substituant dans l'équation \ref{eq:findevphit}, nous trouvons 
+            \begin{equation}
+                \left(\frac{d\phi}{dt}\right)^2 = \frac{1-\frac{2M}{r}}{1-\frac{2M}{r}}\frac{M}{r^3} = \frac{M}{r^3}
+            \end{equation}
+            donc
+            \begin{equation}
+                \frac{d\phi}{dt} = \frac{M}{r^{\frac{3}{2}}}.
+            \end{equation}
+            C'est la même relation qu'en mécanique newtonienne. On peut alors intégrer de $a$ à $T_S$, où $T_S$ est la période de révolution dans le temps de Schwarzschild (différent du temps physique).
+            \begin{align}
+                \int_0^{T_S}\frac{d\phi}{dt}~dt &= \int_0^{T_S}\frac{M}{r^{\frac{3}{2}}}~dt \\
+                \Leftrightarrow\qquad 2\pi &= \frac{M}{r^{\frac{3}{2}}}T_S
+            \end{align}
+        \end{proof}
+        
+        La relation entre le temps propre $\tau_E$ d'un émetteur en orbite et la temps propre du récepteur $\tau_R$ sur la Terre est donnée par
+        \begin{equation}
+            d\tau^2_E = \left( 1-\frac{2M}{R} \right)~dt^2_E-R^2~d\phi^2
+        \end{equation}
+        en négligeant la rotation de la Terre. En utilisant la relation
+        \begin{equation}
+            d\phi^2 = \frac{M}{R^3}~dt^2_E
+        \end{equation}
+        qui a été utilisée dans la démonstration de la troisième loi de Kepler, nous pouvons reformuler $d\tau_E$ comme
+        \begin{align}
+            d\tau^2_E &= \left( 1-\frac{2M}{R}-R^2\frac{M}{R^3} \right)~dt^2_E\\
+            &= \left( 1-\frac{3M}{R} \right)~dt^2_E
+        \end{align}
+        Par définition de $\tau_R$, 
+        \begin{equation}
+            d\tau^2_R = \left( 1-\frac{2M}{R_\oplus} \right)~dt^2_R.
+        \end{equation}
+        Lorsque le champ de gravitation est statique (c'est notre cas) donc $dt_E = dt_R$. En utilisant les deux relations précédentes, on trouve donc que
+        \begin{equation}
+            d\tau^2_R = \left( 1-\frac{2M}{R_\oplus} \right)~dt^2_E = \frac{1-\frac{2M}{R_\oplus}}{1-\frac{3M}{R}}~d\tau^2_E
+        \end{equation}
+        ou encore
+        \begin{equation}
+            d\tau_R = \sqrt{\frac{1-\frac{2M}{R_\oplus}}{1-\frac{3M}{R}}}~d\tau_E
+        \end{equation}
+        Le numérateur est d'origine gravitationnelle tandis que le dénominateur proviens aussi de la relativité restreinte. On peut voir que, si l'on veut que $d\tau_E<d\tau_R$ (comme la relativité restreinte le suggère), il faut que
+        \begin{align}
+            1-\frac{2M}{R_\oplus} &> 1-\frac{3M}{R} \\
+            \Leftrightarrow\qquad \frac{3M}{R} &> \frac{2M}{R_\oplus}\\
+            \Leftrightarrow \qquad R &< \frac{3}{2}R_\oplus
+        \end{align}
+        Dans ce cas, appelé \textit{orbite basse}, les de la relativité restreinte dominent. Au contraire, si
+        \begin{equation}
+            R > \frac{3}{2}R_\oplus
+        \end{equation}
+        dans le cas d'un\textit{orbite haute}, ce sont les effets de la relativité générale qui dominent : $$d\tau_E>d\tau_R$$. Ce résultat est à comparer avec le décalage des fréquences que nous avons discuté plus tôt (l'effet du décalage vers le bleu du au champ de gravitation l'emporte, donc l'horloge embarquée avance).\\
+        
+        Les ordres de grandeur typiques des effets du champ de gravitation sur le temps sont $\sim10^{-9}$. Ceci est particulièrement pour le système de GPS par exemple. Pour repérer la position d'un émetteur sur la Terre, plusieurs GPS mesurent la distance entre leur position et celle de l'émetteur. Si $\Delta x$ est la résolution spatiale voulue sur Terre et que $L$ est une distance typique mesurée par le satellite, alors
+        \begin{equation}
+            \frac{\Delta x}{L}\sim\frac{2\centi\meter}{20~000\kilo\meter}\sim10^{-9}
+        \end{equation}
+        donc il faut tenir compte des effets du champ de gravitation. Sans cela, on ne pourrait pas atteindre de résolution inférieur à $\Delta x\sim100\meter$.
+        
+    \section{Trous noirs de Schwarzschild}
     
         On utilise les unités géométriques $G = c = 1$. Au début de ce chapitre, nous avons montré que si l'on impose la symétrique sphérique, la solution au équation d'Einstein dans le vide est la métrique de Schwarzschild
         \begin{equation}
@@ -5260,7 +5500,7 @@ Louan \textsc{Mol}
         
          Prenons la solution de Schwarzschild au sérieux pour toutes les valeurs de $r$. On se heurte à deux problèmes : la métrique est singulière en $r=2M$ et en $r=0$. Pour comprendre, cartographies en utilisant des géodésiques radiales de genre lumière. Notons que l'on peut facilement se ramener au cas des géodésiques de genre temps à partir de l'étude des géodésiques de genre lumière et que la partie de la métrique qui nous intéresse est la partie radial car c'est elle qui diverge. Pour une géodésique radiale de genre lumière,
          \begin{equation}
-             0 = \left( 1-\frac{2M}{r} \right)dt^2 - \left( 1-\frac{2M}{r}dt^2 \right)^{-1}dr^2
+             0 = \left( 1-\frac{2M}{r} \right)dt^2 - \left( 1-\frac{2M}{r} \right)^{-1}dr^2
          \end{equation}
          donc
          \begin{equation}
