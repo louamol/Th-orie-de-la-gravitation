@@ -208,7 +208,7 @@ Louan \textsc{Mol}
         \end{equation}
         où $m$ est la masse d'un électron. Ce résultat est indépendant de la distance qui sépare les électrons. La force gravitationnelle est donc négligeable au niveau microscopique. Deuxièmement, à l'inverse des autres interactions, la gravité est uniquement cumulative car toutes les masses sont positives, il n'y a donc pas d'effet d'écrantage. Par exemple pour l'électromagnétisme, il y a des charges positives et négatives ce qui permet à la matière d'être électriquement neutre.\\
         
-        On dit que la théorie newtonnienne de la gravitation est une théorie classique car elle n'est pas invariante par la relativité einsteinienne (relativité restreinte) mais juste sous le groupe de relativité galiléenne. Il semble donc important au niveau conceptuel de mettre au point une théorie relativiste de la gravitation. Nous verrons plus tard que cette théorie permet également d'expliquer un grand nombre de phénomènes qui ne sont pas expliqués par la théorie de Newton (avancée du périhélie de Mercure, ...). Plus encore, elle permet de prédire l'existence de phénomènes dont nous n'avions pas idée de l'existence (trous noires, trous de verre, ondes gravitationnelles, ...).\\
+        On dit que la théorie newtonnienne de la gravitation est une théorie classique car elle n'est pas invariante par la relativité einsteinienne (relativité restreinte) mais juste sous le groupe de relativité galiléenne. Il semble donc important au niveau conceptuel de mettre au point une théorie relativiste de la gravitation. Nous verrons plus tard que cette théorie permet également d'expliquer un grand nombre de phénomènes qui ne sont pas expliqués par la théorie de Newton (avancée du périhélie de Mercure, lentilles gravitationnelles,...). Plus encore, elle permet de prédire l'existence de phénomènes dont nous n'avions pas idée de l'existence (trous noires, trous de verre, ondes gravitationnelles, ...).\\
         
         A ce stade, nous pouvons nous demander si dans le cas de la validité d'une telle théorie, quel ordre de grandeur les effets de celle-ci auraient. Soient $\O$ une observable quelconque, $\O_{\text{Newton}}$ la valeur prédite par la théorie de Newton et $\O_{\text{rela}}$ la valeur prédite par une théorie relativiste. Dans ce cas,
         \begin{equation}
@@ -304,7 +304,7 @@ Louan \textsc{Mol}
     
         Si l'on dispose d'un premier système de coordonnées $(\vv{x},t)$, alors les trois transformations élémentaires en relativité galiléenne permettant de passer à un deuxième système de coordonnées $(\vv{x}',t')$ et laissant les lois de la physique invariantes sont
         \begin{itemize}[label = \textbullet]
-            \item translation spatiale : $\vv{x}' = \vv{v}+\vv{a}$ avec $a\in\mathbb{R}^3$
+            \item translation spatiale : $\vv{x}' = \vv{x}+\vv{a}$ avec $a\in\mathbb{R}^3$
             \item rotation spatiale : $\vv{x}' = \mathcal{R}(\vv{x})$ avec $x'^a = R^a_{~b}x^b,~R\in SO(3)$
             \item translation temporelle : $t' = t + t_0$ avec $t_0\in\mathbb{R}$
         \end{itemize}
@@ -365,7 +365,7 @@ Louan \textsc{Mol}
                 $$O(3,1)~\hat{=}~\left\{\Lambda\in M_{4\text{x}4}(\mathbb{R})~\big|~\Lambda^T\eta\Lambda = \eta\right\}$$
             \end{defn}
         
-            \begin{prop}
+            \begin{prop}\begin{leftbar}
                 Le groupe de Lorentz possède quatre composantes connexes.
                 \begin{align}
                     L^\uparrow_+ &~\hat{=}~ \left\{\Lambda\in O(3,1)~\big|~\text{det}(\Lambda) = 1\text{ et }\Lambda^0_{~0}\geq1\right\} \\
@@ -373,7 +373,10 @@ Louan \textsc{Mol}
                     L^\uparrow_- &~\hat{=}~ \left\{\Lambda\in O(3,1)~\big|~\text{det}(\Lambda) = -1\text{ et }\Lambda^0_{~0}\geq1\right\} \\
                     L^\downarrow_- &~\hat{=}~ \left\{\Lambda\in O(3,1)~\big|~\text{det}(\Lambda) = -1\text{ et }\Lambda^0_{~0}\leq-1\right\}
                 \end{align}
-            \end{prop}
+            \end{leftbar}\end{prop}
+            
+            Où les signes $+,-$ donnent le signe du déterminant et les flèches $\uparrow,\downarrow$ donnent le sens du temps.
+            
             \begin{proof}
             ${}$\\
                 Soit $\Lambda\in O(3,1)$, alors
@@ -409,7 +412,7 @@ Louan \textsc{Mol}
                 Soient $\Lambda \in L \cap L^i_j $ et $\Lambda' \in L\backslash L^i_j$. Dans ce cas, il existe un $L^k_l \neq L^i_j$ tel que $\Lambda' \in L^k_l$. Par connexité de $L$, il existe une courbe $\Lambda(t)$ continue telle que $\Lambda(0) = \Lambda$ et $\Lambda(1) = \Lambda'$ ce qui est absurde car on ne peut pas passer continûment de $\Lambda^0_{~0} \geq 1$ à $\Lambda^0_{~0} \leq -1$ ou de $\det \Lambda = 1$ à $\det \Lambda = -1$. Donc $L$ est nécessairement une des quatre composantes explicitées.
             \end{proof}
             \begin{defn}
-                On dit qu'une transformation de Lorentz est \textit{propre} (\textit{impropre}) si $\text{det}(\Lambda = 1)$ ($\det(\Lambda) = -1$) et \textit{orthochrone} (\textit{non-orthochrone}) si $\Lambda^0_{~0}\geq1$ ($\Lambda^0_{~0}\leq-1$). 
+                On dit qu'une transformation de Lorentz est \textit{propre} (\textit{impropre}) si $\text{det}(\Lambda) = 1$ ($\det(\Lambda) = -1$) et \textit{orthochrone} (\textit{non-orthochrone}) si $\Lambda^0_{~0}\geq1$ ($\Lambda^0_{~0}\leq-1$). 
             \end{defn}
             Notons que parmi les quatre composantes connexes du groupe de Lorentz, seul le groupe de Lorentz propre orthochrone (groupe des transformations de Lorentz propres orthochrones) est un groupe car c'est le seule à contenir l'identité. De plus, c'est un sous-groupe normal.
             
@@ -437,20 +440,20 @@ Louan \textsc{Mol}
             
             On définit ici les transformations spéciales de Lorentz directement par une forme explicite de ces dernières, qui semble venir de nulle part. Nous verrons après qu'il existe plusieurs manières de trouver l'expression des transformations de Lorentz dont certaines ne font même pas référence à la lumière. Par exemple dans \cite{leblond}, il est démontré que l'on peut trouver la forme explicite des transformations de Lorentz juste à partir des quatre hypothèses suivantes : homogénéité de l'espace-temps, isotropie de l'espace-temps, l'ensemble des changements de référentiels a une structure de groupe et principe de causalité.\\
             
-            \begin{prop}
+            \begin{prop}\begin{leftbar}
                 Toute transformation de Lorentz propre orthochrone $\Lambda\in L^\uparrow_+$ peut être décomposée de manière unique comme le produit d'une rotation statique $R\in(1\oplus SO(3))$ et d'une T.S.L. $L(v)$.
                 \begin{equation}
                     \Lambda = RL
                 \end{equation}
-            \end{prop}
+            \end{leftbar}\end{prop}
             
             \begin{proof}${}$\\
                 \comp                
             \end{proof}
             
-            \begin{prop}
+            \begin{prop}\begin{leftbar}
                 Le groupe de Lorentz est formé par les T.S.L., le renversement du temps $T$ ($t'= -t$) et la parité $P$ ($\vv{x}' = -\vv{x}$).
-            \end{prop}
+            \end{leftbar}\end{prop}
             \begin{proof}${}$\\
                 \comp
             \end{proof}
@@ -518,10 +521,10 @@ Louan \textsc{Mol}
                 \end{itemize}
             \end{defn}
             
-            \begin{prop}
+            \begin{prop}\begin{leftbar}
                 Soient deux évènements $P_1$ et $P_2$ respectivement de coordonnées $x_1^\mu$ et $x_2^\mu$ et l'intervalle d'espace-temps $\underline{u}^2 = \eta_{\mu\nu}x_1^\mu x_2^\nu$.
                 \begin{itemize}[label = \textbullet]
-                    \item Si $\underline{u}^2<0$, il existe un référentiel pour lequel les évènements $P_1$ et $P_2$ sont au même point de l'espace, c'est-à-dire qu'il existe une transformation de Lorentz $\Lambda$ telle que
+                    \item Si $\underline{u}^2<0$, il existe un référentiel pour lequel les évènements $P_1$ et $P_2$ sont au même point de l'espace à des instants différents, c'est-à-dire qu'il existe une transformation de Lorentz $\Lambda$ telle que
                     \begin{equation}
                         \underline{u}' = \Lambda \underline{u} = \left(u'^0,\vv{0}\right).
                     \end{equation}
@@ -537,7 +540,7 @@ Louan \textsc{Mol}
                     \end{equation}
                     Donc $P_1$ et $P_2$ sont liés causalement.
                 \end{itemize}
-            \end{prop}
+            \end{leftbar}\end{prop}
             
             \begin{proof}${}$\\
                 \comp
@@ -545,7 +548,7 @@ Louan \textsc{Mol}
             
             Le système \ref{TSL} donne la forme explicite d'une transformation de Lorentz spéciale de Lorentz lorsque $\vv{v}$ est selon l'axe des $x$. On voudrait trouver une forme pour $\vv{v}$ quelconque.
             
-            \begin{prop}
+            \begin{prop}\begin{leftbar}
                 Pour $\vv{v}$ quelconque, les transformations spéciales de Lorentz imposent le changement de coordonnées suivant.
                 \begin{subequations}\label{TSLg}
                 \begin{empheq}[left=\empheqlbrace]{align}
@@ -553,7 +556,7 @@ Louan \textsc{Mol}
                 \vv{x}' &= \vv{x} - \gamma t\vv{v} + (\gamma-1)\frac{\vv{x}\cdot\vv{v}}{\vv{v}^2}\vv{v}
                 \end{empheq}
                 \end{subequations}
-            \end{prop}
+            \end{leftbar}\end{prop}
             
             \begin{proof}
             ${}$\\
@@ -636,13 +639,13 @@ Louan \textsc{Mol}
                 \vv{v}_{\R_1} &= \frac{d\vv{x}'}{dt}
             \end{align}
             
-            \begin{prop}
+            \begin{prop}\begin{leftbar}
                 Nous avons la loi de transformation des vitesses suivante.
                 \begin{equation}
                     \vv{v}_{\R_1} = \frac{\vv{v}_{\R_2}+\gamma\vv{v}+(\gamma-1)\frac{\vv{v}_{\R_2}\cdot\vv{v}}{\vv{v}^2}\vv{v}}{\gamma(1+\vv{v}\cdot\vv{v}_{\R_2})}
                 \end{equation}
                 où $\vv{v}$ est la vitesse de $\mathcal{R}_2$ dans $\mathcal{R}_1$.
-            \end{prop}
+            \end{leftbar}\end{prop}
             
             \begin{proof}
             ${}$\\
@@ -687,18 +690,18 @@ Louan \textsc{Mol}
             \caption{Graphe de la fonction tangente hyperbolique}
             \end{figure}
             
-            \begin{prop}
+            \begin{prop}\begin{leftbar}
                 La loi de transformation des vitesses pour la rapidité est linéaire et 
                 \begin{equation}
                     \varphi_{\R_1} = \varphi_{\R_2}+\varphi_{\nicefrac{\R_2}{\R_1}}.
                 \end{equation}
-            \end{prop}
+            \end{leftbar}\end{prop}
             
             \begin{proof}
             ${}$\\
                 En supposant que $\vv{v} = (v,0,0)$, on pose $v_{\R_1} ~\hat{=}~ \th{\varphi_{\R_1})},~ v_{\R_2} ~\hat{=}~ \th{\varphi_{\R_2}}$ et $v_{\nicefrac{2}{1}} ~\hat{=}~ \th{\varphi_{\nicefrac{\R_2}{\R_2}}}$, la loi de transformation \ref{LTVx} devient
                 \begin{equation}
-                    \th{\varphi_{\R_1}} = \frac{\th{\varphi_{\R_2}}+\th{\varphi_{\nicefrac{\R_2}{\R_1}}}}{1+\th{\varphi_{\R_2}}\th{\varphi_{\nicefrac{\R_2}{\R_1}}}} = \th{\varphi_{\R_1}+\varphi_{\nicefrac{\R_2}{\R_1}}}
+                    \th{\varphi_{\R_1}} = \frac{\th{\varphi_{\R_2}}+\th{\varphi_{\nicefrac{\R_2}{\R_1}}}}{1+\th{\varphi_{\R_2}}\th{\varphi_{\nicefrac{\R_2}{\R_1}}}} = \th{\varphi_{\R_2}+\varphi_{\nicefrac{\R_2}{\R_1}}}
                 \end{equation}
                 donc on trouve bien
                 \begin{equation}
@@ -729,12 +732,12 @@ Louan \textsc{Mol}
             \end{equation}
             Ce quadri-vecteur est appelé énergie impulsion car sa partie spatiale correspond à l'impulsion classique multipliée par $\gamma$ (la partie spatiale correspond en fait à la quantité de mouvement classique mais on l'appelle souvent impulsion par anglicisme). La première composante est appelée \textit{énergie relativiste} et le second \textit{impulsion relativiste}.
             
-            \begin{prop}
+            \begin{prop}\begin{leftbar}
                 Nous avons l'égalité suivante.
                 \begin{equation}
                     E^2 = \vv{p}^2 + m^2
                 \end{equation}
-            \end{prop}
+            \end{leftbar}\end{prop}
             \begin{proof}
             ${}$\\
                 Il suffit de développer l'expression de la norme de la quadri-impulsion.
@@ -753,7 +756,7 @@ Louan \textsc{Mol}
             En mécanique classique, l'énergie et l'impulsion d'un système isolé sont conservée. Ceci est indépendant du principe de relativité. La relativité restreinte donne des nouvelles valeurs à l'énergie et à l'impulsion mais ces grandeurs restent conservées au sein d'un même référentiel.\\
             
             \begin{leftbar}
-            \textbf{Conservation de l'énergie impulsion :} \quad Pour tout système isolé, l'énergie-impulsion est conservée au cours du temps.
+            \textbf{Conservation de l'énergie impulsion :} Pour tout système isolé, l'énergie-impulsion est conservée au cours du temps.
             \end{leftbar}
             
         \subsection{Quadri-accélération}
@@ -781,12 +784,12 @@ Louan \textsc{Mol}
                 v(\tau) = v_{\nicefrac{\R_\tau}{\R}}(\tau) = \frac{dx}{d\tau}.
             \end{equation}
             
-            \begin{prop}\label{prop:v}
+            \begin{prop}\begin{leftbar}\label{prop:v}
                 La vitesse de boost du référentiel fixe $\R$ au référentiel tangent $\R_\tau$ doit satisfaire
                 \begin{equation}
                     \frac{dv}{d\tau} = a\left(1-v^2(\tau)\right).
                 \end{equation}
-            \end{prop}
+            \end{leftbar}\end{prop}
             
             \begin{proof}
             ${}$\\
@@ -809,7 +812,7 @@ Louan \textsc{Mol}
             \end{equation}
             \end{proof}
             
-            \begin{prop}
+            \begin{prop}\begin{leftbar}
                 L'accélération propre est le taux de variation de la rapidité.
                 \begin{equation}
                     a = \frac{d\varphi}{d\tau}
@@ -818,7 +821,7 @@ Louan \textsc{Mol}
                 \begin{equation}
                     v(\tau) = \th{a\tau}.
                 \end{equation}
-            \end{prop}
+            \end{leftbar}\end{prop}
             
             \begin{proof}
             ${}$\\
@@ -840,7 +843,7 @@ Louan \textsc{Mol}
                 \end{equation}
             \end{proof}
             
-            \begin{prop}\label{eq:a}
+            \begin{prop}\begin{leftbar}\label{eq:a}
                 Le trajectoire d'un observateur en MRUA s'écrit explicitement en fonction du temps propre comme
                 \begin{subequations}
                 \begin{empheq}[left=\empheqlbrace]{align}
@@ -848,7 +851,7 @@ Louan \textsc{Mol}
                     x(\tau) &= \frac{1}{a}\ch{a\tau}+x_0
                 \end{empheq}
                 \end{subequations}
-            \end{prop}
+            \end{leftbar}\end{prop}
             
             \begin{proof}
             ${}$\\
@@ -978,17 +981,17 @@ Louan \textsc{Mol}
             \end{align}
             
             Les diagrammes de Minkowski sont plus simples lorsqu'on considère les T.S.L. comme des rotation hyperboliques. 
-            \begin{prop}
+            \begin{prop}\begin{leftbar}
                 Les T.S.L. prennent la forme suivante lorsqu'on les expriment sous forme d'une rotation hyperbolique
                 \begin{subequations}\label{TSLh}
                 \begin{empheq}[left=\empheqlbrace]{align}
-                    t' &= t\ch{\varphi}-x\sh{\varphi}) \\
-                    x' &= x\ch{\vp}-t\sh{\vp}) \\
+                    t' &= t\ch{\varphi}-x\sh{\varphi} \\
+                    x' &= x\ch{\vp}-t\sh{\vp} \\
                     y' &= y \\
                     z' &= z
                 \end{empheq}
                 \end{subequations}
-            \end{prop}
+            \end{leftbar}\end{prop}
             
             \begin{proof}
                 Pour les mettre sous cette forme nous utilisons la rapidité. On sait que $v = \th{\varphi}$ ce qui entraîne que
@@ -1414,7 +1417,7 @@ Louan \textsc{Mol}
                 d\tau^2 = -g_{\mu\nu}~dx^\mu dx^\nu.
             \end{equation}
             
-            \begin{prop}
+            \begin{prop}\begin{leftbar}
                 Le tenseur métrique satisfait les propriétés suivantes.
                 \begin{enumerate}[label = \textit{\roman*)}]
                     \item symétrie : $g_{\mu\nu}=g_{\nu\mu}$
@@ -1424,7 +1427,7 @@ Louan \textsc{Mol}
                         g'_{\mu\nu} = \frac{\p x^\rho}{\p x'^\mu}\frac{\p x^\kappa}{\p x'^\nu}~g_{\rho\kappa}.
                     \end{equation}
                 \end{enumerate}
-            \end{prop}
+            \end{leftbar}\end{prop}
             
             \begin{proof}
                 \begin{enumerate}[label = \textit{\roman*)}]
@@ -1440,12 +1443,12 @@ Louan \textsc{Mol}
                 \end{enumerate}
             \end{proof}
             
-            \begin{prop}
+            \begin{prop}\begin{leftbar}
                 Dans un référentiel localement inertiel, l'espace-temps est Minkowskien (espace-temps plat), c'est-à-dire que
                 \begin{equation}
                     g_{\mu\nu}(P) = \eta_{\mu\nu}
                 \end{equation}
-            \end{prop}
+            \end{leftbar}\end{prop}
             
             \begin{proof}
             ${}$\\
@@ -1457,9 +1460,9 @@ Louan \textsc{Mol}
             
             Malgré l'idée intuitive que l'on peut avoir de la notion de coordonnées localement inertielles, nous n'avons pas encore discuté la notion mathématique. Dans la démonstration de la proposition précédente nous n'avons pas exactement montré que le tenseur métrique prenait cette forme dans tout les référentiel localement inertiels, mais juste que s'il existe un tel référentiel alors le tenseur métrique est la pseudo-métrique Minkowskienne et donc en particulier diagonale. Mais cela provient en fait directement de la définition de $g_{\mu\nu}$ et de comment on a trouvé son expression dans un premier temps. Même si c'est bien de le vérifier, ce résultat n'est pas nouveau. On peut en fait se servir de la condition de diagonalité de la métrique pour définir mathématiquement ce que veut dire "localement inertiel". On ajoute une seconde condition qui donne l'idée de "plan tangent".
             
-            \begin{prop}
+            \begin{prop}\begin{leftbar}
                 On peut toujours trouver un système de coordonnée localement plat.
-            \end{prop}
+            \end{leftbar}\end{prop}
             
             \begin{proof}
             ${}$\\
@@ -1538,9 +1541,9 @@ Louan \textsc{Mol}
                 R_{\mu\nu\sigma\rho}+R_{\mu\sigma\nu\rho}+R_{\mu\rho\sigma\nu} = 0
             \end{equation}
             
-            \begin{prop}
+            \begin{prop}\begin{leftbar}
                 Le tenseur de courbure $R_{\mu\nu\sigma\rho}$ a $\frac{D^2(D^2-1)}{12}$ composantes indépendantes.
-            \end{prop}
+            \end{leftbar}\end{prop}
             
             \begin{proof}${}$\\
                 \comp
@@ -1556,13 +1559,13 @@ Louan \textsc{Mol}
             
             Dans notre cas, une particule test a donc une masse non-nulle (de manière à être sujette à la l'interaction gravitationnelle) mais on suppose que la champ gravitationnelle généré par cette masse est négligeable.
             
-            \begin{prop}
+            \begin{prop}\begin{leftbar}
                 Soient un système de coordonnées $z^\alpha_P$ localement inertielles en $P$ et $x^\mu$ un autre système de coordonnées quelconque en $P$. L'équation du mouvement d'un particule test (particule en chute libre) s'écrit alors comme
                 \begin{equation}
                     \frac{d^2x^\rho}{d\tau^2}+\Gamma^\rho_{\mu\nu}\frac{dx^\mu}{d\tau}\frac{dx^\nu}{d\tau} = 0
                 \end{equation}
                 avec $\Gamma^\rho_{\mu\nu} = \frac{\p x^\rho}{\p z^\alpha_P}\frac{\p^2 z^\alpha_P}{\p x^\mu\p x^\nu}$.
-            \end{prop}
+            \end{leftbar}\end{prop}
             
             \begin{proof}
                 Comme les coordonnées $z^\alpha_P$ sont inertielles, il existe un voisinage de $P$ tel que, dans ces coordonnées, l'équation du mouvement prend la forme
@@ -1592,7 +1595,7 @@ Louan \textsc{Mol}
                 \end{equation}
             \end{defn}
             
-            \begin{prop}\label{prop:propgamma}
+            \begin{prop}\begin{leftbar}\label{prop:propgamma}
                 Le symboles de Christoffel ont les propriétés suivantes.
                 \begin{enumerate}[label = \textit{\roman*)}]
                     \item Symétrie par rapport aux indices indérieurs : $\Gamma^\mu_{\nu\rho}=\Gamma^\mu_{\rho\nu}$
@@ -1602,7 +1605,7 @@ Louan \textsc{Mol}
                         \Gamma'^\mu_{\nu\rho} = \Gamma^\kappa_{\theta\sigma}\frac{\p x^\sigma}{\p x'^\nu} \frac{\p x'^\mu}{\p x^\kappa}\frac{\p x^\theta}{\p x'^\nu} +  \frac{\p x'^\mu}{\p x^\kappa}\frac{\p^2 x^\kappa}{\p x'^\nu\p x'^\rho}
                     \end{equation}
                 \end{enumerate}
-            \end{prop}
+            \end{leftbar}\end{prop}
             
             \begin{proof}${}$\\
             \begin{enumerate}[label = \textit{\roman*)}]
@@ -1622,12 +1625,12 @@ Louan \textsc{Mol}
             
             Le premier terme de la loi de transformation des symbole de Christoffel est exactement comme on pourrait s'y attendre pour un tenseur. Ceci montre que les $\Gamma^\rho_{\mu\nu}$ ne sont pas les composantes d'un tenseur.
             
-            \begin{prop}
+            \begin{prop}\begin{leftbar}
                 Les symboles de Christoffel peuvent s'exprimer en terme de la métrique comme
                 \begin{equation}\label{eq:gammag}
                     \Gamma^\mu_{\nu\rho} = \frac{1}{2}g^{\mu\theta}\left( \p_\nu g_{\rho\theta}+\p_\rho g_{\nu\theta}-\p_\theta g_{\rho\nu} \right)
                 \end{equation}
-            \end{prop}
+            \end{leftbar}\end{prop}
             
             \begin{proof}
                 On peut définir des symboles $\gamma^\mu_{\nu\rho}$ comme \ref{eq:gammag} et observer ces symboles satisfont les trois propriétés que la proposition \ref{prop:propgamma}. Dans ce cas, dans u système de coordonnées localement inertielles,
@@ -1772,13 +1775,13 @@ Louan \textsc{Mol}
                     Lorsque le contexte est clair, nous ne noterons pas le point de tangence du vecteur : $V_P\equiv V$.
                 \end{rmk}
                 
-                \begin{prop}
+                \begin{prop}\begin{leftbar}
                     L'espace tangent $T_P\M$ est un espace vectoriel réel de même dimension que $\M$. De plus,
                     \begin{equation}
                         \left\{ \frac{\p}{\p x^\mu}\bigg|_P \right\}
                     \end{equation}
                     est une base de $T_P\M$. Cette base est appellée \textit{base naturelle}.
-                \end{prop}
+                \end{leftbar}\end{prop}
                 
                 Comme nous l'avons introduit, il est difficile de se faire de se faire une intuition pour les vecteurs tangents. Considérons une courbe différentiable $(\gamma)$ sur $\M$ de paramètre $t\in\mathbb{R}$. Si $f\in C^\infty(\M,\mathbb{R})$, on peut définir le vecteur tangent $\dot{\gamma}(s)$ qui associe à $f$ sa dérivée le long de $\gamma$ en $t=s$.
                 
@@ -1829,12 +1832,12 @@ Louan \textsc{Mol}
                     Pour alléger les notations, lorsque le contexte est clair nous n'indiquerons pas le point dont il est question pour la différentielle de l'application : $\phi_{*P}\equiv\phi_*$.
                 \end{rmk}
                 
-                \begin{prop}
+                \begin{prop}\begin{leftbar}
                     Si $x^\mu$ sont des coordonnées locales en $P\in\M$ et $y^\mu$ sont des coordonnées locales en $\phi(P)\in\N$, la matrice associée à cette application est la jacobienne de $y\circ\phi\circ x^{-1}$ dans les bases $\eval{\pdv{}{x^\mu}}_{P}$ $\eval{\pdv{}{y^\mu}}_{\phi(P)}$. De sorte que, si $X = X^\mu\eval{\pdv{}{x^\mu}}_{P}\in T_P\M$, 
                     \begin{equation}
                         \phi_*(X) = X^\mu\eval{\pdv{(y\circ\phi\circ x^{-1})^\nu}{\tild{x}^\mu}}_{\phi(P)}\eval{\pdv{}{y^\nu}}_{P}
                     \end{equation}
-                \end{prop}
+                \end{leftbar}\end{prop}
                 
                 Si $\phi$ est un difféomorphisme, on peut montrer que $\phi_*$ est isomorphisme linéaire. Des variétés qui sont difféomorphes ont donc des espaces tangent isomorphes. Réciproquement, si il existe un point $P\in\M$ tel que, en $P$, $\phi_*$ est un isomorphisme, alors il existe une voisinage $U$ autour de $P$ tel que $\phi$ restreint à ce voisinage soit un difféomorphisme du $U$ à $\phi(U)$.
             
@@ -1871,9 +1874,9 @@ Louan \textsc{Mol}
                 
                 Malgré le fait que l'on peut toujours travailler dans une base abstraite $\{e_\mu\}$, nous utiliserons toujours la base naturelle pour $T_P\M$. De la même manière, il existe aussi une base naturelle pour l'espace cotangent. Pour rappel, les coordonnée locales $x^\mu$ sont des applications de $\M$ dans $\mathbb{R}$ différentiables ce qui permet de considérer la différentielle de ses applications.
                 
-                \begin{prop}
+                \begin{prop}\begin{leftbar}
                     Si $x$ sont des coordonnées locales en $P\in\M$, alors les $\{dx^\mu\}$ forment une base de l'espace $(T_P\M)^*$.
-                \end{prop}
+                \end{leftbar}\end{prop}
                 
                 \begin{proof}${}$\\
                     \comp
@@ -1884,12 +1887,12 @@ Louan \textsc{Mol}
                     Maintenant que nous disposons des base naturelle pour $T_P\M$ et $(T_P\M)^*$ étant donné des coordonnée locales $x$ en $P$, il faut garder à l'esprit que , même si nous utilisons les notations abstraites $\{e_\mu\}$ et $\{e^\mu\}$, si l'on se donne des coordonnées locales, on peut toujours remplace les $e_\mu$ par $\p_\mu$ et les $e^\mu$ par $dx^\mu$.
                 \end{rmk}
                 
-                \begin{prop}
+                \begin{prop}\begin{leftbar}
                     Soit $f:\M\to\mathbb{R}$ une fonction quelconque et $x$ des coordonnées locales en $P\in\M$. L'application différentielle de $df$ peut se décomposer dans la base duale $dx^\mu$ associée aux coordonnées $x$ comme
                     \begin{equation}
                         df = \pdv{f}{x^\mu}dx^\mu.
                     \end{equation}
-                \end{prop}
+                \end{leftbar}\end{prop}
                 
                 \begin{proof}
                     Soit $X\in T_P\M$ tel que $X = X^\mu\pdv{}{x^\mu}$, alors par définition de $df$,
@@ -1984,12 +1987,12 @@ Louan \textsc{Mol}
                     \end{equation}
                 \end{defn}
                 
-                \begin{prop}
+                \begin{prop}\begin{leftbar}
                     Soit $T$ est un tenseur de type $(p,q)$ de composantes $T\indices{^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q}}$, alors
                     \begin{equation}
                         T = T\indices{^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q}} e_{\mu_1}\otimes\dots\otimes e_{\mu_p}\otimes e^{\nu_1}\otimes\dots\otimes e^{\nu_q}
                     \end{equation}
-                \end{prop}
+                \end{leftbar}\end{prop}
                 
                 \begin{proof}
                    Soient $\omega^1,\dots,\omega^p\in(T_P\M)^*$ et $X_1,\dots,X_q\in T_P\M$ tels que 
@@ -2025,12 +2028,12 @@ Louan \textsc{Mol}
                     La proposition qui précède montre que, si l'on se donne une base de $T_P\M$ et une base de $(T_P\M)^*$, il y a une correspondance biunivoque entre l'ensemble des composantes d'un tenseur et le tenseur lui-même. Et pour rappel, se donner des coordonnées locales $x$ induit une base naturelle de $T_P\M$ et de $(T_P\M)^*$. Si l'on dispose de coordonnées locales, nous ferons donc souvent l'abus de langage de dire que les composantes d'un tenseur sont un tenseur pour en fait désigner le tenseur que ses composantes définissent.
                 \end{rmk}
                 
-                \begin{prop}
+                \begin{prop}\begin{leftbar}
                     Si $T$ est un tenseur de type $(p,q)$, alors
                     \begin{equation}
                         T(\omega^1,\dots,\omega^p,X_1,\dots,X_q) = \omega^1_{\mu_1}\dots\omega^p_{\mu_p}X^{\nu_1}_1\dots X^{\nu_q}_q~ T\indices{^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q}}.
                     \end{equation}
-                \end{prop}
+                \end{leftbar}\end{prop}
                 
                 \begin{proof}
                     Cette formule a été obtenue dans la démonstration de la proposition précédente.
@@ -2048,12 +2051,12 @@ Louan \textsc{Mol}
                 
                 La propriété fondamentale des tenseurs est la loi de transformation de leurs composantes.
                 
-                \begin{prop}
+                \begin{prop}\begin{leftbar}
                     Soit $T$ un tenseur de type $(p,q)$) de composantes $T\indices{^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q}}$ dans les coordonnées $x$. Les composantes de $T$ dans les coordonnées $x'$ s'expriment comme 
                     \begin{equation}
                         T'^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q} = \pdv{x'^{\mu_1}}{x^{\sigma_1}} (P)\dots\pdv{x'^{\sigma_p}}{x^{\sigma_p}}(P)\pdv{x^{\rho_1}}{x'^{\nu_1}}(P)\dots\pdv{x^{\rho_q}}{x'^{\nu_q}}(P)~T\indices{^{\sigma_1\dots\sigma_p}_{\rho_1\dots\rho_q}}
                     \end{equation}
-                \end{prop}
+                \end{leftbar}\end{prop}
                 
                 \begin{proof}${}$\\
                     \comp
@@ -2063,12 +2066,12 @@ Louan \textsc{Mol}
                     Un tenseur de type $(1,0)$ est appelé \textit{vecteur} et un tenseur de type $(0,1)$ est appelé \textit{1-forme}.
                 \end{defn}
                 
-                \begin{prop}
+                \begin{prop}\begin{leftbar}
                     L'espace tangent est un espace de vecteurs, c'est-à-dire que les vecteur tangent se transforment bien comme des vecteurs.
                     \begin{equation}
                         T_P\M = T^{(1,0)}_P\M
                     \end{equation}
-                \end{prop}
+                \end{leftbar}\end{prop}
                 
                 \begin{proof}${}$\\
                     Si $V\in T_P\M$ et $V^\mu\p_\mu$ dans les coordonnées locales $x^\mu$. Dans d'autres coordonnées locales $x'^\mu$, on a la matrice de changement de base (jacobienne) $ \frac{\p x'^\mu}{\p x^\nu}$ et $\omega = \omega_\mu~dx^\mu$, alors
@@ -2080,12 +2083,12 @@ Louan \textsc{Mol}
                 \end{proof}
                 La loi de transformation est bien celle d'un vecteur. Ceci justifie le nom de "vecteur" tangent.\\
                 
-                \begin{prop}
+                \begin{prop}\begin{leftbar}
                     L'espace dual de l'espace tangent est l'espace des 1-formes.
                     \begin{equation}
                         (T_P\M)^* \equiv \Omega_1(\M)
                     \end{equation}
-                \end{prop}
+                \end{leftbar}\end{prop}
             
                 \begin{proof}
                     Si $\omega\in (T_P\M)^*$ et $w_\mu dx^\mu$ dans les coordonnées locales $x^\mu$. Pour d'autres coordonnées locales $x'^\mu$ on a la matrice de changement de base (jacobienne) $ \frac{\p x^\mu}{\p x'^\nu}$ et $\omega = \omega_\mu~dx^\mu$, alors
@@ -2098,7 +2101,7 @@ Louan \textsc{Mol}
                 
                 Discutons des opérations que l'on peut faire entre tenseurs.
                 
-                \begin{prop}[opérations sur les tenseurs]
+                \begin{prop}\begin{leftbar}[opérations sur les tenseurs]
                     Nous pouvons effectuer les opérations suivantes entre tenseurs :
                     \begin{enumerate}[label = \textit{\roman*)}]
                         \item combinaison linéaire : si $t_1$ et $t_2$ sont de type $(p,q)$,
@@ -2118,7 +2121,7 @@ Louan \textsc{Mol}
                         \end{equation}
                         est un tenseur de type $(p-1,q-1)$.
                     \end{enumerate}
-                \end{prop}
+                \end{leftbar}\end{prop}
                 
                 \begin{proof}
                     Les trois propriétés se démontrent en observant comment les objets définis ci-dessus se transforment lors d'un changement de coordonnées.
@@ -2180,7 +2183,7 @@ Louan \textsc{Mol}
                     \end{equation}
                  \end{defn}
                 
-                \begin{prop}
+                \begin{prop}\begin{leftbar}
                     Soit $t$ un tenseur d'ordre $p$.
                     \begin{enumerate}[label = \textit{\roman*)}]
                         \item la partie symétrique de $t$ est anti-symétrique i.e. on peut toujours symétriser ce tenseur comme
@@ -2192,7 +2195,7 @@ Louan \textsc{Mol}
                             t_{[a_1\dots a_p]} = \frac{1}{p!} \sum_{\sigma\in S_p}\varepsilon(\sigma) t_{a_{\sigma(1)}\dots a_{\sigma(p)}}.
                         \end{equation}
                     \end{enumerate}
-                \end{prop}
+                \end{leftbar}\end{prop}
                 
                 \begin{proof}${}$
                     \begin{enumerate}[label = \textit{\roman*)}]
@@ -2209,7 +2212,7 @@ Louan \textsc{Mol}
                     \end{enumerate}
                 \end{proof}
                 
-                \begin{prop}
+                \begin{prop}\begin{leftbar}
                     Soit $t$ un tenseur d'ordre $p$.
                     \begin{enumerate}[label = \textit{\roman*)}]
                         \item $t$ est complètement symétrique si et seulement si
@@ -2221,7 +2224,7 @@ Louan \textsc{Mol}
                             t_{[a_1\dots a_p]} = t_{a_1\dots a_p}
                         \end{equation}
                     \end{enumerate}
-                \end{prop}
+                \end{leftbar}\end{prop}
                 
                 \begin{proof}${}$
                     \begin{enumerate}[label = \textit{\roman*)}]
@@ -2266,12 +2269,12 @@ Louan \textsc{Mol}
                     ce qui est clairement anti-symétrique sous l'échange de $a$ et $b$. 
                 \end{exmp}
                 
-                \begin{prop}
+                \begin{prop}\begin{leftbar}
                     Tout tenseur $t$ d'ordre $p$ peut être décomposé comme
                     \begin{equation}
                         t_{a_1\dots a_p} = t_{(a_1\dots a_p)} + t_{[a_1\dots a_p]}
                     \end{equation}
-                \end{prop}
+                \end{leftbar}\end{prop}
                 
                 \begin{proof}${}$\\
                     \comp
@@ -2290,9 +2293,9 @@ Louan \textsc{Mol}
                     Un \textit{tenseur métrique} est un tenseur de type $(0,2)$ non-dégénéré et complètement symétrique.
                 \end{defn}
                 
-                \begin{prop}
+                \begin{prop}\begin{leftbar}
                     Le tenseur métrique définit, en chaque point $P\in\M$, un pseudo-produit scalaire sur $T_P\M$.
-                \end{prop}
+                \end{leftbar}\end{prop}
                 
                 \begin{proof}
                     Soit $g$ un tenseur métrique, étant donné qu'il est deux fois covariant, $g$ définit en chaque point $P\in\M$, une forme bilinéaire symétrique non-dégénérée.
@@ -2313,9 +2316,9 @@ Louan \textsc{Mol}
                 
                 Un tel tenseur est caractérisé par sa signature $(r,s)$, où $r+s = \text{dim}(\M) = n$. Dans le cas euclidien, nous avons $(r,s) = (0,n)$. Dans le cas lorentzien, $(r,s) = (1,n-1)$.
                 
-                \begin{prop}
+                \begin{prop}\begin{leftbar}
                     Le tenseur inverse $g^{ab}$ (tenseur dont les composantes sont celle de la matrice inverse de $g_{ab}$) définit, en chaque point $P\in\M$, un produit scalaire sur $(T_P\M)^*$.
-                \end{prop}
+                \end{leftbar}\end{prop}
                 
                 \begin{proof}
                     Considérons une matrice de changement de base $M$ (par forcément une transformation de Lorentz). On a
@@ -2408,9 +2411,9 @@ Louan \textsc{Mol}
             \end{defn}
             
             On voit donc que n'importe quelle $p$-forme $\omega$ peut s'écrire comme \ref{eq:pformebase}.
-            \begin{prop}
+            \begin{prop}\begin{leftbar}
                 Si $\{e^a\}$ est une base de $(T_P\M)^*$, alors $\{e^{a_1}\wedge\dots \wedge e^{a_p},1\leq a_1<\dots<a_p\leq n\}$ est une base de $\Omega_P^p(\M)$.
-            \end{prop}
+            \end{leftbar}\end{prop}
             
             \begin{proof}
                 Nous avons montré que la partie anti-symétrique de tout tenseur peut s'écrire dans cette base. Cependant, ce n'est pas forcément le cas le plus générale. A priori, rien ne garanti qu'il n'existe pas de tenseurs complètement anti-symétriques qui ne sont pas la partie anti-symétrique d'un autre tenseur. Si c'est le cas, il faut montrer que ces tenseurs là aussi peuvent s'écrire dans cette base. Quelque soit $\omega\in T^{(p,q)}_P(\M)$, nous avons vu que ce tenseur est complètement anti-symétrique si et seulement si
@@ -2493,7 +2496,7 @@ Louan \textsc{Mol}
             \end{itemize}
             \end{exmp}
             
-            \begin{prop}
+            \begin{prop}\begin{leftbar}
                 Soient $V$ un espace vectoriel et $v_1,v_2,v_3\in V$. Le produit extérieur a les propriétés suivantes.
                 \begin{enumerate}[label = \textit{\roman*)}]
                     \item bilinéaire : pour tout $\alpha\in\mathbb{R}$,
@@ -2505,26 +2508,26 @@ Louan \textsc{Mol}
                     \item alterné : $v_1 \wedge v_1 = 0$
                     \item anti-symétrique : $v_1\wedge v_2 = -v_2\wedge v_1$
                 \end{enumerate}
-            \end{prop}
+            \end{leftbar}\end{prop}
             
             Le produit extérieur est une généralisation du produit vectoriel qui n'est définit que dans un espace à trois dimensions. On peut aussi voir le produit extérieur comme étant l'analogue du produit tensoriel mais sur l'espace des tenseurs complètement anti-symétriques.\\
             
             On vient de voir que le produit extérieur de deux $p$-formes est anti-symétrique. Cependant ca n'est pas le cas pour le produit extérieur d'une $p$-forme et d'une $q$-forme.
             
-            \begin{prop}
+            \begin{prop}\begin{leftbar}
                 Soient $\omega\in\Omega_P^p(\M)$ et $\eta\in \Omega_P^q(\M)$ alors
                 \begin{equation}
                     \omega\wedge\eta = (-1)^{pq}\eta\wedge\omega
                 \end{equation}
-            \end{prop}
+            \end{leftbar}\end{prop}
             
             \begin{proof}${}$\\
                 \comp
             \end{proof}
             
-            \begin{prop}
+            \begin{prop}\begin{leftbar}
                 On a $dim(T_P^{(0,p)}(\M)) = n^p$ et $dim(\Omega_P^p(\M)) = {p \choose n}$.
-            \end{prop}
+            \end{leftbar}\end{prop}
             
             \begin{proof}${}$\\
                  \comp
@@ -2590,9 +2593,9 @@ Louan \textsc{Mol}
                 (d\omega)_{\mu_1 \dots\mu_{p+1}} = (p+1) \p_{[\mu_1}\omega_{\mu_2\dots\mu_{p+1}]}
             \end{equation}
             
-            \begin{thm}
+            \begin{thm}\begin{leftbar}
                 L'objet $d\omega$ tel que définit ci-dessus est une $(p+1)$-forme, c'est-à-dire que les $(d\omega)_{\mu_1 \dots\mu_{p+1}}$ sont les composantes d'un tenseur.
-            \end{thm}
+            \end{leftbar}\end{thm}
             
             Illustrons cela par des exemples.
             
@@ -2629,24 +2632,24 @@ Louan \textsc{Mol}
                 \end{itemize}
             \end{exmp}
             
-            \begin{prop}[Règle de Leibniz graduée]
+            \begin{prop}\begin{leftbar}[Règle de Leibniz graduée]
                 Soient $\omega\in\Omega_P^p(\M)$ et $\eta\in\Omega_P^q(\M)$, alors
                 \begin{equation}
                     d(\omega\wedge\eta) = d\eta\wedge\omega+(-1)^{p}~\eta\wedge d\omega.
                 \end{equation}
-            \end{prop}
+            \end{leftbar}\end{prop}
             
             \begin{proof}${}$\\
                 \comp
             \end{proof}
             
-            \begin{prop}
+            \begin{prop}\begin{leftbar}
                 Quel que soit $\omega\in\Omega_P^p(\M)$, on a 
                 \begin{equation}
                     d^2\omega \equiv d(d(\omega)) = 0.
                 \end{equation}
                 C'est-à-dire que $d^2 = 0$.
-            \end{prop}
+            \end{leftbar}\end{prop}
             
             \begin{proof}${}$\\
                 \comp
@@ -2704,12 +2707,12 @@ Louan \textsc{Mol}
                 Inversement, si $dF = 0$, est-ce qu'il existe toujours une $1$-forme $A$ telle que $F = dA$ ? La réponse est oui, si la variété a une topologie triviale. Dans ce cas, on dit que $F$ est une forme exacte.
             \end{exmp}
             
-            \begin{prop}
+            \begin{prop}\begin{leftbar}
                 Soit $\omega$ une $p$-forme quelconque et $\phi:\M\to\N$ une application différentiable. Alors
                 \begin{equation}
                     d(\phi^*(\omega)) = \phi^*(d\omega).
                 \end{equation}
-            \end{prop}
+            \end{leftbar}\end{prop}
             
             \begin{proof}${}$\\
                 \comp
@@ -2747,9 +2750,9 @@ Louan \textsc{Mol}
                     \end{itemize}
                 \end{exmp}
                 
-                \begin{thm}
+                \begin{thm}\begin{leftbar}
                     Si $t^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q}$ sont les composantes d'un tenseur de type $(p,q)$, alors $\nabla_\mu t^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q}$ sont les composantes d'un tenseur de type $(p,q+1)$.
-                \end{thm}
+                \end{leftbar}\end{thm}
                 
                 \begin{proof}
                     Montrons le cas particulier du vecteur ($p=1,q=0$). Si $V^\mu$ sont les composantes d'un vecteur, alors
@@ -2770,7 +2773,7 @@ Louan \textsc{Mol}
                     et $ \pdv{\delta^\nu_\mu}{x^\theta} = 0$. On trouve donc la loi de transformation d'un tenseur de type $(1,1)$.
                 \end{proof}
                 
-                \begin{prop}[Règle de Leibniz]
+                \begin{prop}\begin{leftbar}[Règle de Leibniz]
                     Soient $t_1$ et $t_2$ deux tenseurs, alors
                     \begin{equation}
                         \nabla(t_1\otimes t_2) = (\nabla t_1)\otimes t_2 + t_1\otimes(\nabla t_2).
@@ -2779,7 +2782,7 @@ Louan \textsc{Mol}
                     \begin{equation}
                          \nabla_\mu (t^{\mu_1\dots\mu_p}_{1~\nu_i\dots\nu_q}t^{\rho_1\dots\rho_r}_{2~\sigma_i\dots\sigma_s}) = (\nabla_\mu t^{\mu_1\dots\mu_p}_{1~\nu_i\dots\nu_q})t^{\rho_1\dots\rho_r}_{2~\sigma_i\dots\sigma_s} + t^{\mu_1\dots\mu_p}_{1~\nu_i\dots\nu_q} (\nabla_\mu t^{\rho_1\dots\rho_r}_{2~\sigma_i\dots\sigma_s}).
                     \end{equation}
-                \end{prop}
+                \end{leftbar}\end{prop}
                 
                 \begin{exmp}
                     Soient $V\in T_P\M$ et $\omega\in (T_P\M)^*$ tels que $V = V^\mu\p_\mu$ et $\omega = \omega_\mu~dx^\mu$. Si $t = V\otimes\omega$, alors $t^\mu_\nu = V^\mu\omega_\nu$, et donc
@@ -2822,12 +2825,12 @@ Louan \textsc{Mol}
                 \end{equation}
                 dans les référentiels localement inertiels, ce qui impose une contrainte sur les $\Gamma$ : $\Gamma^\alpha_{\beta\gamma}(P) = 0$ dans un référentiel localement inertiel en $P$. Les conséquences de cette contrainte entraînent deux condition très importantes sur les $\Gamma$.
                 
-                \begin{prop}[Condition de torsion nulle]
+                \begin{prop}\begin{leftbar}[Condition de torsion nulle]
                     Les symboles $\Gamma$ satisfont à la condition
                     \begin{equation}
                         \Gamma^\mu_{\nu\rho} = \Gamma^\mu_{\rho\nu}.
                     \end{equation}
-                \end{prop}
+                \end{leftbar}\end{prop}
                 
                 \begin{proof}
                     Soit $z^\alpha_P$ un système de coordonnées localement inertielles en $P$ et $x$ un second système de coordonnée. Alors la loi de transformation des $\Gamma$ implique que
@@ -2837,12 +2840,12 @@ Louan \textsc{Mol}
                     ce qui est bien symétrique sous l'échange des indices inférieurs.
                 \end{proof}
                 
-                \begin{prop}[Condition de préservation de la métrique]
+                \begin{prop}\begin{leftbar}[Condition de préservation de la métrique]
                     Les symboles $\Gamma$ satisfont à la condition
                     \begin{equation}
                         \nabla_\mu g_{\nu\rho} = 0
                     \end{equation}
-                \end{prop}
+                \end{leftbar}\end{prop}
                 
                 \begin{proof}
                     Soit $z^\alpha_P$ un système de coordonnées localement inertielles en $P$, calculons la dérivée covariante de la métrique dans ces coordonnées.
@@ -2852,12 +2855,12 @@ Louan \textsc{Mol}
                     Le premier terme s'annule car $z^\alpha_P$ sont des coordonnées localement inertielles et les deux dernier termes s'annulent parce que  $\Gamma^\alpha_{\beta\gamma}(P) = 0$ dans un référentiel localement inertiel en $P$.
                 \end{proof}
                 
-                \begin{prop}
+                \begin{prop}\begin{leftbar}
                     Soient $V,W\in T_P\M$, alors
                     \begin{equation}
                         \nabla_\mu(g(V,W)) = g(\nabla_\mu V,W) + g(V,\nabla_\mu W).
                     \end{equation}
-                \end{prop}
+                \end{leftbar}\end{prop}
                 
                 \begin{proof}
                     De part la règle de Leibniz pour la dérivée covariante,
@@ -2877,12 +2880,12 @@ Louan \textsc{Mol}
                     en notation matricielle.
                 \end{defn}
                 
-                \begin{prop}
+                \begin{prop}\begin{leftbar}
                     Les composantes du tenseur de torsion sont
                     \begin{equation}
                         T^\rho_{\mu\nu} = 2\Gamma^\rho_{[\mu\nu]}.
                     \end{equation}
-                \end{prop}
+                \end{leftbar}\end{prop}
                 
                 \begin{proof}
                     Dans une base $\{dx^\mu\}$,
@@ -2896,9 +2899,9 @@ Louan \textsc{Mol}
                     \end{equation}
                 \end{proof}
                 
-                \begin{prop}
+                \begin{prop}\begin{leftbar}
                     Le tenseur torsion est un tenseur de type $(1,2)$.
-                \end{prop}
+                \end{leftbar}\end{prop}
                 
                 \begin{proof}
                     On note $\Gamma$ la connexion dans le système de coordonnées $x$ et $\Gamma'$ dans le système de coordonnées $x'$. Nous avons
@@ -2923,12 +2926,12 @@ Louan \textsc{Mol}
                     \end{align}
                 \end{proof}
                 
-                \begin{prop}[propriété de Schwartz]
+                \begin{prop}\begin{leftbar}[propriété de Schwartz]
                     Soit $f$ un champ scalaire quelconque. On a
                     \begin{equation}
                         [\p_\mu,\p_\nu]f = 0.
                     \end{equation}
-                \end{prop}
+                \end{leftbar}\end{prop}
                 
                 La torsion représente l'obstruction à la propriété de Schwartz. Effectivement, si $f$ est un champ scalaire,
                 \begin{align}
@@ -2975,12 +2978,12 @@ Louan \textsc{Mol}
                 \end{equation}
                 Une connexion est une quantité qui porte la notion d'équipollence dans les espaces courbes. D'après les principes de la relativité générale, on peut imposer certaines condition à la connexion que nous utilisons (préservation de la métrique $g$ et torsion nulle). La connexion de Levi-Civita est l'unique connexion qui satisfait ces conditions.\\
             
-                \begin{thm}[fondamental de la géométrie riemannienne]
+                \begin{thm}\begin{leftbar}[fondamental de la géométrie riemannienne]
                     Sur une variété riemannienne $(\M,g)$, il existe une unique connexion de torsion nulle préservant la métrique. On l'appelle la \textit{connexion de Levi-Civita} telle que
                     \begin{equation}
                         \chris{\rho}{\mu}{\nu}=\Gamma^\rho_{\mu\nu}
                     \end{equation}
-                \end{thm}
+                \end{leftbar}\end{thm}
                 
                 \begin{proof}${}$\\
                     Soit une variété $\M$ munie d'une métrique $g$ et considérons une connexion $\nabla$ sur le fibré tangent $T\M$.
@@ -3104,13 +3107,13 @@ Louan \textsc{Mol}
                 
                 Une propriété remarquable du fibré tangent est qu'il lui-même être vu comme un variété.
                 
-                \begin{prop}
+                \begin{prop}\begin{leftbar}
                     Si $\M$ es une variété différentiable de dimension $n$ alors le fibré tangent $T\M$ admet une structure de variété différentiable de dimension $2n$ telle que
                     \begin{enumerate}[label = \textit{\roman*)}]
                         \item la projection $\pi:T\M\to\M$ ets différentiable
                         \item chaque fibre $\pi^{-1}(P)$ est difféomorphe à $\mathbb{R^{n}}$ pour tout $P\in\M$
                     \end{enumerate}
-                \end{prop}
+                \end{leftbar}\end{prop}
                 
                 Le fibré tangent permet d'associer un espace vectoriel à chaque point de la variété, l'espace vectoriel est ici le cas particulier de l'espace tangent. L'espace tangent étant naturellement associé à un point de la variété cette notion est assez naturelle. On peut généraliser ce principe pour n'importe quel type d'espace vectoriel, plus seulement l'espace tangent. On appelle ca le fibré vectoriel.
                 
@@ -3300,16 +3303,16 @@ Louan \textsc{Mol}
                  &= X^\mu(\p_\mu s^a+\Gamma^a_{\mu b}s^b)e_a
             \end{align}
              
-            \begin{prop}
+            \begin{prop}\begin{leftbar}
                     La dérivée covariante d'une section $s = s^a e_a$ est donnée par
                     \begin{equation}
                         \nabla_\mu s^a = \p_\mu s^a+\Gamma^a_{\mu b}s^b
                     \end{equation}
-            \end{prop}
+            \end{leftbar}\end{prop}
              
             Que se passe-t-il sous un changement de base ? Ou de manière plus générale, que se passe-t-il sous une transformation de jauge ? Pour faire le cas générale, on va considérer un changement de base uniquement pour les fibres et pas dans l'esapce tangent. On verra plus après le cas particulier où les fibres sont des espaces tangents qu'est le notre.
             
-            \begin{prop}
+            \begin{prop}\begin{leftbar}
                 Sous un changement de coordonnées du type
                 \begin{align}
                     e_a' &= N_a^{~b}~e_b \\
@@ -3319,7 +3322,7 @@ Louan \textsc{Mol}
                  \begin{equation}
                      \Gamma' = M\Gamma M^{-1} + MdM^{-1}
                  \end{equation}
-            \end{prop}
+            \end{leftbar}\end{prop}
         
             \begin{proof}
                 On a 
@@ -3455,12 +3458,12 @@ Louan \textsc{Mol}
                 &= \frac{dU^\mu}{d\lambda} + \Gamma^\nu_{\mu\rho} U^\mu U^\rho
             \end{align}
             Ce résultat peut être généralisé à n'importe que tenseur défini le long d'une courbe $\mathscr{C}$.
-            \begin{prop}
+            \begin{prop}\begin{leftbar}
                 Soit une courbe $\mathscr{C}$ sur $\M$ de paramètre $\lambda$. Si $U$ est un vecteur tangent à $\mathscr{C}$, alors la dérivée d'un tenseur $t$ de type $(p,q)$ est
                 \begin{equation}
                     \nabla_U t^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q} = \frac{dt^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q}}{d\lambda} + U^\mu(\Gamma_\mu t + \dots)
                 \end{equation}
-            \end{prop}
+            \end{leftbar}\end{prop}
             
             \begin{proof}
                 Il suffit de développer l'expression de la dérivée covariante de la même manière que précédemment.
@@ -3507,12 +3510,12 @@ Louan \textsc{Mol}
                 est appelé \textit{paramètre affine}.
             \end{defn}
             
-            \begin{prop}
+            \begin{prop}\begin{leftbar}
                 Soient $\lambda_1$ et $\lambda_2$ deux paramètre affines pour une courbe $\mathscr{C}$. Il existe $\alpha,\beta\in\mathbb{R}$ tels que
                 \begin{equation}
                     \lambda_1 = \alpha\lambda_2+\beta.
                 \end{equation}
-            \end{prop}
+            \end{leftbar}\end{prop}
             
             Pour certaines courbe, le paramètre affine correspond à une quantité physique bien connue : le temps propre.
             
@@ -3553,13 +3556,13 @@ Louan \textsc{Mol}
                 où le signe "-" et le paramètre $m$ (masse) sont conventionnels. Les courbe qui minimisent la distance sont celles qui minimisent l'action $S$, c'est-à-dire les courbe pour lesquelles $v=0$.
             \end{exmp}
             
-            \begin{thm}
+            \begin{thm}\begin{leftbar}
                 Si $\Gamma$ est la connexion de Levi-Civita alors les lignes droites extrémalisent  la fonctionnelle temps propre entre deux points
                 \begin{equation}
                     S = -m\int_P^Qd\tau
                 \end{equation}
                 pour les courbes de genre temps.
-            \end{thm}
+            \end{leftbar}\end{thm}
             
             \begin{proof}${}$\\
                 Rappelons que, par définition du temps propre,
@@ -3593,13 +3596,13 @@ Louan \textsc{Mol}
             \end{equation}
             On peut en conclure que le temps propre est un paramètre affine. En géométrie euclidienne, la paramètre affine est la abscisse curviligne.
             
-            \begin{prop}
+            \begin{prop}\begin{leftbar}
                 Si $U$ est le vecteur tangent le long d'un courbe, alors la quantité
                 \begin{equation}
                     g(U,U) = g_{\mu\nu}U^\mu U^\nu
                 \end{equation}
                 où $U^\mu = \frac{dx^\mu}{d\lambda}$, est constante le long de cette courbe.
-            \end{prop}
+            \end{leftbar}\end{prop}
             
             \begin{proof}${}$\\
                 Il suffit de remarquer que
@@ -3619,12 +3622,12 @@ Louan \textsc{Mol}
                 \end{itemize}
             \end{defn}
             
-            \begin{prop}
+            \begin{prop}\begin{leftbar}
                 Les géodésiques de genre temps extrémalisent l'action
                 \begin{equation}
                     S = -m\int d\tau = -m\int \sqrt{g_{\mu\nu}\frac{dx^\mu}{d\lambda}\frac{dx^\nu}{d\lambda}}.
                 \end{equation}
-            \end{prop}
+            \end{leftbar}\end{prop}
             
             Notons que cette action est invariante par changement de paramètre affine.\\
             
@@ -3639,13 +3642,13 @@ Louan \textsc{Mol}
                 \mathscr{L} = g_{\mu\nu}\dot{x}^\mu\dot{x}^\nu
             \end{equation}
             
-            \begin{prop}
+            \begin{prop}\begin{leftbar}
                 Les équations d'Euler-Lagrange pour le lagrangien
                 \begin{equation}
                 \mathscr{L} = g_{\mu\nu}\dot{x}^\mu\dot{x}^\nu
                 \end{equation}
                 sont équivalentes à l'équation des géodésiques.
-            \end{prop}
+            \end{leftbar}\end{prop}
             
             \begin{proof}${}$\\
                 Les équations d'Euler-Lagrange sont données par
@@ -3776,12 +3779,12 @@ Louan \textsc{Mol}
                 
                 En électromagnétisme, le fibré vectoriel est de dimension $1$ et donc les changements de base sont des multiplications un scalaire. Le groupe de structure est donc abélien et $A\wedge A = 0$. Dans notre cas, le groupe de structure n'est pas abélien, c'est pourquoi le terme $\Gamma\wedge\Gamma$ est non-nul. Le fait que le groupe de structure est non-abélien a des conséquences très importante, cela implique que nous seront amener à travailler avec des équation non-linéaires.
                 
-                \begin{thm}
+                \begin{thm}\begin{leftbar}
                     La courbure $\mathscr{R}$ est une $2$-forme à  valeur dans $End(F)= F\otimes F^*$. Autrement dit, les $\mathscr{R}^a_{~b}$ se transforment sous un changement de base comme la matrice d'une application linéaire.
                     \begin{equation}
                         \mathscr{R}' = M\mathscr{R}M^{-1}
                     \end{equation}
-                \end{thm}
+                \end{leftbar}\end{thm}
                 
                 \begin{proof}
                     Soient $\{e_a\}$ et $\{e_a'\}$ deux bases du fibré. On note
@@ -3825,9 +3828,9 @@ Louan \textsc{Mol}
                 \end{equation}
                 Pour avoir l'expression en terme de $g$, il faut substituer l'expression de $\Gamma$ en fonction de $g$ que nous avons vu précédemment. Cette expression devient alors très longue, ce qui ne va pas en s'améliorant lorsque l'on doit faire un changement de référentiel. Ça n'aurait donc pas été pratique de démontrer le théorème précédent par calcul direct. C'est pour cette raison que nous avons considéré un cadre plus générale.
                 
-                \begin{thm}
+                \begin{thm}\begin{leftbar}
                     Si $\M$ est simplement connexe (tout chemin fermé est homotope à un point), il existe une base $\{e_a\}$ du fibré tel que $\Gamma = 0$, et donc $\mathscr{R} = 0$.
-                \end{thm}
+                \end{leftbar}\end{thm}
                 
                 Remarquons que $\mathscr{R} = 0$ peut se vérifier dans n'importe quelle base puisque $\mathscr{R}\in End(F)$.
                 
@@ -3943,7 +3946,7 @@ Louan \textsc{Mol}
                 
                 Le transport parallèle du vecteur $V$ en $P$ le long du chemin infinitésimale donne un vecteur $\widetilde{V}$ en $P$. Pour cela, on doit faire une intégration infinitésimale de l'équation \ref{eq:transportv}.
                 
-                \begin{prop}
+                \begin{prop}\begin{leftbar}
                     La solution de l'équation
                     \begin{equation}
                         \frac{dV^a}{d\lambda} + \Gamma^a_{\mu b}\frac{dx^\mu}{d\lambda} = 0
@@ -3956,7 +3959,7 @@ Louan \textsc{Mol}
                     \begin{equation}
                         P\left(V(\lambda_1)V(\lambda_2)\right) ~\hat{=}~ V(\lambda_1) V(\lambda_2)\theta(\lambda_1-\lambda_2)+V(\lambda_2) V(\lambda_1)\theta(\lambda_2-\lambda_1).
                     \end{equation}
-                \end{prop}
+                \end{leftbar}\end{prop}
                 
                 \begin{proof}
                     Cette équation peut être réécrite comme
@@ -4037,12 +4040,12 @@ Louan \textsc{Mol}
             
                 Nous allons maintenant nous intéresser à deux identité très importants : les identités de Bianchi.
                 
-                \begin{prop}[première identité de Bianchi]
+                \begin{prop}\begin{leftbar}[première identité de Bianchi]
                     Soit $T$ le tenseur de torsion et $\{e_a\}$ une base de $T_P\M$. Dans ce cas,
                     \begin{equation}
                         dT = \mathscr{R} \wedge e - \Gamma\wedge T
                     \end{equation}
-                \end{prop}
+                \end{leftbar}\end{prop}
                 
                 \begin{proof}
                     Il suffit de partir de la définition $T = de+\Gamma\wedge e$.
@@ -4053,12 +4056,12 @@ Louan \textsc{Mol}
                     \end{align}
                 \end{proof}
                 
-                \begin{prop}[deuxième identité de Bianchi]
+                \begin{prop}\begin{leftbar}[deuxième identité de Bianchi]
                     Soit $T$ le tenseur de torsion et $\{e_a\}$ une base de $T_P\M$. Dans ce cas,
                     \begin{equation}
                         d\mathscr{R} = \mathscr{R} \wedge \Gamma - \Gamma\wedge \mathscr{R}
                     \end{equation}
-                \end{prop}
+                \end{leftbar}\end{prop}
                 
                 \begin{proof}
                     Il suffit de partir de la définition $\mathscr{R} = d\Gamma+\Gamma\wedge\Gamma$.
@@ -4095,7 +4098,7 @@ Louan \textsc{Mol}
                     est de type $(3,1)$ est appelé $\textit{tenseur de Riemann}$.
                 \end{defn}
                 
-                \begin{prop}
+                \begin{prop}\begin{leftbar}
                     Le tenseur de Riemann a les propriétés suivantes:
                     \begin{enumerate}[label = \textit{\roman*)}]
                         \item anti-symétrie par rapport aux deux premiers indices :
@@ -4121,7 +4124,7 @@ Louan \textsc{Mol}
                         \end{equation}
                         Nous faisons une permutation cyclique de l'indice de $\nabla$ et des deux dernier indices de $R$.
                     \end{enumerate}
-                \end{prop}
+                \end{leftbar}\end{prop}
                 
                 \begin{proof}${}$\\
                     \begin{enumerate}[label = \textit{\roman*)}]
@@ -4142,13 +4145,13 @@ Louan \textsc{Mol}
                     \end{enumerate}
                 \end{proof}
                 
-                \begin{prop}
+                \begin{prop}\begin{leftbar}
                     Le nombre de composantes indépendantes du tenseur de Riemann est
                     \begin{equation}
                         \frac{1}{12}D^2(D^2-1).
                     \end{equation}
                     En particulier pour $n=4$, les tenseur de Riemann possède $20$ composantes indépendantes.
-                \end{prop}
+                \end{leftbar}\end{prop}
                 
                 \begin{proof}
                     Le nombre de composantes indépendantes d'un tenseur de rang $4$ qui ets symétrique sous l'échange des couples d'indices successifs est 
@@ -4184,13 +4187,13 @@ Louan \textsc{Mol}
             \end{equation}
         \end{defn}
         
-        \begin{prop}
+        \begin{prop}\begin{leftbar}
             Le tenseur de Ricci a les propriétés suivantes :
             \begin{enumerate}[label = \textit{\roman*)}]
                 \item c'est un tenseur symétrique : $R_{\mu\nu} = R_{\nu\mu}$
                 \item c'est la seule contraction non-nulle des composantes du tenseur de Riemann
             \end{enumerate}
-        \end{prop}
+        \end{leftbar}\end{prop}
         
         \begin{proof}${}$
             \begin{enumerate}[label = \textit{\roman*)}]
@@ -4219,7 +4222,7 @@ Louan \textsc{Mol}
             \end{equation}
         \end{defn}
         
-        \begin{prop}
+        \begin{prop}\begin{leftbar}
             Le tenseur d'Einstein a les propriétés suivantes :
             \begin{enumerate}[label = \textit{\roman*)}]
                 \item c'est un tenseur symétrique : $G_{\mu\nu} = G_{\nu\mu}$
@@ -4228,7 +4231,7 @@ Louan \textsc{Mol}
                     \nabla_\mu G^{\mu\nu} = 0
                 \end{equation}
             \end{enumerate}
-        \end{prop}
+        \end{leftbar}\end{prop}
         
         \begin{proof}${}$
             \begin{enumerate}[label = \textit{\roman*)}]
@@ -4446,13 +4449,13 @@ Louan \textsc{Mol}
             \end{equation}
             L'équation \ref{eq:einstein1} induit trop de contrainte sur $R$ et est donc fausse. Cependant, dans le vide, elle donne la même prédiction que la version corrigée de l'équation ce qui qui permit déjà de faire des prédictions qui, après avoir été validées, on mit en avant la théorie de la relativité générale.
             
-            \begin{thm}[équation d'Einstein]
+            \begin{thm}\begin{leftbar}[équation d'Einstein]
                 Le tenseur d'Einstein satisfait à l'équation
                 \begin{equation}
                     G_{\mu\nu}+\Lambda g_{\mu\nu} = \kappa^2 T_{\mu\nu}.
                 \end{equation}
                 où la constante $\Lambda>0$ est appellée \textit{constante cosmologique}.
-            \end{thm}
+            \end{leftbar}\end{thm}
             Nous verrons que, dans le vide, ces équations permettent bien de retrouver la condition $R = 0$ (en notation matricielle pour le tenseur de Riemann). La constante cosmologique joue un rôle fondamental. Elle est notamment responsable de l'expansion de l'univers.\\
             
             Ces équation sont essentiellement uniques si l'ont impose que le tenseur $G_{\mu\nu}$ du membre de gauche soit construit uniquement à partir de la métrique, ses dérivées premières, ses dérivées secondes et si il satisfait
@@ -4501,9 +4504,9 @@ Louan \textsc{Mol}
                 $R_{\mu\nu} = 0$ est appelée la \textit{condition de Ricci plat}.
             \end{defn}
             
-            \begin{prop}
+            \begin{prop}\begin{leftbar}
                 Dans le vide, l'équation d'Einstein est équivalente à la \textit{condition de Ricci plat}.
-            \end{prop}
+            \end{leftbar}\end{prop}
             
             \begin{proof}
                 Dans le vide, $T_{\mu\nu}=0$ donc
@@ -4668,12 +4671,12 @@ Louan \textsc{Mol}
             \end{equation}
             donc $N^\mu$ sont les composantes d'un vecteur. Commençons par démontrer une relations qui sera utilise.
         
-            \begin{prop}
+            \begin{prop}\begin{leftbar}
                 Si $V^\mu$ sont les composantes d'un vecteur et que $X,Y$ sont deux champs vectoriels alors
                 \begin{align}
                     [\nabla_X,\nabla_Y]V^\mu = X^\rho Y^\sigma R^{\mu}_{~\nu\rho\sigma}V^\nu + (\L_X Y)^\sigma\nabla_\sigma V^\mu.
                 \end{align}
-            \end{prop}
+            \end{leftbar}\end{prop}
             
             \begin{proof}
                 Premièrement, nous savons que
@@ -4694,12 +4697,12 @@ Louan \textsc{Mol}
                 \end{align}
             \end{proof}
             
-            \begin{prop}[équation de déviation géodésique]
+            \begin{prop}\begin{leftbar}[équation de déviation géodésique]
                 Soit $U^\mu(\lambda,v)$ le vecteur tangent à la trajectoire, alors
                 \begin{equation}
                     \nabla_U\nabla_U N^\mu = R^\mu_{~\nu\rho\sigma}U^\rho N^\sigma U^\nu.
                 \end{equation}
-            \end{prop}
+            \end{leftbar}\end{prop}
             
             \begin{proof}
                 Le vecteur $U$ est tangent à la trajectoire, c'est-à-dire que
@@ -4795,9 +4798,9 @@ Louan \textsc{Mol}
         \end{equation}
         Les coordonnées $(t,r,\theta,\phi)$ sont appelées \textit{coordonnées de Schwartzschild}. On pourrait supposer, pour simplifier la situation d'avantage, que le champ doit être statique, c'est-à-dire que que métrique ne dépende pas de $t$. En fait, c'est toujours le cas pour les champ à symétrie sphérique.
         
-        \begin{thm}[de Birkhoff]
+        \begin{thm}\begin{leftbar}[de Birkhoff]
             Toute solution à symétrie sphérique de l'équation d'Einstein est statique et asymptotiquement plate.
-        \end{thm}
+        \end{leftbar}\end{thm}
         
         L'idée de ce théorème est que le champ gravitationnel doit être généré par un objet massif à l'origine. Si ce n'était pas le cas, s'il y avait une autre concentration de masse-énergie ailleurs, cela perturberait la symétrie sphérique. La deuxième partie correspond au fait à ce que l'on s'attend à ce que la gravitation newtonienne est un cas limite de la relativité générale. Une conséquence importante est que la champ gravitationnel d'une étoile est à l'extérieur de l'étoile est indépendant des mouvement de l'étoile du moment que la symétrie sphérique est respectée (pulsation sphérique).\\
         
@@ -5018,13 +5021,13 @@ Louan \textsc{Mol}
         \end{equation}
         où $\Phi = -\frac{GM}{r}$. En comparant cette expression avec celle de $A(r)$, peut voir qu'il faut que $k' = -GM$. Nous avons donc complètement déterminer la métrique associée à un champ de gravitation à symétrique sphérique.
         
-        \begin{prop}
+        \begin{prop}\begin{leftbar}
             La métrique associée à un champ de gravitation à symétrique sphérique est donnée par
             \begin{equation}
                 ds^2 = -c^2\left( 1-\frac{2GM}{rc^2} \right)dt\otimes dt + \left( 1-\frac{2GM}{rc^2} \right)^{-1}dr\otimes dr + r^2(d\theta\otimes d\theta+\sin^2\theta d\phi\otimes d\phi)
             \end{equation}
             dans les coordonnée de Schwarzschild. C'est la \textit{métrique de Schwarzschild}.
-        \end{prop}
+        \end{leftbar}\end{prop}
 
     \section{Mouvement des planètes autour du soleil}
     
@@ -5070,13 +5073,13 @@ Louan \textsc{Mol}
         
             Les équations du mouvement peuvent s'obtenir de deux manière différentes. Premièrement, nous avons du commencer par écrire les équations du mouvement pour calculer les symboles de Christoffel. Nous pourrions réécrire ces équations avec $A$ et $B$ qui sont maintenant connu. On peut aussi procéder d'une seconde manière qui est l'analogue de la méthode de Newton. Écrivons les lois de conservations associées à l'invariance par rotation et par translation dans le temps.
             
-            \begin{prop}
+            \begin{prop}\begin{leftbar}
                 Si $\xi$ est un vecteur de Killing pour la métrique et que $U^\mu = \dot{x}^\mu$ sont les composante que la quadri-vitesse le long d'une géodésique, alors
                 \begin{equation}
                     q = \xi^\mu U_\mu
                 \end{equation}
                 est une constante le long de la trajectoire.
-            \end{prop}
+            \end{leftbar}\end{prop}
             
             \begin{proof}
                 Par définition, les composantes $\xi^\mu$ satisfont
@@ -5287,20 +5290,56 @@ Louan \textsc{Mol}
             \end{equation}
             Cet intégrale est bien convergente et peut être effectuée par calcul direct. Cependant, utilisons une autre approche qui, bien que plus compliquée dans ce cas-ci, pourra être ré-utilisée dans le cas de la relativité générale.\\
             
-            Considérons la fonction à variable complexe
-            \begin{equation*}
-                z\mapsto \frac{1}{\sqrt{\left( z-\rho^{(0)}_m \right)\left( \rho^{(0)}_M-z \right)}}.
-            \end{equation*}
-            Celle-ci possède deux pôles ( en $\rho^{(0)}_m$ et en $\rho^{(0)}_M$) et une coupure entre les deux où elle n'est pas définie. Pour résoudre cette intégrale nous utilisons le théorème des résidus qui affirme que l'on peut faire cette intégrale en intégrant sur un chemin fermé dans le plan complexe qui entoure les deux pôles. De plus, l'intégrale est indépendante du chemin choisit. Premièrement, prenons un chemin $\gamma_1$ entourant les deux pôles et la coupure le plus proche possible. Dans ce cas, $z-\rho^{(0)}_M<0$ et donc
+            La stratégie est de résoudre l'intégrale en utilisant le théorème des résidus sur l'intégrale complexe. Pour rappel, la fonction racine carrée est définie en analyse complexe comme
             \begin{equation}
-                \sqrt{z-\rho^{(0)}_M} = \sqrt{\abs{z-\rho^{(0)}_M}}e^{-i\frac{\pi}{2}} = \sqrt{z-\rho^{(0)}_M}e^{-i\frac{\pi}{2}} = -i\sqrt{z-\rho^{(0)}_M}.
+                \sqrt{z}~\hat{=}~\sqrt{\abs{z}}~e^{\frac{i}{2}\arg(z)}
             \end{equation}
-            Le problème ne se pose pas pour le deuxième terme car $z-\rho^{(0)}_m>0$. Nous obtenons alors
+            pour tout $ł\in\mathbb{C}$ où $\arg(z)$ est la \textit{fonction argument} de $z$. L'important est que $(\sqrt{z})^2$ mais la fonction de l'argument peut être définie de différente manière. La détermination de l'argument la plus courante est d'utiliser l'angle polaire $\theta$:
+            \begin{equation}
+                \arg(z) = \theta = \arctan\left(\frac{\Im(z)}{\Re(z)}\right).
+            \end{equation}
+            c'est la \textit{détermination principale}. Cette détermination n'est pas continue. En effet, 
+            \begin{equation}
+                \lim\limits_{y\to0^+} \arg(x+iy) = 0 \neq 2\pi = \lim\limits_{y\to0^-} \arg(x+iy).
+            \end{equation}
+            La fonction argument n'est pas continue le long de la demi-droite $[0,+\infty]$ (coupure). On peut utiliser d'autre détermination de l'argument de manière déplacer et à changer la forme de cette coupure à volonté mais il n'est pas possible de ne plus en avoir. En translatant la détermination principale, on peu par exemple faire en sorte que la coupure soit $[-\infty,0]$. Nous prendrons ces cas pour la suite.
+            
+            %schéma eliott
+            
+            Revenons à la fonction racine. A cause de la discontinuité de l'argument, la fonction racine est également discontinue le long de la même coupure. Pour voir cela, prenons $z_1,z_2\in\mathbb{C}$ de sorte que $z_1$ soit au dessus de la coupure et que $z_2$ soit en dessous de la coupure. Dans cas,
+            \begin{align}
+                \sqrt{z_1} &= i\sqrt{\abs{z_1}}\\
+                \sqrt{z_2} &= -i\sqrt{\abs{z_2}}
+            \end{align}
+            avec $a,b\in\mathbb{R}$ et $a<b$. Il y a donc une discontinuité de signe. Dans le cas de la racine de deux nombres complexe, on a 
+            \begin{equation}
+                \sqrt{(z-a)(z-b)} = \sqrt{\abs{z-a}\cdot\sqrt{\abs{z-b}}}e^{\frac{i}{2}\left( \arg(z-a)-\arg(z-b) \right)}
+            \end{equation}
+            Il y a donc une coupure sur $[-\infty,a]$ (provenant de la fonction $\arg(z-a)$) et une coupure sur $[-\infty,b]$ (provenant de $\arg(z-b)$). Sur la demi-droite $\{x\in\mathbb{R}|x<a\}$ il y deux discontinuités de signe et donc l'effet s'annule. La coupure restante est sur l'intervalle $[a,b]$.\\
+            
+            Considérons la fonction
+            \begin{equation*}
+                z\mapsto \frac{1}{\sqrt{\left( z-a \right)\left( z-b \right)}}.
+            \end{equation*}
+            Cette fonction possède deux pôle et une coupure sur $[a,b]$. Si l'on intègre cette fonction sur un chemin fermé $\gamma_1$ qui entoure la coupure, alors l'intégrale peut se diviser en deux intégrales réelles où seul le signe de l'intégrant et le sens des bornes de l'intégrale change.
+            \begin{align}
+                \oint_{\gamma_1}\frac{dz}{\sqrt{\left( z-a \right)\left( z-b \right)}} &= \int_a^b \frac{dx}{(-i)\sqrt{\left( x-a \right)\left( x-b \right)}}+\int_b^a -\frac{dx}{(-i)\sqrt{\left( x-a \right)\left( x-b \right)}}\\
+                &= 2i\int_a^b \frac{dx}{\sqrt{\left( x-a \right)\left( x-b \right)}}\\
+                &= 2\pi i
+            \end{align}
+            par le théorème des résidus. Le facteur $-i$ vient de la racine complexe.\\
+            
+            Le théorème des résidus également affirme que cette intégrale est indépendante du chemin choisit. Prenons un second chemin $\gamma_{2,R}(t) = Re^{it}$, le cercle de rayon $R>\max(a,b)$. Dans ce cas
+            \begin{equation}
+                \lim\limits_{R\to\infty} \oint_{\gamma_{2,R}}\frac{dz}{\sqrt{\left( z-a \right)\left( z-b \right)}} = \lim\limits_{R\to\infty}\oint_{\gamma_{2,R}}\frac{dz}{z} = 2\pi.
+            \end{equation}
+            
+            Dans le cas de notre intégrale, $a = \rho^{(0)}_m$ et $b = \rho^{(0)}_M$. Nous obtenons alors
             \begin{align}
                 \oint_{\gamma_1} \frac{1}{\sqrt{\left( z-\rho^{(0)}_m \right)\left( \rho^{(0)}_M-z \right)}}~\frac{dz}{2\pi} &= \frac{1}{2\pi i} \int^{\rho_M}_{\rho_m}\frac{1}{-i\sqrt{\left( z-\rho^{(0)}_m \right)\left( \rho^{(0)}_M-z \right)}}~dz\\
                 &= \frac{1}{\pi} \int^{\rho_M}_{\rho_m}\frac{d\rho}{\sqrt{\left( \rho-\rho^{(0)}_m \right)\left( \rho^{(0)}_M-\rho \right)}}
             \end{align}
-            Deuxièmement, prenons un chemin $\gamma_2$ qui tend vers l'infini. Dans ce cas,
+            et
             \begin{equation}
                 \oint_{\gamma_2} \frac{1}{\sqrt{\left( z-\rho^{(0)}_m \right)\left( \rho^{(0)}_M-z \right)}}~\frac{dz}{2\pi} = \oint_{\gamma_2}\frac{1}{z}~\frac{dz}{2\pi} = 1.
             \end{equation}
@@ -5396,13 +5435,13 @@ Louan \textsc{Mol}
         
         Considérons maintenant le cas avec un champ de gravitation décrit par la métrique de Schwarzschild.
         
-        \begin{prop}[troisième loi de Kepler]
+        \begin{prop}\begin{leftbar}[troisième loi de Kepler]
             Pour une trajectoire circulaire, 
             \begin{equation}
                 \frac{r^3}{T^2_S} = \frac{M}{4\pi^2}
             \end{equation}
             où $T_S$ est la période de révolution dans les coordonnées de Schwarzschild.
-        \end{prop}
+        \end{leftbar}\end{prop}
         
         \begin{proof}
             Pour une trajectoire circulaire : $r_m=r_M$. Le rayon est donc donné par $V_{\text{eff}}'(r) = 0$.
@@ -5493,40 +5532,188 @@ Louan \textsc{Mol}
         
     \section{Trous noirs de Schwarzschild}
     
-        On utilise les unités géométriques $G = c = 1$. Au début de ce chapitre, nous avons montré que si l'on impose la symétrique sphérique, la solution au équation d'Einstein dans le vide est la métrique de Schwarzschild
-        \begin{equation}
-            ds^2 = -\left( 1-\frac{2M}{r} \right)dt^2 + \left( 1-\frac{2M}{r} \right)^{-1}dr^2 + r^2d\Omega^2
-        \end{equation}
-        avec $d\Omega^2 = d\theta^2+\sin^2\theta d\phi^2$. Lorsque l'on considère une étoile de rayon $R$, cette métrique est bien définie dans le vide, c'est-à-dire lorsque $r>R$. Pour $r<R$, le tenseur énergie-impulsion n'est plus identiquement nul. Dans ce cas, il faudrait trouver le tenseur-impulsion qui décrit l'intérieur stellaire et résoudre à nouveau les équations d'Einstein dont le second membre est maintenant non-nul. Notons que la métrique ne dépend que de la masse $M$ de l'étoile et pas de son rayon $R$. En particulier, la métrique ne dépend pas de la densité l'étoile. Cependant, on voit que la métrique diverge lorsque $r\to2M$ donc que se passe-t-il si $R$ est assez petit pour permettre $r\leq2M$ ? 
-        \begin{defn}
-            Le rayon de Schwarszchild est définit comme  
+        \subsection{Introduction}
+    
+            On utilise les unités géométriques $G = c = 1$. Au début de ce chapitre, nous avons montré que si l'on impose la symétrique sphérique, la solution au équation d'Einstein dans le vide est la métrique de Schwarzschild
             \begin{equation}
-                R_S =\frac{2GM}{c^2}.
+                ds^2 = -\left( 1-\frac{2M}{r} \right)dt^2 + \left( 1-\frac{2M}{r} \right)^{-1}dr^2 + r^2d\Omega^2
             \end{equation}
-        \end{defn}
-        Dans un premier temps, on pourrait être tenter de dire que la métrique de Schwarzschild n'est définie que pour les étoiles dont le rayon est supérieur au rayon de Schwarzschild, c'est d'ailleurs le cas la plupart du temps (pour le soleil : $R_S\sim 1.5\kilo\meter$). Pour résumer :
+            avec $d\Omega^2 = d\theta^2+\sin^2\theta d\phi^2$. Lorsque l'on considère une étoile de rayon $R$, cette métrique est bien définie dans le vide, c'est-à-dire lorsque $r>R$. Pour $r<R$, le tenseur énergie-impulsion n'est plus identiquement nul. Dans ce cas, il faudrait trouver le tenseur-impulsion qui décrit l'intérieur stellaire et résoudre à nouveau les équations d'Einstein dont le second membre est maintenant non-nul. Notons que la métrique ne dépend que de la masse $M$ de l'étoile et pas de son rayon $R$. En particulier, la métrique ne dépend pas de la densité l'étoile. Cependant, on voit que la métrique diverge lorsque $r\to2M$ donc que se passe-t-il si $R$ est assez petit pour permettre $r\leq2M$ ? 
+            \begin{defn}
+                Le rayon de Schwarszchild est définit comme  
+                \begin{equation}
+                    R_S =\frac{2GM}{c^2}.
+                \end{equation}
+            \end{defn}
+            Dans un premier temps, on pourrait être tenter de dire que la métrique de Schwarzschild n'est définie que pour les étoiles dont le rayon est supérieur au rayon de Schwarzschild, c'est d'ailleurs le cas la plupart du temps (pour le soleil : $R_S\sim 1.5\kilo\meter$). Pour résumer :
+            
+            \begin{itemize}[label = \textbullet]
+                \item $\boldsymbol{R>R_S}$ : lorsque $r>R$ la solution aux équations d'Einstein est la métrique de Schwarzschild et lorsque $r<R$ la métrique de Schwarzschild n'est plus valable car nous ne sommes plus dans le vide.
+                \item $\boldsymbol{R<R_S}$ : lorsque $r>R_S$ la métrique de Schwarzschild semble bien définie mais diverge lorsque $r\to R_S$. Lorsque $R<r<R_S$, la métrique de Schwarzschild semble non-définie (non-physique) même si l'on se trouve quand même dans le vide. Lorsque $r<R$ la métrique de Schwarzschild n'est plus valable car nous ne somme plus dans le vide.
+                \comp
+            \end{itemize}
+            
+            Prenons la solution de Schwarzschild au sérieux pour toutes les valeurs de $r$. On se heurte à deux problèmes : la métrique est singulière en $r=2M$ et en $r=0$. Pour comprendre, cartographies en utilisant des géodésiques radiales de genre lumière. Notons que l'on peut facilement se ramener au cas des géodésiques de genre temps à partir de l'étude des géodésiques de genre lumière et que la partie de la métrique qui nous intéresse est la partie radial car c'est elle qui diverge. Pour une géodésique radiale de genre lumière,
+            \begin{equation}
+                0 = \left( 1-\frac{2M}{r} \right)dt^2 - \left( 1-\frac{2M}{r} \right)^{-1}dr^2
+            \end{equation}
+            donc
+            \begin{equation}
+                 dt = \pm \left( 1-\frac{2M}{r}dt^2 \right)^{-1} dr = \pm \frac{r}{r-2M}~dr = \pm\left( 1+\frac{2M}{r-2M} \right)~dr.
+            \end{equation}
+            Le signe décide si la géodésique est entrante ($+$) ou sortante ($-$). Pour une géodésique radial, 
+            \begin{equation}
+                V_{\text{eff}}(r) = \frac{1}{2}\left( 1-\frac{2M}{r} \right)\frac{L^2}{r^2} = 
+            \end{equation}
+            et donc
+            \begin{equation}
+                \mathscr{E} = \frac{1}{2}\dot{r}^2.
+            \end{equation}
+            Il suit que $\dot{r}$ est une constante. En intégrant l'expression de $dt$ que nous avons trouvée ci-dessus, on obtient une expression explicite de $t$.
+            \begin{equation}
+                t = \pm\left( r+2M\ln\left( \frac{r-2M}{2M} \right) \right) +  \text{cste}
+            \end{equation}
+             
+            \begin{defn}
+                On définit la \textit{coordonnée de la tortue} comme
+                \begin{equation}
+                    r_*(r) ~\hat{=}~ r+2M\ln\left( \frac{r-2M}{2M} \right).
+                \end{equation}
+            \end{defn}
+             
+            En terme de la coordonnée tortue, la coordonnée $t$ s'exprime comme
+            \begin{equation}
+                 t = \pm r_*(r) + \text{cste}
+            \end{equation}
+             avec le signe + pour une géodésique entrante et le signe - pour une géodésique sortante.
+             
+            \begin{defn}
+                On définit les \textit{coordonnées de genre lumière}
+                \begin{align}
+                    t_1 ~&\hat{=}~ t+r_*(r)-r
+                    u_1 ~&\hat{=}~ t_1+r
+                \end{align}
+                pour une géodésique entrante et
+                \begin{align}
+                    t_2 ~&\hat{=}~ t-r_*(r)-r
+                    u_2 ~&\hat{=}~ t_2+r
+                \end{align}
+                pour une géodésique sortante.
+            \end{defn}
+            Notons que 
+            \begin{align}
+                u_1 &= t-r_*(r)\\
+                u_2 &= t+r_*(t)
+            \end{align}
+            Donc $u_1=\text{cste}$ et $u_1=\text{cste}$.\\
+            
+
+            
+            Dans un premier temps, étudier les géodésiques rentrantes. On peut voir que $t\to\infty$ lorsque $r\to 2M^+$ donc pour les observateurs qui restent à $r> 2M$, la géodésique entrante ne traverse jamais $r=2M$.
+            
+            \begin{defn}
+                La sphère de rayon $r=2M$ est appellée \textit{horizon}.
+            \end{defn}
+            
+            % schéma eliott
+            
+            De manière reliée, le décalage vers le rouge à l'horizon diverge. Notons que le champ de gravitation n'est pas forcément extrêmement fort à l'horizon. Du point de vue de l'observateur à l'extérieur, le temps écoulé pour se rapprocher de $r=2M$ est exponentiellement long. Pour l'observateur qui suit la géodésique entrante $\dot{r}$ est constant donc
+            \begin{equation}
+                r(\lambda) = -\lambda+\text{cste}.
+            \end{equation}
+            Il se voit atteindre et franchir $r=2M$ en un paramètre affinne fini (ou temps un temps fini dans le cas d'une géodésique de genre temps). Dans son référentiel, la géodésique croise l'horizon.\\
+            
+            Utilisons les coordonnées $t$ et $u_1$ qui sont mieux adaptée aux géodésiques entrantes. Par définition, 
+            \begin{align}
+                du_1 &= dt+dr_*\\
+                &= dt + \left( 1+\frac{2M}{r-2M} \right)~dr\\
+                &= dt +\frac{r}{2M}\frac{1}{\frac{r}{2M}-1}
+            \end{align}
+            donc la métrique se réécrit comme
+            \begin{equation}
+                ds^1 = -\left( 1-\frac{2M}{r} \right)~du^2_1 + 2du_1dr+r^2d\Omega^2
+            \end{equation}
+            Ces coordonnées montrent qu'il n'y a aucune singularité en $r=2M$ : ce sont uniquement les coordonnées de Schwarzschild qui sont singulière en $r=2M$. C'est une singularité apparente comme pour la singularité des coordonnées polaires dans le plan (l'angle polaire n'est pas définit lorsque le rayon es nul).\\
+            
+            % schéma eliott
+            
+            On peut diviser l'espace en deux régions :
+            \begin{itemize}[label = \textbullet]
+                \item \textbf{région I} $(\boldsymbol{r>2M})$ :  Cette région est asymptotiquement plate. Pour un observateur extérieur, les cônes de lumières se redressent du coté du trou noir au fur et à mesure que l'on s'en approche de manière à ce que les géodésiques ne pénètrent jamais l'horizon. Pour un observateur suivant une géodésique entrante, c'est le coté opposé du cône de lumière qui devient verticale en s'approchant de $r=2M$. Si l'on franchi l'horizon en venant de la région I, on pénètre dans la région $II$. 
+                \item \textbf{région II} $(\boldsymbol{r<2M})$ : Une fois l'horizon passée, les cônes de lumière continuent à se refermer ce qui implique que toutes les trajectoires vont vers les $r$ décroissants.
+            \end{itemize}
+            Lorsque l'on dépasse l'horizon, les deux première composantes de ma métrique de Schwarzschild changent de signe donc $r$ de vient une coordonnée temporelle $t$ devient une coordonnée spatiale. Ceci implique que le champ de gravitation n'est pas statique quand $r<2M$, la métrique n'est plus invariante par rotation. La singularité $r=0$ est dans le futur de tout les observateurs. Il est faut de dire que l'on se fait attiré très fort par la gravité au point de ne plus pouvoir sortit. L'observateur va simplement vers son futur. Ceci décrit une cosmologie inverse de \textit{Big Crunch} à savoir une compression qui a lieu partout à la fois dans le futur. C'est l'inverse d'un \textit{Big Bang}, c'est-à-dire une explosion qui a lieu partout à la fois dans le passé. De cette manière, l'intérieur d'un trou noir de Schwarzschild décrit une cosmologie inversée pour laquelle le futur de tout les observateurs et dans la singularité en $r=0$. Notons que $r=0$ n'est pas une singularité apparente comme celle en $r=2M$ pour les coordonnées de Schwarzschild. Ceci peut être vu en observant que les invariants de courbure divergent : c'est une vraie singularité au-delà de laquelle les géodésiques ne peuvent pas êtres continuées. On dit que c'est un \textit{singularité de genre espace} car elle est partout dans l'espace en un point du temps.\\
+            
+            % schéma de eliott
+            
+            Étudions maintenant les géodésiques sortantes. Pour cela, on exprime la métrique dans la coordonnées $u_2$.
+            \begin{align}
+                ds^2 &= -\left( 1-\frac{2M}{r} \right)(dt^2-dr^2)+r^2 d\Omega^2\\
+                &= -\left( 1-\frac{2M}{r} \right)(dt-dr)(dt+dr)+r^2 d\Omega^2\\
+                &= -\left( 1-\frac{2M}{r} \right)du_1\left( du_1-2\frac{dr_*}{1-\frac{2M}{r}} \right)+r^2 d\Omega^2\\
+                &= -\left( 1-\frac{2M}{r} \right)du^2_1+du_1dr+r^2 d\Omega^2\\
+                &= -\left( 1-\frac{2M}{r} \right)du_2\left( du_2+2\frac{dr}{1-\frac{2M}{r}} \right)+r^2 d\Omega^2\\
+                &= -\left( 1-\frac{2M}{r} \right)du^2_2-2du_2dr+r^2 d\Omega^2
+            \end{align}
+            
+            On voit que les géodésiques sortantes qui sont dans la région II croisent l'horizon en un paramètre affinne dans le passé, c'est à nouveau un problème dû au coordonnées. Les géodésiques sortantes doivent sortir d'une région $r<2M$ mais ne peuvent pas sortir de la région II car, comme nous le verrons après, il n'y a pas de géodésiques sortantes de II). Les géodésiques sortante dans la région III proviennent donc d'une région III.\\
+            
+            Les géodésiques sortantes de la région II ne sortent jamais réellement. 
+            Les géodésiques entrantes qui sont dans la région I ne peuvent pas venir de la région II, ce ne sont pas les mêmes que les géodésiques entrantes qui viennent de la région II. Elles viennent donc d'une région IV.\\
+            
+            % schéma eliott
+            
+            D'après ce que l'on vient de voir, les trous noir de Scwarzschild rejoignent deux régions de l'espace-temps séparée, la région I/II et la région III/IV. C'est un \textit{trou de ver}. A l'autre extrémité du trou de ver, la métrique est la même mais pas les cônes de lumière, tout les géodésiques sortent : c'est un \textit{trou blanc}. L'intérieur d'un trou décrit à une cosmologie de Big Bang (et plus de Big Crunch comme pour les trous noirs). 
+            
+            \begin{rmk}
+                Si $R<2M$, il n'y a plus de solution statique pour le champ de gravitation, la surface de l'astre suit une géodésique de genre temps et l'astre s'effondre jusqu'à donner une singularité. Dans ce cas, il n'y a pas de région III et IV et donc pas de trou de ver.
+                
+                % schéma eliott
+                
+                Les trous noir dont on parle dan cette section sont considéré comme "éternels", on doit pouvoir remonter dans le passé aussi loin que l'on veut.
+            \end{rmk}
+            
+            On a pu voir qu'il y a deux régions différentes telles que $r<2M$ et deux régions différentes telles que $r>2M$ donc la coordonnés radiale $r$ n'est pas une bonne coordonnée. On peut montrer que n'importe quel fonction des coordonnées $u_1$ et $u_2$ préserve les propriétés importantes de ces coordonnées. Définissons un nouveau type de coordonnées qui permet d'éliminer la singularité et donc de mieux représenter les trous de ver.
+            
+            \begin{defn}
+                Les \textit{coordonnées de Kruskal/Szekeres} sont définies comme
+                \begin{align}
+                    U ~&\hat{=}~ e^{\frac{u_1}{4M}}\\
+                    V ~&\hat{=}~ -e^{*\frac{u_2}{4M}}
+                \end{align}
+            \end{defn}
+            
+            On peut directement voir que 
+            \begin{align}
+                UV &= -e^{\frac{u_1-u_2}{4M}} = -e^{\frac{r_*}{2M}}\frac{2M}{r}\frac{e^{-\frac{r}{2M}}}{1-\frac{2M}{r}}\\
+                \frac{U}{V} &= -e^{\frac{u_1+u_2}{4M}} = -e^{\frac{t}{2M}}
+            \end{align}
+            
+            et donc
+            \begin{equation}
+                dUdV = -\frac{du_1}{4M}\frac{du_2}{4M}UV = -\frac{du_1du_2}{32M^2}e^{-\frac{r}{2M}}\left( 1-\frac{2M}{r} \right)
+            \end{equation}
+            ce qui permet de réécrire la métrique dans les coordonnées de Krusal/Szekeres comme
+            \begin{equation}
+                ds^2 = 32M^2e^{-\frac{r}{2M}}dUdV+r^2d\Omega^2.
+            \end{equation}
+            Dans ces coordonnées, les lignes deviennt
+            \begin{align}
+                t &= \text{cste} \to \frac{U}{V} = \text{cste}\\
+                r &= \text{cste} \to UV = \text{cste}
+            \end{align}
+            
+            % schéma eliott
+            
+            % schéma eliott
+            
+        \subsection{Pont d'Einstein-Rosen}
         
-        \begin{itemize}[label = \textbullet]
-            \item $\boldsymbol{R>R_S}$ : lorsque $r>R$ la solution aux équations d'Einstein est la métrique de Schwarzschild et lorsque $r<R$ la métrique de Schwarzschild n'est plus valable car nous ne sommes plus dans le vide.
-            \item $\boldsymbol{R<R_S}$ : lorsque $r>R_S$ la métrique de Schwarzschild semble bien définie mais diverge lorsque $r\to R_S$. Lorsque $R<r<R_S$, la métrique de Schwarzschild semble non-définie (non-physique) même si l'on se trouve quand même dans le vide. Lorsque $r<R$ la métrique de Schwarzschild n'est plus valable car nous ne somme plus dans le vide.
-            \comp
-        \end{itemize}
+            Si l'on décrit l'espace-temps au cours du temps, on voit que les deux régions de l'espace asymptotiquement plates déconnectée jusqu'à ce qu'au moment où le trou de ver s'ouvre, c'est le \textit{pont d'Einstein-Rosen}. A ce moment-là, les régions I et IV deviennent causalement connectées et un trou noir apparaît dans ces régions qui sont maintenant équivalentes (l'espace-temps devient connexe). Les régions II et III ne sont pas équivalentes (Big Bang ou Big Crunch). Ce type de trou de verre n'est pas traversable classiquement mais il existe d'autres types de trou de ver qui le sont.
         
-         Prenons la solution de Schwarzschild au sérieux pour toutes les valeurs de $r$. On se heurte à deux problèmes : la métrique est singulière en $r=2M$ et en $r=0$. Pour comprendre, cartographies en utilisant des géodésiques radiales de genre lumière. Notons que l'on peut facilement se ramener au cas des géodésiques de genre temps à partir de l'étude des géodésiques de genre lumière et que la partie de la métrique qui nous intéresse est la partie radial car c'est elle qui diverge. Pour une géodésique radiale de genre lumière,
-         \begin{equation}
-             0 = \left( 1-\frac{2M}{r} \right)dt^2 - \left( 1-\frac{2M}{r} \right)^{-1}dr^2
-         \end{equation}
-         donc
-         \begin{equation}
-             dt = \pm \left( 1-\frac{2M}{r}dt^2 \right)^{-1} dr.
-         \end{equation}
-         Le signe décide si la géodésique est rentrante ($+$) ou sortante ($-$).
+        \subsection{Discussions plus avancées}
         
-        
-        
-        
-        
-        
+            
             
             
 \end{document}
