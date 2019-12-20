@@ -183,13 +183,13 @@ Louan \textsc{Mol}
 
 \chapter*{Avant-propos}
 
-    Ce document reprend mes notes du cours de \textit{Théorie de la gravitation} donné par le professeur \textit{F. Ferrari} à l'Université Libre de Bruxelles (ULB) durant l'année 2019-2020. Ce cours est destiné aux étudiants de première année de master en physique. Je me suis permis de rajouter certains détails, rappels et applications trouvés dans les différentes références.\\
+    Ce document reprend mes notes du cours de \textit{Théorie de la gravitation} donné par le professeur \textit{F. Ferrari} à l'\textit{Université Libre de Bruxelles (ULB)} durant l'année 2019-2020. Ce cours est destiné aux étudiants de première année de master en physique. Je me suis permis de rajouter certains détails, rappels et applications trouvés dans les différentes références.\\
     
-    Les notions mathématiques seront le plus rigoureusement possible, tout en y apportant une interprétation physique. Le but étant d'avoir un fondement mathématique solide. Beaucoup de notations et de définitions sont tirées du cours de Géométrie différentielle de \textit{S. Gutt}. \\
+    Les notions mathématiques sont définies le plus rigoureusement possible, tout en y apportant une interprétation physique. Le but étant d'avoir un fondement mathématique solide. Beaucoup de notations et de définitions sont tirées du cours de Géométrie Différentielle de \textit{S. Gutt}. \\
     
     Je n'ai pas la prétention de faire de ce document une référence, le but est simplement de transcrire mes notes sous une forme qui m'est agréable.\\
     
-    Merci à \textit{Eliott Van Steirteghem} et à \textit{Guillaume Houyoux} pour les schémas ainsi que pour leurs relectures attentives. Pour les fautes qui nous aurons échappées, vous pouvez me contacter via mon adresse mail \verb?louamol@ulb.ac.be?.
+    Merci à \textit{Eliott Van Steirteghem} et à \textit{Guillaume Houyoux} pour les schémas ainsi que pour leurs relectures attentives. Pour les fautes qui nous aurons échappées, vous pouvez me contacter via mon adresse mail : \verb?louamol@ulb.ac.be?.
 
 \printbibliography[title=Références]
 \pagebreak
@@ -200,17 +200,17 @@ Louan \textsc{Mol}
 
     \section{Les interactions fondamentales}
     
-        Historiquement, il est apparut qu'il y a quatre interactions fondamentales dans la nature : les interactions nucléaires forte et faible, l'interaction électromagnétique et l'interaction gravitationnelle. Les interactions nucléaires ont toutes les deux des portées faibles de l'ordre du fermi ($\sim10^{-15}\meter$), alors que  l'électromagnétisme et la gravitation semblent avoir une portée infinie. De par leur nature, les interactions nucléaires sont essentiellement décrites dans des théories quantiques alors que les deux dernières peuvent être décrites de manière classique. L'électromagnétisme ayant certains effets quantiques, nous pouvons les décrire via l'électrodynamique quantique. Au cours du $20^{\text{ème}}$ siècle, il a été découvert que l'interaction nucléaire faible et l'électromagnétisme pouvaient être vues comme deux faces d'une même pièce : l'interaction électrofaible.\\
+        Historiquement, il est apparut qu'il y a quatre interactions fondamentales dans la nature : les interactions nucléaires forte et faible, l'interaction électromagnétique et l'interaction gravitationnelle. Les interactions nucléaires ont toutes les deux une faible portée, de l'ordre du fermi ($\sim10^{-15}\meter$), alors que  l'électromagnétisme et la gravitation semblent avoir une portée infinie. De par leur nature, les interactions nucléaires sont essentiellement décrites dans des théories quantiques alors que les deux dernières peuvent être décrites de manière classique. L'électromagnétisme ayant certains effets quantiques, nous pouvons les décrire via l'électrodynamique quantique (QED). Au cours du $20^{\text{ème}}$ siècle, il a été découvert que l'interaction nucléaire faible et l'électromagnétisme pouvaient être vues comme deux faces d'une même pièce : l'interaction électrofaible.\\
         
         L'interaction gravitationnelle se distingue des autres à plusieurs niveaux. Premièrement, la gravitation est une interaction extrêmement faible par rapport aux autres. Pour illustrer cela, imaginons deux électrons séparés d'une distance $r$. Comparons les ordres de grandeur de l'interaction gravitationnelle et de l'interaction électromagnétique, on voit que
         \begin{equation}
-            \abs{\frac{F_{\text{grav}}}{F_{\text{em}}}} = \frac{Gm^2}{r^2}\frac{4\pi\varepsilon_0r^2}{q^2} = \frac{4\pi\varepsilon_0 m^2}{q^2} = 2,4\cdot10^{-43}
+            \abs{\frac{F_{\text{grav}}}{F_{\text{é-m}}}} = \frac{Gm^2}{r^2}\frac{4\pi\varepsilon_0r^2}{q^2} = \frac{4\pi\varepsilon_0 m^2}{q^2} \approx 2,4\cdot10^{-43}
         \end{equation}
-        où $m$ est la masse d'un électron. Ce résultat est indépendant de la distance qui sépare les électrons. La force gravitationnelle est donc négligeable au niveau microscopique. Deuxièmement, à l'inverse des autres interactions, la gravité est uniquement cumulative car toutes les masses sont positives, il n'y a donc pas d'effet d'écrantage. Par exemple pour l'électromagnétisme, il y a des charges positives et négatives ce qui permet à la matière d'être électriquement neutre.\\
+        où $m$ est la masse d'un électron. Ce résultat est indépendant de la distance qui sépare les électrons. La force gravitationnelle est donc négligeable au niveau microscopique. Deuxièmement, à l'inverse des autres interactions, la gravité est uniquement cumulative car toutes les masses sont positives, il n'y a donc pas d'effet d'écrantage. Pour l'électromagnétisme par exemple, il y a des charges positives et négatives ce qui permet à la matière d'être électriquement neutre, ce n'est pas le cas pour la gravitation.\\
         
-        On dit que la théorie newtonnienne de la gravitation est une théorie classique car elle n'est pas invariante par la relativité einsteinienne (relativité restreinte) mais juste sous le groupe de relativité galiléenne. Il semble donc important au niveau conceptuel de mettre au point une théorie relativiste de la gravitation. Nous verrons plus tard que cette théorie permet également d'expliquer un grand nombre de phénomènes qui ne sont pas expliqués par la théorie de Newton (avancée du périhélie de Mercure, lentilles gravitationnelles,...). Plus encore, elle permet de prédire l'existence de phénomènes dont nous n'avions pas idée de l'existence (trous noires, trous de verre, ondes gravitationnelles, ...).\\
+        On dit que la théorie newtonnienne de la gravitation est une théorie classique car elle n'est pas invariante par la relativité einsteinienne (relativité restreinte) mais juste sous le groupe de relativité galiléenne. Il semble important au niveau conceptuel de mettre au point une théorie relativiste de la gravitation. Nous verrons plus tard que cette théorie permet également d'expliquer un grand nombre de phénomènes qui ne sont pas expliqués par la théorie de Newton (avancée du périhélie de Mercure, lentilles gravitationnelles,...). Plus encore, elle permet de prédire l'existence de phénomènes dont nous n'avions pas idée de l'existence (trous noirs, trous de ver, ondes gravitationnelles, ...).\\
         
-        A ce stade, nous pouvons nous demander si dans le cas de la validité d'une telle théorie, quel ordre de grandeur les effets de celle-ci auraient. Soient $\O$ une observable quelconque, $\O_{\text{Newton}}$ la valeur prédite par la théorie de Newton et $\O_{\text{rela}}$ la valeur prédite par une théorie relativiste. Dans ce cas,
+        A ce stade, nous pouvons nous demander quel ordre de grandeur les effets d'une telle théorie auraient. Soient $\O$ une observable quelconque, $\O_{\text{Newton}}$ la valeur prédite par la théorie de Newton et $\O_{\text{rela}}$ la valeur prédite par une théorie relativiste. Dans ce cas,
         \begin{equation}
             \O_{\text{rela}} = (1+\alpha)\O_{\text{Newton}}
         \end{equation}
@@ -227,40 +227,48 @@ Louan \textsc{Mol}
             \item $\varepsilon\ll 1$ : les effets relativistes sont négligeables
             \item $\varepsilon\sim 1$ : les effets relativistes jouent un rôle important
         \end{itemize}
-        Ce petit raisonnement n'est pas rigoureux mais il permet de se convaincre que les effets d'une théorie relativiste de la gravitation seraient tout à fait observables. Pour le soleil,
-        \begin{align*}
-            M_\odot &= 2,0\cdot10^{30}\kilo\gram \\
-            R_\odot &= 7,0\cdot10^{5}\kilo\meter
-        \end{align*}
-        et donc
-        \begin{equation}
-            \varepsilon_\odot  = \frac{GM_\odot}{R_\odot c^2}\sim 10^{-6}.
-        \end{equation}
-        Les observatoires astronomiques actuels permettent de mesurer ce genre de facteurs jusqu'à cinq chiffres significatifs. Pour la Terre,
-        \begin{align*}
-            M_\oplus &= 6,0\cdot10^{24}\kilo\gram \\
-            R_\oplus &= 6,4\cdot10^{3}\kilo\meter
-        \end{align*}
-        et donc
-        \begin{equation}
-            \varepsilon_\oplus = \frac{GM_\oplus}{R_\oplus c^2}\sim 10^{-9}.
-        \end{equation}
-        Pour l'univers,
-        \begin{align*}
-            M &= 3\cdot10^{52}\kilo\gram \\
-            R &= 14\cdot10^{9}\text{al}
-        \end{align*}
-        et donc
-        \begin{equation}
-            \varepsilon = \frac{GM}{Rc^2}\sim 0.02
-        \end{equation}
-        ce qui est très important. Tous les modèles cosmologiques à l'échelle de l'univers requièrent donc une théorie relativiste de la gravitation. On verra plus tard que pour tous les trous noirs $\varepsilon = \nicefrac{1}{2}$.\\
+        Ce raisonnement rapide n'est pas rigoureux mais il permet de se convaincre que les effets d'une théorie relativiste de la gravitation seraient tout à fait observables. 
+        \begin{exmp}
+            Pour le soleil,
+            \begin{align*}
+                M_\odot &= 2,0\cdot10^{30}\kilo\gram \\
+                R_\odot &= 7,0\cdot10^{5}\kilo\meter
+            \end{align*}
+            et donc
+            \begin{equation}
+                \varepsilon_\odot  = \frac{GM_\odot}{R_\odot c^2}\sim 10^{-6}.
+            \end{equation}
+            Les observatoires astronomiques actuels permettent de mesurer ce genre de facteurs jusqu'à cinq chiffres significatifs. 
+        \end{exmp}
+        \begin{exmp}
+            Pour la Terre,
+            \begin{align*}
+                M_\oplus &= 6,0\cdot10^{24}\kilo\gram \\
+                R_\oplus &= 6,4\cdot10^{3}\kilo\meter
+            \end{align*}
+            et donc
+            \begin{equation}
+                \varepsilon_\oplus = \frac{GM_\oplus}{R_\oplus c^2}\sim 10^{-9}.
+            \end{equation}
+        \end{exmp}
+        \begin{exmp}
+            Pour l'univers,
+            \begin{align*}
+                M &= 3\cdot10^{52}\kilo\gram \\
+                R &= 14\cdot10^{9}\text{al}
+            \end{align*}
+            et donc
+            \begin{equation}
+                \varepsilon = \frac{GM}{Rc^2}\sim 0.02
+            \end{equation}
+            ce qui est très important. Tous les modèles cosmologiques à l'échelle de l'univers requièrent donc une théorie relativiste de la gravitation. On verra plus tard que pour tous les trous noirs $\varepsilon = \nicefrac{1}{2}$.
+        \end{exmp}
         
         Que se passe-t-il si l'on s'intéresse aux corrections quantiques? Si l'on prend $G$, $c$ et $\hbar$ comme seules grandeurs caractéristiques, la seule combinaison qui donne les unités d'une longueur est appelée \textit{longueur de Planck} et est définie comme
         \begin{equation*}
             l_{\text{Planck}} ~\hat{=}~ \sqrt{\frac{\hbar G}{c^3}}
         \end{equation*}
-        De là, il découle
+        Il en découle les différentes grandeurs suivantes :
         \begin{align*}
             t_{\text{Planck}} ~&~\hat{=}~~ \frac{l_{\text{Planck}}}{c} \\
             M_{\text{Planck}} ~&~\hat{=}~~ \frac{c^2l_{\text{Planck}}}{G} \\
@@ -274,13 +282,13 @@ Louan \textsc{Mol}
         \begin{equation}
             z = \gamma x.
         \end{equation}
-        Pourquoi mesurons-nous en physique les longueurs avec les mêmes unités indépendamment de la direction ? Nous pourrions croire que c'est simplement par facilité ou pour des raisons historiques mais il y a une raison plus profonde. Si les aviateurs peuvent mesurer l'altitude de cette manière c'est qu'il est possible différencier la direction de l'axe $z$ des axes $x$ et $y$. Les physiciens n'en sont-ils pas capables ? Le fait que les unités ne dépendent pas de la direction en physique est en fait une conséquence de l'invariance par rotation que l'on impose aux théories physiques. Si une théorie est invariante par rotation, il n'est pas possible de distinguer les différentes directions de manière absolue et donc impossible de les mesurer avec des unités différentes.
+        En physique, nous mesurons les longueurs avec les mêmes unités indépendamment de la direction, pourquoi cela ? On pourrait croire que c'est simplement par facilité ou pour des raisons historiques mais il y a en fait une raison plus profonde. Si les aviateurs peuvent mesurer l'altitude de cette manière c'est qu'il est possible différencier la direction de l'axe $z$ des axes $x$ et $y$, ce sont des direction fondamentalement différentes. Les physiciens n'en sont-ils pas capables ? Le fait que les unités ne dépendent pas de la direction en physique est en fait une conséquence de l'invariance par rotation que l'on impose aux théories physiques. Si une théorie est invariante par rotation, il n'est pas possible de distinguer les différentes directions de manière absolue et donc impossible de les mesurer avec des unités différentes.
         
         \begin{leftbar}
             L'invariance par rotation des lois de la physique implique un choix naturel d'unités $\gamma = 1$, on mesure les distances avec les mêmes unités quelle que soit la direction.
         \end{leftbar}
         
-        Une des différences fondamentales de la relativité einsteinienne avec celle de Galilée est qu'elle considère le temps comme étant une autre direction au même titre, en principe, qu'une direction spaciale. Cela ne signifie pas que l'on peut se déplacer dans le temps comme on le ferait dans l'espace mais plutôt qu'au lieu de travailler dans l'espace $\mathbb{R}^3$ et de considérer que le temps est absolu, on considère la physique dans l'espace-temps $\mathbb{R}^4$ où les changements de référentiels mélangent les coordonnées d'espace et de temps d'une manière bien précise.
+        Une des différences fondamentales entre la relativité einsteinienne et la relativité de galiléenne est de considérer le temps comme étant une autre direction, au même titre, qu'une direction spatiale en principe. Cela ne signifie pas que l'on peut se déplacer dans le temps comme on le ferait dans l'espace mais plutôt qu'au lieu de travailler dans l'espace $\mathbb{R}^3$ et de considérer que le temps est absolu, on considère la physique dans l'espace-temps $\mathbb{R}^4$ où les changements de référentiels mélangent les coordonnées d'espace et de temps d'une manière bien précise.
         
         \begin{leftbar}
             L'invariance de Lorentz (rotations hyperboliques) des lois de la physique implique qu'une mesure de distance est, en principe, équivalente à une mesure de temps. Ceci suggère un choix d'unités naturelles $c=1$, de la même manière que $\gamma$ pour l'invariance par rotation.
@@ -292,7 +300,7 @@ Louan \textsc{Mol}
             Le principe de la relativité générale implique qu'une mesure de distance est équivalente à une mesure de masse. Ceci impose un choix d'unités naturelles pour lesquelles $G = 1$.
         \end{leftbar}
         
-        Remarquons que si temps et distances sont équivalents, distances et masses sont équivalentes et que masses et énergies le sont aussi (par $E = mc^2$). Toutes les grandeurs sont donc équivalentes. Ceci met en avant le fait que les unités sont bien une technologie nécessaire pour comparer physique et monde réel mais qu'elles ne sont pas fondamentales. Notons également qu'il n'y a aucune perte d'information lorsque l'on pose les constantes à 1. En effet, ceci se vérifie immédiatement par analyse dimensionnelle.
+        Remarquons que si temps et distances sont équivalents, distances et masses sont équivalentes et que masses et énergies le sont aussi (par $E = mc^2$), toutes les grandeurs sont équivalentes. Ceci met en avant le fait que les unités sont bien une technologie nécessaire pour comparer physique et monde réel mais qu'elles ne sont pas fondamentales. Notons également qu'il n'y a aucune perte d'information lorsque l'on pose les constantes à 1. Les constantes peuvent êtres récupérées à tout moment par analyse dimensionnelle.
 
 \chapter{Relativité sans gravité}
 
@@ -300,16 +308,16 @@ Louan \textsc{Mol}
 
     \section{Relativité galiléenne}
     
-        \textbf{Principe de relativité :}\quad Tous les référentiels galiléens sont équivalents pour décrire les lois fondamentales de la nature. Elles conservent donc leurs formes pour tout changement de référentiel galiléen.\\
-    
         Si l'on dispose d'un premier système de coordonnées $(\vv{x},t)$, alors les trois transformations élémentaires en relativité galiléenne permettant de passer à un deuxième système de coordonnées $(\vv{x}',t')$ et laissant les lois de la physique invariantes sont
         \begin{itemize}[label = \textbullet]
-            \item translation spatiale : $\vv{x}' = \vv{x}+\vv{a}$ avec $a\in\mathbb{R}^3$
-            \item rotation spatiale : $\vv{x}' = \mathcal{R}(\vv{x})$ avec $x'^a = R^a_{~b}x^b,~R\in SO(3)$
-            \item translation temporelle : $t' = t + t_0$ avec $t_0\in\mathbb{R}$
+            \item les translations spatiales : $\vv{x}' = \vv{x}+\vv{a}$ avec $a\in\mathbb{R}^3$
+            \item les rotations spatiales : $\vv{x}' = \mathcal{R}(\vv{x})$ avec $x'^a = R^a_{~b}x^b,~R\in SO(3)$
+            \item les translations temporelles : $t' = t + t_0$ avec $t_0\in\mathbb{R}$
         \end{itemize}
         
-        Notons que l'utilisation même des vecteurs en physique est une conséquence de l'invariance par rotation des lois de la physique et non l'inverse. C'est d'ailleurs ce qui différencie un vecteur d'un triplet de nombres, les lois de transformation que suivent les vecteurs sont bien précises (transformation linéaire sous le groupe de symétrie), alors qu'un triplet de nombre n'a aucune propriété de ce type qui lui est imposée.
+        \begin{rmk}
+            L'utilisation même des vecteurs en physique est une conséquence de l'invariance par rotation des lois de la physique et non l'inverse. C'est d'ailleurs ce qui différencie un vecteur d'un triplet de nombres : les lois de transformation des composantes d'un vecteur sous changement de base sont bien précises (transformation linéaire sous le groupe de symétrie), alors qu'un triplet de nombre n'a aucune propriété de ce type qui lui est imposée a priori.
+        \end{rmk}
         
         \begin{defn}
             Si le référentiel $(\vv{x}',t')$ est vu comme se déplaçant à une vitesse $\vv{v}$ dans le référentiel $(\vv{x},t)$ alors la \textit{transformation de Galilée} permet de passer de $(x,t)$ à $(\vv{x}',t')$ comme suit:
@@ -320,30 +328,44 @@ Louan \textsc{Mol}
             \end{empheq}
             \end{subequations}
         \end{defn}
+        
+        \begin{prin}[de relativité]
+        \begin{leftbar}
+            Tous les référentiels galiléens sont équivalents pour décrire les lois fondamentales de la nature. Elles conservent leur forme pour tout changement de référentiel galiléen.
+        \end{leftbar}
+        \end{prin}
     
     \section{Relativité einsteinienne}
     
         \subsection{Généralités}
     
-            Le principe de relativité est toujours présent mais on y ajoute un second principe.\\
+            Le principe de relativité est toujours présent mais on y ajoute un second principe.
             
-            \textbf{Constance de la vitesse de la lumière :}\quad La lumière se propage toujours dans le vide avec une certaine vitesse $c$ qui est indépendante de l'état de mouvement de la source lumineuse. Cela peut se traduire par le fait que la vitesse de la lumière dans le vide soit une constante indépendante du référentiel d'inertie d'observation.\\
+            \begin{prin}[constance de la vitesse de la lumière]
+            \begin{leftbar}
+                La lumière se propage toujours dans le vide avec une certaine vitesse $c$ qui est indépendante de l'état de mouvement de la source lumineuse. Cela peut se traduire par le fait que la vitesse de la lumière dans le vide soit une constante indépendante du référentiel d'inertie d'observation.
+            \end{leftbar}
+            \end{prin}
             
             La relativité einsteinienne est un bond conceptuel par rapport à la relativité galiléenne car elle mélange les coordonnées de temps et d'espace (temps relatif). Les transformations qui laissent les lois de la physique invariantes sont les mêmes mais les transformations qui permettent de passer d'un référentiel à un autre ne sont plus les transformations de Galilée mais les \textit{transformations du groupe de Poincaré}.\\
             
-            Avant de définir le groupe de symétrie, commençons par définir l'espace-temps de cette relativité puis nous définirons un sous-groupe du groupe de symétrie qui a une importance capitale. Parfois, ce groupe est présenté comme étant lui-même le groupe de symétrie.
+            Avant de définir le groupe de symétrie, commençons par définir l'espace-temps de cette relativité puis nous définirons un sous-groupe du groupe de symétrie qui a une importance capitale. Parfois ce groupe est présenté comme étant lui-même le groupe de symétrie.
             
             \begin{defn}
                 L'\textit{espace-temps de Minkowski} (ou \textit{espace-temps de Poincaré-Minkowski}) est l'espace euclidien à quatre dimension $\mathbb{R}^4$ munit de la pseudo-métrique de Minkowski $\eta$ de signature $(-,+,+,+)$.
             \end{defn}
             
-            Après cette approche axée sur les groupes, on peut maintenant voir comment écrire explicitement ces transformations et l'algèbre tensorielle qui en découle.
-            Pour pouvoir appliquer les notions de relativité einsteinienne, il est utile définir ce qu'est un évènement.
             \begin{defn}
                 On appelle \textit{évènement} de coordonnées $x^\mu$ et on note $\underline{x}$, un point de coordonnées $(x^0,x^1,x^2,x^3)$ dans l'espace-temps.
             \end{defn}
             
-            Un évènement peut désigner n'importe quelle action considérée comme instantanée comme l'émission d'un signal lumineux, la désintégration d'une particule, etc. Comme pour n'importe quel espace vectoriel normé, c'est la métrique de l'espace qui définit le produit scalaire et donc également la norme. Dans notre cas, la pseudo-métrique est dite hyperbolique ce qui a des conséquences bien particulières que nous verrons dans la suite.\\
+            Un évènement peut désigner n'importe quelle action considérée comme instantanée, comme l'émission d'un signal lumineux, la désintégration d'une particule, ... Comme pour n'importe quel espace vectoriel normé, la norme découle du produit scalaire. Dans notre cas, la pseudo-métrique est dite hyperbolique ce qui a des conséquences bien particulières que nous verrons dans la suite.\\
+            
+            On peut maintenant définir le groupe formé par l'ensemble des transformations qui préservent cette métrique.
+            \begin{defn}
+                Le \textit{groupe de Lorentz} (ou \textit{groupe de Lorentz homogène}) est définit comme
+                $$O(3,1)~\hat{=}~\left\{\Lambda\in M_{4\text{x}4}(\mathbb{R})~\big|~\Lambda^T\eta\Lambda = \eta\right\}$$
+            \end{defn}
             
             Le groupe de Lorentz agit linéairement sur l'espace-temps comme
             \begin{equation}
@@ -358,13 +380,6 @@ Louan \textsc{Mol}
             \begin{equation}
                 v\cdot w = \eta_{\alpha\beta}v^\alpha w^\beta = \eta_{\alpha\beta} \Lambda^\alpha_{~\delta}  \Lambda^\beta_{~\omega} v'^\delta w'^\omega = \eta_{\delta\omega}  v'^\delta w'^\omega = v'\cdot w'
             \end{equation}
-            
-            On peut maintenant définir le groupe formé par l'ensemble des transformations qui préservent cette métrique.
-            \begin{defn}
-                Le \textit{groupe de Lorentz} (ou \textit{groupe de Lorentz homogène}) est définit comme
-                $$O(3,1)~\hat{=}~\left\{\Lambda\in M_{4\text{x}4}(\mathbb{R})~\big|~\Lambda^T\eta\Lambda = \eta\right\}$$
-            \end{defn}
-        
             \begin{prop}\begin{leftbar}
                 Le groupe de Lorentz possède quatre composantes connexes.
                 \begin{align}
@@ -424,6 +439,8 @@ Louan \textsc{Mol}
             \end{defn}
             
             Étant donné que les réflexions dans le temps et dans l'espace permettent de passer de $L^\uparrow_+$ aux autres composantes connexes, l'essentiel se trouve dans $L^\uparrow_+$. Ce groupe contient les transformations spéciales de Lorentz et les rotations statiques de l'espace. Nous allons voir que ce groupe est composé des rotations et d'autres transformations de Lorentz appelées transformations spéciales de Lorentz.\\
+            
+             Après cette approche axée sur les groupes, on peut maintenant voir comment écrire explicitement ces transformations et étudier l'algèbre tensorielle qui en découle.
             
             \begin{defn}
                 Si le référentiel $(\vv{x}',t')$ est vu comme se déplaçant à une vitesse $v$ selon l'axe des $x$ dans le référentiel $(\vv{x},t)$ alors la \textit{transformation spéciale de Lorentz}  (\textit{T.S.L.} ou \textit{boost}) de $(\vv{x},t)$ à $(\vv{x}',t')$ a la forme
@@ -3121,7 +3138,13 @@ Louan \textsc{Mol}
                     Un \textit{fibré vectoriel} réel $\F$ de dimension $k$ sur la variété différentiable $\M$ est de projection $\pi:\F\to\M$ est une variété différentiable telle que pour tout $P\in\M$ il existe un voisinage $U\subset\M$ autour de $P$ tel que $\pi^{-1}(U)$ est difféomorphe à $U\times \mathbb{R}^k$ avec les propriétés suivantes
                     \begin{enumerate}[label = \textit{\roman*)}]
                         \item le diagramme suivant commute\\
-                        
+                        %\begin{equation*}
+                        %    \begin{CD}
+                        %        S^{\mathcal{W}_\Lambda}\otimes T @>j>> T\\
+                        %        @VVV @VV{\End P}V\\
+                        %        (S\otimes T)/I @= (Z\otimes T)/J
+                        %    \end{CD}
+                        %\end{equation*}
                         où $\varphi_U$ est un difféomorphisme et $\pi_1$ est la projection sur le premier facteur.
                         \item toute composition $\varphi_V\circ\varphi_U^{-1} : (U\cap V)\times \mathbb{R}^k\to (U\cap V)\times \mathbb{R}^k$ où $U$ et $V$ sont disjoints, est linéaire en le second facteur.
                     \end{enumerate}
@@ -5581,7 +5604,7 @@ Louan \textsc{Mol}
                 \end{equation}
             \end{defn}
              
-            En terme de la coordonnée tortue, la coordonnée $t$ s'exprime comme
+            En terme de la coordonnée de la tortue, la coordonnée $t$ s'exprime comme
             \begin{equation}
                  t = \pm r_*(r) + \text{cste}
             \end{equation}
