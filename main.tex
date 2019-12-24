@@ -2175,7 +2175,7 @@ Louan \textsc{Mol}
                 
                 Discutons des opérations que l'on peut faire entre tenseurs.
                 
-                \begin{prop}\begin{leftbar}[opérations sur les tenseurs]
+                \begin{prop}[opérations sur les tenseurs]\begin{leftbar}
                     Nous pouvons effectuer les opérations suivantes entre tenseurs :
                     \begin{enumerate}[label = \textit{\roman*)}]
                         \item combinaison linéaire : si $t_1$ et $t_2$ sont de type $(p,q)$,
@@ -2709,7 +2709,7 @@ Louan \textsc{Mol}
                 \end{itemize}
             \end{exmp}
             
-            \begin{prop}\begin{leftbar}[Règle de Leibniz graduée]
+            \begin{prop}[Règle de Leibniz graduée]\begin{leftbar}
                 Soient $\omega\in\Omega_P^p(\M)$ et $\eta\in\Omega_P^q(\M)$, alors
                 \begin{equation}
                     d(\omega\wedge\eta) = d\eta\wedge\omega+(-1)^{p}~\eta\wedge d\omega.
@@ -2777,7 +2777,7 @@ Louan \textsc{Mol}
                 \begin{equation}
                     F_{\alpha\beta} = (\p_\alpha F_\beta-\p_\beta F_\alpha)
                 \end{equation}
-                Dans notre cas, $A$ existe, c'est le potentiel vecteur. Une fois que l'on a la relation $dA = F$, alors la relation \ref{maxwellgrav} de vient évidente car
+                Dans notre cas, $A$ existe, c'est le potentiel vecteur. Une fois que l'on a la relation $dA = F$, alors la relation \ref{eq:maxwellgrav} devient évidente car
                 \begin{equation}
                     dF = d^2A = 0.
                 \end{equation}
@@ -2852,7 +2852,19 @@ Louan \textsc{Mol}
                     et $ \pdv{\delta^\nu_\mu}{x^\theta} = 0$. On trouve donc la loi de transformation d'un tenseur de type $(1,1)$.
                 \end{proof}
                 
-                \begin{prop}\begin{leftbar}[Règle de Leibniz]
+                \begin{exmp}
+                    Soit $A = A^\mu\p_\mu$ un vecteur en $P\in\M$. Dans ce cas, 
+                    \begin{equation}
+                        \nabla_\mu A^\nu = \p_\mu A^\nu+\Gamma^\nu_{\mu\rho}A^\rho.
+                    \end{equation}
+                    Si $x'$ sont des coordonnées quelconques, alors
+                    \begin{equation}
+                        \p'_\mu A'^\nu  = \pdv{x^\alpha}{x'^\mu}\pdv{}{x^\alpha}\left( \pdv{x'^\nu}{x^\beta}A^\beta \right) = \pdv{x^\alpha}{x'^\mu}\pdv{x'^\nu}{x^\alpha}{x^\beta}A^\beta+\pdv{x^\alpha}{x'^\mu}\pdv{x'^\nu}{x^\beta}\pdv{A^\beta}{x^\alpha}\label{eq:transfvectnabla}
+                    \end{equation}
+                    donc le premier terme de $\nabla_\mu A^\nu$ ne se transforme pas comme un tenseur, ce sont les anomalies issues du changement de coordonnées des symboles de connexion qui annulent les anomalies du terme $\p_\mu A^\nu$ de sorte que $\nabla_\mu A^\nu$ soient bien les composantes d'un tenseur. Remarquons que si les coordonnées $x$ et $x'$ sont des coordonnées localement inertielles en $P$, la matrice Hessienne du changement de coordonnées s'annule et donc le terme d'anomalie aussi. Comme les coefficients de connexions s'annulent dans des coordonnées localement inertielles, $\nabla_\mu A^\nu$ se transforme toujours comme les composantes d'un tenseur. Il faut retenir de cette discussion que les termes de l'expression \ref{eq:transfvectnabla} ne sont pas les composantes d'un tenseur, mais la somme des deux l'est.
+                \end{exmp}
+                
+                \begin{prop}[Règle de Leibniz]\begin{leftbar}
                     Soient $t_1$ et $t_2$ deux tenseurs, alors
                     \begin{equation}
                         \nabla(t_1\otimes t_2) = (\nabla t_1)\otimes t_2 + t_1\otimes(\nabla t_2).
@@ -2904,7 +2916,7 @@ Louan \textsc{Mol}
                 \end{equation}
                 dans les référentiels localement inertiels, ce qui impose une contrainte sur les $\Gamma$ : $\Gamma^\alpha_{\beta\gamma}(P) = 0$ dans un référentiel localement inertiel en $P$. Les conséquences de cette contrainte entraînent deux condition très importantes sur les $\Gamma$.
                 
-                \begin{prop}\begin{leftbar}[Condition de torsion nulle]
+                \begin{prop}[Condition de torsion nulle]\begin{leftbar}
                     Les symboles $\Gamma$ satisfont à la condition
                     \begin{equation}
                         \Gamma^\mu_{\nu\rho} = \Gamma^\mu_{\rho\nu}.
@@ -2919,7 +2931,7 @@ Louan \textsc{Mol}
                     ce qui est bien symétrique sous l'échange des indices inférieurs.
                 \end{proof}
                 
-                \begin{prop}\begin{leftbar}[Condition de préservation de la métrique]
+                \begin{prop}[Condition de préservation de la métrique]\begin{leftbar}
                     Les symboles $\Gamma$ satisfont à la condition
                     \begin{equation}
                         \nabla_\mu g_{\nu\rho} = 0
@@ -3005,7 +3017,7 @@ Louan \textsc{Mol}
                     \end{align}
                 \end{proof}
                 
-                \begin{prop}\begin{leftbar}[propriété de Schwartz]
+                \begin{prop}[propriété de Schwartz]\begin{leftbar}
                     Soit $f$ un champ scalaire quelconque. On a
                     \begin{equation}
                         [\p_\mu,\p_\nu]f = 0.
@@ -3057,7 +3069,7 @@ Louan \textsc{Mol}
                 \end{equation}
                 Une connexion est une quantité qui porte la notion d'équipollence dans les espaces courbes. D'après les principes de la relativité générale, on peut imposer certaines condition à la connexion que nous utilisons (préservation de la métrique $g$ et torsion nulle). La connexion de Levi-Civita est l'unique connexion qui satisfait ces conditions.\\
             
-                \begin{thm}\begin{leftbar}[fondamental de la géométrie riemannienne]
+                \begin{thm}[fondamental de la géométrie riemannienne]\begin{leftbar}
                     Sur une variété riemannienne $(\M,g)$, il existe une unique connexion de torsion nulle préservant la métrique. On l'appelle la \textit{connexion de Levi-Civita} telle que
                     \begin{equation}
                         \chris{\rho}{\mu}{\nu}=\Gamma^\rho_{\mu\nu}
@@ -4125,7 +4137,7 @@ Louan \textsc{Mol}
             
                 Nous allons maintenant nous intéresser à deux identité très importants : les identités de Bianchi.
                 
-                \begin{prop}\begin{leftbar}[première identité de Bianchi]
+                \begin{prop}[première identité de Bianchi]\begin{leftbar}
                     Soit $T$ le tenseur de torsion et $\{e_a\}$ une base de $T_P\M$. Dans ce cas,
                     \begin{equation}
                         dT = \mathscr{R} \wedge e - \Gamma\wedge T
@@ -4141,7 +4153,7 @@ Louan \textsc{Mol}
                     \end{align}
                 \end{proof}
                 
-                \begin{prop}\begin{leftbar}[deuxième identité de Bianchi]
+                \begin{prop}[deuxième identité de Bianchi]\begin{leftbar}
                     Soit $T$ le tenseur de torsion et $\{e_a\}$ une base de $T_P\M$. Dans ce cas,
                     \begin{equation}
                         d\mathscr{R} = \mathscr{R} \wedge \Gamma - \Gamma\wedge \mathscr{R}
@@ -4534,7 +4546,7 @@ Louan \textsc{Mol}
             \end{equation}
             L'équation \ref{eq:einstein1} induit trop de contrainte sur $R$ et est donc fausse. Cependant, dans le vide, elle donne la même prédiction que la version corrigée de l'équation ce qui qui permit déjà de faire des prédictions qui, après avoir été validées, on mit en avant la théorie de la relativité générale.
             
-            \begin{thm}\begin{leftbar}[équation d'Einstein]
+            \begin{thm}[équation d'Einstein]\begin{leftbar}
                 Le tenseur d'Einstein satisfait à l'équation
                 \begin{equation}
                     G_{\mu\nu}+\Lambda g_{\mu\nu} = \kappa^2 T_{\mu\nu}.
@@ -4782,7 +4794,7 @@ Louan \textsc{Mol}
                 \end{align}
             \end{proof}
             
-            \begin{prop}\begin{leftbar}[équation de déviation géodésique]
+            \begin{prop}[équation de déviation géodésique]\begin{leftbar}
                 Soit $U^\mu(\lambda,v)$ le vecteur tangent à la trajectoire, alors
                 \begin{equation}
                     \nabla_U\nabla_U N^\mu = R^\mu_{~\nu\rho\sigma}U^\rho N^\sigma U^\nu.
@@ -4883,7 +4895,7 @@ Louan \textsc{Mol}
         \end{equation}
         Les coordonnées $(t,r,\theta,\phi)$ sont appelées \textit{coordonnées de Schwartzschild}. On pourrait supposer, pour simplifier la situation d'avantage, que le champ doit être statique, c'est-à-dire que que métrique ne dépende pas de $t$. En fait, c'est toujours le cas pour les champ à symétrie sphérique.
         
-        \begin{thm}\begin{leftbar}[de Birkhoff]
+        \begin{thm}[de Birkhoff]\begin{leftbar}
             Toute solution à symétrie sphérique de l'équation d'Einstein est statique et asymptotiquement plate.
         \end{leftbar}\end{thm}
         
@@ -5520,7 +5532,7 @@ Louan \textsc{Mol}
         
         Considérons maintenant le cas avec un champ de gravitation décrit par la métrique de Schwarzschild.
         
-        \begin{prop}\begin{leftbar}[troisième loi de Kepler]
+        \begin{prop}[troisième loi de Kepler]\begin{leftbar}
             Pour une trajectoire circulaire, 
             \begin{equation}
                 \frac{r^3}{T^2_S} = \frac{M}{4\pi^2}
