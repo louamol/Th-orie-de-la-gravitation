@@ -189,7 +189,9 @@ Louan \textsc{Mol}
     
     Je n'ai pas la prétention de faire de ce document une référence, le but est simplement de transcrire mes notes sous une forme qui m'est agréable.\\
     
-    Merci à \textit{Eliott Van Steirteghem} et à \textit{Guillaume Houyoux} pour les schémas ainsi que pour leurs relectures attentives. Pour les fautes qui nous aurons échappées, vous pouvez me contacter via mon adresse mail : \verb?louamol@ulb.ac.be?.
+    Merci à \textit{Eliott Van Steirteghem} et à \textit{Guillaume Houyoux} pour les schémas ainsi que pour leurs relectures attentives. Pour les fautes qui nous aurons échappées, vous pouvez me contacter via mon adresse mail : \verb?louamol@ulb.ac.be?.\\
+    
+    %Merci à \texit{A. Forucci} pour les corrections des exercies et discussions sur le cours dont ces notes on grandement bénéficiée.
 
 \printbibliography[title=Références]
 \pagebreak
@@ -197,6 +199,10 @@ Louan \textsc{Mol}
 \pagebreak
 
 \chapter{Introduction}
+
+    \section*{Notations}
+    
+        Nous utilisons la \textit{convention de sommation d'Einstein} pour les indices répétés de variances différentes. Les indices grecs prennent les valeurs $0,1,\dots,n-1$ et les indices romains prennent les valeurs $1,\dots,n-1$ où $n$ est la dimension.
 
     \section{Les interactions fondamentales}
     
@@ -349,7 +355,7 @@ Louan \textsc{Mol}
             
             La relativité einsteinienne est un bond conceptuel par rapport à la relativité galiléenne car elle mélange les coordonnées de temps et d'espace (temps relatif). Les transformations qui laissent les lois de la physique invariantes sont les mêmes mais les transformations qui permettent de passer d'un référentiel à un autre ne sont plus les transformations de Galilée mais les \textit{transformations du groupe de Poincaré}.\\
             
-            Avant de définir le groupe de symétrie, commençons par définir l'espace-temps de cette relativité puis nous définirons un sous-groupe du groupe de symétrie qui a une importance capitale. Parfois ce groupe est présenté comme étant lui-même le groupe de symétrie.
+            Avant de définir le groupe de symétrie (groupe de Poincaré), commençons par définir l'espace-temps de cette relativité. Après ca, nous définirons un sous-groupe du groupe de Poincaré qui a une importance capitale.
             
             \begin{defn}
                 L'\textit{espace-temps de Minkowski} (ou \textit{espace-temps de Poincaré-Minkowski}) est l'espace euclidien à quatre dimension $\mathbb{R}^4$ munit de la pseudo-métrique de Minkowski $\eta$ de signature $(-,+,+,+)$.
@@ -380,17 +386,39 @@ Louan \textsc{Mol}
             \begin{equation}
                 v\cdot w = \eta_{\alpha\beta}v^\alpha w^\beta = \eta_{\alpha\beta} \Lambda^\alpha_{~\delta}  \Lambda^\beta_{~\omega} v'^\delta w'^\omega = \eta_{\delta\omega}  v'^\delta w'^\omega = v'\cdot w'
             \end{equation}
+            
+            La relativité einsteinienne est également invariante sous les translations spatiales et temporelles. Si l'on ajoute ces dernières transformations au groupe de Lorentz, on obtient le groupe de symétrie de la relativité einsteinienne : le groupe de Poincaré.
+            \begin{defn}
+                Le \textit{groupe de Poincaré} $ISO(3,1)$ est le groupe formé par le groupe de Lorentz, les translations dans le temps et les translations dans l'espace.
+                \begin{equation}
+                    ISO(3,1) ~\hat{=}~ \mathbb{R}^{3,1}\rtimes O(3,1)
+                \end{equation}
+                Ce groupe est parfois appelé \textit{groupe de Lorentz affine} ou \textit{groupe de Lorentz inhomogène}.
+            \end{defn}
+            
+            Ce groupe agit sur les coordonnée de l'espace-temps comme
+            \begin{equation}
+                x'^\alpha = \Lambda^\alpha_{~\beta}x^\beta + a^\mu
+            \end{equation}
+            avec $\Lambda\in O(3,1)$ et $a\in\mathbb{R}^4$.
+            
+            \begin{rmk}
+                Produit semi-direct :
+                \comp
+            \end{rmk}
+            
+            Le groupe de Lorentz est un sous-groupe du groupe de Poincaré qui a une importante capitale. Il parfois lui-me présenté comme le groupe de symétrie de la relativité restreinte. Nous étudierons les propriétés de ce dernier dans la suite de cette section.
+            
             \begin{prop}\begin{leftbar}
-                Le groupe de Lorentz possède quatre composantes connexes.
+                Le groupe de Lorentz possède quatre composantes connexes:
                 \begin{align}
                     L^\uparrow_+ &~\hat{=}~ \left\{\Lambda\in O(3,1)~\big|~\text{det}(\Lambda) = 1\text{ et }\Lambda^0_{~0}\geq1\right\} \\
                     L^\downarrow_+ &~\hat{=}~ \left\{\Lambda\in O(3,1)~\big|~\text{det}(\Lambda) = 1\text{ et }\Lambda^0_{~0}\leq -1\right\} \\
                     L^\uparrow_- &~\hat{=}~ \left\{\Lambda\in O(3,1)~\big|~\text{det}(\Lambda) = -1\text{ et }\Lambda^0_{~0}\geq1\right\} \\
                     L^\downarrow_- &~\hat{=}~ \left\{\Lambda\in O(3,1)~\big|~\text{det}(\Lambda) = -1\text{ et }\Lambda^0_{~0}\leq-1\right\}
                 \end{align}
+                où les signes $+,-$ donnent le signe du déterminant et les flèches $\uparrow,\downarrow$ donnent le sens du temps.
             \end{leftbar}\end{prop}
-            
-            Où les signes $+,-$ donnent le signe du déterminant et les flèches $\uparrow,\downarrow$ donnent le sens du temps.
             
             \begin{proof}
             ${}$\\
@@ -406,9 +434,7 @@ Louan \textsc{Mol}
                 \begin{equation}
                     \Lambda^0_{~0} \geq 1 \text{\quad ou \quad} \Lambda^0_{~0} \leq -1.
                 \end{equation}
-                Donc, quel que soit $\Lambda\in O(3,1)$, $\Lambda$ appartient à un et un seul des quatre ensembles définis ci-dessus.\\
-                
-                Montrons que chaque ensemble est connexe. Faisons le raisonnement pour $L_+^\uparrow$, les autres étant similaires.\\
+                Donc, quel que soit $\Lambda\in O(3,1)$, $\Lambda$ appartient à un et un seul des quatre ensembles définis ci-dessus. Montrons que chaque ensemble est connexe. On fait le raisonnement pour $L_+^\uparrow$, les autres étant similaires.\\
                 Soient $\Lambda_1, \Lambda_2 \in L_+^\uparrow$ et $\Lambda(t)$ une courbe continue telle que $\Lambda(t) = \Lambda_1 (1 - t) + t\Lambda_2, ~\forall t \in [0,1]$. Dans ce cas, 
                 \begin{align}
                     \det \Lambda(t) &= (1 - t)\det \Lambda_1 + t \det \Lambda_2 = (1 - t) + t = 1\\
@@ -424,7 +450,10 @@ Louan \textsc{Mol}
                 \begin{equation}
                     L \cap L^i_j \neq \varnothing
                 \end{equation}
-                Soient $\Lambda \in L \cap L^i_j $ et $\Lambda' \in L\backslash L^i_j$. Dans ce cas, il existe un $L^k_l \neq L^i_j$ tel que $\Lambda' \in L^k_l$. Par connexité de $L$, il existe une courbe $\Lambda(t)$ continue telle que $\Lambda(0) = \Lambda$ et $\Lambda(1) = \Lambda'$ ce qui est absurde car on ne peut pas passer continûment de $\Lambda^0_{~0} \geq 1$ à $\Lambda^0_{~0} \leq -1$ ou de $\det \Lambda = 1$ à $\det \Lambda = -1$. Donc $L$ est nécessairement une des quatre composantes explicitées.
+                Soient $\Lambda \in L \cap L^i_j $ et $\Lambda' \in L\backslash L^i_j$. Dans ce cas, il existe un $L^k_l \neq L^i_j$ tel que $\Lambda' \in L^k_l$. Par connexité de $L$, il existe une courbe $\Lambda(t)$ continue telle que $\Lambda(0) = \Lambda$ et $\Lambda(1) = \Lambda'$
+                ce qui contredit le fait de $L$ et $L'$ sont des composantes connexes distinctes.
+                %ce qui est absurde car on ne peut pas passer continûment de $\Lambda^0_{~0} \geq 1$ à $\Lambda^0_{~0} \leq -1$ ou de $\det \Lambda = 1$ à $\det \Lambda = -1$. 
+                Donc $L$ est nécessairement une des quatre composantes explicitées.
             \end{proof}
             \begin{defn}
                 On dit qu'une transformation de Lorentz est \textit{propre} (\textit{impropre}) si $\text{det}(\Lambda) = 1$ ($\det(\Lambda) = -1$) et \textit{orthochrone} (\textit{non-orthochrone}) si $\Lambda^0_{~0}\geq1$ ($\Lambda^0_{~0}\leq-1$). 
@@ -438,9 +467,14 @@ Louan \textsc{Mol}
                 $$L^\uparrow_+ ~\hat{=}~ \left\{\Lambda\in SO(3,1)~\big|~\Lambda^0_{~0}\geq1\right\}.$$
             \end{defn}
             
-            Étant donné que les réflexions dans le temps et dans l'espace permettent de passer de $L^\uparrow_+$ aux autres composantes connexes, l'essentiel se trouve dans $L^\uparrow_+$. Ce groupe contient les transformations spéciales de Lorentz et les rotations statiques de l'espace. Nous allons voir que ce groupe est composé des rotations et d'autres transformations de Lorentz appelées transformations spéciales de Lorentz.\\
+            \begin{prop}\begin{leftbar}
+                Le groupe de Lorentz est formé par les transformations de Lorentz propres orthochrones, le renversement du temps $T$ ($t'= -t$) et la parité $P$ ($\vv{x}' = -\vv{x}$).
+            \end{leftbar}\end{prop}
+            \begin{proof}${}$\\
+                \comp
+            \end{proof}
             
-             Après cette approche axée sur les groupes, on peut maintenant voir comment écrire explicitement ces transformations et étudier l'algèbre tensorielle qui en découle.
+            Étant donné que le renversement du temps $T$ et la parité $P$ permettent de passer de $L^\uparrow_+$ aux autres composantes connexes, l'essentiel se trouve dans $L^\uparrow_+$. Ce groupe contient les transformations spéciales de Lorentz et les rotations statiques de l'espace. Nous allons voir que ce groupe est composé des rotations et d'autres transformations de Lorentz appelées transformations spéciales de Lorentz.
             
             \begin{defn}
                 Si le référentiel $(\vv{x}',t')$ est vu comme se déplaçant à une vitesse $v$ selon l'axe des $x$ dans le référentiel $(\vv{x},t)$ alors la \textit{transformation spéciale de Lorentz}  (\textit{T.S.L.} ou \textit{boost}) de $(\vv{x},t)$ à $(\vv{x}',t')$ a la forme
@@ -455,7 +489,9 @@ Louan \textsc{Mol}
                 où $\gamma(v)=\frac{1}{\sqrt{1-v^2}}$.
             \end{defn}
             
-            On définit ici les transformations spéciales de Lorentz directement par une forme explicite de ces dernières, qui semble venir de nulle part. Nous verrons après qu'il existe plusieurs manières de trouver l'expression des transformations de Lorentz dont certaines ne font même pas référence à la lumière. Par exemple dans \cite{leblond}, il est démontré que l'on peut trouver la forme explicite des transformations de Lorentz juste à partir des quatre hypothèses suivantes : homogénéité de l'espace-temps, isotropie de l'espace-temps, l'ensemble des changements de référentiels a une structure de groupe et principe de causalité.\\
+            \begin{rmk}
+                Nous avons définit les transformations spéciales de Lorentz directement par une forme explicite qui semble venir de nulle part. Nous verrons après qu'il existe plusieurs manières de trouver l'expression des transformations de Lorentz dont certaines ne font même pas référence à la lumière. Par exemple dans \cite{leblond}, il est démontré que l'on peut trouver la forme explicite des transformations de Lorentz juste à partir des quatre hypothèses suivantes : homogénéité de l'espace-temps, isotropie de l'espace-temps, l'ensemble des changements de référentiels possède une structure de groupe et le principe de causalité.
+            \end{rmk}
             
             \begin{prop}\begin{leftbar}
                 Toute transformation de Lorentz propre orthochrone $\Lambda\in L^\uparrow_+$ peut être décomposée de manière unique comme le produit d'une rotation statique $R\in(1\oplus SO(3))$ et d'une T.S.L. $L(v)$.
@@ -467,22 +503,6 @@ Louan \textsc{Mol}
             \begin{proof}${}$\\
                 \comp                
             \end{proof}
-            
-            \begin{prop}\begin{leftbar}
-                Le groupe de Lorentz est formé par les T.S.L., le renversement du temps $T$ ($t'= -t$) et la parité $P$ ($\vv{x}' = -\vv{x}$).
-            \end{leftbar}\end{prop}
-            \begin{proof}${}$\\
-                \comp
-            \end{proof}
-            
-            Pour finir, la relativité einsteinienne est également invariante sous les translations spatiales et temporelles. Si l'on ajoute ces dernières transformations au groupe de Lorentz, on obtient le groupe de symétrie de la relativité einsteinienne : le groupe de Poincaré.
-            \begin{defn}
-                Le \textit{groupe de Poincaré} $ISO(3,1)$ est le groupe formé par le groupe de Lorentz, les translations dans le temps, les translations dans l'espace, le renversement du temps $T$ et la parité $P$.
-                \begin{equation}
-                    ISO(3,1) ~\hat{=}~ \mathbb{R}^{3,1}\rtimes O(3,1)
-                \end{equation}
-                Ce groupe est parfois appelé \textit{groupe de Lorentz affine} ou \textit{groupe de Lorentz inhomogène}.
-            \end{defn}
             
             \begin{figure}[H]
             \centering
@@ -515,12 +535,53 @@ Louan \textsc{Mol}
             \caption{Représentation schématique de la structure du groupe de Poincaré}
             \end{figure}
             
-            Le groupe de Lorentz s'exprime bien comme un semi-produit direct de $O(3,1)$ et $\mathbb{R}^{3,1}$ car 
+            Le système \ref{TSL} donne la forme explicite d'une transformation de Lorentz spéciale de Lorentz lorsque $\vv{v}$ est selon l'axe des $x$. On voudrait trouver une forme pour $\vv{v}$ quelconque.
+            
+            \begin{prop}\begin{leftbar}
+                Pour $\vv{v}$ quelconque, les transformations spéciales de Lorentz imposent le changement de coordonnées suivant.
+                \begin{subequations}\label{TSLg}
+                \begin{empheq}[left=\empheqlbrace]{align}
+                t' &= \gamma(t-\vv{x}\cdot\vv{x}) \\
+                \vv{x}' &= \vv{x} - \gamma t\vv{v} + (\gamma-1)\frac{\vv{x}\cdot\vv{v}}{\vv{v}^2}\vv{v}
+                \end{empheq}
+                \end{subequations}
+            \end{leftbar}\end{prop}
+            
+            \begin{proof}
+            ${}$\\
+            Une première méthode, basée sur l'intuition, permet de trouver un résultat rapidement. Soient $\vv{F}(t,\vv{x},\vv{v})$ et $\vv{G}(t,\vv{x},\vv{v})$ deux fonctions inconnues telles que
+            \begin{subequations}
+                \begin{empheq}[left=\empheqlbrace]{align}
+                    t' &= \vv{F}(t,\vv{x},\vv{v}) \\
+                    \vv{x}' &= \vv{G}(t,\vv{x},\vv{v})
+                \end{empheq}
+            \end{subequations}
+            Il n'y a qu'une seule manière de combiner $\vv{v}$ et $\vv{x}$ pour que $t'$ satisfasse \ref{TSL} :
+            \begin{equation}
+                t' = \gamma(t-\vv{v}\cdot\vv{x}).
+            \end{equation}
+            Pour $\vv{x}'$, si l'on veut pouvoir retrouver la limite galiléenne, il faut que $\vv{G}$ soit linéaire en $\vv{x}$ et $\vv{v}$, donc
+            \begin{equation}
+                \vv{x}' = A\vv{x} + B\vv{v}
+            \end{equation}
+            où les coefficients $A$ et $B$ peuvent dépendre de la norme de $\vv{v}$ et du temps. Lorsque $\vv{v}=(v,0,0)$ il faut que $y'=y$ et $z'=z$. En faisant le même raisonnement avec $\vv{v}$ selon les autres axes de coordonnée spatiale, on déduit que $A = 1$.\\
+            Toujours dans le cas $\vv{v}=(v,0,0)$, nous avons alors
+            \begin{equation}
+                x' = x+Bv = \gamma(x-vt)
+            \end{equation}
+            et donc $B = (\gamma-1)\frac{x}{v}-\gamma t$. Le terme $\frac{x}{v}$ devient $\frac{\vv{x}\cdot\vv{v}}{\vv{v}\cdot\vv{v}}$ lorsque $\vv{v}$ est quelconque.\\
+            
+            Le deuxième méthode est plus calculatoire. Il suffit d'appliquer la matrice $R$ de rotation de $x$ à $\vv{v}$ quelconque à la matrice $\lambda$. C'est faire un changement de base
+            
+            \begin{equation}
+                \begin{pmatrix}
+                aa
+                \end{pmatrix}
+            \end{equation}
             \comp
+            \end{proof}
             
-            
-            
-            
+            Nous avons vu comment faire pour trouver la forme la plus générale des T.S.L. à partir du cas $\vv{v} = (v,0,0)$, mais comment faire pour trouver la forme de cette dernière dans un premier temps ? Il existe plusieurs manières de trouver la forme des transformations de Lorentz. Une des manières les plus courantes est d'imposer l'invariance de la vitesse de la lumière en faisant un changement de référentiel. En supposant que le temps ne soit pas absolu, on trouve alors la manière dont se dilatent les intervalles de temps et le reste en découle. Cette façon de procéder a l'avantage d'être simple et intuitive mais donne l'impression que la relativité restreinte concerne principalement la lumière, ce qui est faux. La relativité restreinte concerne toute la cinématique en physique. Le terme "restreint" désignant cette théorie est donc assez mal choisi étant donné qu'elle est indépendante de l'interaction considérée et est de ce fait plus générale que la "relativité générale" qui est une théorie de la gravitation gravitationnelle. Ce nom a été historiquement donné pour désigner le fait qu'elle ne comprenait pas la gravitation, ce qui la rend paradoxalement beaucoup plus générale.
             
             \begin{defn}
                 On appelle \textit{intervalle d'espace-temps} entre deux évènements $P_1$ et $P_2$ respectivement de coordonnées $x_1^\mu$ et $x_2^\mu$ la quantité
@@ -555,61 +616,13 @@ Louan \textsc{Mol}
                     \begin{equation}
                         \underline{u}' = \Lambda \underline{u} = \left(u'^0,u'^0,0,0\right).
                     \end{equation}
-                    Donc $P_1$ et $P_2$ sont liés causalement.
+                    Donc $P_1$ et $P_2$ sont liés causalement uniquement pas un champ électro-magnétique.
                 \end{itemize}
             \end{leftbar}\end{prop}
             
             \begin{proof}${}$\\
                 \comp
             \end{proof}
-            
-            Le système \ref{TSL} donne la forme explicite d'une transformation de Lorentz spéciale de Lorentz lorsque $\vv{v}$ est selon l'axe des $x$. On voudrait trouver une forme pour $\vv{v}$ quelconque.
-            
-            \begin{prop}\begin{leftbar}
-                Pour $\vv{v}$ quelconque, les transformations spéciales de Lorentz imposent le changement de coordonnées suivant.
-                \begin{subequations}\label{TSLg}
-                \begin{empheq}[left=\empheqlbrace]{align}
-                t' &= \gamma(t-\vv{x}\cdot\vv{x}) \\
-                \vv{x}' &= \vv{x} - \gamma t\vv{v} + (\gamma-1)\frac{\vv{x}\cdot\vv{v}}{\vv{v}^2}\vv{v}
-                \end{empheq}
-                \end{subequations}
-            \end{leftbar}\end{prop}
-            
-            \begin{proof}
-            ${}$\\
-            Une première méthode, basée sur l'intuition, permet de trouver un résultat rapidement. Soient $\vv{F}(t,\vv{x},\vv{v})$ et $\vv{G}(t,\vv{x},\vv{v})$ deux fonctions inconnues telles que
-            \begin{subequations}
-                \begin{empheq}[left=\empheqlbrace]{align}
-                    t' &= \vv{F}(t,\vv{x},\vv{v}) \\
-                    \vv{x}' &= \vv{G}(t,\vv{x},\vv{v})
-                \end{empheq}
-            \end{subequations}
-            Il n'y a qu'une seule manière de combiner $\vv{v}$ et $\vv{x}$ pour que $t'$ satisfasse \ref{TSL} :
-            \begin{equation}
-                t' = \gamma(t-\vv{v}\cdot\vv{x}).
-            \end{equation}
-            Pour $\vv{x}'$, si l'on veut pouvoir retrouver la limite Galiléenne, il faut que $\vv{G}$ soit linéaire en $\vv{x}$ et $\vv{v}$, donc
-            \begin{equation}
-                \vv{x}' = A\vv{x} + B\vv{v}
-            \end{equation}
-            où les coefficients $A$ et $B$ peuvent dépendre de la norme de $\vv{v}$ et du temps. Lorsque $\vv{v}=(v,0,0)$ il faut que $y'=y$ et $z'=z$. En faisant le même raisonnement avec $\vv{v}$ selon les autres axes de coordonnée spatiale, on déduit que $A = 1$.\\
-            Toujours dans le cas $\vv{v}=(v,0,0)$, nous avons alors
-            \begin{equation}
-                x' = x+Bv = \gamma(x-vt)
-            \end{equation}
-            et donc $B = (\gamma-1)\frac{x}{v}-\gamma t$. Le terme $\frac{x}{v}$ devient $\frac{\vv{x}\cdot\vv{v}}{\vv{v}\cdot\vv{v}}$ lorsque $\vv{v}$ est quelconque.\\
-            
-            Le deuxième méthode est plus calculatoire. Il suffit d'appliquer la matrice $R$ de rotation de $x$ à $\vv{v}$ quelconque à la matrice $\lambda$. C'est faire un changement de base
-            
-            \begin{equation}
-                \begin{pmatrix}
-                aa
-                \end{pmatrix}
-            \end{equation}
-            \comp
-            \end{proof}
-            
-            Nous avons vu comment faire pour trouver la forme la plus générale des T.S.L. à partir du cas $\vv{v} = (v,0,0)$, mais comment faire pour trouver la forme de cette dernière dans un premier temps ? Il existe plusieurs manières de trouver la forme des transformations de Lorentz. Une des manières les plus courantes est d'imposer l'invariance de la vitesse de la lumière en faisant un changement de référentiel. En supposant que le temps ne soit pas absolu, on trouve alors la manière dont se dilatent les intervalles de temps et le reste en découle. Cette façon de procéder a l'avantage d'être simple et intuitive mais donne l'impression que la relativité restreinte concerne principalement la lumière, ce qui est faux. La relativité restreinte concerne toute la cinématique en physique. Le terme "restreint" désignant cette théorie est donc assez mal choisi étant donné qu'elle est indépendante de l'interaction considérée, et est de ce fait plus générale que la "relativité générale" qui est une théorie particularisée à l'interaction gravitationnelle. Ce nom a été historiquement donné pour désigner le fait qu'elle ne comprenait pas la gravitation, ce qui la rendait paradoxalement beaucoup plus générale.
         
         \subsection{Vitesse et rapidité}
         
@@ -620,7 +633,7 @@ Louan \textsc{Mol}
                 v^\mu ~\hat{=}~ \frac{dx^\mu}{dt} = (1,\vv{v})
                 \end{equation}
             \end{defn}
-            Mais en fait, cette quantité n'est pas un quadri-vecteur. De manière générale, un tenseur dérivé par un scalaire (invariant) donne toujours un vecteur mais ici nous avons
+            Mais cette quantité n'est pas un quadri-vecteur. De manière générale, un tenseur dérivé par un scalaire (invariant) donne toujours un vecteur mais ici nous avons
             \begin{equation}
                 dx^0 = \gamma d\tau
             \end{equation}
@@ -653,7 +666,7 @@ Louan \textsc{Mol}
             Soient deux référentiels $\mathcal{R}_1$ et $\mathcal{R}_2$ respectivement associés aux coordonnées $(t,\vv{x})$ et $(t',\vv{x}')$. Les vitesses dans chacun des référentiels sont définies comme
             \begin{align}
                 \vv{v}_{\R_1} &= \frac{d\vv{x}}{dt} \\
-                \vv{v}_{\R_1} &= \frac{d\vv{x}'}{dt}
+                \vv{v}_{\R_2} &= \frac{d\vv{x}'}{dt}
             \end{align}
             
             \begin{prop}\begin{leftbar}
@@ -726,7 +739,7 @@ Louan \textsc{Mol}
                 \end{equation}
             \end{proof}
             
-            La dernière proposition montre bien que la condition $c\leq 1$, qui est souvent placée au centre de toute la relativité einsteinienne, n'est en fait pas tellement fondamentale. Cette condition provient uniquement de notre paramétrisation de la vitesse.\\
+            La dernière proposition montre bien que la condition $c\leq 1$ qui est souvent placée au centre la relativité einsteinienne n'est pas tellement fondamentale. Cette condition provient uniquement de notre paramétrisation de la vitesse.\\
             
             Une mauvaise interprétation de la condition $c\leq1$ (et donc $v\leq c$) peut aussi amener à croire que la distance maximale que l'on peut parcourir en un temps $\Delta t'$ est plus petite ou égale à $c\Delta t'$, ce qui est faux (cela dépend de l'objet qui se déplace). Un observateur peut se rendre n'importe où en n'importe quel temps. Par exemple, il est possible de se rendre à l'autre bout de la galaxie en une seconde et ceci n'est pas en contradiction avec $v\leq 1$. L'observateur qui se rend à l'autre bout de la galaxie ne se voit pas aller à une vitesse plus grande que $c$ par rapport aux éléments qu'il croise. Disons qu'il veut parcourir une distance $L$ vue par un observateur extérieur qui est dans le même référentiel que la galaxie, l'observateur qui se déplace dans la galaxie ne se voit pas parcourir une distance $L$ mais plutot une distance $L' = L\sqrt{1-v^2}\leq L$ où $v$ est la vitesse de son référentiel par rapport au référentiel de la galaxie. Donc il se voit aller à une vitesse
             \begin{equation}
@@ -745,9 +758,9 @@ Louan \textsc{Mol}
             \end{defn}
             En développant, on trouve que
             \begin{equation}
-                P^\alpha = m U^\alpha = (E,\gamma m\vv{v}) = (E,\vv{p}).
+                P^\alpha = m U^\alpha = (\gamma m,\gamma m\vv{v}) = (E,\vv{p}).
             \end{equation}
-            Ce quadri-vecteur est appelé énergie impulsion car sa partie spatiale correspond à l'impulsion classique multipliée par $\gamma$ (la partie spatiale correspond en fait à la quantité de mouvement classique mais on l'appelle souvent impulsion par anglicisme). La première composante est appelée \textit{énergie relativiste} et le second \textit{impulsion relativiste}.
+            Ce quadri-vecteur est appelé énergie impulsion car sa partie spatiale correspond à l'impulsion classique multipliée par $\gamma$ (la partie spatiale correspond en fait à la quantité de mouvement mais on l'appelle souvent impulsion par anglicisme). La première composante est appelée \textit{énergie relativiste} et le second \textit{impulsion relativiste}.
             
             \begin{prop}\begin{leftbar}
                 Nous avons l'égalité suivante.
@@ -770,15 +783,17 @@ Louan \textsc{Mol}
                 E = m.
             \end{equation}
             
-            En mécanique classique, l'énergie et l'impulsion d'un système isolé sont conservée. Ceci est indépendant du principe de relativité. La relativité restreinte donne des nouvelles valeurs à l'énergie et à l'impulsion mais ces grandeurs restent conservées au sein d'un même référentiel.\\
+            En mécanique classique, l'énergie et l'impulsion d'un système isolé sont conservées. Ceci est indépendant du principe de relativité. La relativité restreinte donne des nouvelles valeurs à l'énergie et à l'impulsion mais ces grandeurs restent conservées au sein d'un même référentiel.\\
             
+            \begin{prin}[conservation de l'énergie impulsion]
             \begin{leftbar}
-            \textbf{Conservation de l'énergie impulsion :} Pour tout système isolé, l'énergie-impulsion est conservée au cours du temps.
+                Pour tout système isolé, l'énergie-impulsion est conservée au cours du temps.
             \end{leftbar}
+            \end{prin}
             
         \subsection{Quadri-accélération}
         
-            En dérivant à nouveau par rapport au temps propre $\tau$, on peut introduire un nouveau quadri-vecteur.
+            En dérivant à nouveau par rapport au temps propre $\tau$, on peut introduire un nouveau quadri-vecteur correspondant cette fois à l'accélération.
             \begin{defn}
                 On appelle \textit{quadri-accélération} le quadri-vecteur
                 \begin{equation}
@@ -816,12 +831,12 @@ Louan \textsc{Mol}
             \end{equation}
             Or, pour $\varepsilon\ll 1$,
             \begin{equation}
-                \frac{1}{1+\varepsilon} = 1-\varepsilon+\varepsilon^2+\dots
+                \frac{1}{1+\varepsilon} = 1-\varepsilon+\dots
             \end{equation}
             et comme $d\tau$ est infinitésimale,
             \begin{align}
                 \frac{v(\tau)+ad\tau}{1+av(\tau)d\tau} &\approx \left(v(\tau)+ad\tau\right)\left( 1-av(\tau)d\tau \right) \\
-                &= v(\tau) + a\left( 1-v^2(\tau) \right)d\tau
+                &\approx v(\tau) + a\left( 1-v^2(\tau) \right)d\tau
             \end{align}
             On trouve donc bien que 
             \begin{equation}
@@ -887,7 +902,14 @@ Louan \textsc{Mol}
                 En intégrant \ref{eq:1} et \ref{eq:2} on trouve bien le résultat voulu.
             \end{proof}
             
-            On vient donc de voir que, quel que soit la nature de l'objet qui est en MRUA, sa trajectoire dans l'espace-temps a toujours la forme de celle explicité dans la proposition \ref{eq:a}, c'est-à-dire une hyperbole.
+            On vient donc de voir que, quel que soit la nature de l'objet qui est en MRUA, sa trajectoire dans l'espace-temps a toujours la forme de celle explicité dans la proposition \ref{eq:a}, c'est-à-dire une hyperbole. Ces équations sont à comparer avec les équations du mouvement non-relativistes :
+            \begin{subequations}\label{eq:hyperbole}
+            \begin{empheq}[left=\empheqlbrace]{align}
+                t(\tau) &= \tau\\
+                x(\tau) &= at^2 + x_0
+            \end{empheq}
+            \end{subequations}
+            pour lesquelles l'observateur n'a pas forcément une vitesse bornée.
             
             \begin{figure}[H]
             \centering
@@ -896,7 +918,8 @@ Louan \textsc{Mol}
                 \draw[->] (0, -3) -- (0, 4) node[above left]{$t$};
                 \draw[dotted, opacity = 0.9] (-3,-3) -- (3, 3);
                 \draw[dotted, opacity = 0.9] (-3,3) -- (3, -3);
-                \draw[domain = -3:3, smooth] plot({sqrt(1 + \x*\x)}, \x);
+                \draw[domain = -3:3, smooth, blue] plot({sqrt(1 + \x*\x)}, \x);
+                \draw[domain = -1.7:1.7, smooth,dashed] plot(\x*\x, \x);
             \end{tikzpicture}
             \caption{Trajectoire d'un objet en MRUA}
             \label{fig:my_label}
@@ -954,7 +977,7 @@ Louan \textsc{Mol}
             \end{bmatrix} \Bigg\vert~ v\in\mathbb{R}\right\}
             \end{equation}
             
-            est une hyperbole, ou plus exactement, la partie supérieure d'une hyperbole. Cette courbe est paramétrisée par la vitesse $v$. La partie inférieure de l'hyperbole apparaîtrais si l'on considérait les transformations de Lorentz non-orthochrones (nous avons juste considéré les transformations spéciales de Lorentz, c'est-à-dire les transformations de Lorentz propres orthochrones).\\
+            est une hyperbole, ou plus exactement, la partie supérieure d'une hyperbole. Cette courbe est paramétrisée par la vitesse $v$. La partie inférieure de l'hyperbole apparaîtrais si l'on considérait les transformations de Lorentz non-orthochrones (nous avons juste considéré les transformations spéciales de Lorentz qui sont des transformations de Lorentz propres orthochrones).\\
             
             On peut faire le même raisonnement et trouver que 
             \begin{equation}
@@ -1055,21 +1078,21 @@ Louan \textsc{Mol}
             
             Dans cette partie nous discuterons de manière qualitative trois conséquences du mariage entre la relativité restreinte et la mécanique quantique. Le but n'est pas de présenter des raisonnements rigoureux mais plutôt de se faire une intuition derrière ces différents phénomènes.\\
             
-            Soient un référentiel $\R$ de coordonnées $(t,x)$, un second référentiel $\R'$ de coordonnées $(t',x')$ en translation à vitesse $v$ par rapport à $\R$et deux évènements $X_1 = (x_1^0,\vv{x}_1)$, $X_2 = (x_2^0,\vv{x}_2)$ tels que $x_1^0<x_2^0$. Prenons $X_1$ comme étant une désintégration d'une particule $A$ et deux particules $B$ et $C$ et $X_2$ comme étant une absorption d'une particule extérieure $D$ par $B$ pour formé une particule $E$.
+            Soient un référentiel $\R$ de coordonnées $(t,x)$, un second référentiel $\R'$ de coordonnées $(t',x')$ en translation à vitesse $v$ par rapport à $\R$ et deux évènements $X_1 = (x_1^0,\vv{x}_1)$, $X_2 = (x_2^0,\vv{x}_2)$ tels que $x_1^0<x_2^0$. Prenons $X_1$ comme étant une désintégration d'une particule $A$ et deux particules $B$ et $C$ et $X_2$ comme étant une absorption d'une particule extérieure $D$ par $B$ pour former une particule $E$.
             \begin{equation}
                 X_1 : A\to B+C \text{\quad puis \quad} X_2 : B+D\to E
             \end{equation}
             Comme ces évènement sont causalement reliés, l'intervalle d'espace-temps $(X_2-X_1)^2$ est de type temps (la particule $B$ ne peut pas aller plus vite que la vitesse de la lumière).
             \begin{equation}
-                (X_2-X_1)^2 = \vv{x}_2-\vv{x}_1)^2 - (x_2^0-x_1^0)^2 < 0
+                (X_2-X_1)^2 = (\vv{x}_2-\vv{x}_1)^2 - (x_2^0-x_1^0)^2 < 0
             \end{equation}
-            Cependant, si l'on suppose que $(X_2-X_1)^2 > 0$, le principe d'incertitude d'Heisenberg donne une indétermination sur la vitesse de la particule $B$ de tout de même aller de $\vv{x}_1$ à $\vv{x_2}$. La probabilité que cela arrive est non-négligeable si
+            Cependant, si l'on suppose que $(X_2-X_1)^2 > 0$, le principe d'incertitude d'Heisenberg donne une indétermination sur la vitesse de la particule $B$ qui permet de tout de même aller de $\vv{x}_1$ à $\vv{x_2}$. La probabilité que cela arrive est non-négligeable si
             \begin{equation}
-                (\vv{x}_2-\vv{x}_1)^2 - (x_2^0-x_1^0)^2 \lesssim \frac{\hbar^2}{m^2}
+                (\vv{x}_2-\vv{x}_1)^2 - (x_2^0-x_1^0)^2 \lesssim \frac{\hbar^2}{m^2}.
             \end{equation}
-            On se retrouve donc avec deux évènements causalement reliés mais dont l'intervalle d'espace-temps est de type espace. C'est en contradiction avec ce que l'on a vu jusqu'à présent. Cela pose problème parce que, comme l'intervalle est de type espace, il est possible de trouver référentiel dans lequel $x_1'^0 > x_2'^0$. Qu'advient-il de la causalité dans ce cas-là ? Comment l'observateur pourrait-il voir la particule $B$ absorber une autre particule et puis ensuite voir la particule $B$ se créer? Comment résoudre se paradoxe?\\
+            On se retrouve donc avec deux évènements causalement reliés mais dont l'intervalle d'espace-temps est de type espace. C'est en contradiction avec ce que l'on a vu jusqu'à présent. Cela pose problème étant donné que comme l'intervalle est de type espace il est possible de trouver référentiel dans lequel $x_1'^0 > x_2'^0$. Qu'advient-il de la causalité dans ce cas-là ? Comment l'observateur pourrait-il voir la particule $B$ absorber une autre particule avant de voir la particule $B$ être créée?\\
             
-            La seule solution est qu'il existe une autre particule $\overline{C}$ telle que l'observateur dans le référentiel $\R'$ observe
+            La seule solution à ce paradoxe est qu'il existe une autre particule $\overline{C}$ telle que l'observateur dans le référentiel $\R'$ observe
             \begin{equation}
                 X_2 : D\to E+\overline{C} \text{\quad puis \quad} X_1 : \overline{C}+A\to B.
             \end{equation}
@@ -1135,7 +1158,7 @@ Louan \textsc{Mol}
     
         Quelle que soit la relativité (galiléenne ou einsteinienne), rien n'explique pourquoi les référentiels inertiels sont tels que observés. L'observation montre que le référentiel lié au soleil avec des axes pointants vers les étoiles "fixes" est un excellent référentiel inertiel. Cependant, si l'on prend du recul, ce référentiel n'est pas mieux qu'un autre. Qu'est-ce qui détermine les référentiels inertiels alors ?\\
             
-        Voici une petite expérience de pensée qui permet de mieux se rendre compte du problème. Imaginons être dans le vide, sans lumière, sans son, sans aucun repère. Juste en face de nous, flottent deux boules de whisky. Celle de gauche est sphérique et celle de droite est ellipsoïdale. On peut alors dire que la boule de gauche est immobile dans un référentiel $\R$ et que celle de droite est en rotation par rapport à $\R$. Mais qu'est-ce qui détermine ce référentiel à ce point dans l'espace ?\\
+        Voici une petite expérience de pensée qui permet de mieux se rendre compte du problème. Imaginons être dans le vide, sans lumière, sans son, sans aucun repère. Juste en face de nous, flottent deux boules de liquide, du whisky par exemple. Celle de gauche est sphérique et celle de droite est ellipsoïdale. On peut alors dire que la boule de gauche est immobile dans un référentiel $\R$ et que celle de droite est en rotation par rapport à $\R$. Mais qu'est-ce qui détermine ce référentiel à ce point dans l'espace ?\\
         
         Le physicien E. Mach avait déjà mis en évidence la relation entre les référentiels inertiels et les étoiles "fixes", c'est-à-dire la distribution de masse dans l'univers. Il a alors tenté d'appliquer ce principe en mesurant une potentielle différence de force d'inertie entre le plan de la galaxie et le plan transverse. Mais en réalité, il n'existe pas d'anisotropie de l'inertie, cependant l'idée de Mach est conceptuellement correcte.\\
         
@@ -1145,9 +1168,11 @@ Louan \textsc{Mol}
         
             Commençons par discuter le principe d'équivalence dans sa version la plus traditionnelle.
             
+            \begin{prin}[d'équivalence, première formulation]
             \begin{leftbar}
-                \textbf{Principe d'équivalence (première formulation) :}\quad La masse gravitationnelle est égale à la masse inertielle.
+                La masse gravitationnelle est égale à la masse inertielle.
             \end{leftbar}
+            \end{prin}
             
             Dans sa seconde loi, Newton nous dit que pour un corps de masse $m_i$, la force résultante qui s'exerce sur ce corps est reliée à son accélération par
             \begin{equation}
@@ -1161,31 +1186,33 @@ Louan \textsc{Mol}
             
             Mais rien ne garanti que les paramètres $m_i$ et $m_g$ soient identiques. A priori, ce sont deux propriétés distinctes d'un corps qui apparaissent dans deux phénomènes différents. La masse apparaissant dans la seconde loi de Newton est appellée \textit{masse inertielle} et la masse apparaissant dans la loi de la gravitation universelle est appelée \textit{masse gravitationnelle} (c'est la "charge gravitationnelle").\\
             
-            Si $m_i\neq m_g$, il y aurait des conséquences mesurables. Prenons l'exemple d'un pendule, dans un régime de petites oscillations, la période est donnée par
+            Si $m_i\neq m_g$, il y aurait des conséquences mesurables. Prenons l'exemple d'un pendule : dans un régime de petites oscillations, la période est donnée par
             \begin{equation}
                 T = 2\pi\sqrt{\frac{m_iL}{m_g g}}
             \end{equation}
-            où $L$ est la longueur du pendule. L'expérience d'Eötvos permet également de calculer le rapport $\nicefrac{m_i}{m_g}$ avec une très grande précision. Celle-ci fonctionne comme suit : on suspend deux corps différents à chaque extrémité d'une barre qui est elle-même suspendue à un support fixe. Alors, si les corps ont des masses de rapport $\nicefrac{m_i}{m_g}$ ($i = 1, 2$) différents, les forces d'inerties dûes à la rotation de la Terre devraient entraîner une torsion sur le fil. Cette expérience a pu montrer que $m_i = m_g$ avec une très grande précision.\\
+            où $L$ est la longueur du pendule. L'expérience d'Eötvos permet également de calculer le rapport $\nicefrac{m_i}{m_g}$ avec une très grande précision. Celle-ci fonctionne comme suit : on suspend deux corps différents à chaque extrémité d'une barre qui est elle-même suspendue à un support fixe. Alors, si les corps ont des masses de rapport $\nicefrac{m_{i}}{m_g}$ différents, les forces d'inerties dûes à la rotation de la Terre devraient entraîner une torsion sur le fil. Cette expérience a pu montrer que $m_i = m_g$ avec une très grande précision.\\
             
             En 1907, Einstein va prendre cette idée très au sérieux et partir de cette hypothèse pour construire une théorie relativiste de la gravitation qui sera aussi automatiquement une théorie de l'inertie.\\
             
-            Observons une conséquence de cette hypothèse. Supposons que l'on ait le bilan de forces suivant dans un référentiel inertiel $\R_1$.
+            Observons une conséquence de cette hypothèse. Supposons que l'on ait le bilan de forces suivant dans un référentiel inertiel $\R_1$:
             \begin{equation}
-                m_i\vv{a}_{\R_1} = m_g\vv{g} + \vv{F}
+                m_i\vv{a}_{\R_1} = m_g\vv{g} + \vv{F}.
             \end{equation}
-            Dans un référentiel $\R'$, il y a des forces d'entraînement et des forces d'inertie qui apparaissent.
+            Dans un référentiel $\R'$, il y a des forces d'entraînement et des forces d'inertie qui apparaissent:
             \begin{equation}
-                m_i\vv{a}_{\R_2} = m_g\vv{g} -m_i\vv{a}_e-m_i\vv{a}_i + \vv{F}
+                m_i\vv{a}_{\R_2} = m_g\vv{g} -m_i\vv{a}_e-m_i\vv{a}_i + \vv{F}.
             \end{equation}
-            En regroupant les termes, et en utilisant le fait que $m_i = m_g$, nous pouvons interpréter le référentiel $\R_2$ comme étant lui-même inertiel mais dont le champ de gravitation est maintenant $\vv{g}'$.
+            En regroupant les termes et en utilisant le principe d'équivalence, nous pouvons interpréter le référentiel $\R_2$ comme étant lui-même inertiel mais dont le champ de gravitation est maintenant $\vv{g}'$.
             \begin{equation}
                 m\vv{a}_{\R_2} = m(\underbrace{\vv{g} -\vv{a}_e-\vv{a}_i}_{\vv{g}'}) + \vv{F}
             \end{equation}
             Il n'est donc pas possible, si $m_i=m_g$, de distinguer les effets d'une force gravitationnelle et d'une force d'inertie : c'est le principe d'équivalence entre gravitation et inertie. Passons maintenant à une formulation plus précise du principe d'équivalence.
             
+            \begin{prin}[d'équivalence, deuxième formulation]
             \begin{leftbar}
-                \textbf{Principe d'équivalence (deuxième formulation) :}\quad Dans une région suffisamment petite de l'espace-temps, il est toujours possible de choisir un référentiel dans lequel le champ de gravitation s'annule.
+                Dans une région suffisamment petite de l'espace-temps, il est toujours possible de choisir un référentiel dans lequel le champ de gravitation s'annule.
             \end{leftbar}
+            \end{prin}
         
             Cette formulation du principe est beaucoup plus géométrique, on verra dans la suite que l'on peut considérer l'espace-temps comme un espace courbe. Le principe d'équivalence stipule qu'il est toujours possible de trouver un système de coordonnées tel que l'espace-temps est localement assimilable à un plan, c'est-à-dire à l'espace-temps plat de Minkowski. Cette idée permettra de relier le champ de gravitation aux propriétés géométriques de l'espace-temps.
         
@@ -1193,13 +1220,13 @@ Louan \textsc{Mol}
         
             \subsubsection{Déviation d'un rayon lumineux par un champ de gravitation}
             
-                Nous savons que si certains objets peuvent être vu comme allant en ligne droite dans certains référentiels, un changement de référentiel (rotation) permet de les voir se déplacer suivant une trajectoire courbe. Le principe d'équivalence implique alors que le champ de gravitation peut dévier les rayons lumineux.\\
+                Si un objet peut être vu comme allant en ligne droite dans un référentiel, un changement de référentiel (rotation) permet de le voir se déplacer suivant une trajectoire courbe. En utilisant le principe d'équivalence, ceci implique que le champ de gravitation peut dévier les rayons lumineux.\\
                 
                 Imaginons une étoile située derrière le soleil du point de vue de la Terre. On peut montrer en mécanique classique que n'importe quel corps allant à une vitesse $\vv{v} = \vv{c}$ subirait un angle de déviation
                 \begin{equation}
                     \Delta\varphi = 2\frac{GM_\odot}{ac^2}
                 \end{equation}
-                où $a$ est le paramètre d'impact. Cette formule peut être obtenue en quasi-totalité par analyse dimensionnelle mais le facteur 2, lui, provient des lois de Newton. En voyant la lumière comme composée de corps massiques on obtient alors que les rayons lumineux provenant d'une étoile derrière le soleil seraient déviés d'un angle $\Delta\varphi$.\\
+                où $a$ est le paramètre d'impact. Cette formule peut être obtenue en quasi-totalité par analyse dimensionnelle mais le facteur 2 lui provient des lois de Newton. En voyant la lumière comme composée de corps massiques on obtient alors que les rayons lumineux provenant d'une étoile derrière le soleil seraient déviés d'un angle $\Delta\varphi$.\\
                 
                 Les mêmes calculs dans la théorie d'Einstein permettent de trouver un angle de déviation
                 \begin{equation}
@@ -1207,7 +1234,7 @@ Louan \textsc{Mol}
                 \end{equation}
                 au premier ordre. Le facteur $4$ est bien différent de celui prédit par Newton.\\
                 
-                En 1919, A. Eddington a organisé une expédition lors d'une éclipse solaire totale pour mesurer l'angle de déviation ce qui a donné raison à la théorie d'Einstein. C'est une des premières grandes preuves expérimentales de la relativité générale, elle participa a attirer l'attention sur cette théorie.
+                En 1919, A. Eddington a organisé une expédition lors d'une éclipse solaire totale pour mesurer l'angle de déviation des rayons parvenant d'une étoile par le soleil. Les résultats sont précisément ceux prédit par le théorie d'Einstein. C'est une des premières validations expérimentales de la relativité générale.
             
                 \begin{figure}[H]
                 \centering
@@ -1229,34 +1256,58 @@ Louan \textsc{Mol}
             
             \subsubsection{Distorsion du temps par un champ de gravitation}
             
-                Plaçons nous dans un référentiel où il y a un champ de gravitation $\vv{g}$. Supposons qu'un émetteur $E$ émet un signal, de pulse $(\delta t)_E = t_2^E-t_1^E$. Le signal est reçu par un récepteur $R$ situé à une hauteur $h$ au dessus de $E$ aux temps $t_1^R,t_2^R$, il observe donc un pulse $(\delta t)_R = t_2^R-t_1^R$. En utilisant le principe d'équivalence, on considère le cas équivalent où $\vv{g}$ est remplacé par une accélération du référentiel dans lequel $E$ et $R$ sont immobiles. Dans ce point de vue, $E$ et $R$ ont les positions
+                On regarde les phénomènes sur une échelle de distance $h$. Quelle est la variation typique d'un potentiel gravitationnel sur échelle $h$ ? Considérons deux observateurs $A$ et $B$ au voisinage d'un astre de masse $M$ tels que $z_B-z_A\equiv h>0$ où $z$ dénote l'altitude. Le potentiel newtonnien généré par l'astre est
+                \begin{equation}
+                    V(z) = \frac{GM}{z}
+                \end{equation}
+                Ainsi, la différence de potentiel entre observée entre les points $A$ et $B$ est
+                \begin{equation}
+                    V(z_B)-V(z_A) = GM\left( \frac{1}{z_A+h} -\frac{1}{z_A}\right)=-\frac{GM}{z^2_A}h+\order{H^2} = g(z_A)h +\order{h^2}
+                \end{equation}
+                où $g$ est e champ de gravitation local. Nous obtenons $\delta V\sim gh$.
+                \begin{defn}
+                    On définit le \textit{paramètre de relativité} comme le rapport
+                    \begin{equation}
+                        \Xi = \frac{\abs{V}}{c^2}.
+                    \end{equation}
+                    où $\abs{V}$ est l'échelle de potentiel considérée.
+                \end{defn}
+                \begin{defn}
+                La \textit{limite de champ faible} exprime le fait que l'approximation newtonienne et bonne, c'est-à-dire que
+                \begin{align}
+                    \Xi\ll1.
+                \end{align}
+                \end{defn}
+                Dans notre cas, $\frac{gh}{c^2}\ll1$.\\
+            
+                On considère un champ de gravitation constant $\vv{g}=-g\vv{u}_z$ dans le référentiel $\R$ et deux observateurs : $E$ (émetteur) situé à un hauteur $z_E$ et $R$ (récepteur) situé à une hauteur $z_R = z_E+h$. Supposons que l'émetteur émette un signal, de période $(\delta t)_E = t_2^E-t_1^E$. Le signal est reçu par un le récepteur aux temps $t_1^R,t_2^R$, il observe donc une période $(\delta t)_R = t_2^R-t_1^R$. En vertu du principe d'équivalence, ce champ de gravitation est équivalent à un observateur uniformément accéléré dans la direction $\vv{u}_z$. De ce point de vue, $E$ et $R$ ont les positions
                 \begin{align}
                     z_E(t) &=  \frac{1}{2}gt^2 \\
-                    z_R(t) &= h + \frac{1}{2}gt^2
+                    z_R(t) &= h  \frac{1}{2}gt^2
                 \end{align}
-                Si $z_1(t)$ et $z_2(t)$ sont les trajectoires des pulses alors et que l'on prend $t_1^E = 0$ on a
+                Si $z_1(t)$ et $z_2(t)$ sont les trajectoires des pulses alors
                 \begin{align}
-                    z_1(t) &= ct \\
+                    z_1(t) &= c(t-t^E_1) \\
                     z_2(t) &= c(t-t_2^E)
                 \end{align}
                 
                 % schéma Eliott
                 
-                Calculons les temps de réception.
+                Calculons les temps de réception. Par définition, on doit avoir
                 \begin{subequations}
                 \begin{empheq}[left=\empheqlbrace]{align}
-                    z_1(t_1^R) &= z_R(t_1^R) \\
+                    z_1(t_1^R-t^E_1) &= z_R(t_1^R) \\
                     z_2(t_2^R) &= z_R(t_2^R)
                 \end{empheq}
                 \end{subequations}
-                en utilisant les définitions on obtient
+                autrement dit,
                 \begin{subequations}
                 \begin{empheq}[left=\empheqlbrace]{align}
-                    ct_1^R &= h+\frac{1}{2}g(t_1^R)^2 \\
-                    c(t_2^R-t_2^E) &= h+\frac{1}{2}g(t_2^R)^2
+                    ct_1^R &= h-\frac{1}{2}g(t_1^R)^2 \\
+                    c(t_2^R-t_2^E) &= h-\frac{1}{2}g(t_2^R)^2
                 \end{empheq}
                 \end{subequations}
-                Si l'on considère le cas $\dot{z}_1(t),\dot{z}_2(t)\ll c$ et $gt\ll c$, on peut alors développer au premier ordre après avoir soustrait les deux équations précédentes.
+                Si l'on considère le cas $\dot{z}_1(t),\dot{z}_2(t)\ll c$ et $gt\ll c$ (limite de champ faible), on peut alors développer au premier ordre après avoir soustrait les deux équations précédentes.
                 \begin{equation}
                     c\left( (\delta t)_R-(\delta t)_E \right) = \frac{1}{2}g\left( (t_2^R)^2-(t_1^R)^2 \right) \approx \frac{gh}{c}(\delta t)_R
                 \end{equation}
@@ -1273,7 +1324,7 @@ Louan \textsc{Mol}
                     \frac{\Delta\nu}{\nu} = -\frac{gh}{c^2}
                 \end{equation}
                 
-                Voici un second raisonnement : le principe d'équivalence implique qu'un champ de gravité constant est équivalent à un observateur accéléré avec une accélération $g$ dans l'autre sens que le champ de gravitation. Lorsque cet observateur arrive au niveau de $R$, il coïncide avec un observateur de vitesse constante $v = g(\delta t)_E = \frac{gh}{c}$. Par effet Doppler, ce dernier observe une plus petite fréquence que celle à laquelle $E$ a émit le signal.
+                Voici un second raisonnement : lorsque l'observateur accéléré arrive au niveau de $R$, il coïncide avec un observateur de vitesse constante $v = g(\delta t)_E = \frac{gh}{c}$. Par effet Doppler, ce dernier observe une plus petite fréquence que celle à laquelle $E$ a émit le signal.
                 \begin{equation}
                     \frac{\nu_E}{\nu_R} = \sqrt{\frac{1+\frac{gh}{c^2}}{1-\frac{gh}{c^2}}}\approx 1+\frac{gh}{c^2}.
                 \end{equation}
@@ -1282,31 +1333,35 @@ Louan \textsc{Mol}
                 \begin{equation}
                     \frac{\Delta\nu}{\nu} = -\frac{\Delta\phi}{c^2}
                 \end{equation}
-                où $\varphi$ est le potentiel du champ $\vv{g}$, c'est-à-dire le champ tel que $\vv{g} = -\vv{\nabla}\varphi$.\\
+                où $\varphi$ est le potentiel du champ $\vv{g}$, c'est-à-dire le champ tel que $\vv{g} = -\vv{\nabla}\varphi$.
                 
-                Pour un rayon lumineux en provenance du soleil, $\varphi=-\frac{GM_\odot}{r}$ et donc
-                \begin{equation}
-                    \Delta\varphi = -\frac{GM_\odot}{r_{\odot-\oplus}} + \frac{GM_\odot}{R_\odot}\approx\frac{GM_\odot}{R_\odot}.
-                \end{equation}
-                Ceci donne
-                \begin{equation}
-                    \frac{\Delta\nu}{\nu} \approx - \frac{GM_\odot}{R_\odot c^2} = -\varepsilon_\odot \sim 10^{-6}.
-                \end{equation}
-                Il y a donc un décalage vers le rouge lorsque les rayons remontent le champ de gravitation. Cet effet est observable pour les raies spectrales.\\
+                \begin{exmp}
+                    Pour un rayon lumineux en provenance du soleil, $\varphi=-\frac{GM_\odot}{r}$ et donc
+                    \begin{equation}
+                        \Delta\varphi = -\frac{GM_\odot}{r_{\odot-\oplus}} + \frac{GM_\odot}{R_\odot}\approx\frac{GM_\odot}{R_\odot}.
+                    \end{equation}
+                    Ceci donne
+                    \begin{equation}
+                        \frac{\Delta\nu}{\nu} \approx - \frac{GM_\odot}{R_\odot c^2} = -\varepsilon_\odot \sim 10^{-6}.
+                    \end{equation}
+                    Il y a donc un décalage vers le rouge lorsque les rayons remontent le champ de gravitation. Cet effet est observable pour les raies spectrales.
+                \end{exmp}
                 
-                On voit le temps des satellites en orbite autour de la Terre dilaté par effet cinématique (relativité restreinte) mais il y a aussi un effet inverse dû au champ de gravitation terrestre. On verra qu'il existe une orbite où ces effets ces compensent. On appelle \textit{orbite haute} une orbite où les effets du champ gravitationnel l'emportent et \textit{orbite basse} une orbite où les effets cinématiques l'emportent.
+                On voit le temps des satellites en orbite autour de la Terre dilaté par effet cinématique (relativité restreinte) mais il y a aussi un effet inverse dû au champ de gravitation terrestre. On verra qu'il existe une orbite où ces effets se compensent.
     
         \subsection{Principe de covariance générale}
         
-            Le principe d'équivalence dit que, localement dans l'espace-temps, les effets du champ de gravitation peuvent êtres annulé par un choix de référentiel approprié (référentiel localement inertiel). Ceci veut dire que les effets de gravitation peuvent se déduire par un changement en partant du référentiel localement inertiel dans lequel les lois de la physique sont connues. Donc, le principe d'équivalence permet de déduire les effets du champ de gravitation lorsque l'on connaît les lois de la physique en l'absence de gravitation, c'est un \textit{principe de covariance} et non un \textit{principe de symétrie} (\textit{principe d'invariance}).\\
+            Le principe d'équivalence dit que, localement dans l'espace-temps, les effets du champ de gravitation peuvent êtres annulé par un choix de référentiel approprié (référentiel localement inertiel). Pour connaître les lois de la physique en présence de gravitation dans un référentiel quelconque $\R$, il suffit donc faire un changement de référentiel à partir d'un référentiel localement inertiel (où les lois des la physique sont déjà connues mais sans gravitation) à $\R$. Donc, le principe d'équivalence permet de déduire les effets du champ de gravitation lorsque l'on connaît les lois de la physique en l'absence de gravitation, c'est un \textit{principe de covariance} et non un \textit{principe de symétrie} (ou \textit{principe d'invariance}).\\
             
-            En particulier ce principe est de nature fondamentalement différente du principe de relativité einsteinienne qui est un principe d'invariance qui dit que les lois de la physique restent les mêmes (invariantes) sous les transformations du groupe de Poincaré. Ce dernier "contraint" la physique à s'écrire en terme de vecteurs (au sens de Poincaré), pas le principe d'équivalence.\\
+            En particulier, ce principe est de nature fondamentalement différente du principe de relativité einsteinienne qui est un principe d'invariance. Ce dernier dit que les lois de la physique restent les mêmes (invariantes) sous les transformations du groupe de Poincaré. Ceci "contraint" la physique à s'écrire en terme de vecteurs (au sens de Poincaré), pas le principe d'équivalence.\\
             
             Néanmoins, les équations du champ de gravitation devront être décrites d'une manière générale dans tout les référentiels possibles, puisque l'effet des changements de référentiels n'est rien d'autre qu'un champ de gravitation. C'est le \textit{principe de covariance générale}. Il faut écrire les lois de la physique dans tout les référentiels. C'est une autre manière de reformuler le principe d'équivalence.
             
+            \begin{prin}[de covariance générale]
             \begin{leftbar}
-            \textbf{Principe de covariance générale}\quad Les lois de la physique doivent êtres écrites sous une forme qui ne fait référence à aucun référentiel.
+            Les lois de la physique doivent êtres écrites sous une forme qui ne fait référence à aucun référentiel.
             \end{leftbar}
+            \end{prin}
             
             Le principe qui sous-tend la notion de covariance générale est qu'il n'existe a priori aucune coordonnée. Ces dernières sont seulement des artifices mathématiques utilisés pour décrire la nature et ne devraient donc jouer aucun rôle dans l'expression des lois de la physique. C'est une redondance et pas une symétrie, comme pour les transformations de jauge (ce qu'on appelle symétrie de jauge n'est en fait pas une symétrie).
     
@@ -1316,7 +1371,7 @@ Louan \textsc{Mol}
         
             En mécanique classique, la distance entre deux points est absolue. Ceci rend, entre autre, la notion de solide possible (ensemble de point à distance fixe). Mais en relativité restreinte ce n'est plus le cas. \\
             
-            Notons $\M$ l'espace-temps. Quelle que soit sa nature, il doit être possible de "mettre" un système de coordonnées sur cet espace. L'espace-temps doit donc, en quelque sorte, être assimilable à $\mathbb{R}^4$. Rien ne dit qu'il doit exister une bijection de l'espace-temps de $\M$ dans $\mathbb{R}^4$ mais on doit en tout cas pouvoir couvrir $\M$ de domaines qui soient en bijection avec $\mathbb{R}^4$. C'est ici qu'intervient la notion de \textit{variété}.\\
+            Notons $\M$ l'espace-temps. Quelle que soit sa nature, il doit être possible de "mettre" un système de coordonnées sur cet espace. L'espace-temps doit donc en quelque sorte être assimilable à $\mathbb{R}^4$. Rien ne dit qu'il doit exister une bijection de l'espace-temps de $\M$ dans $\mathbb{R}^4$ mais on doit en tout cas pouvoir couvrir $\M$ de domaines qui sont en bijection avec $\mathbb{R}^4$. C'est ici qu'intervient la notion de \textit{variété}.\\
             
             On commence par définir les fonctions qui font l'intermédiaire entre un ensemble quelconque (ici $\M$) et $\mathbb{R}^n$.
             \begin{defn}
@@ -1324,19 +1379,19 @@ Louan \textsc{Mol}
                 \begin{equation}
                     \varphi:U\to\varphi(U) \subset\mathbb{R}^n
                 \end{equation}
-                où $U$ est un sous-ensemble de $M$ appelé \textit{domaine de carte} et $\varphi(U)$ un ouvert de $\mathbb{R}^n$. La fonction $\varphi$ est appellée \textit{application de coordonnées}.
+                où $U$ est un sous-ensemble de $\M$ appelé \textit{domaine de carte} et $\varphi(U)$ un ouvert de $\mathbb{R}^n$. La fonction $\varphi$ est appellée \textit{application de coordonnées}.
             \end{defn}
             
             Ce nom se justifie par le fait que notre fonction $\varphi$ est entièrement déterminée par ses coordonnées telles que $\varphi = (x^1, x^2, \ldots, x^n)$ où $x^i: U \to \mathbb{R}$ quel que soit $i$. Pour pouvoir couvrir tout l'espace-temps, nous avons besoin d'un ensemble de cartes dont les domaines recouvrent $\M$.
             
             \begin{defn}
-                Un \textit{atlas différentiable} $\A$ de dimension $n$ pour un ensemble $M$ est une collection 
+                Un \textit{atlas différentiable} $\A$ de dimension $n$ pour un ensemble $\M$ est une collection 
                 \begin{equation}
                     \A = \left\{ (U_i,\varphi_i)~|~i\in I \right\}
                 \end{equation}
-                de cartes locales de dimension $n$ pour $M$ telle que
+                de cartes locales de dimension $n$ pour $\M$ telle que
                 \begin{enumerate}[label=\textit{(\roman*)}]
-                    \item $\bigcup_{i\in I} U_i = M$
+                    \item $\bigcup_{i\in I} U_i = \M$
                     \item si $U_i\cap U_j \neq \varnothing$ alors $\varphi_i(U_i\cap U_j)$ est un ouvert de $\Rm$ et les cartes $(U_i,\varphi_i)$ et $(U_j,\varphi_j)$ sont \textit{compatibles}, c'est-à-dire que l'application de changement de carte
                         \begin{equation}
                             \varphi_j\circ\varphi_i^{-1}:\varphi_i(U_i\cap U_j)\subset\Rm\to\varphi_j(U_i\cap U_j)\subset\Rm
@@ -1345,7 +1400,7 @@ Louan \textsc{Mol}
                 \end{enumerate}
             \end{defn}
             
-            Notons que nous travaillerons uniquement avec des applications différentiables. Pourquoi ne pas imposer directement que les applications de coordonnées soient différentiables ? A priori, $M$ est juste un ensemble et ne comporte aucune structure supplémentaire, cette notion n'aurait donc pas de sens. De plus, nous verrons qu'un changement de carte correspond à un changement de référentiel. Les changements de carte doivent donc être différentiables afin de pouvoir écrire les lois de la physique (EDP) dans tous les référentiels. Cela justifie l'utilisation de variété différentiable, et non d'un autre type de variété.
+            Notons que nous travaillerons uniquement avec des applications différentiables. Pourquoi ne pas imposer directement que les applications de coordonnées soient différentiables ? A priori, $\M$ est juste un ensemble et ne comporte aucune structure supplémentaire, cette notion n'aurait donc pas de sens. De plus, nous verrons qu'un changement de carte correspond à un changement de référentiel. Les changements de carte doivent donc être différentiables afin de pouvoir écrire les lois de la physique (EDP) dans tous les référentiels. Ceci justifie l'utilisation de variétés dites "différentiables", et pas d'un autre type de variété.
             
             \begin{rmk}
                 La condition de changement de carte différentiable permet en fait plus que cela. Lorsqu'on a une application entre deux variétés, on peut définir ce que différentiable signifie pour celle-ci. Pour que cette notion ne dépende pas des cartes choisies, il faut que les changement de carte soient eux aussi différentiables.
@@ -1354,13 +1409,13 @@ Louan \textsc{Mol}
             La prochaine définition demande de connaître plusieurs notions mathématiques que nous ne traiterons pas en détail dans ces notes.
             
             \begin{defn}
-                Une \textit{variété différentiable} $(M,\A)$ de dimension $n$ est un ensemble $M$ munit d'un atlas différentiable de dimension $n$ tel que la topologie canonique associée soit séparée au sens de Hausdorff et à base dénombrable.
+                Une \textit{variété différentiable} $(\M,\A)$ de dimension $n$ est un ensemble $\M$ munit d'un atlas différentiable de dimension $n$ tel que la topologie canonique associée soit séparée au sens de Hausdorff et à base dénombrable.
             \end{defn}
             
-            Revenons sur les notions impliquées dans cette définition. Il possible de montrer qu'un ensemble de domaines de carte forme une topologie, on l'appelle topologie canonique. On veut que cette topologie soit séparée au sens de Hausdorff. Cela qui signifie que si l'on prend deux points $a, b \in M$, il doit exister deux ouverts disjoints $U$ et $V$ tels que $a \in U$ et $b \in V$. Cela permet d'éviter le "dédoublement" de points. Pour finir, la topologie canonique doit aussi être à base dénombrable, c'est-à-dire qu'il doit exister un ensemble dénombrable d'ouverts tels que n'importe quel autre ouvert peut s'exprimer comme une union (potentiellement dénombrable) d'ouverts de cet ensemble. Cette condition assure une certaine cohérence entre la dimension de la variété et l'ensemble en question. Sans cela, il serait, par exemple, possible de munir l'ensemble $\mathbb{R}^2$ d'un atlas de sorte à obtenir une variété différentiable de dimension $1$.
+            Revenons sur les notions impliquées dans cette définition. Il possible de montrer qu'un ensemble de domaines de carte forme une topologie, on l'appelle \textit{topologie canonique}. On veut que cette topologie soit \textit{séparée au sens de Hausdorff}. Cela signifie que si l'on prend deux points $a, b \in \M$, il doit exister deux ouverts disjoints $U$ et $V$ tels que $a \in U$ et $b \in V$. Cela permet d'éviter le "dédoublement" de points. Pour finir, la topologie canonique doit aussi être \textit{à base dénombrable}, c'est-à-dire qu'il doit exister un ensemble dénombrable d'ouverts tels que n'importe quel autre ouvert peut s'exprimer comme une union (au plus dénombrable) d'ouverts de cet ensemble. Cette condition assure une certaine cohérence entre la dimension de la variété et l'ensemble en question. Sans cela, il serait, par exemple, possible de munir l'ensemble $\mathbb{R}^2$ d'un atlas de sorte à obtenir une variété différentiable de dimension $1$.
             
             \begin{rmk}
-                Pour être rigoureux, on distingue la notion de structure différentiable et de variété différentiable. Une structure différentiable est une classe d'équivalence d'atlas différentiables. On dit que deux atlas sont équivalents si toutes leurs cartes sont compatibles, c'est-à-dire si l'union des deux atlas forme toujours un atlas différentiable. Notons que la donnée d'un atlas suffit à définir une classe d'équivalence. On définit alors une variété différentiable comme étant un ensemble munit d'une structure différentiable et dont la topologie canonique respecte les propriétés énoncées ci-dessus. Si l'on a une application $a$ entre deux variétés, on dit que $a$ est un homéomorphisme (notion d'équivalence pour les topologies) si $a$ est bijective et bicontinue. Les deux variétés sont alors homéomorphes. Si en plus $a$ est bidifférentiable, c'est un difféomorphisme et les variétés sont difféomorphes (notion d'équivalence pour les variétés différentiables). Si deux variétés sont difféomorphes elles sont aussi homéomorphes mais pas le contraire. Ceci permet au même ensemble d'avoir la même topologie canonique mais des structures différentiables non-difféomorphes. Par exemple il a été montré (Milnor, 1907) que la sphère $S^7$ munit de la topologie induite par la topologie usuelle de $\mathbb{R}^8$ possède 28 structures de variétés différentiables non-difféomorphes.
+                Pour être rigoureux, on distingue la notion de structure différentiable et de variété différentiable. Une structure différentiable est une classe d'équivalence d'atlas différentiables. On dit que deux atlas sont équivalents si toutes leurs cartes sont compatibles, c'est-à-dire si l'union des deux atlas forme toujours un atlas différentiable. Notons que la donnée d'un atlas suffit à définir une classe d'équivalence. On définit alors une variété différentiable comme étant un ensemble munit d'une structure différentiable et dont la topologie canonique respecte les propriétés énoncées ci-dessus. Si l'on a une application $a$ entre deux variétés, on dit que $a$ est un homéomorphisme (notion d'équivalence pour les topologies) si $a$ est bijective et bicontinue. Les deux variétés sont alors homéomorphes. Si en plus $a$ est bidifférentiable, c'est un difféomorphisme et les variétés sont difféomorphes (notion d'équivalence pour les variétés différentiables). Si deux variétés sont difféomorphes elles sont aussi homéomorphes mais pas le contraire. Ceci permet au même ensemble d'avoir la même topologie canonique mais des structures différentiables non-difféomorphes. Par exemple il a été montré (Milnor, 1956) que la sphère $S^7$ munit de la topologie induite par la topologie usuelle de $\mathbb{R}^8$ possède 28 structures de variétés différentiables non-difféomorphes.
             \end{rmk}
             
             \begin{rmk}
@@ -1397,15 +1452,17 @@ Louan \textsc{Mol}
             
             Si $z_P$ est un système de coordonnées localement plat en $P$, et $Q\in U$ alors $z_P^\alpha(Q)$ sont les coordonnées de $Q$ dans le système de coordonnées localement inertiel en $P$.\\
             
-            Nous avons vu précédemment que référentiel et système de coordonnées sont des notions équivalentes. Un changement de référentiel n'est donc rien d'autre qu'un changement de carte. Soient deux applications de coordonnées (deux système de coordonnées) $x^\mu$ et $x'^\mu$ au point $P\in\M$, alors on peut alors exprimer les coordonnées $x'^\mu(P)$ en fonction des coordonnées $x^\mu(P-$.
+            Nous avons vu précédemment que référentiel et système de coordonnées sont des notions équivalentes. Un changement de référentiel n'est donc rien d'autre qu'un changement de carte. Soient deux applications de coordonnées (deux système de coordonnées) $x^\mu$ et $x'^\mu$ au point $P\in\M$, alors on peut alors exprimer les coordonnées $x'^\mu(P)$ en fonction des coordonnées $x^\mu(P)$.
             \begin{equation}\label{eq:chgtref}
                 x'^\mu(P) = (x'\circ x^{-1})(x^\mu(P))
             \end{equation}
             
-            Une ligne d'univers est simplement une courbe $x^\mu(\lambda)$ dans l'espace-temps où $\lambda$ est un paramètre réel quelconque qui paramétrise cette courbe.
-            \begin{equation}
-                \gamma : I\subset\mathbb{R} \to \M
-            \end{equation}
+            \begin{defn}
+                Une \textit{ligne d'univers} est une courbe $x^\mu(\lambda)$ dans l'espace-temps où $\lambda$ est un paramètre réel quelconque qui paramétrise cette courbe.
+                \begin{equation}
+                    \gamma : I\subset\mathbb{R} \to \M
+                \end{equation}
+            \end{defn}
             On peut directement obtenir une courbe dans $\mathbb{R}^4$ à partir de celle dans $\mathcal{M}$.
             \begin{equation}
                 x^\mu(\lambda)\equiv(x\circ\gamma)(\lambda)
@@ -1650,7 +1707,7 @@ Louan \textsc{Mol}
             \end{leftbar}\end{prop}
             
             \begin{proof}
-                On peut définir des symboles $\gamma^\mu_{\nu\rho}$ comme \ref{eq:gammag} et observer ces symboles satisfont les trois propriétés que la proposition \ref{prop:propgamma}. Dans ce cas, dans u système de coordonnées localement inertielles,
+                On peut définir des symboles $\gamma^\mu_{\nu\rho}$ comme \ref{eq:gammag} et observer ces symboles satisfont les trois propriétés que la proposition \ref{prop:propgamma}. Dans ce cas, dans un système de coordonnées localement inertielles,
                 \begin{equation}
                     \Gamma^\mu_{\nu\rho}(P) = \gamma^\mu_{\nu\rho}(P) = 0
                 \end{equation}
@@ -1685,13 +1742,13 @@ Louan \textsc{Mol}
             
         \subsection{Limite non-relativiste et de champ faible}
             
-            Comme on vient de le voir, l'équation du mouvement d'une particule en chute libre est 
+            L'équation du mouvement d'une particule en chute libre est 
             \begin{equation}
                 \frac{d^2x^\rho}{d\tau^2}+\Gamma^\rho_{\mu\nu}\frac{dx^\mu}{d\tau}\frac{dx^\nu}{d\tau} = 0.
             \end{equation}
             La force de gravitation dépend donc de la vitesse (comme la force de Lorentz) comme les forces d'inerties ce qui est logique car on peut voir la gravitation comme une généralisation des forces d'inertie.\\
             
-            La limite non relativiste est $c\to\infty$ implique que $t = \tau$ et donc
+            La limite non relativiste $c\to\infty$ implique que $t = \tau$ et donc
             \begin{equation}
                 \frac{d^2x^0}{d\tau^2} = 0.
             \end{equation}
@@ -1726,7 +1783,7 @@ Louan \textsc{Mol}
                 c^2\frac{1}{2}\p_i g_{00} &= g^i \\
                 \Leftrightarrow\quad \p_i g_{00} &= \frac{2g^i}{c^2} 
             \end{align}
-            On peut écrire $\vv{g}=-\vv{\nabla}(\phi)$ où $\phi$ est le potentiel gravitationnel et $g_{00}=-1+h$ pour $h$ une petite perturbation. La relation ci-dessus implque que
+            On peut écrire $\vv{g}=-\vv{\nabla}(\phi)$ où $\phi$ est le potentiel gravitationnel et $g_{00}=-1+h$ pour $h$ une petite perturbation. La relation ci-dessus implique que
             \begin{equation}
                 \vv{\nabla}(g_{00}) = \vv{\nabla}(h) = \frac{2\vv{g}}{c^2} = -\frac{2}{c^2}\vv{\nabla}(\phi)
             \end{equation}
@@ -1749,9 +1806,9 @@ Louan \textsc{Mol}
 
 \chapter{Calcul tensoriel}
 
-    Dans ce chapitre, nous allons introduire toutes les notions de géométrie différentielle nécessaire pour la suite du cours. Nous avons vu que pour étudier une espace courbe il faut nécessaire d'introduire le concept de variété. La prochaine étape et de formaliser la notion de grandeur physique. Une grandeur physique est associée à un champ tensoriel sur la variété. Pour pouvoir mettre au point des équation qui décrivent ce grandeurs, on doit mettre au point une notion de dérivée pour les champ de tenseurs. On introduit alors trois opérateur différentiels : la dérivée extérieure (pour les $p$-forme), la dérivée de Lie (pour les champs de vecteurs) et finalement le dérivée covariante (pour les tenseurs). Le deux premier opérateurs peuvent être définit à partir de la structure de variété mais le dernier nécessite une structure supplémentaire : la connexion. Ceci permettra décrire les équation du champ de matière (qui régit la gravité) de manière covariante dans le chapitre suivant.
+    Dans ce chapitre, nous allons introduire toutes les notions de géométrie différentielle nécessaire pour la suite du cours. Nous avons vu que pour étudier un espace-temps courbe il faut introduire le concept de variété. La prochaine étape et de formaliser la notion de grandeur physique. Une grandeur physique est associée à un champ tensoriel sur la variété. Pour pouvoir mettre au point des équation qui décrivent ce grandeurs, on doit mettre au point une notion de dérivée pour les champ de tenseurs. On introduit alors trois opérateur différentiels : la dérivée extérieure (pour les $p$-forme), la dérivée de Lie (pour les champs de vecteurs) et finalement le dérivée covariante (pour les tenseurs). Le deux premiers opérateurs peuvent être définit à partir de la structure de variété mais le dernier nécessite une structure supplémentaire : la connexion. Ceci permettra décrire les équations du champ de matière qui régissent la gravité de manière covariante dans le chapitre suivant.
     
-        \section{Approche en géométrie différentielle}
+        \section{Vecteurs et tenseurs en géométrie différentielle}
         
             \subsection{Espace tangent}
                 
@@ -1875,7 +1932,7 @@ Louan \textsc{Mol}
                     L'\textit{espace cotangent} à $\M$ en $P$ est le dual de l'espace tangent $\M$ en $P$, noté $(T_P\M)^*$.
                 \end{defn}
                 
-                Soit $\{e_\mu\}$ une base de l'esapce tangent $T_P\M$. Si $\{e^\mu\}$ est la base de correspondante de $(T_P\M)^*$, on doit avoir
+                Soit $\{e_\mu\}$ une base de l'espace tangent $T_P\M$. Si $\{e^\mu\}$ est la base de correspondante de $(T_P\M)^*$, on doit avoir
                 \begin{equation}
                     e^\mu(e_\nu) = \delta^\mu_\nu.
                 \end{equation}
@@ -2303,7 +2360,10 @@ Louan \textsc{Mol}
                     Soit un tenseur $t$ d'ordre $2$. On dit que ce tenseur est \textit{non-dégénéré} si la matrice de ses composantes est inversible.
                 \end{defn}
                 
-                Remarquons que la notion de dégénérescence dépend du point $P$ considéré.\\
+                Remarquons que la notion de dégénérescence dépend du point $P$ considéré.
+                
+            \subsection{Tenseur métrique}
+                
                 Après cette discussion, nous pouvons définir le tenseur métrique.
                 
                 \begin{defn}
@@ -2758,6 +2818,8 @@ Louan \textsc{Mol}
                         \nabla_\mu t^{\mu_1\dots\mu_p}_{\nu_i\dots\nu_q} ~\hat{=}~ \p_\mu t^{\mu_1\dots\mu_p}_{\nu_i\dots\nu_q}+\sum_{r=1}^p \Gamma^{\mu_r}_{\mu\rho_r}t^{\mu_1\dots\mu_{r-1}\rho_r\mu_{r+1}\dots\mu_p}_{\nu_i\dots\nu_q} - \sum_{r=1}^q \Gamma^{\rho_r}_{\mu\nu_r}t^{\mu_1\dots\mu_p}_{\nu_i\dots\nu_{r-1}\rho_r\nu_{r+1}\dots\nu_q}
                     \end{equation}
                 \end{defn}
+                
+                L'opérateur $\nabla_\mu t^{\mu_1\dots\mu_p}_{\nu_i\dots\nu_q}$ décrit comment on doit prendre le variation du champ $t$ :  on doit tenir compte de sa variation propre (premier terme) mais aussi de la modification des composantes par transport parallèle du fait que la base locales est susceptible de changer lorsque l'on migre d'un point $P\in\M$ à un point $P+dP$ tout proche. Cet opérateur réalise la connexion (affine) entre les différents espaces tangents à la variété.
                 
                 \begin{exmp}${}$
                     \begin{itemize}[label = \textbullet]
@@ -5379,7 +5441,7 @@ Louan \textsc{Mol}
         
             Traitons le terme $M\rho^3$ perturbativement. C'est-à-dire que l'on peut se limiter au développement au premier ordre. Pour rappel, si $\varepsilon\ll1$,
             \begin{equation}
-                \frac{1}{\sqrt{1-\varepsilon}}\approx1-\frac{\varepsilon}{2}
+                \frac{1}{\sqrt{1+\varepsilon}}\approx1-\frac{\varepsilon}{2}
             \end{equation}
             et donc
             \begin{align}
@@ -5613,12 +5675,12 @@ Louan \textsc{Mol}
             \begin{defn}
                 On définit les \textit{coordonnées de genre lumière}
                 \begin{align}
-                    t_1 ~&\hat{=}~ t+r_*(r)-r
+                    t_1 ~&\hat{=}~ t+r_*(r)-r\\
                     u_1 ~&\hat{=}~ t_1+r
                 \end{align}
                 pour une géodésique entrante et
                 \begin{align}
-                    t_2 ~&\hat{=}~ t-r_*(r)-r
+                    t_2 ~&\hat{=}~ t-r_*(r)-r\\
                     u_2 ~&\hat{=}~ t_2+r
                 \end{align}
                 pour une géodésique sortante.
