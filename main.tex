@@ -1458,9 +1458,9 @@ Louan \textsc{Mol}
             \end{equation}
             
             \begin{defn}
-                Une \textit{ligne d'univers} est une courbe $x^\mu(\lambda)$ dans l'espace-temps où $\lambda$ est un paramètre réel quelconque qui paramétrise cette courbe.
+                Une \textit{ligne d'univers} est une courbe différentiable dans la variété, c'est-à-dire une application
                 \begin{equation}
-                    \gamma : I\subset\mathbb{R} \to \M
+                    \gamma : I\subset\mathbb{R} \to \M.
                 \end{equation}
             \end{defn}
             On peut directement obtenir une courbe dans $\mathbb{R}^4$ à partir de celle dans $\mathcal{M}$.
@@ -1812,9 +1812,7 @@ Louan \textsc{Mol}
         
             \subsection{Espace tangent}
                 
-                On peut se poser la question suivante : comment définir le déplacement en physique ? Imaginons être dans le vide, comment savoir si on se déplace ou pas ? S'il y a un champ dans cette région de l'espace (champ de densité de masse, champ électrique, ...), on peut dire que l'on est en mouvement si on observe une variation de ce champ. On pourrait aussi déduire que c'est le champ qui se déplace et ainsi que l'on est fixe, mais si le champ est réparti dans tout l'espace c'est une notion équivalente. Pour cela, on introduit la notion de vecteur tangent à un point d'une variété. Intuitivement, un vecteur tangent va être un objet permettant de mesurer la variation d'un champ $f:\M\to\mathbb{R}$ dans la direction du vecteur entre deux points très proches. Mathématiquement, on parle d'opérateur différentiel de premier ordre.\\
-                
-                Soit une variété différentielle $\M$ de dimension $n$, $P\in\M$ et $x$ une carte en $P$.\\
+                On peut se poser la question suivante : comment définir le déplacement en physique ? Imaginons être dans le vide, comment savoir si on se déplace ou pas ? S'il y a un champ dans cette région de l'espace (champ de densité de masse, champ électrique, ...), on peut dire que l'on est en mouvement si on observe une variation de ce champ. On pourrait aussi déduire que c'est le champ qui se déplace et que nous sommes fixe.  Si le champ est réparti dans tout l'espace, c'est une notion équivalente. Pour cela, on introduit la notion de vecteur tangent à un point d'une variété. Intuitivement, un vecteur tangent va être un objet permettant de mesurer la variation d'un champ $f:\M\to\mathbb{R}$ dans la direction du vecteur entre deux points très proches. Mathématiquement, on parle d'opérateur différentiel de premier ordre.
                 
                 \begin{defn}
                     Soit $\M$ une variété différentiable et $P\in\M$. Un \textit{vecteur tangent} à $\M$ en $P$ est une application linéaire $X_P:C^\infty(\M,\mathbb{R})\to\mathbb{R}$ telle que
@@ -1827,57 +1825,65 @@ Louan \textsc{Mol}
                 \begin{defn}
                     L'\textit{espace tangent} à $\M$ en $P$, noté $T_P\M$, est définit comme l'ensemble des vecteurs tangents à $\M$ en $P$.
                 \end{defn}
-                On peut montrer que l'espace tangent est un espace vectoriel réel.\\
+                
+                \begin{prop}
+                \begin{leftbar}
+                    L'espace tangent en un point est un espace vectoriel réel de même dimension que la variété.
+                \end{leftbar}
+                \end{prop}
                 
                 Cette définition abstraite ne donne pas beaucoup d'intuition sur la nature des vecteurs tangents. La règle de Leibniz fait penser aux dérivées, cependant définir une dérivée sur la variété n'est pas claire. Pour faire cela, on utilise le fait que les composantes $x^\mu$ des applications de coordonnées $x$ peuvent servir de "coordonnées" locales (tout en gardant à l'esprit que ces "coordonnées" sont des applications de $\M$ dans $\mathbb{R}$). On peut définir une dérivée en fonction des coordonnées locales comme
                 \begin{equation}
-                \p_\mu\equiv\frac{\p}{\p x^\mu}\bigg|_P:\left(
+                \frac{\p}{\p x^\mu}\bigg|_P:\left(
                 \begin{array}{ccc}
                     C^\infty(\M,\mathbb{R}) & \longrightarrow & \mathbb{R} \\
-                    f & \longmapsto & \frac{\p}{\p x^\mu}\bigg|_P(f) ~\hat{=}~ \frac{\p}{\p x^\mu_P}(f\circ x^{-1})(x^0_P,\dots,x^3_P)\big|_{x(P)}
+                    f & \longmapsto & \frac{\p}{\p x^\mu}\bigg|_P(f) ~\hat{=}~ \frac{\p}{\p x^\mu}(f\circ x^{-1})(x^0(P),\dots,x^3(P))
                 \end{array}
                 \right).
                 \end{equation}
                 
                 Il est claire que ces fonctions sont des vecteurs tangents en $P$ mais rien ne garanti que c'est la forme la plus générale. Il est en fait possible de montrer que n'importe quel vecteur tangent $X_P$ peut s'écrire comme une combinaison linéaire de dérivées partielles en fonction des coordonnées locales :
                 \begin{equation}
-                    V_P = \sum_{\mu=0}^3 V^\mu \frac{\p}{\p x^\mu}\bigg|_P
+                    X_P = \sum_{\mu=0}^3 X^\mu \frac{\p}{\p x^\mu}\bigg|_P
                 \end{equation}
                 où $V^\mu\in\mathbb{R}$.
                 
                 \begin{rmk}
-                    Lorsque le contexte est clair, nous ne noterons pas le point de tangence du vecteur : $V_P\equiv V$.
+                    Lorsque le contexte est clair, nous ne noterons pas le point de tangence du vecteur : $X\equiv X_P$, $\p_\mu\equiv\eval{\frac{\p}{\p x^\mu}}_P$.
                 \end{rmk}
                 
                 \begin{prop}\begin{leftbar}
-                    L'espace tangent $T_P\M$ est un espace vectoriel réel de même dimension que $\M$. De plus,
+                    L'ensemble
                     \begin{equation}
-                        \left\{ \frac{\p}{\p x^\mu}\bigg|_P \right\}
+                        \left\{ \frac{\p}{\p x^\mu}\bigg|_P \right\}_{\mu=1,\dots,n}
                     \end{equation}
-                    est une base de $T_P\M$. Cette base est appellée \textit{base naturelle}.
+                    forme une base de $T_P\M$. Cette base est appellée \textit{base naturelle}.
                 \end{leftbar}\end{prop}
                 
-                Comme nous l'avons introduit, il est difficile de se faire de se faire une intuition pour les vecteurs tangents. Considérons une courbe différentiable $(\gamma)$ sur $\M$ de paramètre $t\in\mathbb{R}$. Si $f\in C^\infty(\M,\mathbb{R})$, on peut définir le vecteur tangent $\dot{\gamma}(s)$ qui associe à $f$ sa dérivée le long de $\gamma$ en $t=s$.
+                Cette définition abstraite de vecteur tangent rend le concept difficile à comprendre intuitivement. Si l'on se donne une ligne d'univers, on peut définir la notion de vecteur tangent à la ligne d'univers qui est plus intuitive.
+                \begin{defn}
+                    Soit une courbe différentiable $(\gamma)$ sur $\M$ de paramètre $t\in\mathbb{R}$. Si $f\in C^\infty(\M,\mathbb{R})$, on peut définir le \textit{vecteur tangent} à $\gamma$ en $\gamma(s)$ comme l'opérateur différentiel qui associe à $f$ sa dérivée le long de $\gamma$ évaluée en $\gamma(s)$:
+                    \begin{equation}
+                    \dot{\gamma}(s):\left(
+                    \begin{array}{ccc}
+                        C^\infty(\M,\mathbb{R}) & \longrightarrow & \mathbb{R} \\
+                        f & \longmapsto &\dot{\gamma}(s)(f) ~\hat{=}~ \frac{d}{dt}f(\gamma(t))|_{t=s}
+                    \end{array}
+                    \right).
+                    \end{equation}
+                \end{defn}
                 
+                On vérifie facilement que $\dot{\gamma}(s)$ est bien un vecteur tangent. En effet, si $(U,\varphi)$ est une carte locale telle que $\gamma(s)\in U$, on peut écrire $\dot{\gamma}(s)$ on peut voir que
                 \begin{equation}
-                \dot{\gamma}(s):\left(
-                \begin{array}{ccc}
-                    C^\infty(\M,\mathbb{R}) & \longrightarrow & \mathbb{R} \\
-                    f & \longmapsto &\dot{\gamma}(s)(f) ~\hat{=}~ \frac{d}{dt}f(\gamma(t))|_{t=s}
-                \end{array}
-                \right)
+                    \dot{\gamma}(s)(f) = \frac{d}{dt}f(\gamma(t))|_{t=s}= \frac{d(f\circ\varphi^{-1})(\varphi\circ\gamma(t))}{dt}|_{t=s}= \eval{\frac{d\gamma^\mu(t)}{dt}}_{t=s}\eval{\pdv{}{x^\mu}}_{\gamma(s)}(f)
                 \end{equation}
+                où $(\varphi\circ\gamma)(t)\equiv(\gamma^0(t),\dots,\gamma^{n-1}(t))$ et donc $\dot{\gamma}(s)$ s'écrit dans la base naturelle comme
+                \begin{equation}
+                     \dot{\gamma}(s) =  \eval{\frac{d\gamma^\mu(t)}{dt}}_{t=s}\eval{\pdv{}{x^\mu}}_{\gamma(s)}.
+                \end{equation}
+                Inversement, tout vecteur tangent en un point $P$ peut être vu comme un vecteur tangent à une courbe passant par $P$. Cette courbe n'est pas unique.\\
                 
-                $\dot{\gamma}(s)$ est bien un vecteur tangent, il doit donc pouvoir s'écrire dans la base naturelle. En effet, si $(U,\varphi)$ est une carte locale telle que $\gamma(s)\in U$,
-                
-                \begin{align}
-                    \dot{\gamma}(s)(f) &= \frac{d}{dt}f(\gamma(t))|_{t=s} \\
-                    &= \frac{d(f\circ\varphi^{-1})(\varphi\circ\gamma(t))}{dt}|_{t=s}\\
-                    &= \eval{\frac{d\gamma^\mu(t)}{dt}}_{t=s}\eval{\pdv{}{x^\mu}}_{\gamma(s)}(f)
-                \end{align}
-                où $(\varphi\circ\gamma)(t)\equiv(\gamma^0(t),\dots,\gamma^{n-1}(t))$. Ceci montre que tout vecteur tangent en un point $P$ peut être vu comme un vecteur tangent à une courbe passant par $P$. Cette courbe n'est pas unique.\\
-                
-                Si l'on dispose de deux variétés $\M$ et $\N$ respectivement de dimension $\dim\M$ et $\dim\N$, et que 
+                Si l'on dispose de deux variétés $\M$ et $\N$ respectivement de dimension $m$ et $n$, et que 
                 \begin{equation*}
                     \phi : M\to N
                 \end{equation*}
@@ -1900,20 +1906,28 @@ Louan \textsc{Mol}
                     pour tout $X\in T_P\M$ et $f\in C^{\infty}(\N,\mathbb{R})$.
                 \end{defn}
                 
-                La différentielle de l'application est une application linéaire entre deux espaces vectoriels de dimensions $n$ et $n'$ respectivement. Elle associe à tout vecteur tangent à $\M$ en $P$ un vecteur tangent $\N$ en $\phi(P)$.
+                La différentielle de l'application est une application linéaire entre deux espaces vectoriels de dimensions $m$ et $n$ respectivement. Elle associe à tout vecteur tangent à $\M$ en $P$ un vecteur tangent $\N$ en $\phi(P)$.
                 
                 \begin{rmk}
                     Pour alléger les notations, lorsque le contexte est clair nous n'indiquerons pas le point dont il est question pour la différentielle de l'application : $\phi_{*P}\equiv\phi_*$.
                 \end{rmk}
                 
                 \begin{prop}\begin{leftbar}
-                    Si $x^\mu$ sont des coordonnées locales en $P\in\M$ et $y^\mu$ sont des coordonnées locales en $\phi(P)\in\N$, la matrice associée à cette application est la jacobienne de $y\circ\phi\circ x^{-1}$ dans les bases $\eval{\pdv{}{x^\mu}}_{P}$ $\eval{\pdv{}{y^\mu}}_{\phi(P)}$. De sorte que, si $X = X^\mu\eval{\pdv{}{x^\mu}}_{P}\in T_P\M$, 
+                    Si $x^\mu$ sont des coordonnées locales en $P\in\M$ et $y^\mu$ sont des coordonnées locales en $\phi(P)\in\N$, la matrice associée à cette application linéaire est la jacobienne de $y\circ\phi\circ x^{-1}$ dans les bases $\eval{\pdv{}{x^\mu}}_{P}$ et  $\eval{\pdv{}{y^\mu}}_{\phi(P)}$. De sorte que, si $X = X^\mu\eval{\pdv{}{x^\mu}}_{P}\in T_P\M$, 
                     \begin{equation}
-                        \phi_*(X) = X^\mu\eval{\pdv{(y\circ\phi\circ x^{-1})^\nu}{\tild{x}^\mu}}_{\phi(P)}\eval{\pdv{}{y^\nu}}_{P}
+                        \phi_*(X) = X^\mu\eval{\pdv{(y\circ\phi\circ x^{-1})^\nu(x^1(P),\dots,x^n(P))}{x^\mu}(P)}_{x(P)}\eval{\pdv{}{y^\nu}}_{P}
                     \end{equation}
                 \end{leftbar}\end{prop}
                 
+                Lorsque que l'on fait un changement de base dans l'espace tangent : 
+                \begin{equation*}
+                    \left\{\eval{\pdv{}{x^\mu}}_{P}\right\}\quad\to\quad \left\{\eval{\pdv{}{y^\mu}}_P\right\}
+                \end{equation*}
+                on a $\M=\N$ et $\phi = Id$. Dans ce cas, la matrice de changement de base est $\text{Jac}(y\circ x^{-1})$.\\
+                
                 Si $\phi$ est un difféomorphisme, on peut montrer que $\phi_*$ est isomorphisme linéaire. Des variétés qui sont difféomorphes ont donc des espaces tangent isomorphes. Réciproquement, si il existe un point $P\in\M$ tel que, en $P$, $\phi_*$ est un isomorphisme, alors il existe une voisinage $U$ autour de $P$ tel que $\phi$ restreint à ce voisinage soit un difféomorphisme du $U$ à $\phi(U)$.
+                
+                
             
             \subsection{Espace cotangent}
             
@@ -1926,39 +1940,38 @@ Louan \textsc{Mol}
                 \end{array}
                 \right).
                 \end{equation}
-                Ces forme linéaire sont par appelées covecteurs.
+                Ces forme linéaire sont parfois appelées covecteurs.
                 
                 \begin{defn}
                     L'\textit{espace cotangent} à $\M$ en $P$ est le dual de l'espace tangent $\M$ en $P$, noté $(T_P\M)^*$.
                 \end{defn}
                 
-                Soit $\{e_\mu\}$ une base de l'espace tangent $T_P\M$. Si $\{e^\mu\}$ est la base de correspondante de $(T_P\M)^*$, on doit avoir
+                Pour rappel, si $\{e_\mu\}$ est une base de l'espace tangent $T_P\M$ et $\{e^\mu\}$ est la base de $(T_P\M)^*$ associée, on doit avoir
                 \begin{equation}
                     e^\mu(e_\nu) = \delta^\mu_\nu.
                 \end{equation}
                 
                 \begin{defn}
-                    A tout fonction $f:\M\to\mathbb{R}$ on peut faire correspondre un élément de l'espace dual vecteur tangent $df\in(T_P\M)^*$ définit comme
+                    A tout fonction $f\inC^\infty(\M,\mathbb{R})$ on peut faire correspondre un élément de l'espace dual vecteur tangent $df_P\in(T_P\M)^*$ définit comme
                     \begin{equation}
-                        df(X) = X[f]
+                        df_P(X_P) = X_P[f]
                     \end{equation}
-                    pour tout $X\in T_P\M$. Cette application est appelée la $\textit{différentielle}$ de $f$.
+                    pour tout $X_P\in T_P\M$. Cette application est appelée la $\textit{différentielle}$ de $f$. Nous utiliserons la notation $df\equiv df_P$.
                 \end{defn}
                 Faire agir la différentielle d'une fonction sur un vecteur tangent revient à faire agir ce vecteur tangent sur la fonction.\\
                 
-                Malgré le fait que l'on peut toujours travailler dans une base abstraite $\{e_\mu\}$, nous utiliserons toujours la base naturelle pour $T_P\M$. De la même manière, il existe aussi une base naturelle pour l'espace cotangent. Pour rappel, les coordonnée locales $x^\mu$ sont des applications de $\M$ dans $\mathbb{R}$ différentiables ce qui permet de considérer la différentielle de ses applications.
+                De la même manière que pour l'espace tangent, la donnée de coordonnée locales permet de définir une base naturelle pour l'espace cotangent. Pour rappel, les coordonnée locales $x^\mu$ sont des applications de $\M$ dans $\mathbb{R}$ différentiables ce qui permet de considérer la différentielle de ses applications.
                 
                 \begin{prop}\begin{leftbar}
-                    Si $x$ sont des coordonnées locales en $P\in\M$, alors les $\{dx^\mu\}$ forment une base de l'espace $(T_P\M)^*$.
+                    Si $x$ sont des coordonnées locales en $P\in\M$, alors l'ensemble $\{dx^\mu\}_{\mu=i,\dots,n}$ forme une base de l'espace cotangent $(T_P\M)^*$.
                 \end{leftbar}\end{prop}
                 
                 \begin{proof}${}$\\
                     \comp
                 \end{proof}
                 
-                
                 \begin{rmk}
-                    Maintenant que nous disposons des base naturelle pour $T_P\M$ et $(T_P\M)^*$ étant donné des coordonnée locales $x$ en $P$, il faut garder à l'esprit que , même si nous utilisons les notations abstraites $\{e_\mu\}$ et $\{e^\mu\}$, si l'on se donne des coordonnées locales, on peut toujours remplace les $e_\mu$ par $\p_\mu$ et les $e^\mu$ par $dx^\mu$.
+                    Maintenant que nous disposons des base naturelle pour $T_P\M$ et pour $(T_P\M)^*$, il faut garder à l'esprit que même si nous utilisons les notations abstraites $\{e_\mu\}$ et $\{e^\mu\}$, on peut toujours remplacer les $e_\mu$ par $\p_\mu$ et les $e^\mu$ par $dx^\mu$ par la donnée de coordonnées locales.
                 \end{rmk}
                 
                 \begin{prop}\begin{leftbar}
@@ -1970,21 +1983,17 @@ Louan \textsc{Mol}
                 
                 \begin{proof}
                     Soit $X\in T_P\M$ tel que $X = X^\mu\pdv{}{x^\mu}$, alors par définition de $df$,
-                    \begin{align}
-                        df(X) &= X[f]\\
-                        &= X^\mu\pdv{f}{x^\mu}\\
-                        &= dx^\mu(V)\pdv{f}{x^\mu}
-                    \end{align}
-                    quelque soit $X$. Nous avons utilisée le fait que $dx^\mu(V) = V^\mu$, par propriété de base duale. Donc, nous retrouvons bien
+                    \begin{equation}
+                        df(X) = X[f] = X^\mu\pdv{f}{x^\mu} = dx^\mu(X)\pdv{f}{x^\mu}
+                    \end{equation}
+                    quelque soit $X\in T_P\M$. Nous avons utilisé le fait que $dx^\mu(X) = X^\mu$. Pour finir, on retrouve bien
                     \begin{equation}
                         df = \pdv{f}{x^\mu}dx^\mu.
                     \end{equation}
                 \end{proof}
-                
-                C'est la généralisation de la loi bien connue.
-                
+
                 \begin{rmk}
-                    Soit $\phi$ une fonction différentiable entre deux variétés $\M$ et $\N$. Si l'on se restreint au cas $\N=\mathbb{R}$ on retrouve les formes linéaires en remarquant que $T_P\mathbb{R}$ est assimilable à $\mathbb{R}$ lui-même. C'est pour cela que, si $f:\mathbb{R}^2\to\mathbb{R}$ est une fonction, on dit que $df$ est la différentielle de $f$ et que
+                    Soit $\phi$ une fonction différentiable entre deux variétés $\M$ et $\N$. Si $\N=\mathbb{R}$, on retrouve les formes linéaires en remarquant que $T_P\mathbb{R}$ est assimilable à $\mathbb{R}$ lui-même. C'est pour cela que, si $f:\mathbb{R}^2\to\mathbb{R}$ est une fonction, on dit que $df$ est la différentielle de $f$ et que
                     \begin{equation}
                         df = \frac{\p f}{\p x} dx + \frac{\p f}{\p y} dy.
                     \end{equation}
@@ -1999,7 +2008,7 @@ Louan \textsc{Mol}
                 
                 Notons que les $\p_\mu$ sont bien covariants, les $V^\mu$ contravariants, les $dx^\mu$ contravariants et les $w_\mu$ covariants. Ceci est vrai quel que soit l'espace vectoriel en question. On éclaircira ça dans la section suivante. Il est aussi important de remarquer que lorsque l'on considère des changements de base dans cette partie, on parle de changement de base quelconque, et pas forcément des transformations de Lorentz.\\
                 
-                Si $\phi:\M\to\N$ est différentiable, on peut définir la différentielle de l'application $\phi$ entre les espaces tangents de $\N$ et $\M$, notée $\phi_*$, comme vu dans la section précédente. Maintenant que nous étudions les espaces tangents duaux, on peut définir, à partir de $\phi_*$, une application de associe à chaque forme linéaire de $(T_{\phi(P)}\M)^*$ une forme linéaire de $(T_P\M)^*$. C'est la transposée de l'application (ou "pullback").
+                Si $\phi:\M\to\N$ est différentiable, on peut définir la différentielle de l'application $\phi$ entre les espaces tangents de $\N$ et $\M$, notée $\phi_*$, comme vu dans la section précédente. Maintenant que nous étudions les espaces tangents duaux, on peut définir, à partir de $\phi_*$, une application qui associe à chaque forme linéaire de $(T_{\phi(P)}\N)^*$ une forme linéaire de $(T_P\M)^*$. C'est la transposée de l'application (ou "pullback").
                 
                 \begin{defn}
                     Soit $\phi\in C^\infty(\M,\N)$, la \textit{transposée de l'application} $\phi$ en $P\in\M$ est l'application linéaire
@@ -2015,7 +2024,7 @@ Louan \textsc{Mol}
                     \begin{equation}
                         \phi^{*P}(\omega)(X) = \omega(\phi_{*P}(X))
                     \end{equation}
-                    pour tout $\omega\in (T_{\phi(P)})^*$ et $X\in T_P\M$.
+                    pour tout $\omega\in (T_{\phi(P)})^*$ et $X\in T_P\M$. Nous utiliserons la notation $\phi^{*P}\equiv\phi^*$.
                 \end{defn}
             
             \subsection{Tenseurs}
@@ -2037,7 +2046,7 @@ Louan \textsc{Mol}
                     \end{equation}
                 \end{defn}
                 
-                Par définition
+                Par définition,
                 \begin{itemize}[label = \textbullet]
                     \item les tenseur de type $(0,0)$ sont les scalaires de $\mathbb{R}$
                     \item les tenseur de type $(0,1)$ sont les covecteurs, c'est-à-dire les éléments de $(T_P\M)^*$
@@ -2062,14 +2071,14 @@ Louan \textsc{Mol}
                 \end{defn}
                 
                 \begin{prop}\begin{leftbar}
-                    Soit $T$ est un tenseur de type $(p,q)$ de composantes $T\indices{^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q}}$, alors
+                    Si $T$ est un tenseur de type $(p,q)$, alors
                     \begin{equation}
-                        T = T\indices{^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q}} e_{\mu_1}\otimes\dots\otimes e_{\mu_p}\otimes e^{\nu_1}\otimes\dots\otimes e^{\nu_q}
+                        T(\omega^1,\dots,\omega^p,X_1,\dots,X_q) = \omega^1_{\mu_1}\dots\omega^p_{\mu_p}X^{\nu_1}_1\dots X^{\nu_q}_q~ T\indices{^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q}}.
                     \end{equation}
                 \end{leftbar}\end{prop}
                 
                 \begin{proof}
-                   Soient $\omega^1,\dots,\omega^p\in(T_P\M)^*$ et $X_1,\dots,X_q\in T_P\M$ tels que 
+                    Soient $\omega^1,\dots,\omega^p\in(T_P\M)^*$ et $X_1,\dots,X_q\in T_P\M$ tels que 
                     \begin{align}
                         \omega^i &= \omega^i_\mu ~dx^\mu \\
                         X_j &= X^\mu_j~\p_\mu
@@ -2080,6 +2089,20 @@ Louan \textsc{Mol}
                         &=\omega^1_{\mu_1}\dots\omega^p_{\mu_p}X^{\nu_1}_1\dots X^{\nu_q}_q~T(e^{\mu_1},\dots,e^{\mu_p},e_{\nu_1},\dots,e_{\nu_q}) \\
                         &= \omega^1_{\mu_1}\dots\omega^p_{\mu_p}X^{\nu_1}_1\dots X^{\nu_q}_q~ T\indices{^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q}}
                     \end{align}
+                \end{proof}
+                
+                \begin{prop}\begin{leftbar}
+                    Soit $T$ est un tenseur de type $(p,q)$ de composantes $T\indices{^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q}}$, alors
+                    \begin{equation}
+                        T = T\indices{^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q}} e_{\mu_1}\otimes\dots\otimes e_{\mu_p}\otimes e^{\nu_1}\otimes\dots\otimes e^{\nu_q}
+                    \end{equation}
+                \end{leftbar}\end{prop}
+                
+                \begin{proof}
+                    D'une part, nous avons la relation
+                    \begin{equation}
+                         T(\omega^1,\dots,\omega^p,X_1,\dots,X_q) = \omega^1_{\mu_1}\dots\omega^p_{\mu_p}X^{\nu_1}_1\dots X^{\nu_q}_q~ T\indices{^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q}}.
+                    \end{equation}
                     D'autre part, comme $T$ est un tenseur, il est toujours possible de l'exprimer comme une combinaison linéaire de vecteurs de la base de $T^{(p,q)}_P\M$. Notons $\widetilde{T}\indices{^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q}}$ les coefficients de cette décomposition.
                     \begin{equation}
                         T = \widetilde{T}\indices{^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q}} e_{\mu_1}\otimes\dots\otimes e_{\mu_p}\otimes e^{\nu_1}\otimes\dots\otimes e^{\nu_q}
@@ -2101,17 +2124,6 @@ Louan \textsc{Mol}
                 \begin{rmk}
                     La proposition qui précède montre que, si l'on se donne une base de $T_P\M$ et une base de $(T_P\M)^*$, il y a une correspondance biunivoque entre l'ensemble des composantes d'un tenseur et le tenseur lui-même. Et pour rappel, se donner des coordonnées locales $x$ induit une base naturelle de $T_P\M$ et de $(T_P\M)^*$. Si l'on dispose de coordonnées locales, nous ferons donc souvent l'abus de langage de dire que les composantes d'un tenseur sont un tenseur pour en fait désigner le tenseur que ses composantes définissent.
                 \end{rmk}
-                
-                \begin{prop}\begin{leftbar}
-                    Si $T$ est un tenseur de type $(p,q)$, alors
-                    \begin{equation}
-                        T(\omega^1,\dots,\omega^p,X_1,\dots,X_q) = \omega^1_{\mu_1}\dots\omega^p_{\mu_p}X^{\nu_1}_1\dots X^{\nu_q}_q~ T\indices{^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q}}.
-                    \end{equation}
-                \end{leftbar}\end{prop}
-                
-                \begin{proof}
-                    Cette formule a été obtenue dans la démonstration de la proposition précédente.
-                \end{proof}
                 
                 \begin{exmp}${}$
                     \begin{itemize}[label = \textbullet]
@@ -2149,11 +2161,10 @@ Louan \textsc{Mol}
                 
                 \begin{proof}${}$\\
                     Si $V\in T_P\M$ et $V^\mu\p_\mu$ dans les coordonnées locales $x^\mu$. Dans d'autres coordonnées locales $x'^\mu$, on a la matrice de changement de base (jacobienne) $ \frac{\p x'^\mu}{\p x^\nu}$ et $\omega = \omega_\mu~dx^\mu$, alors
-                    \begin{align}
-                        V[\phi] &= V^\mu \frac{\p\phi}{\p x^\mu} \\
-                        &=  \underbrace{V^\mu\frac{\p x'^\nu}{\p x^\mu}}_{V'^\nu}\frac{\p\phi}{\p x'^\nu}
-                    \end{align}
-                    pour tout $\phi\in C^\infty(\M,\mathbb{R})$, avec $V'^\mu = V^\nu\frac{\p x'^\mu}{\p x^\nu}$. Et donc les $V^\mu$ sont des tenseurs de type $(1,0)$ car ils se transforment de la manière souhaitée.
+                    \begin{equation}
+                        V[\phi] = V^\mu \frac{\p\phi}{\p x^\mu} =  \underbrace{V^\mu\frac{\p x'^\nu}{\p x^\mu}}_{V'^\nu}\frac{\p\phi}{\p x'^\nu}
+                    \end{equation}
+                    pour tout $\phi\in C^\infty(\M,\mathbb{R})$, avec $V'^\mu = V^\nu\frac{\p x'^\mu}{\p x^\nu}$. Et donc les $V^\mu$ sont des tenseurs de type $(1,0)$ car ils se transforment de la manière souhaitée. Notons que ce résultat est est direct si l'on utilise le fait que l'espace tangent est un espace vectoriel, mais nous l'avons vérifie autrement.
                 \end{proof}
                 La loi de transformation est bien celle d'un vecteur. Ceci justifie le nom de "vecteur" tangent.\\
                 
@@ -2166,10 +2177,9 @@ Louan \textsc{Mol}
             
                 \begin{proof}
                     Si $\omega\in (T_P\M)^*$ et $w_\mu dx^\mu$ dans les coordonnées locales $x^\mu$. Pour d'autres coordonnées locales $x'^\mu$ on a la matrice de changement de base (jacobienne) $ \frac{\p x^\mu}{\p x'^\nu}$ et $\omega = \omega_\mu~dx^\mu$, alors
-                    \begin{align}
-                        \omega &= T_P^{(0,1)\M} = \omega_\mu~dx^\mu \\
-                        &=  \underbrace{\omega_\mu \frac{\p x^\mu}{\p x'^\nu}}_{w'_\nu}dx'^\nu
-                    \end{align}
+                    \begin{equation}
+                        \omega = T_P^{(0,1)\M} = \omega_\mu~dx^\mu =  \underbrace{\omega_\mu \frac{\p x^\mu}{\p x'^\nu}}_{w'_\nu}dx'^\nu
+                    \end{equation}
                     donc les $\omega_\mu$ sont bien des tenseurs de type $(0,1)$.
                 \end{proof}
                 
@@ -2453,6 +2463,24 @@ Louan \textsc{Mol}
                 \end{exmp}
                 
                 Notons bien que dès l'introduction de la notion de tenseur, nous avons utilisé une notation en terme des composantes qui tient compte de l'ordre des indices sans aucune raison à priori. Si l'on ne tient pas compte du dernier résultat que, il ne faut pas tenir compte de l'ordre des indices. Pour lever l'ambiguïté, il faut dorénavant spécifier la position relative des indices covariants et contravariants car l'isomorphisme ne permute pas les colonnes, il permet seulement de changer la variance d'indices donnés.
+                
+                \begin{prop}
+                \begin{leftbar}
+                    Les composantes de la métrique dans une base de coordonnées quelconque $x$ sont données, en terme de coordonnées localement plates $z_P$ en un point $P$, par 
+                    \begin{equation}
+                        g_{\mu\nu}(P) = \eval{\pdv{z^\alpha_P}{x^\mu}}_{P}\eval{\pdv{z^\beta_P}{x^\nu}}_{P}~\eta_{\alpha\beta}.
+                    \end{equation}
+                \end{leftbar}
+                \end{prop}
+                
+                \begin{proof}
+                    Notons $g_{\mu\nu}$ les coordonnées du tenseur métrique dans les coordonnée $x$ et $\tilde{g}_{\mu\nu}$ dans les coordonnées $z_P$ localement inertielles en $P$. Dans ce cas, $\tilde{g}_{\mu\nu}(P) = \eta_{\mu\nu}$ et donc
+                    \begin{align}
+                        g(P) &= g_{\mu\nu}(P)dx^\mu\otimes dx^\nu \\
+                        &= \tilde{g}_{\alpha\beta}(P) \eval{\pdv{z^\alpha_P}{x^\mu}}_{P}\eval{\pdv{z^\beta_P}{x^\nu}}_{P} dx^\mu\otimes dx^\nu\\
+                        &= \eta_{\alpha\beta}(P) \eval{\pdv{z^\alpha_P}{x^\mu}}_{P}\eval{\pdv{z^\beta_P}{x^\nu}}_{P} dx^\mu\otimes dx^\nu
+                    \end{align}
+                \end{proof}
         
         \section{$p$-formes et produit extérieur}
         
@@ -2827,6 +2855,7 @@ Louan \textsc{Mol}
                         \item $\nabla_\mu F_{\nu\rho} = \p_\mu F_{\nu\rho}-\Gamma^\sigma_{\mu\nu}F_{\sigma\rho}-\Gamma^{\sigma}_{\mu\rho}F_{\nu\sigma}$
                         \item $\nabla_\mu t^\nu_\rho = \p_\mu t^\nu_\rho+\Gamma^\nu_{\mu\sigma}t^\sigma_\rho - \Gamma^\sigma_{\mu\rho}t^\nu_\sigma$
                     \end{itemize}
+                    Nous venons de voir que chaque indice tensoriel doit être corrigé pour définir la connexion d'un tenseur $T$. L'indice contravariant $\mu$ est corrigé avec $\Gamma^\mu_{\nu\rho}T^\rho$ et l'indice covariant $\mu$ est corrigé avec $-\Gamma^\rho_{\nu\mu}T_\rho$ où $\nu$ est l'indice de dérivation.
                 \end{exmp}
                 
                 \begin{thm}\begin{leftbar}
@@ -2886,6 +2915,33 @@ Louan \textsc{Mol}
                         &= (\nabla_\mu V^\nu)\omega_\rho + V^\nu(\nabla_\mu\omega_\rho)
                     \end{align}
                 \end{exmp}
+                
+                \begin{rmk}
+                    Il possible d'arriver à la définition générale de dérivée covariante que nous avons donnée ci-dessus en partant du cas particulier des vecteur (exemple ci-dessus).
+                    Soit $A$ un vecteur et $\omega$ un $1$-forme (vecteur dual). dans ce cas, $\langle\omega,A\rangle$, où $\langle\cdot,\cdot\rangle$ est le produit dual, est un scalaire donc
+                    \begin{equation}
+                        \nabla_\mu\langle\omega,A\rangle = \p_\mu\langle\omega,A\rangle = \p_\mu (\omega_\nu A^\nu) = (\p_\mu \omega_\nu)A^\nu+\omega_\nu(\p_\mu A^\nu).
+                    \end{equation}
+                    Si l'on suppose que la dérivée covariante doit satisfaire une règle de Leibniz, alors
+                    \begin{equation}
+                        \nabla_\mu\langle\omega,A\rangle = (\nabla_\mu \omega_\nu)A^\nu+\omega_\nu(\nabla_\mu A^\nu).
+                    \end{equation}
+                    Or, nous savons déjà que
+                    \begin{equation}
+                        \nabla_\mu A^\nu = \p_\mu A^\nu+\Gamma^\nu_{\mu\rho}A^\rho.
+                    \end{equation}
+                    En comparant ces trois expressions, on obtient
+                    \begin{align}
+                        (\nabla_\mu \omega_\nu)A^\nu &= \nabla_\mu\langle\omega,A\rangle-\omega_\nu(\nabla_\mu A^\nu) \\
+                        &= (\p_\mu \omega_\nu)A^\nu+\omega_\nu(\p_\mu A^\nu) - \omega_\nu p_\mu A^\nu-\omega_\nu\Gamma^\nu_{\mu\rho}A^\rho \\
+                        &= \left((\p_\mu \omega_\nu)-\Gamma^\rho_{\mu\nu}\omega_\rho\right) A^\nu\\
+                    \end{align}
+                    ce qui déterminer la dérivée covariante d'une $1$-forme. Prenons $A = \p_\sigma$, on a obtenu
+                    \begin{equation}
+                        \nabla_\mu \omega_\sigma = (\p_\mu \omega_\sigma)-\Gamma^\rho_{\mu\sigma}\omega_\rho.
+                    \end{equation}
+                    Ça permet de mieux comprendre le signe "-" présent dans la définition. Eu utilisant la règle de Leibniz pour le produit tensoriel, on peut déduire la dérivée covariante de n'importe quel tenseur.
+                \end{rmk}
                 
                 \begin{leftbar}
                     L'existence des symboles $\Gamma$ permet donc d'écrire les lois de la physique sous une forme tensorielle simplement en remplaçant les dérivées partielles $\p_\alpha$ qui apparaissent dans les lois en l'absence de gravitation par des dérivées covariantes $\nabla_\mu$.
@@ -5280,7 +5336,7 @@ Louan \textsc{Mol}
             
             Étudions plus en détails le cas où $\theta=1$.
             \begin{itemize}[label = \textbullet]
-                \item $\boldsymbol{L^2>16\left( \frac{GM}{c^} \right)^2}$ : 
+                \item $\boldsymbol{L^2>16\left( \frac{GM}{c^} \right)^2}$ :
                 \begin{itemize}[label = $\triangleright$]
                     \item $\boldsymbol{\mathscr{E}<0}$ : la trajectoire est bornée et périodique en la variable radiale mais plus fermée (plus comme dans le cas newtonnien). Ceci veut dire que, sur une période du mouvement radiale l'angle azimutale $\phi$ évoluera comme 
                     \begin{equation}
@@ -5773,7 +5829,7 @@ Louan \textsc{Mol}
             On a pu voir qu'il y a deux régions différentes telles que $r<2M$ et deux régions différentes telles que $r>2M$ donc la coordonnés radiale $r$ n'est pas une bonne coordonnée. On peut montrer que n'importe quel fonction des coordonnées $u_1$ et $u_2$ préserve les propriétés importantes de ces coordonnées. Définissons un nouveau type de coordonnées qui permet d'éliminer la singularité et donc de mieux représenter les trous de ver.
             
             \begin{defn}
-                Les \textit{coordonnées de Kruskal/Szekeres} sont définies comme
+                Les \textit{coordonnées de Kruskal-Szekeres} sont définies comme
                 \begin{align}
                     U ~&\hat{=}~ e^{\frac{u_1}{4M}}\\
                     V ~&\hat{=}~ -e^{*\frac{u_2}{4M}}
