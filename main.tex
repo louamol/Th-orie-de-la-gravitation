@@ -191,7 +191,7 @@ Louan \textsc{Mol}
     
     Merci à \textit{Eliott Van Steirteghem} et à \textit{Guillaume Houyoux} pour les schémas ainsi que pour leurs relectures attentives. Pour les fautes qui nous aurons échappées, vous pouvez me contacter via mon adresse mail : \verb?louamol@ulb.ac.be?.\\
     
-    %Merci à \texit{A. Forucci} pour les corrections des exercies et discussions sur le cours dont ces notes on grandement bénéficiée.
+    %Merci à \texit{A. Fiorucci} pour les corrections des exercices et les discussions sur le cours qui ont grandement contribué à l'amélioration des ces notes.
 
 \printbibliography[title=Références]
 \pagebreak
@@ -1422,6 +1422,10 @@ Louan \textsc{Mol}
                  Nous verrons dans l'on peut définir la notion de différentiabilité  pour une application entre deux variétés. On peut alors montrer que le fait d'imposer que les changements de carte soient différentiables implique que les carte sont aussi différentiables. Une variéte est donc localement difféomorphe à $\mathbb{R}^n$.
             \end{rmk}
             
+            \begin{rmk}
+                On définit une variété différentiable à bord de la même manière mais en remplaçant $\mathbb{R}^n$ par le demi-espace $\mathbb{R}^{n+}=\left\{(x_1,\dots,x_n)\in\mathbb{R}^n|x_1\geq 0\right\}$. Le bord, noté $\p\M$, est l'ensemble des points dont l'image par une application de coordonnée est sur le bord de $\mathbb{R}^{n+}$. Dans ce cas, $\p\M$ est une variété différentiable de dimension $n-1$ sans bord.
+            \end{rmk}
+            
             Si l'on suppose que l'espace-temps est une variété différentiable, quel que soit $P\in\M$ un évènement, on a alors un domaine de carte $U$ avec $P\in U$ et une application de coordonnées
             
             \begin{equation}\label{eq:coordloc}
@@ -1946,13 +1950,21 @@ Louan \textsc{Mol}
                     L'\textit{espace cotangent} à $\M$ en $P$ est le dual de l'espace tangent $\M$ en $P$, noté $(T_P\M)^*$.
                 \end{defn}
                 
-                Pour rappel, si $\{e_\mu\}$ est une base de l'espace tangent $T_P\M$ et $\{e^\mu\}$ est la base de $(T_P\M)^*$ associée, on doit avoir
+                Pour rappel, si $\{e_\mu\}$ est une base de l'espace tangent $T_P\M$, on peut construire une unique base $\{e^\mu\}$ de $(T_P\M)^*$ associée à $\{e_\mu\}$ telle que
                 \begin{equation}
                     e^\mu(e_\nu) = \delta^\mu_\nu.
                 \end{equation}
+                C'est la base duale. Dans ce cas, si $X\in T_P\M$ et $\omega\in (T_P\M)^*$ tels que $X = X^\mu e_\mu$ et $\omega &= \omega_\mu e^\mu$, la forme linéaire $e^\mu$ envois $X$ sur $X^\mu$ :
+                \begin{equation}
+                    e^\mu(X) =  X^\nu e^\mu( e_\nu) = X^\nu \delta^\mu_\nu = X^\mu
+                \end{equation}
+                par linéarité. Inversement, on retrouve $\omega_\mu$ en appliquant $\omega$ sur $e_\mu$:
+                \begin{equation}
+                    \omega(e_\mu) = \omega_\nu e^\nu(e_\mu) = \omega_\nu \delta^\nu_\mu = \omega_\mu.
+                \end{equation}
                 
                 \begin{defn}
-                    A tout fonction $f\inC^\infty(\M,\mathbb{R})$ on peut faire correspondre un élément de l'espace dual vecteur tangent $df_P\in(T_P\M)^*$ définit comme
+                    A toute fonction $f\inC^\infty(\M,\mathbb{R})$ on peut faire correspondre un élément de l'espace dual vecteur tangent $df_P\in(T_P\M)^*$ définit comme
                     \begin{equation}
                         df_P(X_P) = X_P[f]
                     \end{equation}
@@ -1960,7 +1972,7 @@ Louan \textsc{Mol}
                 \end{defn}
                 Faire agir la différentielle d'une fonction sur un vecteur tangent revient à faire agir ce vecteur tangent sur la fonction.\\
                 
-                De la même manière que pour l'espace tangent, la donnée de coordonnée locales permet de définir une base naturelle pour l'espace cotangent. Pour rappel, les coordonnée locales $x^\mu$ sont des applications de $\M$ dans $\mathbb{R}$ différentiables ce qui permet de considérer la différentielle de ses applications.
+                Pour l'espace tangent, nous avions vu que la donnée de coordonnées permet de définir une base naturelle. De la même manière, la donnée de coordonnées permet on peut définir une base naturelle pour l'espace cotangent. Pour rappel, les coordonnée locales $x^\mu$ sont des applications de $\M$ dans $\mathbb{R}$ différentiables ce qui permet de considérer la différentielle de ses applications.
                 
                 \begin{prop}\begin{leftbar}
                     Si $x$ sont des coordonnées locales en $P\in\M$, alors l'ensemble $\{dx^\mu\}_{\mu=i,\dots,n}$ forme une base de l'espace cotangent $(T_P\M)^*$.
@@ -1970,8 +1982,17 @@ Louan \textsc{Mol}
                     \comp
                 \end{proof}
                 
+                La base $\{dx^\mu\}_{\mu=i,\dots,n}$ est la base duale associée à la base $\{\p_\mu\}_{\mu=i,\dots,n}$ de l'espace tangent. On retrouve la relation
+                \begin{equation}
+                    dx^\nu(\p_\mu) = \p_\nu x^\mu = \delta^\mu_\nu.
+                \end{equation}
+                
                 \begin{rmk}
                     Maintenant que nous disposons des base naturelle pour $T_P\M$ et pour $(T_P\M)^*$, il faut garder à l'esprit que même si nous utilisons les notations abstraites $\{e_\mu\}$ et $\{e^\mu\}$, on peut toujours remplacer les $e_\mu$ par $\p_\mu$ et les $e^\mu$ par $dx^\mu$ par la donnée de coordonnées locales.
+                \end{rmk}
+                
+                \begin{rmk}
+                    Si $f\in C^\infty(\M,\mathb{R})$ et $df\neq0$, la surface $f=\text{constante}$ de $\M$ est une variété de dimension $n-1$. Le sous-espace de $T_P\M$ qui contient tout les vecteurs $X$ tels que $df(X) = 0$ possède tout les vecteurs tangents à une courbe dans la surface $f=\text{constante}$ passant par $P$. On peut donc penser à $df$ comme la normale à la surface $f=\text{constante}$ en $P$.
                 \end{rmk}
                 
                 \begin{prop}\begin{leftbar}
@@ -2063,6 +2084,11 @@ Louan \textsc{Mol}
                     \end{equation}
                 \end{defn}
                 
+                On écrit $X_1\otimes\dots\otimes X_p\otimes\omega^1\otimes\omega^q$ le tenseur qui envois $(\eta^1,\dots,\eta^p,Y_1,\dots,_p)$ sur
+                \begin{equation}
+                    \eta^1(X_1)\dots\eta^p(X_p)\omega^1(Y_1)\dots\omega^q(Y_q).
+                \end{equation}
+                
                 \begin{defn}
                     Soit $\{e_\mu\}$ une base de $T_P\M$ et $\{e^\mu\}$ la base duale de $(T_P\M)^*$. Si $T$ est un tenseur de type $(p,q)$, on appelle \textit{composantes du tenseur} $T$ les nombres
                     \begin{equation}
@@ -2090,40 +2116,6 @@ Louan \textsc{Mol}
                         &= \omega^1_{\mu_1}\dots\omega^p_{\mu_p}X^{\nu_1}_1\dots X^{\nu_q}_q~ T\indices{^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q}}
                     \end{align}
                 \end{proof}
-                
-                \begin{prop}\begin{leftbar}
-                    Soit $T$ est un tenseur de type $(p,q)$ de composantes $T\indices{^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q}}$, alors
-                    \begin{equation}
-                        T = T\indices{^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q}} e_{\mu_1}\otimes\dots\otimes e_{\mu_p}\otimes e^{\nu_1}\otimes\dots\otimes e^{\nu_q}
-                    \end{equation}
-                \end{leftbar}\end{prop}
-                
-                \begin{proof}
-                    D'une part, nous avons la relation
-                    \begin{equation}
-                         T(\omega^1,\dots,\omega^p,X_1,\dots,X_q) = \omega^1_{\mu_1}\dots\omega^p_{\mu_p}X^{\nu_1}_1\dots X^{\nu_q}_q~ T\indices{^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q}}.
-                    \end{equation}
-                    D'autre part, comme $T$ est un tenseur, il est toujours possible de l'exprimer comme une combinaison linéaire de vecteurs de la base de $T^{(p,q)}_P\M$. Notons $\widetilde{T}\indices{^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q}}$ les coefficients de cette décomposition.
-                    \begin{equation}
-                        T = \widetilde{T}\indices{^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q}} e_{\mu_1}\otimes\dots\otimes e_{\mu_p}\otimes e^{\nu_1}\otimes\dots\otimes e^{\nu_q}
-                    \end{equation}
-                    Dans ce cas, par propriété de base duale,
-                    \begin{align}
-                        T(\omega^1,\dots,\omega^p,X_1,\dots,X_q) &= \widetilde{T}\indices{^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q}} (e_{\mu_1}\otimes\dots\otimes e_{\mu_p}\otimes e^{\nu_1}\otimes\dots\otimes e^{\nu_q})(\omega^1,\dots,\omega^p,X_1,\dots,X_q)\\
-                        &= \omega^1_{\alpha_1}\dots\omega^p_{\alpha_p}X^{\beta_1}_1\dots X^{\beta_q}_q \widetilde{T}\indices{^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q}} \delta^{\alpha_1}_{\mu_1}\dots\delta^{\alpha_p}_{\mu_p}\delta^{\nu_1}_{\beta_1}\dots\delta^{\nu_q}_{\beta_q}\\
-                        &= \omega^1_{\mu_1}\dots\omega^p_{\mu_p}X^{\nu_1}_1\dots X^{\nu_q}_q~ \widetilde{T}\indices{^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q}}
-                    \end{align}
-                    Donc, 
-                    \begin{equation}
-                        \widetilde{T}\indices{^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q}} = T\indices{^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q}}.
-                    \end{equation}
-                    
-                    \comp
-                \end{proof}
-                
-                \begin{rmk}
-                    La proposition qui précède montre que, si l'on se donne une base de $T_P\M$ et une base de $(T_P\M)^*$, il y a une correspondance biunivoque entre l'ensemble des composantes d'un tenseur et le tenseur lui-même. Et pour rappel, se donner des coordonnées locales $x$ induit une base naturelle de $T_P\M$ et de $(T_P\M)^*$. Si l'on dispose de coordonnées locales, nous ferons donc souvent l'abus de langage de dire que les composantes d'un tenseur sont un tenseur pour en fait désigner le tenseur que ses composantes définissent.
-                \end{rmk}
                 
                 \begin{exmp}${}$
                     \begin{itemize}[label = \textbullet]
@@ -2236,7 +2228,43 @@ Louan \textsc{Mol}
                     \end{itemize}
                 \end{exmp}
                 
-                Certains tenseurs possèdent des propriétés de symétrie par rapport à une partie de leurs indices. Les définitions suivantes énoncent différentes propriétés possibles. Ces définitions sont utiles uniquement si elles sont accompagnées de propositions qui disent que de tels tenseurs existent et que ces propriétés sont indépendantes de la base choisie. Nous supposerons que c'est le cas.
+                Avec le produit $\otimes$, l'espace des tenseurs en $P$ forme une algèbre sur $\mathbb{R}$.
+                
+                \begin{prop}\begin{leftbar}
+                    Soit $T$ est un tenseur de type $(p,q)$ de composantes $T\indices{^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q}}$, alors
+                    \begin{equation}
+                        T = T\indices{^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q}} e_{\mu_1}\otimes\dots\otimes e_{\mu_p}\otimes e^{\nu_1}\otimes\dots\otimes e^{\nu_q}
+                    \end{equation}
+                \end{leftbar}\end{prop}
+                
+                \begin{proof}
+                    D'une part, nous avons la relation
+                    \begin{equation}
+                         T(\omega^1,\dots,\omega^p,X_1,\dots,X_q) = \omega^1_{\mu_1}\dots\omega^p_{\mu_p}X^{\nu_1}_1\dots X^{\nu_q}_q~ T\indices{^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q}}.
+                    \end{equation}
+                    D'autre part, comme $T$ est un tenseur, il est toujours possible de l'exprimer comme une combinaison linéaire de vecteurs de la base de $T^{(p,q)}_P\M$. Notons $\widetilde{T}\indices{^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q}}$ les coefficients de cette décomposition.
+                    \begin{equation}
+                        T = \widetilde{T}\indices{^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q}} e_{\mu_1}\otimes\dots\otimes e_{\mu_p}\otimes e^{\nu_1}\otimes\dots\otimes e^{\nu_q}
+                    \end{equation}
+                    Dans ce cas, par propriété de base duale,
+                    \begin{align}
+                        T(\omega^1,\dots,\omega^p,X_1,\dots,X_q) &= \widetilde{T}\indices{^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q}} (e_{\mu_1}\otimes\dots\otimes e_{\mu_p}\otimes e^{\nu_1}\otimes\dots\otimes e^{\nu_q})(\omega^1,\dots,\omega^p,X_1,\dots,X_q)\\
+                        &= \omega^1_{\alpha_1}\dots\omega^p_{\alpha_p}X^{\beta_1}_1\dots X^{\beta_q}_q \widetilde{T}\indices{^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q}} \delta^{\alpha_1}_{\mu_1}\dots\delta^{\alpha_p}_{\mu_p}\delta^{\nu_1}_{\beta_1}\dots\delta^{\nu_q}_{\beta_q}\\
+                        &= \omega^1_{\mu_1}\dots\omega^p_{\mu_p}X^{\nu_1}_1\dots X^{\nu_q}_q~ \widetilde{T}\indices{^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q}}
+                    \end{align}
+                    Donc, 
+                    \begin{equation}
+                        \widetilde{T}\indices{^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q}} = T\indices{^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q}}.
+                    \end{equation}
+                    
+                    \comp
+                \end{proof}
+                
+                \begin{rmk}
+                    La proposition qui précède montre que, si l'on se donne une base de $T_P\M$ et une base de $(T_P\M)^*$, il y a une correspondance biunivoque entre l'ensemble des composantes d'un tenseur et le tenseur lui-même. Et pour rappel, se donner des coordonnées locales $x$ induit une base naturelle de $T_P\M$ et de $(T_P\M)^*$. Si l'on dispose de coordonnées locales, nous ferons donc souvent l'abus de langage de dire que les composantes d'un tenseur sont un tenseur pour en fait désigner le tenseur que ses composantes définissent.
+                \end{rmk}
+                
+                Les composantes de tenseurs possèdent des propriétés de symétrie par rapport à une partie de leurs indices. Les définitions suivantes énoncent différentes propriétés possibles. Ces définitions sont utiles uniquement si elles sont accompagnées de propositions qui disent que de tels tenseurs existent et que ces propriétés sont indépendantes de la base choisie. Nous supposerons que c'est le cas.
                 
                 \begin{defn}
                     On appelle \textit{tenseur covariant complètement symétrique} un tenseur $t$ satisfaisant à
