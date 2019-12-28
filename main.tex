@@ -2873,7 +2873,70 @@ Louan \textsc{Mol}
             
         \section{Dérivée de Lie}
             
+            Un champ de vecteur $X$ sur une variété différentiable $\M$ peut être vu comme le champ des vitesses d'un ensemble de particule ou d'un fluide qui se déplace dans $\M$. Si l'on se donne un point $P\in\M$, la particule qui passe par se point a une trajectoire unique définie par le champ de vecteur.
+            
+            \begin{defn}
+             Soit $X$ un champ de vecteur sur $\M$. Une \textit{courbe intégrale} du champ $X$ est un couple $(I,\gamma)$ où est un ouvert de $\mathbb{R}$ contenant 0 et où $\gamma:I\to\M$ est une courbe différentiable telle que
+             \begin{equation}
+                 \dot{\gamma}(t) = X_{\gamma(t)}.
+             \end{equation}
+             Le point $P = \gamma(0)$ est la \textit{condition initiale} de $\gamma$.
+            \end{defn}
+            
+            Dans des coordonnées locales $x^\mu$, si $X = X^\mu\p_\mu$ et que le courbe intégrale $\gamma$ a les coordonnées $x^\mu(t)$, on a la relation
+            \begin{align}
+                \dv{\gamma^\mu}{t} = X^\mu(x^1(t),\dots,x^n(t)).
+            \end{align}
+            
+            Le théorème de Cauchy pour le fonctions lipschitzienne assure qu'une telle équation différentielle possède toujours une solution et qu'elle est unique pour une condition initiale donnée.
+            
+            \begin{prop}
+            \begin{leftbar}
+                Soit $X$ un champ de vecteurs sur $\M$. Pour tout $P\in\M$, il existe $\varepsilon>0$ et une unique courbe intégrale de $X$, $\gamma:(-\varepsilon,\varepsilon)\to\M$ de condition initiale $P$.
+            \end{leftbar}
+            \end{prop}
+            
+            Localement, on peut recouvrir $\M$ de courbe intégrale de sorte pour pouvoir décrire $\M$ uniquement en terme de ces dernières.
+            
+            \begin{defn}
+                Un \textit{groupe à un paramètre $\phi$ de difféomorphismes locaux} de $\M$ est une application différentiable
+                \begin{equation}
+                \phi:\left(
+                \begin{array}{ccc}
+                    U\subset\mathbb{R}^m\times\M & \longrightarrow & \M \\
+                    (t,P) & \longmapsto & \phi_t(P)
+                \end{array}
+                \right)
+                \end{equation}
+                telle que, si $\mathcal{D}_t=U\cap(\{t\}\times\M)\subset\M$, on a les propriétés suivantes :
+                \begin{enumerate}[label = \textit{\roman*)}]
+                    \item $U$ est un voisinage ouvert de $\{0\}\times\M$ dans $\mathbb{R}\times\M$
+                    \item $\phi_0(P)=P$ pour tout $P\in\M$
+                    \item $\phi_t:\mathcal{D}_t\to\mathcal{D}_{-t}$ est un difféomorphisme pour tout $t\in\mathbb{R}$
+                    \item $(\phi_s\circ\phi_t)(t) = \phi_{s+t}(P)$ pour tout $P$ dans le domaine de $\phi_s\circ\phi_t$ et pour tout $r,s\in\mathbb{R}$
+                \end{enumerate}
+            \end{defn}
+            
+            Ces difféomorphisme font correspondre à chaque tenseur $T$ de type $(p,q)$ en $P$ à $\phi_{t*}T$ en $\phi_t(P)$.
+            
+            \begin{defn}
+                La \textit{dérivée de Lie} $\L_X T$ du champ tensoriel $T$ par rapport à $X$ est définie comme
+                \begin{equation}
+                    \L_X T (P) = \lim\limits_{t\to0} \frac{1}{t}\left(T(P)-\phi_{t*}T(P) \right).
+                \end{equation}
+            \end{defn}
+            
+            \begin{prop}
+            \begin{leftbar}
+                La dérivée de Lie du champ tensoriel $T$ par rapport $X$ satisfait les propriétés suivantes :
+                \begin{enumerate}[label = \textit{\roman*}]
+                    \item a
+                \end{enumerate}
+            \end{leftbar}
+            \end{prop}
+            
             \comp
+            
         
         \section{Dérivée covariante et connexion}
         
