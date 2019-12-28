@@ -2204,7 +2204,7 @@ Louan \textsc{Mol}
                 \end{proof}
                 
                 \begin{rmk}
-                    Plus rigoureusement, on peut définir la contraction de la $i$-ème ($1\leq i\leq p$) et de la $j$-ème ($1\leq j\leq q$) composante d'un tenseur de type $(p,q)$ comme l'image de l'application contraction $C^i_j$ définie comme
+                    On peut définir plus rigoureusement la contraction du $i$-ème ($1\leq i\leq p$) et du $j$-ème ($1\leq j\leq q$) indice d'un tenseur de type $(p,q)$ comme l'image de l'application contraction $C^i_j$ définie comme
                     \begin{equation}
                         C^i_j:\left(
                     \begin{array}{ccc}
@@ -2360,7 +2360,7 @@ Louan \textsc{Mol}
                         alors, pour une certaine permutation $\sigma'\in S_p$,
                         \begin{align}
                             t_{a_{\sigma'(1)}\dots a_{\sigma'(p)}} &=  \frac{1}{p!}\sum_{\sigma\in S_p}\varepsilon(\sigma) t_{a_{(\sigma\circ\sigma')(1)}\dots a_{(\sigma\circ\sigma')(p)}}\\
-                            &= \frac{1}{p!}\left( \varepsilon(\sigma'^{-1}) t_{a_{(\sigma'^{-1}\circ\sigma')(1)}\dots a_{(\sigma'^{-1}\circ\sigma')(p)}}+\sum_{\substack{\sigma\in S_p\\\sigma\neq\sigma'^{-1}}} \varepsilon(\sigma) t_{a_{(\sigma\circ\sigma')(1)}\dots a_{(\sigma\circ\sigma')(p)}} \right)\\
+                            &= \frac{1}{p!}\bigg( \varepsilon(\sigma'^{-1}) t_{a_{(\sigma'^{-1}\circ\sigma')(1)}\dots a_{(\sigma'^{-1}\circ\sigma')(p)}}+\sum_{\substack{\sigma\in S_p\\\sigma\neq\sigma'^{-1}}} \varepsilon(\sigma) t_{a_{(\sigma\circ\sigma')(1)}\dots a_{(\sigma\circ\sigma')(p)}} \bigg)\\
                             &= \frac{1}{p!}  \varepsilon(\sigma')t_{a_1\dots a_p}
                         \end{align}
                         La dernière égalité vient du fait que $ \varepsilon(\sigma'^{-1}) =  \varepsilon(\sigma')$ et que le terme avec la somme s'annule. En effet,
@@ -2691,7 +2691,7 @@ Louan \textsc{Mol}
             Le second terme est le même que celui de la loi de transformation d'un tenseur mais il y a aussi un autre terme. De manière générale, la dérivée d'un tenseur n'est donc pas un tenseur. Cela vient du fait que le jacobien du changement de base dépend de $P$. C'est une conséquence du caractère locale de notre théorie.
             
             \begin{defn}
-                La \textit{dérivée extérieur} d'une $p$-forme est définie comme
+                La \textit{dérivée extérieur} fait correspondre une $p$-forme à une $p+1$ forme de manière linéaire comme
                 \begin{equation}
                 d:\left(
                 \begin{array}{ccc}
@@ -2714,7 +2714,7 @@ Louan \textsc{Mol}
             \begin{equation}
                 d\omega = \frac{1}{p!} \p_{\mu_1}\omega_{\mu_2\dots\mu_{p+1}}~dx^{\mu_1}\wedge \dots\wedge dx^{\mu_{p+1}}.
             \end{equation}
-            La dérivée extérieure est donc simplement la différentielle pour les $0$-formes.\\
+            Pour les $0$-formes (c'est-à-dire les fonctions), la dérivée extérieure est simplement la différentielle.\\
             
             De plus, d'après la définition ci dessus,
             \begin{align}
@@ -2730,7 +2730,11 @@ Louan \textsc{Mol}
                 L'objet $d\omega$ tel que définit ci-dessus est une $(p+1)$-forme, c'est-à-dire que les $(d\omega)_{\mu_1 \dots\mu_{p+1}}$ sont les composantes d'un tenseur.
             \end{leftbar}\end{thm}
             
-            Illustrons cela par des exemples.
+            \begin{proof}
+                Ceci se montre simplement en procédant à un changement de coordonnées quelconque et utilisant le fait que les dérivées partielles secondes sont symétriques alors que la produit extérieur est anti-symétrique.
+            \end{proof}
+            
+            Ce résultat repose sur l'anti-symétrie du produit extérieur, c'est pourquoi la dérivée extérieure n'a du sens que pour les $p$-formes.
             
             \begin{exmp}${}$
                 \begin{itemize}[label = \textbullet]
@@ -2785,13 +2789,38 @@ Louan \textsc{Mol}
             \end{leftbar}\end{prop}
             
             \begin{proof}${}$\\
+                Soit $f$ une $0$-forme, c'est-à-dire $f\in C^\infty(\M,\mathbb{R})$. Dans ce cas,
+                \begin{equation}
+                    df = \pdv{f}{x^\mu}dx^\mu
+                \end{equation}
+                donc
+                \begin{equation}
+                    d^2f = \pdv{f}{x^\nu}{x^\mu}dx^\nu\wedge dx^\mu.
+                \end{equation}
+                Ce terme est nul car la dérivée partielle est symétrique et le produit extérieur est anti-symétrique. Soit $\omega = \frac{1}{p!}\omega_{\mu_1\dots\mu_p}~dx^{\mu_1}\wedge \dots\wedge dx^{\mu_p}$ une $p$-forme, alors
+                \begin{equation}
+                    d\omega = \frac{1}{p!}\p_{\mu_1}\omega_{\mu_2\dots\mu_{p+1}} dx^{\mu_1}\wedge \dots\wedge dx^{\mu_{p+1}}
+                \end{equation}
+                et
+                \begin{equation}
+                    d^2\omega = \frac{1}{(p+1)!p!}\p_{\mu_2}\p_{\mu_1}\omega_{\mu_3\dots\mu_{p+2}} dx^{\mu_1}\wedge \dots\wedge dx^{\mu_{p+2}}
+                \end{equation}
+                ce qui s'annule pour les mêmes raisons que dans le cas des $0$-formes.
+            \end{proof}
+            
+            \begin{prop}\begin{leftbar}
+                Soit $\omega$ une $p$-forme quelconque et $\phi:\M\to\N$ une application différentiable. Alors
+                \begin{equation}
+                    d(\phi^*(\omega)) = \phi^*(d\omega).
+                \end{equation}
+            \end{leftbar}\end{prop}
+            
+            \begin{proof}${}$\\
                 \comp
             \end{proof}
             
-            Nous allons maintenant montrer que l'on peut utiliser ce formalisme pour mettre ldes équations de Maxwell homogènes (sans terme de source) sous une forme valable dans tout les référentiels.
-            
             \begin{exmp}
-                Prenons les deux équations de Maxwell qui n'ont pas de terme de source.
+                On peut utiliser ce formalisme pour mettre les équations de Maxwell homogènes (sans terme de source) sous une forme valable dans tout les référentiels.
                 \begin{subequations}
                 \begin{empheq}[left=\empheqlbrace]{align}
                     \vv{\nabla}\cdot\vv{B} &= 0\\
@@ -2805,7 +2834,7 @@ Louan \textsc{Mol}
                     F_{ij} &= \varepsilon_{ijk} B_k
                 \end{empheq}
                 \end{subequations}
-                Ou encore, sous forme matricielle,
+                La représentation matricielle de ce tenseur est
                 \begin{equation}
                 F_{\alpha\beta} = 
                     \begin{bmatrix}
@@ -2813,13 +2842,13 @@ Louan \textsc{Mol}
                     E_1 & 0 & B_3 & -B_2 \\
                     E_2 & -B_3 & 0 & B_1 \\
                     E_3 & B_2 & -B_1 & 0
-                    \end{bmatrix}
+                    \end{bmatrix}.
                 \end{equation}
                 Le simple fait d'imposer la relation
                 \begin{equation}\label{eq:eqtmaxwellinvrel}
                     \p_\alpha F_{\beta\gamma}+\p_\beta F_{\gamma\alpha}+\p_\gamma F_{\alpha\beta} = 0
                 \end{equation}
-                implique les relations précédentes. SI on arrive à mettre cette loi sous forme tensorielle, elle sera automatiquement valable dans tout les systèmes de coordonnées. Or, on peut voir que
+                impose que les équations de Maxwell soit satisfaites. Si l'on arrive à mettre cette loi sous forme tensorielle, elle sera automatiquement valable dans tout les systèmes de coordonnées. Or, on peut voir que
                 \begin{equation}
                     \p_\alpha F_{\beta\gamma}+\p_\beta F_{\gamma\alpha}+\p_\gamma F_{\alpha\beta} = (dF)_{\alpha\beta\gamma}
                 \end{equation}
@@ -2840,16 +2869,7 @@ Louan \textsc{Mol}
                 Inversement, si $dF = 0$, est-ce qu'il existe toujours une $1$-forme $A$ telle que $F = dA$ ? La réponse est oui, si la variété a une topologie triviale. Dans ce cas, on dit que $F$ est une forme exacte.
             \end{exmp}
             
-            \begin{prop}\begin{leftbar}
-                Soit $\omega$ une $p$-forme quelconque et $\phi:\M\to\N$ une application différentiable. Alors
-                \begin{equation}
-                    d(\phi^*(\omega)) = \phi^*(d\omega).
-                \end{equation}
-            \end{leftbar}\end{prop}
-            
-            \begin{proof}${}$\\
-                \comp
-            \end{proof}
+            La dérivée extérieure permet de généraliser le théorème de Stokes pour les variétés différentiables orientables.
             
         \section{Dérivée de Lie}
             
