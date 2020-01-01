@@ -148,8 +148,7 @@
 \center
 
 \textsc{\LARGE Université Libre de Bruxelles (ULB)}\\[1.5cm] % Name of your university/college
-\includegraphics[scale=.1]{background.png}\\[1cm] % Include a department/university logo - this will require the graphicx package
-%\textsc{\Large }\\[0.5cm] % Major heading such as course name
+\includegraphics[scale=.1]{background.png}
 \textsc{\large PHYS-F432}\\[0.5cm] % Minor heading such as course title
 
 
@@ -183,7 +182,7 @@ Louan \textsc{Mol}
 
 \chapter*{Avant-propos}
 
-    Ce document reprend mes notes du cours de \textit{Théorie de la gravitation} donné par le professeur \textit{F. Ferrari} à l'\textit{Université Libre de Bruxelles (ULB)} durant l'année 2019-2020. Ce cours est destiné aux étudiants de première année de master en physique. Je me suis permis de rajouter certains détails, rappels et applications trouvés dans les différentes références.\\
+    Ce document reprend mes notes du cours de \textit{Théorie de la gravitation} donné par le professeur \textit{F. Ferrari} à l'\textit{Université Libre de Bruxelles (ULB)} durant l'année 2019-2020. Ce cours est destiné aux étudiants en première année de master en physique. Je me suis permis de rajouter certains détails, rappels et applications trouvés dans les différentes références.\\
     
     Les notions mathématiques sont définies le plus rigoureusement possible, tout en y apportant une interprétation physique. Le but étant d'avoir un fondement mathématique solide. Beaucoup de notations et de définitions sont tirées du cours de Géométrie Différentielle de \textit{S. Gutt}. \\
     
@@ -1812,6 +1811,14 @@ Louan \textsc{Mol}
 
     Dans ce chapitre, nous allons introduire toutes les notions de géométrie différentielle nécessaire pour la suite du cours. Nous avons vu que pour étudier un espace-temps courbe il faut introduire le concept de variété. La prochaine étape et de formaliser la notion de grandeur physique. Une grandeur physique est associée à un champ tensoriel sur la variété. Pour pouvoir mettre au point des équation qui décrivent ce grandeurs, on doit mettre au point une notion de dérivée pour les champ de tenseurs. On introduit alors trois opérateur différentiels : la dérivée extérieure (pour les $p$-forme), la dérivée de Lie (pour les champs de vecteurs) et finalement le dérivée covariante (pour les tenseurs). Le deux premiers opérateurs peuvent être définit à partir de la structure de variété mais le dernier nécessite une structure supplémentaire : la connexion. Ceci permettra décrire les équations du champ de matière qui régissent la gravité de manière covariante dans le chapitre suivant.
     
+    \begin{rmk}
+        Soit $Q_P$ un certain objets mathématique définit au point $P\in\M$, on peut alors lui associer le champ
+        \begin{equation*}
+            Q:P\in\M\mapsto Q_P
+        \end{equation*}
+        de sorte que toutes le propriété de $Q$ sont exactement les mêmes pour $Q_P$ si l'on se donne un point. Tout au long de ce chapitre, on se permettra de définir certaines quantités en un point $P$ en particulier et après d'utiliser ces notions sans spécifier le point; on fait en fait référence au champ associé. Ces notions de champs seront définies rigoureusement au cours du chapitre. Pour l'instant, c'est simplement une notation qui utilise le fait que les propriétés de $Q$ ne dépendent pas du point considéré.
+    \end{rmk}
+    
         \section{Vecteurs et tenseurs en géométrie différentielle}
         
             \subsection{Espace tangent}
@@ -1851,10 +1858,6 @@ Louan \textsc{Mol}
                     X_P = \sum_{\mu=0}^3 X^\mu \frac{\p}{\p x^\mu}\bigg|_P
                 \end{equation}
                 où $V^\mu\in\mathbb{R}$.
-                
-                \begin{rmk}
-                    Lorsque le contexte est clair, nous ne noterons pas le point de tangence du vecteur : $X\equiv X_P$, $\p_\mu\equiv\eval{\frac{\p}{\p x^\mu}}_P$.
-                \end{rmk}
                 
                 \begin{prop}\begin{leftbar}
                     L'ensemble
@@ -1919,7 +1922,7 @@ Louan \textsc{Mol}
                 \begin{prop}\begin{leftbar}
                     Si $x^\mu$ sont des coordonnées locales en $P\in\M$ et $y^\mu$ sont des coordonnées locales en $\phi(P)\in\N$, la matrice associée à cette application linéaire est la jacobienne de $y\circ\phi\circ x^{-1}$ dans les bases $\eval{\pdv{}{x^\mu}}_{P}$ et  $\eval{\pdv{}{y^\mu}}_{\phi(P)}$. De sorte que, si $X = X^\mu\eval{\pdv{}{x^\mu}}_{P}\in T_P\M$, 
                     \begin{equation}
-                        \phi_*(X) = X^\mu\eval{\pdv{(y\circ\phi\circ x^{-1})^\nu(x^1(P),\dots,x^n(P))}{x^\mu}(P)}_{x(P)}\eval{\pdv{}{y^\nu}}_{P}
+                        \phi_*(X) = X^\mu\eval{\pdv{(y\circ\phi\circ x^{-1})^\nu}{x^\mu(P)}(x^1(P),\dots,x^n(P))}_{x(P)}\eval{\pdv{}{y^\nu}}_{P}
                     \end{equation}
                 \end{leftbar}\end{prop}
                 
@@ -1929,7 +1932,7 @@ Louan \textsc{Mol}
                 \end{equation*}
                 on a $\M=\N$ et $\phi = Id$. Dans ce cas, la matrice de changement de base est $\text{Jac}(y\circ x^{-1})$.\\
                 
-                Si $\phi$ est un difféomorphisme, on peut montrer que $\phi_*$ est isomorphisme linéaire. Des variétés qui sont difféomorphes ont donc des espaces tangent isomorphes. Réciproquement, si il existe un point $P\in\M$ tel que, en $P$, $\phi_*$ est un isomorphisme, alors il existe une voisinage $U$ autour de $P$ tel que $\phi$ restreint à ce voisinage soit un difféomorphisme du $U$ à $\phi(U)$.
+                Si $\phi$ est un difféomorphisme, on peut montrer que $\phi_*$ est isomorphisme linéaire. Des variétés qui sont difféomorphes ont donc des espaces tangent isomorphes. Réciproquement, si il existe un point $P\in\M$ tel que, en $P$, $\phi_*$ est un isomorphisme, alors il existe une voisinage $U$ autour de $P$ tel que $\phi$ restreint à ce voisinage soit un difféomorphisme de $U$ à $\phi(U)$.
                 
                 
             
@@ -1964,39 +1967,38 @@ Louan \textsc{Mol}
                 \end{equation}
                 
                 \begin{defn}
-                    A toute fonction $f\inC^\infty(\M,\mathbb{R})$ on peut faire correspondre un élément de l'espace dual vecteur tangent $df_P\in(T_P\M)^*$ définit comme
+                    A toute fonction $f\in C^\infty(\M,\mathbb{R})$ on peut faire correspondre un élément de l'espace dual $df_P\in(T_P\M)^*$ définit comme
                     \begin{equation}
                         df_P(X_P) = X_P[f]
                     \end{equation}
-                    pour tout $X_P\in T_P\M$. Cette application est appelée la $\textit{différentielle}$ de $f$. Nous utiliserons la notation $df\equiv df_P$.
+                    pour tout $X_P\in T_P\M$. Cette application est appelée la $\textit{différentielle}$ de $f$.
                 \end{defn}
                 Faire agir la différentielle d'une fonction sur un vecteur tangent revient à faire agir ce vecteur tangent sur la fonction.\\
                 
-                Pour l'espace tangent, nous avions vu que la donnée de coordonnées permet de définir une base naturelle. De la même manière, la donnée de coordonnées permet on peut définir une base naturelle pour l'espace cotangent. Pour rappel, les coordonnée locales $x^\mu$ sont des applications de $\M$ dans $\mathbb{R}$ différentiables ce qui permet de considérer la différentielle de ses applications.
+                Pour l'espace tangent, nous avions vu que la donnée de coordonnées permet de définir une base naturelle. De la même manière, la donnée de coordonnées permet de définir une base naturelle de l'espace cotangent. Pour rappel, les coordonnée locales $x^\mu$ sont des applications de $\M$ dans $\mathbb{R}$ différentiables ce qui permet de considérer la différentielle de ses applications.
                 
                 \begin{prop}\begin{leftbar}
-                    Si $x$ sont des coordonnées locales en $P\in\M$, alors l'ensemble $\{dx^\mu\}_{\mu=i,\dots,n}$ forme une base de l'espace cotangent $(T_P\M)^*$.
+                    Si $x$ sont des coordonnées locales en $P\in\M$, alors l'ensemble $\{dx^\mu\}_{\mu=i,\dots,n}$ est la base duale de $\{\p_\mu\}_{\mu=i,\dots,n}$.
                 \end{leftbar}\end{prop}
                 
                 \begin{proof}${}$\\
-                    \comp
+                    On retrouve la relation
+                    \begin{equation}
+                        dx^\nu(\p_\mu) = \p_\nu x^\mu = \delta^\mu_\nu.
+                    \end{equation}
+                    La base $\{dx^\mu\}_{\mu=i,\dots,n}$ est donc la base duale associée à la base $\{\p_\mu\}_{\mu=i,\dots,n}$ de l'espace tangent.
                 \end{proof}
-                
-                La base $\{dx^\mu\}_{\mu=i,\dots,n}$ est la base duale associée à la base $\{\p_\mu\}_{\mu=i,\dots,n}$ de l'espace tangent. On retrouve la relation
-                \begin{equation}
-                    dx^\nu(\p_\mu) = \p_\nu x^\mu = \delta^\mu_\nu.
-                \end{equation}
                 
                 \begin{rmk}
                     Maintenant que nous disposons des base naturelle pour $T_P\M$ et pour $(T_P\M)^*$, il faut garder à l'esprit que même si nous utilisons les notations abstraites $\{e_\mu\}$ et $\{e^\mu\}$, on peut toujours remplacer les $e_\mu$ par $\p_\mu$ et les $e^\mu$ par $dx^\mu$ par la donnée de coordonnées locales.
                 \end{rmk}
                 
                 \begin{rmk}
-                    Si $f\in C^\infty(\M,\mathb{R})$ et $df\neq0$, la surface $f=\text{constante}$ de $\M$ est une variété de dimension $n-1$. Le sous-espace de $T_P\M$ qui contient tout les vecteurs $X$ tels que $df(X) = 0$ possède tout les vecteurs tangents à une courbe dans la surface $f=\text{constante}$ passant par $P$. On peut donc penser à $df$ comme la normale à la surface $f=\text{constante}$ en $P$.
+                    Si $f\in C^\infty(\M,\mathbb{R})$ et $df\neq0$, la surface $f=\text{constante}$ de $\M$ est une variété de dimension $n-1$. Le sous-espace de $T_P\M$ qui contient tout les vecteurs $X$ tels que $df(X) = 0$ possède tout les vecteurs tangents à une courbe dans la surface $f=\text{constante}$ passant par $P$. On peut donc penser à $df$ comme la normale à la surface $f=\text{constante}$ en $P$.
                 \end{rmk}
                 
                 \begin{prop}\begin{leftbar}
-                    Soit $f:\M\to\mathbb{R}$ une fonction quelconque et $x$ des coordonnées locales en $P\in\M$. L'application différentielle de $df$ peut se décomposer dans la base duale $dx^\mu$ associée aux coordonnées $x$ comme
+                    Soit $f:\in C^\infty(\M,\mathbb{R})$ une fonction quelconque et $x$ des coordonnées locales en $P\in\M$. L'application différentielle de $df$ peut se décomposer dans la base duale $dx^\mu$ associée aux coordonnées $x$ comme
                     \begin{equation}
                         df = \pdv{f}{x^\mu}dx^\mu.
                     \end{equation}
@@ -2025,9 +2027,7 @@ Louan \textsc{Mol}
                 \begin{equation}
                     \omega = \omega_\mu~dx^\mu
                 \end{equation}
-                avec $\omega_\mu\in\mathbb{R}$.\\
-                
-                Notons que les $\p_\mu$ sont bien covariants, les $V^\mu$ contravariants, les $dx^\mu$ contravariants et les $w_\mu$ covariants. Ceci est vrai quel que soit l'espace vectoriel en question. On éclaircira ça dans la section suivante. Il est aussi important de remarquer que lorsque l'on considère des changements de base dans cette partie, on parle de changement de base quelconque, et pas forcément des transformations de Lorentz.\\
+                avec $\omega_\mu\in\mathbb{R}$. Notons que les $\p_\mu$ sont bien covariants, les $V^\mu$ contravariants, les $dx^\mu$ contravariants et les $w_\mu$ covariants. Ceci est vrai quel que soit l'espace vectoriel en question. On éclaircira ça dans la section suivante. Il est aussi important de remarquer que lorsque l'on considère des changements de base dans cette partie, on parle de changement de base quelconque, et pas forcément des transformations de Lorentz.\\
                 
                 Si $\phi:\M\to\N$ est différentiable, on peut définir la différentielle de l'application $\phi$ entre les espaces tangents de $\N$ et $\M$, notée $\phi_*$, comme vu dans la section précédente. Maintenant que nous étudions les espaces tangents duaux, on peut définir, à partir de $\phi_*$, une application qui associe à chaque forme linéaire de $(T_{\phi(P)}\N)^*$ une forme linéaire de $(T_P\M)^*$. C'est la transposée de l'application (ou "pullback").
                 
@@ -2045,7 +2045,7 @@ Louan \textsc{Mol}
                     \begin{equation}
                         \phi^{*P}(\omega)(X) = \omega(\phi_{*P}(X))
                     \end{equation}
-                    pour tout $\omega\in (T_{\phi(P)})^*$ et $X\in T_P\M$. Nous utiliserons la notation $\phi^{*P}\equiv\phi^*$.
+                    pour tout $\omega\in (T_{\phi(P)})^*$ et $X\in T_P\M$.
                 \end{defn}
             
             \subsection{Tenseurs}
@@ -2084,7 +2084,7 @@ Louan \textsc{Mol}
                     \end{equation}
                 \end{defn}
                 
-                On écrit $X_1\otimes\dots\otimes X_p\otimes\omega^1\otimes\omega^q$ le tenseur qui envois $(\eta^1,\dots,\eta^p,Y_1,\dots,_p)$ sur
+                On écrit $X_1\otimes\dots\otimes X_p\otimes\omega^1\otimes\omega^q$ le tenseur qui envois $(\eta^1,\dots,\eta^p,Y_1,\dots,Y_p)$ sur
                 \begin{equation}
                     \eta^1(X_1)\dots\eta^p(X_p)\omega^1(Y_1)\dots\omega^q(Y_q).
                 \end{equation}
@@ -2130,14 +2130,22 @@ Louan \textsc{Mol}
                 La propriété fondamentale des tenseurs est la loi de transformation de leurs composantes.
                 
                 \begin{prop}\begin{leftbar}
-                    Soit $T$ un tenseur de type $(p,q)$) de composantes $T\indices{^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q}}$ dans les coordonnées $x$. Les composantes de $T$ dans les coordonnées $x'$ s'expriment comme 
+                    Soit $T$ un tenseur de type $(p,q)$ de composantes $T\indices{^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q}}$ dans les coordonnées $x$. Les composantes de $T$ dans les coordonnées $x'$ s'expriment comme 
                     \begin{equation}
-                        T'^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q} = \pdv{x'^{\mu_1}}{x^{\sigma_1}} (P)\dots\pdv{x'^{\sigma_p}}{x^{\sigma_p}}(P)\pdv{x^{\rho_1}}{x'^{\nu_1}}(P)\dots\pdv{x^{\rho_q}}{x'^{\nu_q}}(P)~T\indices{^{\sigma_1\dots\sigma_p}_{\rho_1\dots\rho_q}}
+                        T'\indices{^{\mu_1}^\dots^{\mu_p}_{\nu_1}_\dots_{\nu_q}} = \pdv{x'^{\mu_1}}{x^{\sigma_1}} (P)\dots\pdv{x'^{\sigma_p}}{x^{\sigma_p}}(P)\pdv{x^{\rho_1}}{x'^{\nu_1}}(P)\dots\pdv{x^{\rho_q}}{x'^{\nu_q}}(P)~T\indices{^{\sigma_1\dots\sigma_p}_{\rho_1\dots\rho_q}}
                     \end{equation}
                 \end{leftbar}\end{prop}
                 
                 \begin{proof}${}$\\
-                    \comp
+                    Si $V\in T_P\M$ et $V^\mu\p_\mu$ dans les coordonnées locales $x^\mu$. Dans d'autres coordonnées locales $x'^\mu$, on a la matrice de changement de base (jacobienne) $ \frac{\p x'^\mu}{\p x^\nu}$ et $\omega = \omega_\mu~dx^\mu$, alors
+                    \begin{equation}
+                        V[\phi] = V^\mu \frac{\p\phi}{\p x^\mu} =  \underbrace{V^\mu\frac{\p x'^\nu}{\p x^\mu}}_{V'^\nu}\frac{\p\phi}{\p x'^\nu}
+                    \end{equation}
+                    pour tout $\phi\in C^\infty(\M,\mathbb{R})$, avec $V'^\mu = V^\nu\frac{\p x'^\mu}{\p x^\nu}$. Et donc les $V^\mu$ sont des tenseurs de type $(1,0)$ car ils se transforment de la manière souhaitée. Si $\omega\in (T_P\M)^*$ et $w_\mu dx^\mu$ dans les coordonnées locales $x^\mu$. Pour d'autres coordonnées locales $x'^\mu$ on a la matrice de changement de base (jacobienne) $ \frac{\p x^\mu}{\p x'^\nu}$ et $\omega = \omega_\mu~dx^\mu$, alors
+                    \begin{equation}
+                        \omega = T_P^{(0,1)\M} = \omega_\mu~dx^\mu =  \underbrace{\omega_\mu \frac{\p x^\mu}{\p x'^\nu}}_{w'_\nu}dx'^\nu
+                    \end{equation}
+                    donc les $\omega_\mu$ sont bien des tenseurs de type $(0,1)$. Le cas générale est direct en utilisant la linéarité du produit tensoriel.
                 \end{proof}
                 
                 \begin{defn}
@@ -2151,13 +2159,6 @@ Louan \textsc{Mol}
                     \end{equation}
                 \end{leftbar}\end{prop}
                 
-                \begin{proof}${}$\\
-                    Si $V\in T_P\M$ et $V^\mu\p_\mu$ dans les coordonnées locales $x^\mu$. Dans d'autres coordonnées locales $x'^\mu$, on a la matrice de changement de base (jacobienne) $ \frac{\p x'^\mu}{\p x^\nu}$ et $\omega = \omega_\mu~dx^\mu$, alors
-                    \begin{equation}
-                        V[\phi] = V^\mu \frac{\p\phi}{\p x^\mu} =  \underbrace{V^\mu\frac{\p x'^\nu}{\p x^\mu}}_{V'^\nu}\frac{\p\phi}{\p x'^\nu}
-                    \end{equation}
-                    pour tout $\phi\in C^\infty(\M,\mathbb{R})$, avec $V'^\mu = V^\nu\frac{\p x'^\mu}{\p x^\nu}$. Et donc les $V^\mu$ sont des tenseurs de type $(1,0)$ car ils se transforment de la manière souhaitée. Notons que ce résultat est est direct si l'on utilise le fait que l'espace tangent est un espace vectoriel, mais nous l'avons vérifie autrement.
-                \end{proof}
                 La loi de transformation est bien celle d'un vecteur. Ceci justifie le nom de "vecteur" tangent.\\
                 
                 \begin{prop}\begin{leftbar}
@@ -2166,14 +2167,6 @@ Louan \textsc{Mol}
                         (T_P\M)^* \equiv \Omega_1(\M)
                     \end{equation}
                 \end{leftbar}\end{prop}
-            
-                \begin{proof}
-                    Si $\omega\in (T_P\M)^*$ et $w_\mu dx^\mu$ dans les coordonnées locales $x^\mu$. Pour d'autres coordonnées locales $x'^\mu$ on a la matrice de changement de base (jacobienne) $ \frac{\p x^\mu}{\p x'^\nu}$ et $\omega = \omega_\mu~dx^\mu$, alors
-                    \begin{equation}
-                        \omega = T_P^{(0,1)\M} = \omega_\mu~dx^\mu =  \underbrace{\omega_\mu \frac{\p x^\mu}{\p x'^\nu}}_{w'_\nu}dx'^\nu
-                    \end{equation}
-                    donc les $\omega_\mu$ sont bien des tenseurs de type $(0,1)$.
-                \end{proof}
                 
                 Discutons des opérations que l'on peut faire entre tenseurs.
                 
@@ -2222,9 +2215,9 @@ Louan \textsc{Mol}
                 
                 \begin{exmp}${}$
                     \begin{itemize}[label = \textbullet]
-                        \item Soit $F_{\mu\nu}$ un tenseur de type $(0,2)$ et $g^{\mu\nu}$ un tenseur de type $(2,0)$. Alors $T_{\mu\nu}^{\sigma\rho}~\hat{=}~F_{\mu\nu}g^{\sigma\rho}$ est un tenseur de type $(2,2)$.
-                        \item Soit $t^{ab}_{c}$ un tenseur de type $(2,1)$. Il y a deux contractions distinctes : $T_1^a~\hat{=}~^{ba}_b$ et $T_2^a~\hat{=}~^{ab}_b$. Ce sont tout deux des tenseurs de type $(1,0)$.
-                        \item Soit $F_{\mu\nu}$ un tenseur de type $(0,2)$ et $H^{\mu\nu\rho}$ un tenseur de type $(3,0)$. Alors $T^{\mu\nu}_{\sigma}~\hat{=}~H^{\mu\nu\rho}F_{\rho\sigma}$ est un tenseur de type $(2,1)$. On a utilisé le produit tensoriel et la contraction.
+                        \item Soit $F_{\mu\nu}$ un tenseur de type $(0,2)$ et $g^{\mu\nu}$ un tenseur de type $(2,0)$. Alors $T\indices{^\sigma^\rho_\mu_\nu}~\hat{=}~F_{\mu\nu}g^{\sigma\rho}$ est un tenseur de type $(2,2)$.
+                        \item Soit $t\indices{^a^b_c}$ un tenseur de type $(2,1)$. Il y a deux contractions distinctes : $T_1^a~\hat{=}~t\indices{^b^a_b}$ et $T_2^a~\hat{=}~t\indices{^a^b_b}$. Ce sont tout deux des tenseurs de type $(1,0)$.
+                        \item Soit $F_{\mu\nu}$ un tenseur de type $(0,2)$ et $H^{\mu\nu\rho}$ un tenseur de type $(3,0)$. Alors $T\indices{^\mu^\nu_\sigma}~\hat{=}~H^{\mu\nu\rho}F_{\rho\sigma}$ est un tenseur de type $(2,1)$. On a utilisé le produit tensoriel et la contraction.
                     \end{itemize}
                 \end{exmp}
                 
@@ -2256,8 +2249,7 @@ Louan \textsc{Mol}
                     \begin{equation}
                         \widetilde{T}\indices{^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q}} = T\indices{^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q}}.
                     \end{equation}
-                    
-                    \comp
+                    car ca doit être vrai pour tout $\omega^1,\dots,\omega^p,X_1,\dots,X_q$.
                 \end{proof}
                 
                 \begin{rmk}
@@ -2311,16 +2303,8 @@ Louan \textsc{Mol}
                 
                 \begin{proof}${}$
                     \begin{enumerate}[label = \textit{\roman*)}]
-                        \item On voit clairement que l'expression
-                        \begin{equation}
-                            \frac{1}{p!} \sum_{\sigma\in S_p} t_{a_{\sigma(1)}\dots a_{\sigma(p)}}
-                        \end{equation}
-                        est complètement symétrique.
-                        \item De même que que précédemment, on voit clairement que l'expression
-                        \begin{equation}
-                            \frac{1}{p!} \sum_{\sigma\in S_p}\varepsilon(\sigma) t_{a_{\sigma(1)}\dots a_{\sigma(p)}}
-                        \end{equation}
-                        est complètement anti-symétrique.
+                        \item On voit clairement que l'expression est complètement symétrique.
+                        \item De même que que précédemment, on voit clairement que l'expression est complètement anti-symétrique.
                     \end{enumerate}
                 \end{proof}
                 
@@ -2394,15 +2378,13 @@ Louan \textsc{Mol}
                 
                 Comme il a déjà été mentionné, la donnée d'un système de coordonnées rend les notion de tenseur et de coordonnée de tenseur équivalentes. Pour les tenseurs d'ordre $2$, on peut associer une matrice dont les éléments sont les composantes du tenseur.
                 
+            \subsection{Tenseur métrique}
+                
                 \begin{defn}
                     Soit un tenseur $t$ d'ordre $2$. On dit que ce tenseur est \textit{non-dégénéré} si la matrice de ses composantes est inversible.
                 \end{defn}
                 
                 Remarquons que la notion de dégénérescence dépend du point $P$ considéré.
-                
-            \subsection{Tenseur métrique}
-                
-                Après cette discussion, nous pouvons définir le tenseur métrique.
                 
                 \begin{defn}
                     Un \textit{tenseur métrique} est un tenseur de type $(0,2)$ non-dégénéré et complètement symétrique.
@@ -2490,7 +2472,7 @@ Louan \textsc{Mol}
                     Autrement dit, $T_1 = T_2 = T$ est un tenseur d'ordre $3$ dont les indices des composantes peuvent changer de variance comme ci-dessus.
                 \end{exmp}
                 
-                Notons bien que dès l'introduction de la notion de tenseur, nous avons utilisé une notation en terme des composantes qui tient compte de l'ordre des indices sans aucune raison à priori. Si l'on ne tient pas compte du dernier résultat que, il ne faut pas tenir compte de l'ordre des indices. Pour lever l'ambiguïté, il faut dorénavant spécifier la position relative des indices covariants et contravariants car l'isomorphisme ne permute pas les colonnes, il permet seulement de changer la variance d'indices donnés.
+                Notons bien que dès l'introduction de la notion de tenseur, nous avons utilisé une notation en terme des composantes qui tient compte de l'ordre des indices sans aucune raison à priori. Si l'on ne tient pas compte du dernier résultat que, il ne faut pas tenir compte de l'ordre des indices, juste de leurs variance. Pour lever l'ambiguïté, il faut dorénavant spécifier la position relative des indices covariants et contravariants car l'isomorphisme ne permute pas les colonnes, il permet seulement de changer la variance d'indices donnés.
                 
                 \begin{prop}
                 \begin{leftbar}
@@ -2519,7 +2501,7 @@ Louan \textsc{Mol}
             \end{defn}
             
             \begin{rmk}
-                La condition $p\leq n$ s'explique par le fait qu'il n'est pas possible d'anti-symétriser une quantité si $n<p$. Nous vérifierons plus tard que $dim(\Omega_P^p(\M)) = {p \choose n}$ ce qui n'est définis que si $n\leq p$.
+                La condition $p\leq n$ s'explique par le fait qu'il n'est pas possible d'anti-symétriser une quantité qui a plus d'indices que le nombres de valeurs que peuvent prendre les indices, c'est-à-dire si $n<p$. Nous vérifierons plus tard que $dim(\Omega_P^p(\M)) = {p \choose n}$ ce qui n'est définis que si $n\leq p$.
             \end{rmk}
             
              L'espace des $p$-formes $\Omega_P^p(\M)$ est un sous-espace vectoriel de $T_P^{(0,p)}(\M)$. A long terme, nous cherchons à obtenir une notion de dérivée pour les tenseurs, la simple dérivée des composantes ne donnant plus un tenseur (on le vérifiera dans la suite). On peut relativement facilement définir une notion de dérivée pour les $p$-formes, c'est la dérivée extérieur. Cette notion est définie à partir d'une opération entre les $p$-formes appellée produit extérieur.\\
@@ -2929,11 +2911,27 @@ Louan \textsc{Mol}
             \begin{prop}
             \begin{leftbar}
                 La dérivée de Lie du champ tensoriel $T$ par rapport $X$ satisfait les propriétés suivantes :
-                \begin{enumerate}[label = \textit{\roman*}]
-                    \item a
+                \begin{enumerate}[label = \textit{\roman*)}]
+                    \item $\L_X$ préserve le type du tenseur
+                    \item $\L_X$ est linéaire et préserve les contractions
+                    \item soient $T_1,T_2$ deux champ de tenseurs, on a la règle de Leibniz suivantes :
+                    \begin{equation}
+                        \L_X(T_\otimes T_2) = \L_X T_1\otimes T_2+T_1\otimes \L_X T_2
+                    \end{equation}
+                    \item si $f$ est un fonction, alors 
+                    $\L_Xf = X(f)$
                 \end{enumerate}
             \end{leftbar}
             \end{prop}
+            
+            Prenons le difféomorphisme $\phi_t$. Le point $Q = \phi_{-t}(P)$ est envoyé sur $(\phi_{t}\circ\phi_{-t})(P) = P$ donc la différentielle de l'application $\phi_t$ permet de passe de l'espace tangent en $Q$ à l'espace tangent en $P$
+            \begin{equation}
+                \phi_{t*}=T_Q\M\to T_P\M.
+            \end{equation}
+            L'action sur une fonction quelconque $f$ est 
+            \begin{equation}
+                aa
+            \end{equation}
             
             \comp
             
