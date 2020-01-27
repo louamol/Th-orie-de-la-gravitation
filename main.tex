@@ -2376,15 +2376,15 @@ Louan \textsc{Mol}
                     \comp
                 \end{proof}
                 
-                Comme il a déjà été mentionné, la donnée d'un système de coordonnées rend les notion de tenseur et de coordonnée de tenseur équivalentes. Pour les tenseurs d'ordre $2$, on peut associer une matrice dont les éléments sont les composantes du tenseur.
-                
-            \subsection{Tenseur métrique}
+                Comme il a déjà été mentionné, la donnée d'un système de coordonnées rend les notion de tenseur et de coordonnée de tenseur équivalentes. Pour les tenseurs d'ordre $2$, on peut associer une matrice dont les éléments sont les composantes du tenseur.\\
                 
                 \begin{defn}
                     Soit un tenseur $t$ d'ordre $2$. On dit que ce tenseur est \textit{non-dégénéré} si la matrice de ses composantes est inversible.
                 \end{defn}
                 
                 Remarquons que la notion de dégénérescence dépend du point $P$ considéré.
+                
+            \subsection{Tenseur métrique}
                 
                 \begin{defn}
                     Un \textit{tenseur métrique} est un tenseur de type $(0,2)$ non-dégénéré et complètement symétrique.
@@ -2514,8 +2514,8 @@ Louan \textsc{Mol}
             \begin{align}\label{dev:pformebase}
                 w' &= \omega_{[a_1\dots a_p]} e^{a_1}\otimes\dots\otimes e^{a_p}\\
                 &= \frac{1}{p!} \sum_{\sigma\in S_p}\varepsilon(\sigma) \omega_{a_{\sigma(1)}\dots a_{\sigma(p)}} e^{a_1}\otimes\dots\otimes e^{a_p}\\
-                &= \frac{1}{p!} \sum_{\sigma\in S_p}\varepsilon(\sigma) \omega_{a_1\dots a_p} e^{a_{\sigma(a)}}\otimes\dots\otimes e^{a_{\sigma(p)}}\\
-                &= \frac{1}{p!}\omega_{a_1\dots a_p} \left( \sum_{\sigma\in S_p}\varepsilon(\sigma)  e^{a_{\sigma(a)}}\otimes\dots\otimes e^{a_{\sigma(p)}}\right)\label{eq:pformebase}
+                &= \frac{1}{p!} \sum_{\sigma\in S_p}\varepsilon(\sigma) \omega_{a_1\dots a_p} e^{a_{\sigma(1)}}\otimes\dots\otimes e^{a_{\sigma(p)}}\\
+                &= \frac{1}{p!}\omega_{a_1\dots a_p} \left( \sum_{\sigma\in S_p}\varepsilon(\sigma)  e^{a_{\sigma(1)}}\otimes\dots\otimes e^{a_{\sigma(p)}}\right)\label{eq:pformebase}
             \end{align}
             
             \begin{defn}
@@ -2531,7 +2531,7 @@ Louan \textsc{Mol}
             \end{leftbar}\end{prop}
             
             \begin{proof}
-                Nous avons montré que la partie anti-symétrique de tout tenseur peut s'écrire dans cette base. Cependant, ce n'est pas forcément le cas le plus générale. A priori, rien ne garanti qu'il n'existe pas de tenseurs complètement anti-symétriques qui ne sont pas la partie anti-symétrique d'un autre tenseur. Si c'est le cas, il faut montrer que ces tenseurs là aussi peuvent s'écrire dans cette base. Quelque soit $\omega\in T^{(p,q)}_P(\M)$, nous avons vu que ce tenseur est complètement anti-symétrique si et seulement si
+                Quelque soit $\omega\in T^{(p,q)}_P(\M)$, nous avons vu que ce tenseur est complètement anti-symétrique si et seulement si
                 \begin{equation}
                     \omega_{[a_1\dots a_2]} = \omega_{a_1\dots a_2}.
                 \end{equation}
@@ -2539,17 +2539,9 @@ Louan \textsc{Mol}
                 \begin{equation}
                     \{e^{a_1}\wedge \dots\wedge e^{a_{p}}\}
                 \end{equation}
-                satisfont à cette condition. Inversement, soit un tenseur quelconque $\omega\in T^{(p,q)}_P\M$ tel que
-                \begin{equation}
-                    \omega_{[a_1\dots a_2]} = \omega_{a_1\dots a_2}.
-                \end{equation}
-                alors
-                \begin{align}
-                     \omega_{a_1\dots a_2} =  \omega_{[a_1\dots a_2]}\\
-                     &= 
-                \end{align}
-                \comp
-                De plus, comme la dérivée extérieur revient à faire une somme sur toute les permutations, on peut restreindre au cas où $1\leq a_1<\dots<a_p\leq n$. Si l'on ne le fait pas, on obtiendrait bien un ensemble générateur de $\Omega_P^p(\M)$ mais il contiendrais des éléments co-linéaires. Par exemple, si l'on considère un cas plus simple où $p=n=2$. La dimension de $\Omega_P^2(\M)$ est 1. Et,
+                satisfont à cette condition. Nous avons montré que la partie anti-symétrique de tout tenseur peut s'écrire dans cette base. Cependant, ce n'est pas forcément le cas le plus générale. A priori, rien ne garanti qu'il n'existe pas des tenseurs complètement anti-symétriques qui ne sont pas la partie anti-symétrique d'un autre tenseur. Si c'est le cas, il faut montrer que ces tenseurs là aussi peuvent s'écrire dans cette base. On peut en fait se rendre compte que ce n'est pas le cas en remarquant que la parti anti-symétrique d'un tenseur anti-symétrique est le tenseur lui-même. Tout tenseur anti-symétrique peu donc être vu comme la aprtie anti-symétrique d'un tenseur (en particulier lui-même).\\
+                
+                De plus, comme le produit extérieur revient à faire une somme sur toute les permutations, on peut restreindre au cas où $1\leq a_1<\dots<a_p\leq n$. Si l'on ne le fait pas, on obtiendrait bien un ensemble générateur de $\Omega_P^p(\M)$ mais il contiendrais des éléments co-linéaires. Par exemple, si l'on considère un cas plus simple où $p=n=2$. La dimension de $\Omega_P^2(\M)$ est 1. Et,
                 \begin{equation}
                     e^a\wedge e^b = \frac{1}{2}\sum_{\sigma\in S_2} \varepsilon(\sigma)e^{\sigma(a)}\otimes e^{\sigma(b)} = \frac{1}{2}\left( e^a\otimes e^b - e^b\otimes e^a \right)
                 \end{equation}
@@ -2561,17 +2553,21 @@ Louan \textsc{Mol}
                     &= \left\{ 
                     0, \frac{1}{2}\left( e^1\otimes e^2 - e^2\otimes e^1 \right),-\frac{1}{2}\left( e^1\otimes e^2 - e^2\otimes e^1 \right),0 \right\}
                 \end{align}
-                On voit donc que non seulement il y a des éléments co-linéaires, mais en plus que certaines combinaisons s'annulent. Ces combinaisons sont celle qui sont invariante sur la permutation de deux indices, si l'on fait une combinaison linéaire anti-symétrique d'élément symétriques, ca s'annule. Pour éviter la cas des combinaisons qui s'annulent, il faut imposer que $a_1\neq \dots\neq a_p$. Pour éviter les éléments co-linéaires (c'est-à-dire les comptage de deux fois le même éléments), on doit imposer $1\leq a_1<\dots<a_p\leq n$. Pour finir,
+                On voit donc que non seulement il y a des éléments co-linéaires, mais en plus que certaines combinaisons s'annulent. Ces combinaisons sont celle qui sont invariante sur la permutation de deux indices. Pour éviter la cas des combinaisons qui s'annulent, il faut imposer que $a_1\neq \dots\neq a_p$. Pour éviter les éléments co-linéaires (c'est-à-dire les comptage de deux fois le même éléments), on doit imposer $1\leq a_1<\dots<a_p\leq n$. Pour finir,
                 \begin{equation}
                     \{e^{a_1}\wedge\dots \wedge e^{a_p},1\leq a_1<\dots<a_p\leq n\}
                 \end{equation}
                 forme une base de $\Omega_P^p(\M)$.
             \end{proof}
             
+            \begin{rmk}
+                On peut voir que le principe de projection émerge. Un tenseur non-nul ne peut pas être symétrique et anti-symétrique à la fois et tout tenseur peut se décomposer comme la somme de sa partie symétrique et sa parti symétrique.
+            \end{rmk}
+            
             Ceci nous mène directement au produit extérieur.
             
             \begin{defn}
-                On définit le \textit{produit extérieur} comme
+                On définit le \textit{produit extérieur} entre une $p$-forme et une $q$-forme comme
                 \begin{equation}
                 \wedge:\left(
                 \begin{array}{ccc}
@@ -2611,8 +2607,8 @@ Louan \textsc{Mol}
             \end{itemize}
             \end{exmp}
             
-            \begin{prop}\begin{leftbar}
-                Soient $V$ un espace vectoriel et $v_1,v_2,v_3\in V$. Le produit extérieur a les propriétés suivantes.
+            \begin{rmk}
+                On peut définir le produit extérieur pour des espaces vectoriels quelconques.Soient $V$ un espace vectoriel et $v_1,v_2,v_3\in V$. Le produit extérieur a les propriétés suivantes.
                 \begin{enumerate}[label = \textit{\roman*)}]
                     \item bilinéaire : pour tout $\alpha\in\mathbb{R}$,
                     \begin{align}
@@ -2621,13 +2617,13 @@ Louan \textsc{Mol}
                         (v_1+v_2)\wedge v_3 &= (v_1\wedge v_3) + (v_2\wedge v_3)
                     \end{align}
                     \item alterné : $v_1 \wedge v_1 = 0$
-                    \item anti-symétrique : $v_1\wedge v_2 = -v_2\wedge v_1$
-                \end{enumerate}
-            \end{leftbar}\end{prop}
+                    \end{enumerate}
+                L'anti-symétrique est une conséquences de ces propriétés.
+            \end{rmk}
             
             Le produit extérieur est une généralisation du produit vectoriel qui n'est définit que dans un espace à trois dimensions. On peut aussi voir le produit extérieur comme étant l'analogue du produit tensoriel mais sur l'espace des tenseurs complètement anti-symétriques.\\
             
-            On vient de voir que le produit extérieur de deux $p$-formes est anti-symétrique. Cependant ca n'est pas le cas pour le produit extérieur d'une $p$-forme et d'une $q$-forme.
+            On vient de voir que le produit extérieur de deux $p$-formes est anti-symétrique. Cependant ce n'est pas le cas pour le produit extérieur d'une $p$-forme et d'une $q$-forme.
             
             \begin{prop}\begin{leftbar}
                 Soient $\omega\in\Omega_P^p(\M)$ et $\eta\in \Omega_P^q(\M)$ alors
@@ -2636,8 +2632,14 @@ Louan \textsc{Mol}
                 \end{equation}
             \end{leftbar}\end{prop}
             
-            \begin{proof}${}$\\
-                \comp
+            \begin{proof} 
+                Nous avons
+                \begin{align}
+                    \omega\wedge\eta &= \frac{1}{p!q!}\omega_{[a_1\dots a_p}\eta_{a_{p+1}\dots a_{p+q}]}~e^{a_1}\wedge \dots\wedge e^{a_p}\wedge e^{a_{p+1}}\wedge\dots\wedge e^{a_{p+q}} \\
+                    &= \frac{1}{p!q!}\eta_{[a_{p+1}\dots a_{p+q}}\omega_{a_1\dots a_p]}~e^{a_1}\wedge \dots\wedge e^{a_p}\wedge e^{a_{p+1}}\wedge\dots\wedge e^{a_{p+q}}\\
+                    &= \frac{(-1)^{pq}}{p!q!}\eta_{[a_{p+1}\dots a_{p+q}}\omega_{a_1\dots a_p]}~e^{a_{p+q}}\wedge \dots\wedge e^{a_{p+1}}\wedge e^{a_1}\wedge\dots\wedge e^{a_p}\\
+                \end{align}
+                La dernière égalité vient du fait que chaque vecteur qui somme avec les mêmes indices que $\eta$ doit a été permuté avec $p$ autres vecteurs.
             \end{proof}
             
             \begin{prop}\begin{leftbar}
@@ -2645,8 +2647,8 @@ Louan \textsc{Mol}
             \end{leftbar}\end{prop}
             
             \begin{proof}${}$\\
-                 \comp
-                 Pour $dim(\Omega_P^p(\M)) = {p \choose n}$, il suffit de compter les éléments de la base que nous avons trouvé dans la proposition précédente.
+                 Calculer le nombre de tenseurs linéairement indépendants revient à calculer le nombre de manière de faire le produit tensoriel de $p$ vecteurs avec à chaque fois $n$ choix par vecteurs. On trouve bien $n^p$.\\
+                 Pour $dim(\Omega_P^p(\M)) = {p \choose n}$, il suffit de compter les éléments de la base $\Omega_P^p(\M)$ trouvée précédemment.
             \end{proof}
             
             Notons que pour tout $\sigma\in S_p$,
@@ -2660,11 +2662,7 @@ Louan \textsc{Mol}
             \begin{equation}
                 A_\mu^\nu ~\hat{=}~ \p_\mu V^\nu
             \end{equation}
-            Soit un second système de coordonnée $x'$ telle que $V = V'^\mu(x') \p_\mu$. Alors 
-            \begin{equation}
-                V'^\mu = V^\nu \pdv{x'^\mu}{x^\nu}
-            \end{equation}
-            et donc
+            Soit un second système de coordonnée $x'$ alors 
             \begin{align}
                 A'^\nu_\mu &= \p'_\mu V'^\nu \\
                 &= \pdv{x^\sigma}{x'^\mu}\pdv{}{x^\sigma}\left( V^\rho \pdv{x'^\nu}{x^\rho} \right)\\
@@ -2678,7 +2676,7 @@ Louan \textsc{Mol}
                 d:\left(
                 \begin{array}{ccc}
                     \Omega_P^p(\M) & \longrightarrow & \Omega_P^{p+1}(\M) \\
-                    (\omega,\eta) & \longmapsto & d\omega
+                    \omega & \longmapsto & d\omega
                 \end{array}
                 \right)
                 \end{equation}
@@ -5835,6 +5833,26 @@ Louan \textsc{Mol}
             \begin{equation}
                 t = \pm\left( r+2M\ln\left( \frac{r-2M}{2M} \right) \right) +  \text{cste}
             \end{equation}
+            
+            \begin{figure}[H]
+            \centering
+            \begin{tikzpicture}[scale = 1.2]
+                \begin{axis}[axis lines = left,xlabel = $\nicefrac{r}{R_S}$, ylabel = {$t$},xmin=0, xmax=8,ymin=0, ymax=6,xtick={0,1,...,8},ytick={0,1,...,6}]
+                % entrantes
+                \foreach \c in {0,1,...,15}
+                   \addplot [domain=1:8, samples=100, color=blue,] {-\x-ln(\x-1)+\c};
+                \foreach \c in {1,2,...,6}
+                   \addplot [domain=0:1, samples=100, color=blue,] {\x+ln(1-\x)+\c};
+                % sortantes
+                \foreach \c in {-9,-8,...,6}
+                   \addplot [domain=1:8, samples=100, color=blue,dashed] {x+ln(\x-1)+\c};
+                \addplot [domain=0:1, samples=100, color=blue,dashed] {-\x-ln(1-\x)};
+                \foreach \c in {0,1,...,5}
+                   \addplot [domain=0:1, samples=100, color=blue,dashed] {-\x-ln(1-\x)+\c};
+                \end{axis}
+            \end{tikzpicture}
+            \caption{Géodésiques radiales de genre lumière entrantes et sortantes}
+            \end{figure}
              
             \begin{defn}
                 On définit la \textit{coordonnée de la tortue} comme
