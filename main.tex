@@ -1,174 +1,16 @@
 %---PACKAGES----------------------------------------
 \documentclass[a4paper,11pt]{report}
-\usepackage[french]{babel}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
 
+\usepackage{import}
+\import{Packages/}{custom_packages.tex}
+\import{Packages/}{custom_macros.tex}
 
-% AJOUTS POUR LA POLICE
-\usepackage{amsmath,amssymb,amsthm,amsfonts,amstext}
-\usepackage{mathrsfs} % commande \mathscr
-\usepackage{pifont} % symboles spéciaux supplémentaires
-%\usepackage{fouriernc} % police de textbook
-%\usepackage{lmodern} % ajoute 72 type de polices d'adobe
-
-% AJOUTS GENERAUX (base)
-\usepackage{fullpage} % mise ne page
-%\usepackage[top=2.4cm, bottom=2.4cm, left=1.5cm, right=1.5cm]{geometry}
-\usepackage{latexsym} % liste énorme de symboles
-\usepackage{biblatex}
-\usepackage{hyperref}
-\usepackage{tikz,pgfplots} % pour les logos sur la page de garde
-\usepackage{footnote}
-\usepackage{color}
-\usepackage{tikz-3dplot}
-
-% AJOUTS SPECIFIQUES
-\usepackage{titlesec} % permet différent styles de titres
-\usepackage{csquotes} % ermet de faire des sitations
-\usepackage{multirow} % permet de faire des cases  sur plusieurs colonnes
-\usepackage{nicefrac} % perme de faire des fraction diagonales utilie pour les corps de texte
-\usepackage{empheq} % permet de faire des systèmes déquation avec acolade et numérotation
-\usepackage{physics} % ajoute des commandes pratiques pour dérivées, sin, ...
-%\usepackage{bm} % meilleure commande boldsymbol
-\usepackage{esvect} % \vv pour vecteurs
-\usepackage{ulem} % commandes de soulignage, achurage, ... mieux
-\usepackage{tensor} % permet de mieux gérer les indices des tenseurs
-\usepackage{bbold}% change symbole math (entre autre R)
-\usepackage[nottoc]{tocbibind}% ajoute l'appendice, ..; à la table des matièes
-\usepackage[toc]{appendix}
-\usepackage[font={it}]{caption}
-\usepackage{subcaption}
-\usepackage{enumitem}
-\usepackage{xfrac}
-\usepackage[procnames]{listings}
-\usepackage{enumitem} % améliore l'env enumerate, ...
-\usepackage{float} % permet de fixer les figures avec [H]
-%\usepackage{calrsfs} % \mathcal devient très caligraphié
-
-% PAS ENCORE CLASSE
-\usepackage{setspace}
-\usepackage{graphicx}
-\usepackage{CJKutf8}
-\usepackage[squaren, Gray, cdot]{SIunits}
-\usepackage{framed}
-\usepackage{transparent}
-
-% SETUP PACKAGES ---------------------------------
-\setlength{\parindent}{0cm}
-\bibliography{bibliography.bib}
-\definecolor{keywords}{RGB}{255,0,90}
-\definecolor{comments}{RGB}{0,0,113}
-\definecolor{red}{RGB}{160,0,0}
-\definecolor{green}{RGB}{0,150,0}
-
-\theoremstyle{definition}
-\theoremstyle{plain}
-\newtheorem{thm}{Théorème}[chapter]
-\newtheorem{prop}[thm]{Proposition}
-\newtheorem{lemme}[thm]{Lemme}
-\newtheorem{corol}[thm]{Corollaire}
-\newtheorem{law}[thm]{Loi}
-\newtheorem{propri}[thm]{Propriété}
-\newtheorem{prin}[thm]{Principe}
-
-\theoremstyle{definition}
-\newtheorem{defn}{Définition}[chapter]
-\newtheorem{exmp}{Exemple}[chapter]
-
-\theoremstyle{remark}
-\newtheorem{rmk}{Remarque}[chapter]
-\newtheorem{rap}[rmk]{Rappel}
-\newtheorem{notat}[rmk]{Notation}
-
-\everymath{\displaystyle}
-
-\pagestyle{headings}
-\headheight = 12pt
-\headsep = 25pt
-
-% NEW COMMANDS -------------------------------------
-
-\newcommand{\x}{\times}
-\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
-\newcommand\BackgroundPic{%
-\put(0,0){%
-\parbox[b][\paperheight]{\paperwidth}{%
-\vspace{6cm}
-\centering
-{\transparent{0.2} 
-\includegraphics[height=\paperheight,keepaspectratio]{background.png}}
-\vfill
-}}}
-\allowdisplaybreaks
-\renewcommand\appendixtocname{Annexes}
-\newcommand{\skipp}{\vspace*{1cm}}
-\renewcommand{\thesection}{\arabic{section}}
-\newcommand{\cadre}[1]{\begin{center}\setlength{\fboxrule}{1pt}\fbox{$\displaystyle{#1}$}\end{center}}
-\newcommand*{\bordd}{\multicolumn{1}{~~\big|~~c}{}}
-\newcommand{\gr}[1]{\boldsymbol{#1}}
-\renewcommand{\th}[1]{\text{th}(#1)}
-\newcommand{\sh}[1]{\text{sh}(#1)}
-\newcommand{\ch}[1]{\text{ch}(#1)}
-\renewcommand{\u}[1]{\underline{#1}}
-\newcommand{\ra}{\rightarrow}
-\newcommand{\lra}{\longrightarrow}
-\newcommand{\lmp}{\longmapsto}
-\newcommand{\Ra}{\Rightarrow}
-\newcommand{\ba}{\backslash}
-\newcommand{\la}{\leftarrow}
-\newcommand{\La}{\Leftarrow}
-\newcommand{\LRa}{\Leftrightarrow}
-\newcommand{\comp}{\begin{center}\textcolor{blue}{A compléter}\end{center}}
-\renewcommand{\O}{\mathcal{O}}
-\newcommand{\R}{\mathcal{R}}
-\newcommand{\T}{\mathcal{T}}
-\newcommand{\M}{\mathscr{M}}
-\newcommand{\N}{\mathscr{N}}
-\newcommand{\A}{\mathcal{A}}
-\newcommand{\F}{\mathcal{F}}
-\renewcommand{\L}{\mathscr{L}}
-\renewcommand{\S}{\mathscr{S}}
-\newcommand{\Rm}{\mathbb{R}^m}
-\newcommand{\p}{\partial}
-\renewcommand{\d}{\text{d}}
-\newcommand{\vp}{\varphi}
-\newcommand{\chris}[3]{\begin{Bmatrix}#1\\#2#3\end{Bmatrix}}
-%\renewcommand{\def}{~\hat{=}~}
-%\renewcommand{\vv}[1]{\boldsymbol{#1}}
-\newcommand{\tens}[2]{\begin{pmatrix}#1\\#2\end{pmatrix}}
-\newcommand{\ten}[3]{#1^{#2_1\dots#2_n}_{\quad\qquad#3_1\dots#3_n}}
 
 % DOCUMENT -------------------------
 
 \begin{document}
 
-\begin{titlepage}
-
-\center
-
-\textsc{\LARGE Université Libre de Bruxelles (ULB)}\\[1.5cm] % Name of your university/college
-\includegraphics[scale=.1]{background.png}
-\textsc{\large PHYS-F432}\\[0.5cm] % Minor heading such as course title
-
-
-\HRule \\[0.6cm]
-{ \huge \bfseries Théorie de la gravitation}\\[0.4cm] % Title of your document
-\HRule \\[1.5cm]
-
-
-\begin{minipage}{0.4\textwidth}
-\begin{center} \large
-Louan \textsc{Mol}
-\end{center}
-
-\end{minipage}\\[8cm]
-
-{\large 2019-2020}\\[2cm] % Date, change the \today to a set date if you want to be precise
-
-\vfill % Fill the rest of the page with whitespace
-
-\end{titlepage}
+\input{titlepage.tex}
 
 \nocite{weinberg}
 \nocite{wheeler}
@@ -188,7 +30,7 @@ Louan \textsc{Mol}
     
     Je n'ai pas la prétention de faire de ce document une référence, le but est simplement de transcrire mes notes sous une forme qui m'est agréable.\\
     
-    Merci à \textit{Eliott Van Steirteghem} et à \textit{Guillaume Houyoux} pour les schémas ainsi que pour leurs relectures attentives. Pour les fautes qui nous aurons échappées, vous pouvez me contacter via mon adresse mail : \verb?louamol@ulb.ac.be?.\\
+    Merci à \textit{Guillaume Houyoux} et à \textit{Eliott Van Steirteghem} pour les schémas ainsi que pour leurs relectures attentives. Pour les fautes qui nous aurons échappées, vous pouvez me contacter via mon adresse mail : \verb?louamol@ulb.ac.be?.\\
     
     %Merci à \texit{A. Fiorucci} pour les corrections des exercices et les discussions sur le cours qui ont grandement contribué à l'amélioration des ces notes.
 
@@ -1957,7 +1799,7 @@ Louan \textsc{Mol}
                 \begin{equation}
                     e^\mu(e_\nu) = \delta^\mu_\nu.
                 \end{equation}
-                C'est la base duale. Dans ce cas, si $X\in T_P\M$ et $\omega\in (T_P\M)^*$ tels que $X = X^\mu e_\mu$ et $\omega &= \omega_\mu e^\mu$, la forme linéaire $e^\mu$ envois $X$ sur $X^\mu$ :
+                C'est la base duale. Dans ce cas, si $X\in T_P\M$ et $\omega\in (T_P\M)^*$ tels que $X = X^\mu e_\mu$ et $\omega = \omega_\mu e^\mu$, la forme linéaire $e^\mu$ envois $X$ sur $X^\mu$ :
                 \begin{equation}
                     e^\mu(X) =  X^\nu e^\mu( e_\nu) = X^\nu \delta^\mu_\nu = X^\mu
                 \end{equation}

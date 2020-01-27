@@ -1,0 +1,86 @@
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+
+% AJOUTS POUR LA POLICE
+\usepackage{amsmath,amssymb,amsthm,amsfonts,amstext}
+\usepackage{mathrsfs} % commande \mathscr
+\usepackage{pifont} % symboles spéciaux supplémentaires
+%\usepackage{fouriernc} % police de textbook
+%\usepackage{lmodern} % ajoute 72 type de polices d'adobe
+
+% AJOUTS GENERAUX (base)
+\usepackage{fullpage} % mise ne page
+%\usepackage[top=2.4cm, bottom=2.4cm, left=1.5cm, right=1.5cm]{geometry}
+\usepackage{latexsym} % liste énorme de symboles
+\usepackage{biblatex}
+\usepackage{hyperref}
+\usepackage{tikz,pgfplots} % pour les logos sur la page de garde
+\usepackage{footnote}
+\usepackage{color}
+\usepackage{tikz-3dplot}
+
+% AJOUTS SPECIFIQUES
+\usepackage{titlesec} % permet différent styles de titres
+\usepackage{csquotes} % ermet de faire des sitations
+\usepackage{multirow} % permet de faire des cases  sur plusieurs colonnes
+\usepackage{nicefrac} % perme de faire des fraction diagonales utilie pour les corps de texte
+\usepackage{empheq} % permet de faire des systèmes déquation avec acolade et numérotation
+\usepackage{physics} % ajoute des commandes pratiques pour dérivées, sin, ...
+%\usepackage{bm} % meilleure commande boldsymbol
+\usepackage{esvect} % \vv pour vecteurs
+\usepackage{ulem} % commandes de soulignage, achurage, ... mieux
+\usepackage{tensor} % permet de mieux gérer les indices des tenseurs
+\usepackage{bbold}% change symbole math (entre autre R)
+\usepackage[nottoc]{tocbibind}% ajoute l'appendice, ..; à la table des matièes
+\usepackage[toc]{appendix}
+\usepackage[font={it}]{caption}
+\usepackage{subcaption}
+\usepackage{enumitem}
+\usepackage{xfrac}
+\usepackage[procnames]{listings}
+\usepackage{enumitem} % améliore l'env enumerate, ...
+\usepackage{float} % permet de fixer les figures avec [H]
+%\usepackage{calrsfs} % \mathcal devient très caligraphié
+
+% PAS ENCORE CLASSE
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{CJKutf8}
+\usepackage[squaren, Gray, cdot]{SIunits}
+\usepackage{framed}
+\usepackage{transparent}
+
+% SETUP PACKAGES ---------------------------------
+\setlength{\parindent}{0cm}
+\bibliography{bibliography.bib}
+\definecolor{keywords}{RGB}{255,0,90}
+\definecolor{comments}{RGB}{0,0,113}
+\definecolor{red}{RGB}{160,0,0}
+\definecolor{green}{RGB}{0,150,0}
+
+\theoremstyle{definition}
+\theoremstyle{plain}
+\newtheorem{thm}{Théorème}[chapter]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lemme}[thm]{Lemme}
+\newtheorem{corol}[thm]{Corollaire}
+\newtheorem{law}[thm]{Loi}
+\newtheorem{propri}[thm]{Propriété}
+\newtheorem{prin}[thm]{Principe}
+
+\theoremstyle{definition}
+\newtheorem{defn}{Définition}[chapter]
+\newtheorem{exmp}{Exemple}[chapter]
+
+\theoremstyle{remark}
+\newtheorem{rmk}{Remarque}[chapter]
+\newtheorem{rap}[rmk]{Rappel}
+\newtheorem{notat}[rmk]{Notation}
+
+\everymath{\displaystyle}
+
+\pagestyle{headings}
+\headheight = 12pt
+\headsep = 25pt
