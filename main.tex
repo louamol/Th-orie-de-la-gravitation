@@ -45,7 +45,7 @@
     
         Nous utilisons la \textit{convention de sommation d'Einstein} pour les indices répétés de variances différentes. Les indices grecs prennent les valeurs $0,1,\dots,n-1$ et les indices romains prennent les valeurs $1,\dots,n-1$ où $n$ est la dimension.
 
-    \section{Les interactions fondamentales}
+    \section{Interactions fondamentales}
     
         Historiquement, il est apparut qu'il y a quatre interactions fondamentales dans la nature : les interactions nucléaires forte et faible, l'interaction électromagnétique et l'interaction gravitationnelle. Les interactions nucléaires ont toutes les deux une faible portée, de l'ordre du fermi ($\sim10^{-15}\meter$), alors que  l'électromagnétisme et la gravitation semblent avoir une portée infinie. De par leur nature, les interactions nucléaires sont essentiellement décrites dans des théories quantiques alors que les deux dernières peuvent être décrites de manière classique. L'électromagnétisme ayant certains effets quantiques, nous pouvons les décrire via l'électrodynamique quantique (QED). Au cours du $20^{\text{ème}}$ siècle, il a été découvert que l'interaction nucléaire faible et l'électromagnétisme pouvaient être vues comme deux faces d'une même pièce : l'interaction électrofaible.\\
         
@@ -1931,6 +1931,16 @@
                     \eta^1(X_1)\dots\eta^p(X_p)\omega^1(Y_1)\dots\omega^q(Y_q).
                 \end{equation}
                 
+                \begin{leftbar}
+                \begin{prop}
+                    On a $dim(T_P^{(0,p)}(\M)) = n^p$.
+                \end{prop}
+                \end{leftbar}
+                
+                \begin{proof}
+                    Calculer le nombre de tenseurs linéairement indépendants revient à calculer le nombre de manière de faire le produit tensoriel de $p$ vecteurs avec à chaque fois $n$ choix par vecteurs. On trouve bien $n^p$.
+                \end{proof}
+                
                 \begin{defn}
                     Soit $\{e_\mu\}$ une base de $T_P\M$ et $\{e^\mu\}$ la base duale de $(T_P\M)^*$. Si $T$ est un tenseur de type $(p,q)$, on appelle \textit{composantes du tenseur} $T$ les nombres
                     \begin{equation}
@@ -2218,6 +2228,10 @@
                     \comp
                 \end{proof}
                 
+                \begin{rmk}
+                    On peut voir que le principe de projection émerge. Un tenseur non-nul ne peut pas être symétrique et anti-symétrique à la fois et tout tenseur peut se décomposer comme la somme de sa partie symétrique et sa parti symétrique.
+                \end{rmk}
+                
                 Comme il a déjà été mentionné, la donnée d'un système de coordonnées rend les notion de tenseur et de coordonnée de tenseur équivalentes. Pour les tenseurs d'ordre $2$, on peut associer une matrice dont les éléments sont les composantes du tenseur.\\
                 
                 \begin{defn}
@@ -2339,11 +2353,11 @@
             La notion de $p$-forme ne nécessite pas de tenseur métrique.
             
             \begin{defn}
-                Une $p$\textit{-forme} est un tenseur de type $(0,p)$ complètement anti-symétrique. On note, $\Omega_P^p(\M)$ l'espace des $p$-formes sur $\M$ en $P$. L'ensemble des $p$-formes pour $p\leq n$ est appelé \textit{algèbre extérieure} (ou \textit{algèbre de Grassmann}).
+                Une $p$\textit{-forme} (ou \textit{forme différentielle d'ordre $p$}) est un tenseur de type $(0,p)$ complètement anti-symétrique. On note, $\Omega_P^p(\M)$ l'espace des $p$-formes sur $\M$ en $P$.
             \end{defn}
             
             \begin{rmk}
-                La condition $p\leq n$ s'explique par le fait qu'il n'est pas possible d'anti-symétriser une quantité qui a plus d'indices que le nombres de valeurs que peuvent prendre les indices, c'est-à-dire si $n<p$. Nous vérifierons plus tard que $dim(\Omega_P^p(\M)) = {p \choose n}$ ce qui n'est définis que si $n\leq p$.
+                La condition $p\leq n$ s'explique par le fait qu'il n'est pas possible d'anti-symétriser une quantité qui a plus d'indices que le nombres de valeurs que peuvent prendre ces indices, c'est-à-dire si $n<p$. Nous vérifierons plus tard que $dim(\Omega_P^p(\M)) = {p \choose n}$ ce qui n'est définis que si $n\leq p$.
             \end{rmk}
             
              L'espace des $p$-formes $\Omega_P^p(\M)$ est un sous-espace vectoriel de $T_P^{(0,p)}(\M)$. A long terme, nous cherchons à obtenir une notion de dérivée pour les tenseurs, la simple dérivée des composantes ne donnant plus un tenseur (on le vérifiera dans la suite). On peut relativement facilement définir une notion de dérivée pour les $p$-formes, c'est la dérivée extérieur. Cette notion est définie à partir d'une opération entre les $p$-formes appellée produit extérieur.\\
@@ -2366,6 +2380,11 @@
                     e^{a_1}\wedge \dots\wedge e^{a_{p}} ~\hat{=}~ \sum_{\sigma\in S_p}\varepsilon(\sigma)e^{a_{\sigma(1)}}\otimes\dots\otimes e^{a_{\sigma(p)}}.
                 \end{equation}
             \end{defn}
+            
+            Notons que pour tout $\sigma\in S_p$,
+            \begin{equation}
+                e^{a_{\sigma(1)}}\wedge\dots\wedge e^{a_{\sigma(p)}} = \varepsilon(\sigma)e^{a_1}\wedge\dots \wedge e^{a_p}
+            \end{equation}
             
             On voit donc que n'importe quelle $p$-forme $\omega$ peut s'écrire comme \ref{eq:pformebase}.
             \begin{prop}\begin{leftbar}
@@ -2402,11 +2421,27 @@
                 forme une base de $\Omega_P^p(\M)$.
             \end{proof}
             
-            \begin{rmk}
-                On peut voir que le principe de projection émerge. Un tenseur non-nul ne peut pas être symétrique et anti-symétrique à la fois et tout tenseur peut se décomposer comme la somme de sa partie symétrique et sa parti symétrique.
-            \end{rmk}
+            \begin{prop}\begin{leftbar}
+                On a $dim(\Omega_P^p(\M)) = {p \choose n}$.
+            \end{leftbar}\end{prop}
             
-            Ceci nous mène directement au produit extérieur.
+            \begin{proof}${}$\\
+                 Il suffit de compter les éléments de la base $\Omega_P^p(\M)$ trouvée précédemment.
+            \end{proof}
+            
+            Toutes les $n$-formes sont donc proportionnelles (colinéaires).\\
+            
+            Comme on vient de le voir, on peut toujours écrire une $p$-forme comme
+                \begin{equation}
+                    \omega = \sum_{1\leq a_1<\dots<a_p\leq n} \omega_{a_1\dots a_p}~e^{a_1}\wedge\dots \wedge e^{a_p}
+                \end{equation}
+                ou encore, 
+                \begin{equation}
+                    \omega = \frac{1}{p!} \omega_{a_1\dots a_p}~e^{a_1}\wedge\dots \wedge e^{a_p}
+                \end{equation}
+                où le facteur $\frac{1}{p!}$ tient compte du fait que l'on somme sur toutes le valeurs d'indice possible avec la convention de sommation.
+            
+            Définissons un produit pour les formes différentielles.
             
             \begin{defn}
                 On définit le \textit{produit extérieur} entre une $p$-forme et une $q$-forme comme
@@ -2418,13 +2453,22 @@
                 \end{array}
                 \right)
                 \end{equation}
-                de sorte que si $\omega = \omega_{a_1\dots a_q}~e^{a_1}\wedge \dots\wedge e^{a_{p}}$ et $\eta = \eta_{a_1\dots a_q}~e^{a_1}\wedge \dots\wedge e^{a_{q}}$,
+                de sorte que si $\omega = \omega_{a_1\dots a_p}~e^{a_1}\wedge \dots\wedge e^{a_{p}}$ et $\eta = \eta_{a_1\dots a_q}~e^{a_1}\wedge \dots\wedge e^{a_{q}}$, alors
                 \begin{equation}
                     \omega\wedge\eta ~\hat{=}~ \frac{1}{p!q!}\omega_{[a_1\dots a_p}\eta_{a_{p+1}\dots a_{p+q}]}~e^{a_1}\wedge \dots\wedge e^{a_{p+q}}.
                 \end{equation}
             \end{defn}
             
-            \begin{exmp}${}$\\
+            Si l'on compare la définition qui précède avec celle de $(p+q)$-forme, nous pouvons voir que
+            \begin{equation}
+                (\omega\wedge\eta)_{a_1\dotsa_{p+q}} = \frac{(p+q)!}{p!q!}\omega_{[a_1\dots a_p}\eta_{a_{p+1}\dots a_{p+q}]}
+            \end{equation}
+            
+            \begin{defn}
+                L'ensemble des $p$-formes pour $p\leq n$ munit du produit extérieur est appelé \textit{algèbre extérieure} (ou \textit{algèbre de Grassmann}).
+            \end{defn}
+            
+            \begin{exmp}${}$
             \begin{itemize}[label = \textbullet]
                 \item Soient $\omega = w_a ~e^a$ et $\eta = \eta_a ~e^a$, alors
                     \begin{equation}
@@ -2449,21 +2493,7 @@
             \end{itemize}
             \end{exmp}
             
-            \begin{rmk}
-                On peut définir le produit extérieur pour des espaces vectoriels quelconques.Soient $V$ un espace vectoriel et $v_1,v_2,v_3\in V$. Le produit extérieur a les propriétés suivantes.
-                \begin{enumerate}[label = \textit{\roman*)}]
-                    \item bilinéaire : pour tout $\alpha\in\mathbb{R}$,
-                    \begin{align}
-                        v_1\wedge (\alpha v_2) &= \alpha(v_1\wedge v_2) = (\alpha v_1)\wedge v_2\\
-                        v_1\wedge(v_2+v_3) &= (v_1\wedge v_2) + (v_1\wedge v_3)\\
-                        (v_1+v_2)\wedge v_3 &= (v_1\wedge v_3) + (v_2\wedge v_3)
-                    \end{align}
-                    \item alterné : $v_1 \wedge v_1 = 0$
-                    \end{enumerate}
-                L'anti-symétrique est une conséquences de ces propriétés.
-            \end{rmk}
-            
-            Le produit extérieur est une généralisation du produit vectoriel qui n'est définit que dans un espace à trois dimensions. On peut aussi voir le produit extérieur comme étant l'analogue du produit tensoriel mais sur l'espace des tenseurs complètement anti-symétriques.\\
+            On peut aussi voir le produit extérieur comme étant l'analogue du produit tensoriel mais sur l'espace des tenseurs complètement anti-symétriques.\\
             
             On vient de voir que le produit extérieur de deux $p$-formes est anti-symétrique. Cependant ce n'est pas le cas pour le produit extérieur d'une $p$-forme et d'une $q$-forme.
             
@@ -2483,24 +2513,10 @@
                 \end{align}
                 La dernière égalité vient du fait que chaque vecteur qui somme avec les mêmes indices que $\eta$ doit a été permuté avec $p$ autres vecteurs.
             \end{proof}
-            
-            \begin{prop}\begin{leftbar}
-                On a $dim(T_P^{(0,p)}(\M)) = n^p$ et $dim(\Omega_P^p(\M)) = {p \choose n}$.
-            \end{leftbar}\end{prop}
-            
-            \begin{proof}${}$\\
-                 Calculer le nombre de tenseurs linéairement indépendants revient à calculer le nombre de manière de faire le produit tensoriel de $p$ vecteurs avec à chaque fois $n$ choix par vecteurs. On trouve bien $n^p$.\\
-                 Pour $dim(\Omega_P^p(\M)) = {p \choose n}$, il suffit de compter les éléments de la base $\Omega_P^p(\M)$ trouvée précédemment.
-            \end{proof}
-            
-            Notons que pour tout $\sigma\in S_p$,
-            \begin{equation}
-                e^{a_{\sigma(1)}}\wedge\dots\wedge e^{a_{\sigma(p)}} = \varepsilon(\sigma)e^{a_1}\wedge\dots \wedge e^{a_p}
-            \end{equation}
         
         \section{Dérivée extérieur}
         
-            Comme nous on l'a dit précédemment, le but est de construire une notion de dérivée pour les tenseurs. Le premier réflexe est d'essayer en utilisant la dérivée classique. Soit $V\in T_P\M$ tel que $V = V^\mu(x) \p_\mu$. On définit l'objet à deux indices suivant.
+            Comme nous on l'a dit précédemment, le but est de construire une notion de dérivée pour les tenseurs. Le premier réflexe est d'essayer en utilisant la dérivée classique. Soit $V\in T_P\M$ tel que $V = V^\mu \p_\mu$. On définit l'objet à deux indices suivant.
             \begin{equation}
                 A_\mu^\nu ~\hat{=}~ \p_\mu V^\nu
             \end{equation}
@@ -2535,18 +2551,13 @@
             donc
             \begin{equation}
                 d\omega = \frac{1}{p!} \p_{\mu_1}\omega_{\mu_2\dots\mu_{p+1}}~dx^{\mu_1}\wedge \dots\wedge dx^{\mu_{p+1}}.
-            \end{equation}
-            Pour les $0$-formes (c'est-à-dire les fonctions), la dérivée extérieure est simplement la différentielle.\\
-            
-            De plus, d'après la définition ci dessus,
-            \begin{align}
-                d\omega &= \frac{1}{p!} \p_{\mu_1}\omega_{\mu_2\dots\mu_{p+1}}~dx^{\mu_1}\wedge \dots\wedge dx^{\mu_{p+1}}\\
-                &= \frac{1}{(p+1)!}(d\omega)_{\mu_1 \dots\mu_{p+1}}~dx^{\mu_1}\wedge \dots\wedge dx^{\mu_{p+1}}
-            \end{align}
-            et donc
+            \end{equation} 
+            et
             \begin{equation}
-                (d\omega)_{\mu_1 \dots\mu_{p+1}} = (p+1) \p_{[\mu_1}\omega_{\mu_2\dots\mu_{p+1}]}
+                (d\omega)_{\mu_1 \dots\mu_{p+1}} = (p+1) \p_{[\mu_1}\omega_{\mu_2\dots\mu_{p+1}]}.
             \end{equation}
+            Pour les $0$-formes (c'est-à-dire les fonctions), la dérivée extérieure est simplement la différentielle comme nous l'avons définit précédemment.
+            
             
             \begin{thm}\begin{leftbar}
                 L'objet $d\omega$ tel que définit ci-dessus est une $(p+1)$-forme, c'est-à-dire que les $(d\omega)_{\mu_1 \dots\mu_{p+1}}$ sont les composantes d'un tenseur.
@@ -3050,10 +3061,32 @@
                 \end{align}
                 où $[X,Y]$ est le commutateur $[X,Y] = XY-YX$.\\
                 
-                Soient $X(P)$ et $Y(P)$ deux vecteur au point $P\in \M$. On note $R$ et $Q$ les points des extrémités de $X(P)$ et $Y(P)$ respectivement. On peut obtenir deux nouveaux vecteurs : $X(R)$ et $Y(Q)$. En géométrie euclidienne, sans courbure, les vecteurs $X(P),Y(P),X(R)$ et $Y(Q)$ forment une parallélogramme fermé. Dans un espace courbe, ce n'est plus le cas. On doit distinguer les vecteurs $X^\parallel(R)$ et $Y^\parallel(Q)$, les transportés parallèles de $X(P)$ et $Y(P)$ respectivement, des vecteurs $X(R)$ et $Y(Q)$. Le parallélogramme n'est donc plus fermé. Dans notre situation, le vecteur $\nabla_Y X$ va de l'extrémité de $X^\parallel(R)$ à l'extrémité de $X(R)$. Le vecteur $\nabla_X Y$ va de l'extrémité de $Y^\parallel(Q)$ à l'extrémité de $Y(Q)$. Et pour finir, le vecteur $[X,Y]$ est le vecteur qui va de l'extrémité de $Y(Q)$ à l'extrémité de $X(R)$. D'après l'expression que l'on a vu ci-dessus, on voit donc que $T(X,Y)$ est le vecteur allant de l'extrémité de $Y^\parallel(Q)$ à l'extrémité de $X^\parallel(R)$. Autrement dit, la torsion mesure la non-fermeture des parallélogrammes définit par l'équipollence.\\
+                Soient $X(P)$ et $Y(P)$ deux vecteur au point $P\in \M$. On note $R$ et $Q$ les points des extrémités de $X(P)$ et $Y(P)$ respectivement. On peut obtenir deux nouveaux vecteurs : $X(R)$ et $Y(Q)$. En géométrie euclidienne, sans courbure, les vecteurs $X(P),Y(P),X(R)$ et $Y(Q)$ forment une parallélogramme fermé. Dans un espace courbe, ce n'est plus le cas. On doit distinguer les vecteurs $X^\parallel(R)$ et $Y^\parallel(Q)$, les transportés parallèles de $X(P)$ et $Y(P)$ respectivement, des vecteurs $X(R)$ et $Y(Q)$. Le parallélogramme n'est donc plus fermé. Dans notre situation, le vecteur $\nabla_Y X$ va de l'extrémité de $X^\parallel(R)$ à l'extrémité de $X(R)$. Le vecteur $\nabla_X Y$ va de l'extrémité de $Y^\parallel(Q)$ à l'extrémité de $Y(Q)$. Et pour finir, le vecteur $[X,Y]$ est le vecteur qui va de l'extrémité de $Y(Q)$ à l'extrémité de $X(R)$. D'après l'expression que l'on a vu ci-dessus, on voit donc que $T(X,Y)$ est le vecteur allant de l'extrémité de $Y^\parallel(Q)$ à l'extrémité de $X^\parallel(R)$. Autrement dit, la torsion mesure la non-fermeture des parallélogrammes définit par l'équipollence.
                 
-                %schéma eliott
-            
+                \begin{figure}[H]
+                    \centering
+                    \begin{tikzpicture}[scale = 1.2]
+                        \draw[->,thick,green] (0,0) -- (4,1) node[midway,below]{$X(P)$};
+                        \draw[->,thick,green] (0,3) -- (3,4) node[midway,below]{$X^{\parallel}(R)$};
+                        \draw[->,thick,green] (0,3) -- (3.5,5) node[midway,left=0.5cm,above]{$X(R)$};
+                        \draw[->,thick,blue] (0,0) -- (0,3) node[midway,left]{$Y(P)$};
+                        \draw[->,thick,blue] (4,1) -- (4.5,3) node[midway,left]{$Y^{\parallel}(Q)$};
+                        \draw[->,thick,blue] (4,1) -- (5.5,3) node[midway,right]{$Y(Q)$};
+                        \draw[->,thick] (4.5,3) -- (5.5,3) node[midway,below]{$\nabla_X Y$};
+                        \draw[->,thick] (3,4) -- (3.5,5) node[midway,right=0.4cm,below=0.05cm]{$\nabla_Y X$};
+                        \draw[->,thick,red] (3.5,5) -- (5.5,3) node[midway,right=0.1cm]{$[X,Y]$};
+                        \draw[->,thick,red] (4.5,3) -- (3,4) node[midway,below=0.2cm  ,left=0.1cm]{$T(X,Y)$};
+                        \draw (0,0) node[scale = 0.7]{$\bullet$};
+                        \draw (4,1) node[scale = 0.7]{$\bullet$};
+                        \draw (0,3) node[scale = 0.7]{$\bullet$};
+                        \draw (0,0) node[below,left]{$P$};
+                        \draw (4,1) node[below,right]{$Q$};
+                        \draw (0,3) node[below,left]{$R$};
+                    \end{tikzpicture}
+                    \caption{Parallélogramme d'équipollence dans un espace courbe}
+                    \label{fig:my_label}
+                \end{figure}
+                
                 En relativité générale, nous avons
                 \begin{equation}
                     T^\mu_{\nu\rho} = \Gamma^\mu_{\nu\rho} - \Gamma^\mu_{\rho\nu}
@@ -4006,7 +4039,23 @@
                 
                 \begin{exmp}
                     En géométrie euclidienne, le transport parallèle ne dépend pas du chemin.
-                    %schéma eliott
+                    \begin{figure}[H]
+                        \centering
+                        \begin{tikzpicture}[scale = 1.2]
+                            \draw[>=latex] (0, 0) node[scale = 1]{$\bullet$} to[out=70,in=220] (5, 3) node[scale = 1]{$\bullet$};
+                            \draw[>=latex] (0, 0) node[scale = 1]{$\bullet$} to[out=20,in=280] (5, 3) node[scale = 1]{$\bullet$};
+                            \draw (0, 0) node[left]{$P$};
+                            \draw (5, 3) node[right]{$Q$};
+                            \draw[->,thick] (0,0) -- (0.3,1);
+                            \draw[->,thick] (1.3,1.42) -- (1.6,2.42);
+                            \draw[->,thick] (3.3,2.12) -- (3.6,3.12);
+                            \draw[->,thick] (1.5,0.42) -- (1.8,1.42);
+                            \draw[->,thick] (3.6,1.01) -- (3.9,2.01);
+                            \draw[->,thick] (5,3) -- (5.3,4);
+                        \end{tikzpicture}
+                        \caption{Transport parallèle d'un vecteur dans un espace plat}
+                        \label{fig:my_label}
+                    \end{figure}
                 \end{exmp}
                 
                 \begin{exmp}
@@ -5293,7 +5342,23 @@
                     \end{equation}
                     avec $\Delta\phi > 2\pi$. C'est l'avancée du périastre (ou du périhélie dans le cas où le soleil est l'astre central).
                     
-                    %schéma eliott
+                    \begin{figure}[H]
+                        \centering
+                        \begin{tikzpicture}[scale = 1.2]
+                            \draw[->] (-4.5,0) -- (4.5,0);
+                            \draw[->] (0,-4.5) -- (0,4.5);
+                            \draw (0,0) circle (3.8);
+                            \draw (0,0) circle (0.6);
+                            \draw (0,0) node{$\bullet$};
+                            %\draw[fill = black] (0,0) circle (0.3);
+                            % X(t) = a*cos(t)+sqrt(a^2-b^2)
+                            % Y(t) = b*sin(t)
+                            \draw (0,0) -- (120:3.8) node[midway,left]{$r_M$};
+                            \draw (0,0) -- (140:0.6) node[left]{$r_m$};
+                            \draw[blue, dashed, thick, samples = 1000, domain=0:30] plot ({cos(deg(0.03*\x))*(2.2*cos(deg(\x))+1.6093)+sin(deg(0.03*\x))*(1.5*sin(deg(\x)))}, {-sin(deg(0.03*\x))*(2.2*cos(deg(\x))+1.6093)+cos(deg(0.03*\x))*(1.5*sin(deg(\x)))});
+                        \end{tikzpicture}
+                        \caption{Avancée du périastre}
+                    \end{figure}
                     
                     on peut montrer que cette avancée est donnée par
                     \begin{equation}
