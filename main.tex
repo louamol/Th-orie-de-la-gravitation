@@ -244,11 +244,18 @@
             \begin{equation}
                 x'^\alpha = \Lambda^\alpha_{~\beta}x^\beta + a^\mu
             \end{equation}
-            avec $\Lambda\in O(3,1)$ et $a\in\mathbb{R}^4$.
+            avec $\Lambda\in O(3,1)$ et $a\in\mathbb{R}^4$. C'est un groupe non-abélien à 10 paramètres.
             
             \begin{rmk}
-                Produit semi-direct :
-                \comp
+                Soient deux transformations $(\Lambda_1,a_1),(\Lambda_2,a_2)\in ISO(3,1)$. Si l'on applique la première transformation sur un quadrivecteur quelconque $x$ on obtient
+                \begin{equation}
+                	x' = \Lambda_1x+a_1.
+                \end{equation}
+                En apppliquat la seconde transformation au résultat, on obtient
+                \begin{equation}
+                x'' = \Lambda_2x'+a_2 = \Lambda_2\Lambda_1x+\Lambda_2a_1+a_2
+                \end{equation}
+                donc $(\Lambda_2,a_2)\circ(\Lambda_1,a_1) = (\Lambda_2\Lambda_1,\Lambda_2a_1+a_2)$. Cette règle particulière pour le produit ne correspond pas à celle d'un produit direct mais bien à celle d'un produit semi-direct.
             \end{rmk}
             
             Le groupe de Lorentz est un sous-groupe du groupe de Poincaré qui a une importante capitale. Il parfois lui-me présenté comme le groupe de symétrie de la relativité restreinte. Nous étudierons les propriétés de ce dernier dans la suite de cette section.
@@ -776,7 +783,15 @@
         
         \subsection{Diagrammes d'espace-temps de Minkowski}
         
-            Travaillons à une seule dimension d'espace pour simplifier les choses. Soient $\u{e_0} = (1,0)$ le vecteur temps unité (vecteur de type temps) et $\u{e_1} = (0,1)$ le vecteur espace unité (vecteur de type espace) dans un référentiel $\R$. Nous avons
+            Travaillons à une seule dimension d'espace pour simplifier les choses. On décide de dessinner les axes $x$ et $t$ perpendiculaires (au sens abituel du terme). Si l'on effectue un boost de rapidité $\phi$, nous obtenons des nouvelles coordonnées $x'$ et $t'$ qui satisfont les relations
+            \begin{align}
+            	t' &= \cosh\phi-x\sinh\phi\\
+            	x' &= -t\sinh\phi + x\cosh\phi
+            \end{align}
+			L'axe $x'$ est définit par l'ensemble des points tels que $t'=0$, en utilisant les relations ci-dessus cela se traduit par l'ensemble des points tels que $t=x\tanh\phi$. L'axe $t'$ lui est définit par l'ensemble des points tels que $x'=0$, en utilisant les relations ci-dessus cela se traduit par l'ensemble des points tels que $x=t\tanh\phi$. Les axes $x'$ et $t'$ sont donc des droites de coefficients angulaires $\tanh\phi$ et $1/\tanh\phi$ respectivement. On voit que l'angle entre les axes $x-x'$ et l'angle entre les axes $t-t'$ sont les mêmes quelque soit $\phi$. L'angle entre les axes $t'-x'$ tend vers $0$ lorsque $\phi$ tend vers l'infini. Les trajectoires d'une particule non-massive se déplacant à une vitesse $v=1$ et passant par $(t,x)=(0,0)$ sont $x=\pm t$ et forment le cône de lumière en $(0,0)$.\\       
+            
+            
+             Soient $\u{e_0} = (1,0)$ le vecteur temps unité (vecteur de type temps) et $\u{e_1} = (0,1)$ le vecteur espace unité (vecteur de type espace) dans un référentiel $\R$. Nous avons
             \begin{align}
                 \u{e_0}^2 &= -1 \\
                 \u{e_1}^2 &= 1
