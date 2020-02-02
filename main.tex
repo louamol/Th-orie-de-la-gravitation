@@ -30,13 +30,16 @@
     
     Je n'ai pas la prétention de faire de ce document une référence, le but est simplement de transcrire mes notes sous une forme qui m'est agréable.\\
     
-    Merci à \textit{Guillaume Houyoux} et à \textit{Eliott Van Steirteghem} pour les schémas ainsi que pour leurs relectures attentives. Pour les fautes qui nous aurons échappées, vous pouvez me contacter via mon adresse mail : \verb?louamol@ulb.ac.be?.\\
+    Merci à \textit{Guillaume Houyoux} et à \textit{Eliott Van Steirteghem} pour les schémas ainsi que pour leurs relectures attentives. Pour les fautes qui nous aurons échappées, vous pouvez me contacter via mon adresse mail : \verb?louamol@ulb.ac.be?.
     
     %Merci à \texit{A. Fiorucci} pour les corrections des exercices et les discussions sur le cours qui ont grandement contribué à l'amélioration des ces notes.
 
 \printbibliography[title=Références]
+
 \pagebreak
+
 \tableofcontents
+
 \pagebreak
 
 \chapter{Introduction}
@@ -372,7 +375,6 @@
                 \draw (4, -1.732) node{$T$};
                 \draw (2, 1) node{$P$};
             \end{tikzpicture}
-            \label{fig:my_label}
             \caption{Représentation schématique de la structure du groupe de Poincaré}
             \end{figure}
             
@@ -557,7 +559,7 @@
             
             \begin{figure}[H]
             \centering
-            \includegraphics[scale = 0.4]{Tanh.PNG}
+            \includegraphics[scale = 0.4]{Pictures/Tanh.PNG}
             \caption{Graphe de la fonction tangente hyperbolique}
             \end{figure}
             
@@ -763,7 +765,6 @@
                 \draw[domain = -1.7:1.7, smooth,dashed] plot(\x*\x, \x);
             \end{tikzpicture}
             \caption{Trajectoire d'un objet en MRUA}
-            \label{fig:my_label}
             \end{figure}
             
             Les formules précédentes prennent une forme simple dans le référentiel tangent à la ligne d'univers.\\
@@ -849,7 +850,6 @@
                 \draw[green, very thick, <->] (0.43,1.09) node[above left]{$\u{e_0}'$} -- (0,0) -- (1.06 , 0.35) node[above]{$\u{e_1}'$};
             \end{tikzpicture}
             \caption{Hyperbole unité de temps et hyperbole unité d'espace}
-            \label{fig:my_label}
             \end{figure}
             
             La géométrie de l'espace-temps de Minkowski est dite \textit{hyperbolique}. Cela vient de la pseudo-métrique qui est elle-même hyperbolique. C'est pour cela qu'on appelle les transformations de Lorentz des \textit{rotations hyperboliques} et qu'elle prennent une forme particulièrement simple sous forme de cosinus et de sinus hyperboliques. Ceci explique aussi pourquoi la loi de composition des vitesses prend une forme extrêmement simple lorsqu'on l'exprime en terme de la rapidité.\\
@@ -908,7 +908,6 @@
                     \draw (0.36,1.06) node[scale = 0.6]{$\bullet$};
                 \end{tikzpicture}
                 \caption{Trajectoire d'un objet en MRUA}
-                \label{fig:my_label}
                 \end{figure}
             
             \subsubsection{Contraction des longueurs}
@@ -962,7 +961,6 @@
                 \draw[dotted,thick] (2.08,1.86) -- (1.28,1.06);
                 \draw[dotted,thick] (1.28,1.86) -- (2.08,1.06);
             \end{tikzpicture}
-            \label{fig:my_label}
             \caption{Ligne d'univers d'une particule supra-luminique}
             \end{figure}
             
@@ -983,7 +981,6 @@
                 \draw[>=latex, thick, red, ->] (1.3, 1.75) to[out = 0, in = 180] (2.6, 0.35);
                 \draw[>=latex, thick, red, ->] (2.6, 0.35) to[out = 0, in = 250] (3.9, 2.5);
             \end{tikzpicture}
-            \label{fig:my_label}
             \caption{Ligne d'univers d'une particule supra-luminique}
             \end{figure}
             
@@ -1091,7 +1088,6 @@
                     \draw[<->, red] (-0.45, -0.01) -- (-0.45, -0.11) node[midway, left]{$a$};
                     \draw[dotted, red] (-0.45, -0.12) -- (0.2, -0.12);
                     \end{tikzpicture}
-                \label{fig:my_label}
                 \caption{Déviation d'un rayon lumineux par le soleil}
                 \end{figure}
             
@@ -1984,7 +1980,7 @@
                 \begin{prop}\begin{leftbar}
                     Soit $T$ un tenseur de type $(p,q)$ de composantes $T\indices{^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q}}$ dans les coordonnées $x$. Les composantes de $T$ dans les coordonnées $x'$ s'expriment comme 
                     \begin{equation}
-                        T'\indices{^{\mu_1}^\dots^{\mu_p}_{\nu_1}_\dots_{\nu_q}} = \pdv{x'^{\mu_1}}{x^{\sigma_1}} (P)\dots\pdv{x'^{\sigma_p}}{x^{\sigma_p}}(P)\pdv{x^{\rho_1}}{x'^{\nu_1}}(P)\dots\pdv{x^{\rho_q}}{x'^{\nu_q}}(P)~T\indices{^{\sigma_1\dots\sigma_p}_{\rho_1\dots\rho_q}}
+                        {T'}\indices{^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q}} = \pdv{x'^{\mu_1}}{x^{\sigma_1}} (P)\dots\pdv{x'^{\sigma_p}}{x^{\sigma_p}}(P)\pdv{x^{\rho_1}}{x'^{\nu_1}}(P)\dots\pdv{x^{\rho_q}}{x'^{\nu_q}}(P)~T\indices{^{\sigma_1\dots\sigma_p}_{\rho_1\dots\rho_q}}
                     \end{equation}
                 \end{leftbar}\end{prop}
                 
@@ -2461,7 +2457,7 @@
             
             Si l'on compare la définition qui précède avec celle de $(p+q)$-forme, nous pouvons voir que
             \begin{equation}
-                (\omega\wedge\eta)_{a_1\dotsa_{p+q}} = \frac{(p+q)!}{p!q!}\omega_{[a_1\dots a_p}\eta_{a_{p+1}\dots a_{p+q}]}
+                (\omega\wedge\eta)_{a_1\dots a_{p+q}} = \frac{(p+q)!}{p!q!}\omega_{[a_1\dots a_p}\eta_{a_{p+1}\dots a_{p+q}]}
             \end{equation}
             
             \begin{defn}
@@ -3096,7 +3092,6 @@
                         \draw (0,3) node[below,left]{$R$};
                     \end{tikzpicture}
                     \caption{Parallélogramme d'équipollence dans un espace courbe}
-                    \label{fig:my_label}
                 \end{figure}
                 
                 En relativité générale, nous avons
@@ -3393,7 +3388,7 @@
                 \begin{exmp}
                     Soit $h\in \Sigma^p$, alors
                     \begin{equation}
-                        h = \frac{1}{p'}\omega^a_{\mu_1\dots\mu_p}~dx^{\mu_1}\wedge\dots\wedge dx^{\mu_p}\otimes e_a.
+                        h = \frac{1}{p!}\omega^a_{\mu_1\dots\mu_p}~dx^{\mu_1}\wedge\dots\wedge dx^{\mu_p}\otimes e_a.
                     \end{equation}
                     
                     Si $p=1$, $h\in\Sigma^1$ et si $x\in T_P\M$ alors $h(x)\in\Sigma^0$ car 
@@ -3426,8 +3421,8 @@
                 Notons que $\nabla$ est à valeur dans $\Sigma^1$ var la dérivation est fonctionnelle. Si $S\in T_P\M$,
                 \begin{align}
                     \nabla_X s &= (\nabla s)(X)\\
-                    &= X^\mu\nabla s(\p_\mu)\\
-                    X^\mu\nabla_\mu s
+                    &= X^\mu(\nabla s)(\p_\mu)\\
+                    &= X^\mu\nabla_\mu s
                 \end{align}
              
                 Soit $\{e_a^{(P)}\}$ une base de $\F_P$ alors
@@ -3521,9 +3516,9 @@
             \begin{equation}
                 \Gamma'_{\mu} = M\Gamma M^{-1} + M\p_\mu M^{-1}.
             \end{equation}
-            Notons bien que nous effectué un changement de base sur la fibre mais que nous avons utilisé la même base de $\Omega^1(\M)$ pour développer $\Gamma'$ et $\Gamma$.\\
+            Notons bien que nous avons effectué un changement de base sur la fibre mais que nous avons utilisé la même base de $\Omega^1(\M)$ pour développer $\Gamma'$ et $\Gamma$.\\
             
-            Dans le cas particulier où $F_P : T_P\M$ et où le changement de base sur la fibre correspond à un changement de coordonnées, il est naturelle d'exprimer les $1$-forme $\Gamma$ dans la base $\{dx^\mu\}$ et les $1$-formes $\Gamma'$ dans la base $\{dx'^\mu\}$. Dans ce cas, $M^a{~b}$ devient $\pdv{x'^\mu}{x^\nu}$ et donc 
+            Dans le cas particulier où $F_P : T_P\M$ et où le changement de base sur la fibre correspond à un changement de coordonnées, il est naturelle d'exprimer les $1$-forme $\Gamma$ dans la base $\{dx^\mu\}$ et les $1$-formes $\Gamma'$ dans la base $\{dx'^\mu\}$. Dans ce cas, $M^a_{~b}$ devient $\pdv{x'^\mu}{x^\nu}$ et donc 
             \begin{equation}
                 \gamma'^\mu_{~\nu} = \pdv{x'^\mu}{x^\rho}\pdv{x^\sigma}{x^\nu}\Gamma^\rho_{~\sigma} + \pdv{x'^\mu}{x^\theta}~d\left( \pdv{x^\theta}{x'^\nu} \right)
             \end{equation}
@@ -3603,11 +3598,11 @@
                 \end{equation}
             ce n'est donc pas un champ de vecteur comme on l'a vu avant car ces vecteurs sont définis uniquement le long de la courbe. On vérifie facilement que c'est bien un vecteur.\\
             
-            Comme $U^\mu$ n'est définit que le long de la courbe, la dérivée covariante $\nabla_X U^\mu\equiv X^\nu\nabla_\nu V^\mu$ n'est pas bien définie. On peut cependant définir correctement $\nabla_U U^\mu\equiv U^\nu\nabla_\nu V^\mu$. Nous avons alors
+            Comme $U^\mu$ n'est définit que le long de la courbe, la dérivée covariante $\nabla_X U^\mu\equiv X^\nu\nabla_\nu U^\mu$ n'est pas bien définie. On peut cependant définir correctement $\nabla_U U^\mu\equiv U^\nu\nabla_\nu V^\mu$. Nous avons alors
             \begin{align}
-                \nabla_U U^\mu &= U^\nu\nabla_\nu V^\mu \\
-                &= \frac{dx^\mu}{d\lambda}\p_\mu V^\nu + \Gamma^\nu_{\mu\rho}U^\mu U^\rho \\
-                &= \frac{dU^\mu}{d\lambda} + \Gamma^\nu_{\mu\rho} U^\mu U^\rho
+                \nabla_U U^\mu &= U^\nu\nabla_\nu U^\mu \\
+                &= \frac{dx^\nu}{d\lambda}\p_\nu U^\mu + \Gamma^\mu_{\nu\rho}U^\nu U^\rho \\
+                &= \frac{d^2x^\mu}{d\lambda^2} + \Gamma^\mu_{\nu\rho} \frac{dx^\nu}{d\lambda}\frac{dx^\rho}{d\lambda}
             \end{align}
             Ce résultat peut être généralisé à n'importe que tenseur défini le long d'une courbe $\mathscr{C}$.
             \begin{prop}\begin{leftbar}
@@ -3623,11 +3618,11 @@
             
             Les tenseurs $\nabla t$ sont définit le long de $\mathscr{C}$.\\
             
-            Comment définir une ligne droite ? En géométrie euclidienne, la droite peut être définie comme étant le plus court chemin entre deux points. Cependant, la notion "plus court" dépend de la métrique dont dispose l'espace que l'on étudie. Le fait que le chemin le plus court entre deux points est une droite est une conséquence de la forme de la métrique euclidienne. Sur une sphère, les chemins les plus court sont des les grands cercles. Fondamentalement, on peut définir une droit comme étant une courbe dont le vecteur tangent ne change pas de direction. C'est-à-dire une courbe telle que
+            Comment définir une ligne droite ? En géométrie euclidienne, la droite peut être définie comme étant le plus court chemin entre deux points. Cependant, la notion "plus court" dépend de la métrique dont dispose l'espace que l'on étudie. Le fait que le chemin le plus court entre deux points est une droite est une conséquence de la forme de la métrique euclidienne. Sur une sphère, les chemins les plus court sont des les grands cercles. Fondamentalement, on peut définir une droite comme étant une courbe dont le vecteur tangent ne change pas de direction. C'est-à-dire une courbe telle que
             \begin{equation}
                 \nabla_U U = f(\lambda) U
             \end{equation}
-            La notion de ligne droite dépend de la connexion de transport parallèle.\\
+            Notons que ceci a bien du sens car $\nabla_\mu U\in T^{(1,1)}\M$ et donc $\nabla_U U = U^\mu\nabla_\mu U\in T^{(1,0)}\M$. La notion de ligne droite dépend de la connexion de transport parallèle.\\
             
             Le membre de droite peut toujours être éliminé par un choix approprié de paramètre $\lambda$. Effectivement, supposons que $\lambda = \lambda(\lambda')$,
             \begin{align}
@@ -3637,7 +3632,7 @@
             \end{align}
             d'autre part, 
             \begin{align}
-                \nabla_U U^\mu &= f(\lambda) \frac{dx^\mu}{\lambda} \\
+                \nabla_U U^\mu &= f(\lambda) \frac{dx^\mu}{d\lambda} \\
                 &= \frac{d\lambda'}{d\lambda}f(\lambda)\frac{dx^\mu}{d\lambda'}
             \end{align}
             En égalant ces deux termes, on trouve
@@ -3648,7 +3643,7 @@
             \begin{equation}
                 \frac{d^2x^\mu}{d\lambda'^2} + \Gamma^\mu_{\nu\rho} \frac{dx^\nu}{d\lambda'}\frac{dx^\mu}{d\lambda'} = 0
             \end{equation}
-            si 
+            si et seulement si
             \begin{align}
                 \frac{d^2\lambda'}{d\lambda^2} &= \frac{d\lambda'}{d\lambda}f(\lambda)
             \end{align}
@@ -3668,6 +3663,18 @@
                     \lambda_1 = \alpha\lambda_2+\beta.
                 \end{equation}
             \end{leftbar}\end{prop}
+            
+            \begin{proof}
+                Nous avons vu que si $\lambda'$ et $\lambda$ sont des paramètres affines alors
+                \begin{equation}
+                    \frac{d^2\lambda'}{d\lambda^2} = 0
+                \end{equation}
+                ce qui implique bien que
+                \begin{equation}
+                    \lambda' = \alpha \lambda + \beta
+                \end{equation}
+                pour $\alpha,\beta\in\mathbb{R}$.
+            \end{proof}
             
             Pour certaines courbes, le paramètre affine correspond à une quantité physique bien connue : le temps propre.
             
@@ -3694,9 +3701,9 @@
             \begin{defn}
                 En signature Minkowskienne, on considère 3 types de courbe :
                 \begin{itemize}[label = \textbullet]
-                    \item de \textit{genre temps} : si $g(t,t)<0$
-                    \item de \textit{genre lumière} : si $g(t,t)=0$
-                    \item de \textit{genre espace} : si $g(t,t)>0$
+                    \item de \textit{genre temps} : si $g(U,U)<0$
+                    \item de \textit{genre lumière} : si $g(U,U)=0$
+                    \item de \textit{genre espace} : si $g(U,U)>0$
                 \end{itemize}
             \end{defn}
             
@@ -3734,7 +3741,7 @@
                 \end{align}
                 Les équation d'Euler-Lagrange nous donnent alors
                 \begin{equation}
-                    \ddot{x}^\xi + \frac{1}{2}g^{\mu\xi}\underbrace{\left( \p_\rho g_{\mu\nu}+\p_\nu g_{\mu\rho} - \p_\mu g_{\nu\rho} \right)}_{\Gamma^\xi_{\nu\rho}}\dot{x}^\nu\dot{x}^\rho = f(\lambda)
+                    \ddot{x}^\xi + \underbrace{\frac{1}{2}g^{\mu\xi}\left( \p_\rho g_{\mu\nu}+\p_\nu g_{\mu\rho} - \p_\mu g_{\nu\rho} \right)}_{\Gamma^\xi_{\nu\rho}}\dot{x}^\nu\dot{x}^\rho = f(\lambda)
                 \end{equation}
                 ou encore
                 \begin{equation}
@@ -3746,7 +3753,7 @@
             \begin{equation}
                 \frac{dF}{d\lambda} = 0.
             \end{equation}
-            On peut en conclure que le temps propre est un paramètre affine. En géométrie euclidienne, la paramètre affine est la abscisse curviligne.
+            On peut en conclure que le temps propre est un paramètre affine. En géométrie euclidienne, l'abscisse curviligne est un paramètre affine.
             
             \begin{prop}\begin{leftbar}
                 Si $U$ est le vecteur tangent le long d'un courbe, alors la quantité
@@ -3759,8 +3766,9 @@
             \begin{proof}${}$\\
                 Il suffit de remarquer que
                 \begin{align}
-                    \frac{d}{d\lambda}\left((g(U,U)\right) &= \nabla_U\left(g(U,U)\right) \\
-                    &= \left(\nabla_Ug\right)(U,U) + g(\nabla_U U,U) + g(U,\nabla U) 
+                    \frac{d}{d\lambda}\left((g(U,U)\right) &= \frac{dx^\mu}{d\lambda}\pdv{}{x^\mu} g(U,U) = \frac{dx^\mu}{d\lambda}\nabla_\mu g(U,U)\\ 
+                    &= U^\mu \nabla_\mu g(U,U) = \nabla_U\left(g(U,U)\right) \\
+                    &= \left(\nabla_Ug\right)(U,U) + g(\nabla_U U,U) + g(U,\nabla_U U) 
                 \end{align}
                 Les deux dernier termes s'annulent car $\lambda$ est un paramètre affine et le terme $\left(\nabla_Ug\right)(U,U)$ s'annule car la dérivée covariante réserve la métrique. On conclu que $g(U,U)$ ne dépend pas du paramètre $\lambda$.
             \end{proof}
@@ -3811,7 +3819,7 @@
                 \end{align}
                 En multipliant la dernière équation par $g^{\mu\sigma}$, nous obtenons
                 \begin{equation}
-                    \ddot{x}^\sigma + \underbrace{g^{\mu\sigma}\left( \p_\rho g_{\mu\nu}+\p_\nu g_{\mu\rho} - \p_\mu g_{\nu\rho} \right)}_{2\Gamma^\sigma_{\nu\rho}}\dot{x}^\nu\dot{x}^\rho = 0\label{eq:calculgamma}
+                    \ddot{x}^\sigma + \underbrace{\frac{1}{2} g^{\mu\sigma}\left( \p_\rho g_{\mu\nu}+\p_\nu g_{\mu\rho} - \p_\mu g_{\nu\rho} \right)}_{\Gamma^\sigma_{\nu\rho}}\dot{x}^\nu\dot{x}^\rho = 0\label{eq:calculgamma}
                 \end{equation}
             \end{proof}
             
@@ -3891,7 +3899,7 @@
             \begin{equation}
                 \pdv{x^\mu}{z^\alpha_P}\pdv{x^\nu}{z^\beta_P}g_{\mu\nu}(P) = \eta_{\alpha\beta} + \order{z^2}
             \end{equation}
-            Comme nous l'avons vu, il n'est , en générale, pas possible d'annuler les termes en $z^2$ (termes en $\p_\alpha\p_\beta g_{\gamma\delta}(P)$) car le nombre de contraintes (nombre d'invariants de courbure)
+            Comme nous l'avons vu, en générale il n'est pas possible d'annuler les termes en $z^2$ (termes en $\p_\alpha\p_\beta g_{\gamma\delta}(P)$) car le nombre de contraintes (nombre d'invariants de courbure)
             \begin{equation}
                 \mathscr{N}_D = \frac{1}{12}D(D-1)(D-2)(D+3)
             \end{equation}
@@ -3923,7 +3931,7 @@
                         \mathscr{R}~\hat{=}~d\Gamma + \Gamma\wedge\Gamma.
                     \end{equation}
                 \end{defn}
-                Notons bien que le terme $\Gamma\wedge\Gamma$ n'est pas nul car ce n'est pas le produit extérieur de deux $1$-formes, c'est une notation matricielle.
+                Notons bien que le terme $\Gamma\wedge\Gamma$ n'est pas nul car ce n'est pas le produit extérieur de deux $1$-formes, c'est une notation matricielle pour
                 \begin{equation}
                     \mathscr{R}^a_{~b} = d\Gamma^a_{~b} + \Gamma^a_{~c}\wedge\Gamma^c_{~b}
                 \end{equation}
@@ -4071,7 +4079,6 @@
                             \draw[->,thick] (5,3) -- (5.3,4);
                         \end{tikzpicture}
                         \caption{Transport parallèle d'un vecteur dans un espace plat}
-                        \label{fig:my_label}
                     \end{figure}
                 \end{exmp}
                 
@@ -4105,7 +4112,6 @@
                             \draw[->, very thick, blue, opacity = 0.6] (7,-2) node[scale = 0.6]{$\bullet$} -- (8, -2);
                         \end{tikzpicture}
                         \caption{Transport parallèle d'un vecteur tangent à la sphère suivant deux chemins différents}
-                        \label{fig:my_label}
                     \end{figure}
                 \end{exmp}
                 
@@ -4251,7 +4257,7 @@
                 
             \subsection{Cas de la connexion de Levi-Civita}
                         
-                Dans cette section nous allons particulariser les résultats plus généraux qui ont été étudiés avant au cas de la relativité générale. Nous supposons donc dès à présent que nous avons la métrique $g$ et la connexion de Levi-Civita. \\
+                Dans cette section nous allons particulariser les résultats généraux qui ont été étudiés au cas de la relativité générale. On prend la métrique $g$ et la connexion de Levi-Civita. \\
                 
                 Dans ce cas-ci, les indices de fibre $a$ et $b$ et les indices d'espace tangent $\mu$ et $\nu$ sont de même nature. Ceci implique que $\mathscr{R}^a_{~b\mu\nu}$ est un tenseur.
                 \begin{equation*}
@@ -4261,7 +4267,7 @@
                 \begin{defn}
                     Le tenseur de composantes 
                     \begin{equation}
-                        \mathscr{R}^\rho_{~\sigma\mu\nu} = \p_\rho\Gamma^\mu_{\sigma \nu}-\p_\sigma\Gamma^\mu_{\rho\nu} + \Gamma^\mu_{\rho \theta}\Gamma^\theta_{\sigma\nu}-\Gamma^\mu_{\sigma \theta}\Gamma^\theta_{\rho\nu}
+                        R^\rho_{~\sigma\mu\nu} = \p_\rho\Gamma^\mu_{\sigma \nu}-\p_\sigma\Gamma^\mu_{\rho\nu} + \Gamma^\mu_{\rho \theta}\Gamma^\theta_{\sigma\nu}-\Gamma^\mu_{\sigma \theta}\Gamma^\theta_{\rho\nu}
                     \end{equation}
                     est de type $(3,1)$ est appelé $\textit{tenseur de Riemann}$.
                 \end{defn}
@@ -4306,8 +4312,8 @@
                         \end{equation}
                         ou encore
                         \begin{align}
-                            dR^\alpha_{~\beta} &= \frac{1}{2} \p_\varepsilon R^\alpha_{~\beta\gamma\delta}~dx^\varepsilon\wedge dx^\gamma\wedge dx^\delta &= 0\\
-                            \Leftrightarrow\qquad \p_\varepsilon R^\alpha_{~\beta\gamma\delta} + \p_\gamma R^\alpha_{~\beta\delta\epsilon} + \p_\delta R^\alpha_{~\beta\gamma\varepsilon}
+                            0 &= dR^\alpha_{~\beta} = \frac{1}{2} \p_\varepsilon R^\alpha_{~\beta\gamma\delta}~dx^\varepsilon\wedge dx^\gamma\wedge dx^\delta \\
+                            \Leftrightarrow\qquad 0 &= \p_\varepsilon R^\alpha_{~\beta\gamma\delta} + \p_\gamma R^\alpha_{~\beta\delta\epsilon} + \p_\delta R^\alpha_{~\beta\gamma\varepsilon}
                         \end{align}
                         Il suffit juste d'utiliser le fait que $\nabla_\mu = \p_\mu$ dans des coordonnées locales plates et on trouve bien la relation voulue. Nous avons montré que le résultat étant vrai dans un système de coordonnée en particulier. Comme $R$ est un tenseur, cela reste vrai dans tout les autre système de coordonnées.
                     \end{enumerate}
@@ -4370,7 +4376,7 @@
                     R_{\mu\nu\mu\rho}+R_{\mu\rho\nu\mu}+\underbrace{R_{\mu\mu\rho\nu}}_{0} &= 0\\
                     \Leftrightarrow\qquad R_{\nu\rho} - R_{\rho\nu} &= 0
                 \end{align}
-                \item En utilisant les propriétés de symétrie et d'anti-symétrie des indices de $R$, on voit que la contraction des indices $1-2$,$3-4$,$1-4$ et $2-3$ est nulle. Et par symétrie, la contraction des indices $2-4$ est la même que le tenseur de Ricci.
+                \item En utilisant les propriétés de symétrie et d'anti-symétrie des indices de $R$, on voit que la contraction des indices $1-2$ et $3-4$ sont nulles. Et par symétrie, la contraction des indices $2-4$,$1-4$ et $2-3$ sont les mêmes que le tenseur de Ricci modulo le signe.
             \end{enumerate}
         \end{proof}
         
@@ -4534,7 +4540,7 @@
                 \begin{equation}
                     \rho = 3p
                 \end{equation}
-                pour le rayonnement. Cet exemple illustre une méthode pour modéliser processus/champs. Ici le rayonnement.
+                pour le rayonnement. Cet exemple illustre une méthode pour modéliser des processus/champs (ici le rayonnement).
             \end{exmp}
         
         \subsection{Conditions sur l'énergie}
@@ -4585,11 +4591,11 @@
             \end{exmp}
             
             \begin{defn}
-                \textit{Condition forte} : on impose
+                \textit{Condition forte} : on impose la relation
                 \begin{equation}
                     T_{\mu\nu}U^\mu U^\nu \leq \frac{T}{2} U^2\qquad \forall U^2\leq0
                 \end{equation}
-                où $T = = T^\mu_{~\mu}$.
+                où $T = T^\mu_{~\mu}$.
             \end{defn}
         
             Cette condition traduit le fait que la force de gravitation est attractive. Elle est utile pour certains calcul mais elle n'est pas respectée dans le nature (par exemple par l'énergie noire).
@@ -4617,26 +4623,32 @@
             \end{equation}
             L'équation \ref{eq:einstein1} induit trop de contrainte sur $R$ et est donc fausse. Cependant, dans le vide, elle donne la même prédiction que la version corrigée de l'équation ce qui qui permit déjà de faire des prédictions qui, après avoir été validées, on mit en avant la théorie de la relativité générale.
             
-            \begin{thm}[équation d'Einstein]\begin{leftbar}
+            \begin{prin}
+            \begin{leftbar}
                 Le tenseur d'Einstein satisfait à l'équation
                 \begin{equation}
                     G_{\mu\nu}+\Lambda g_{\mu\nu} = \kappa^2 T_{\mu\nu}.
                 \end{equation}
                 où la constante $\Lambda>0$ est appellée \textit{constante cosmologique}.
+            \end{leftbar}
+            \end{prin}
+            
+            \begin{thm}[équation d'Einstein]\begin{leftbar}
+                
             \end{leftbar}\end{thm}
             Nous verrons que, dans le vide, ces équations permettent bien de retrouver la condition $R = 0$ (en notation matricielle pour le tenseur de Riemann). La constante cosmologique joue un rôle fondamental. Elle est notamment responsable de l'expansion de l'univers.\\
             
-            Ces équation sont essentiellement uniques si l'ont impose que le tenseur $G_{\mu\nu}$ du membre de gauche soit construit uniquement à partir de la métrique, ses dérivées premières, ses dérivées secondes et si il satisfait
+            Ces équations sont essentiellement uniques si l'ont impose que le tenseur $G_{\mu\nu}$ du membre de gauche soit construit uniquement à partir de la métrique, ses dérivées premières et ses dérivées secondes et s'il satisfait
             \begin{equation}
                 \nabla_\mu G^{\mu\nu} = 0.
             \end{equation}
-            Si l'ont se trouve en coordonnées localement plates, les dérivées secondes sont les seul termes non triviaux car $g_{\mu\nu}$ et les dérivées premières de $g_{\mu\nu}$ s'annulent.\\
+            Si l'ont se trouve en coordonnées localement plates, les dérivées secondes sont les seuls termes non triviaux car $g_{\mu\nu}$ et les dérivées premières de $g_{\mu\nu}$ s'annulent.\\
             
             En réalité, ces équations n'ont aucune raison d'être exactes. Ce n'est que les premiers termes dans un développement mettant en jeu des dérivées d'ordre supérieurs. On pourrait donc très bien avoir quelque chose de la forme
             \begin{equation}
                 \Lambda g_{\mu\nu} + R_{\mu\nu} - \frac{1}{2}Rg_{\mu\nu} + "R^2" + "\nabla^2R" + "\nabla^4 R"+\dots = \kappa^2 T_{\mu\nu}
             \end{equation}
-            où les termes $"\nabla^iR"$ désigne une quantité proportionnelle au dérivée d'ordre $i$ du tenseur de Riemann (et non du scalaire de Ricci). Premièrement, les termes d'ordre $i$ impaire ne sont pas possibles. Il n'est pas possible de contracté un nombre impaire d'indices de manière à former un tenseur d'ordre. Or, l'équation d'Einstein est une relation entre tenseurs d'ordre 2. Deuxièmement, pour que ca soit cohérent au niveau des dimensions, il faut que les termes $"\nabla^i R"$ soit multipliés par quelque chose proportionnel à une longueur $l^i$ car $[\nabla^i]=\frac{1}{L^i}$.
+            où les termes $"\nabla^iR"$ désigne une quantité proportionnelle au dérivée d'ordre $i$ du tenseur de Riemann (et non du scalaire de Ricci). Premièrement, les termes d'ordre $i$ impaire ne sont pas possibles. Il n'est pas possible de contracté un nombre impaire d'indices de manière à former un tenseur d'ordre paire. Or, l'équation d'Einstein est une relation entre tenseurs d'ordre 2. Deuxièmement, pour que ca soit cohérent au niveau des dimensions, il faut que les termes $"\nabla^i R"$ soit multipliés par quelque chose proportionnel à une longueur $l^i$ car $[\nabla^i]=\frac{1}{L^i}$.
             \begin{equation}
                 \Lambda g_{\mu\nu} + R_{\mu\nu} - \frac{1}{2}Rg_{\mu\nu} + "R^2" + l^2"\nabla^2R" + l^2"\nabla^4 R"+\dots = \kappa^2 T_{\mu\nu}
             \end{equation}
@@ -4644,13 +4656,13 @@
             \begin{equation}
                 \nabla\sim\frac{1}{L}\ll \frac{1}{l_{\text{Planck}}}
             \end{equation}
-            où $L$ est une taille typique à laquelle le champ varie, les termes contenant les dérivées supérieures sont complètement négligeables. Cette égalité est donc remarquable non pas parce qu'elle est exacte à toutes les échelles mais parce qu'elle est universelle : les facteurs de proportionnalité qui serait devant les termes $"\nabla^iR"$ dépendraient du système de coordonnées choisi, mais pas ceux qui sont dans les équations d'Einstein.\\
+            où $L$ est une taille typique à laquelle le champ varie, les termes contenant les dérivées supérieures sont complètement négligeables. Cette égalité est donc remarquable non pas parce qu'elle est exacte à toutes les échelles mais parce qu'elle est universelle : les facteurs de proportionnalité qui apparaîtraient devant les termes $"\nabla^iR"$ dépendraient du système de coordonnées choisi tandis que les facteur de proportionnalité qui appairassent dans les équations d'Einstein eux ne dépendent pas du système de coordonnées.\\
             
-            Discutons d'un problème majeur de cette équation. Comme il faut que
+            Discutons un problème majeur de cette équation. Comme il faut que
             \begin{equation}
                 [\Lambda]=\frac{1}{L^2}
             \end{equation}
-            la valeur naturelle de $\Lambda$ est $\Lambda\sim \frac{1}{l_{\text{Planck}}^2}$, ce qui est énorme. Or, on observe $\Lambda_{\text{obs}}\sim\frac{10^{-120}}{l_{\text{Planck}}^2}$. Soit un valeur erronée d'un facteur $10^{120}$ par rapport aux prédictions : c'est la problème de la constante cosmologique. La supersymétrie permet de prédire une valeur de $\Lambda_{\text{obs}}\sim\frac{10^{-60}}{l_{\text{Planck}}^2}$ ce qui est déjà nettement mieux, mais toujours extrêmement éloigné de ce que l'on observe. Ça reste un problème totalement incompris à l'heure actuelle. De plus, cette valeur est absolument nécessaire pour permette à un univers macroscopique (comme le nôtre) d'exister. Une explication possible est de supposer que les lois de la physique ne sont pas uniques et qu'il existent plein solution correspondant à plein d'univers. Les nombre de solution peut être estimé, il est discret et astronomiquement grand. C'est la théorie du multivers. On peut alors se demander pourquoi est-ce que l'on observe cette valeur de $\Lambda$ en particulier alors? Comme la valeur de $\Lambda$ observée est précisément la valeur qui rend possible l'existence d'un univers comme le nôtre (d'après la théorie), c'est en fait la seule valeur que l'on peut observer. C'est le principe anthropique.\\
+            la valeur naturelle de $\Lambda$ est $\Lambda\sim \frac{1}{l_{\text{Planck}}^2}$, ce qui est énorme. Or, on observe $\Lambda_{\text{obs}}\sim\frac{10^{-120}}{l_{\text{Planck}}^2}$. Soit un valeur erronée d'un facteur $10^{120}$ par rapport aux prédictions : c'est le problème de la constante cosmologique. La supersymétrie permet de prédire une valeur de $\Lambda_{\text{obs}}\sim\frac{10^{-60}}{l_{\text{Planck}}^2}$ ce qui est déjà nettement mieux, mais toujours extrêmement éloigné de ce que l'on observe. Ça reste un problème totalement incompris à l'heure actuelle. De plus, cette valeur est absolument nécessaire pour permette à un univers macroscopique (comme le nôtre) d'exister. Une explication possible est de supposer que les lois de la physique ne sont pas uniques et qu'il existent plein solution correspondant à plein d'univers. Les nombre de solution peut être estimé, il est discret et astronomiquement grand. C'est la théorie du multivers. On peut alors se demander pourquoi est-ce que l'on observe cette valeur de $\Lambda$ en particulier alors? Comme la valeur de $\Lambda$ observée est précisément la valeur qui rend possible l'existence d'un univers comme le nôtre (d'après la théorie), c'est en fait la seule valeur que l'on peut observer. C'est le principe anthropique.\\
             
             On sait $\Lambda$ est non-nulle et positive. Mais ca valeur est tellement petite qu'elle joue un rôle complètement négligeable à n'importe quelle échelle plus petite que celle de l'univers (échelle cosmologique). L'ordre de grandeur des échelles à observer pour que la constante cosmologique joue un rôle est 
             \begin{equation}
@@ -4906,7 +4918,7 @@
                 \begin{align}
                     \L_U N^\mu &= U^\rho\p_\rho N^\mu-N^\rho\p_\rho U^\mu\\
                     &= \pdv{x^\rho}{\lambda}\pdv{}{x^\rho}\pdv{x^\mu}{v}-\pdv{x^\rho}{v}\pdv{}{x^\rho}\pdv{x^\mu}{\lambda}\\
-                    &= \pdv{x^\mu}{\lambda}{v}-\pdv{\x^\mu}{v}{\lambda}\\
+                    &= \pdv{x^\mu}{\lambda}{v}-\pdv{x^\mu}{v}{\lambda}\\
                     &= 0
                 \end{align}
                 Et donc
@@ -5201,7 +5213,7 @@
     
         \subsection{Cas de Newton}
         
-            Si l'on considère une masse $m$ en orbite autour d'un autre masse $M$ (supposée comme fixe), alors l'énergie et le moment cinétique sont donnés par
+            Si l'on considère une masse $m$ en orbite autour d'une autre masse $M$ (supposée comme fixe), alors l'énergie et le moment cinétique sont donnés par
             \begin{subequations}
                 \begin{empheq}[left=\empheqlbrace]{align}
                     \frac{E}{m} &= \frac{1}{2}\left( \dot{r}^2+r^2\dot{\phi}^2 \right)-\frac{GM}{r}\\
@@ -5218,11 +5230,11 @@
             \end{equation}
             On distingue trois types de trajectoires :
             \begin{itemize}[label = \textbullet]
-                \item $\boldsymbol{E < 0}$ : la trajectoire est bornée et fermée (ellipse). Le rayon est donnée par
+                \item $\bm{E < 0}$ : la trajectoire est bornée et fermée (ellipse). Le rayon est donnée par
                 \begin{equation}
                     r = \frac{a(1-e^2)}{1-e\cos\phi}
                 \end{equation}
-                où $a$ ets le demi grand-axe et $e$ est l'excentricité de l'ellipse. Dans ce cas,
+                où $a$ est le demi grand-axe et $e$ est l'excentricité de l'ellipse. Dans ce cas,
                 \begin{equation}
                     e = \sqrt{1+\frac{2EL^2}{(GM)^2}}\quad;\quad a = -\frac{GM}{2E}
                 \end{equation}
@@ -5230,8 +5242,8 @@
                 \begin{equation}
                     r_m\leq r \leq r_M.
                 \end{equation}
-                \item $\boldsymbol{E = 0}$ : la trajectoire est parabolique.
-                \item $\boldsymbol{E > 0}$ : la trajectoire est hyperbolique.
+                \item $\bm{E = 0}$ : la trajectoire est parabolique.
+                \item $\bm{E > 0}$ : la trajectoire est hyperbolique.
             \end{itemize}
             
             %schéma eliott
@@ -5262,8 +5274,8 @@
                 \begin{align}
                     \dot{q} &= \nabla_U(\xi^\mu U_\mu)\\
                     &= U_\mu\nabla_U \xi^\mu + \xi^\mu\underbrace{(\nabla_U U)_\mu}_{0}\\
-                    &= U_\mu U^\mu\nabla_\mu \xi^\mu\\
-                    &= \nabla^\mu U^\nu \nabla_\mu \xi_\nu\\
+                    &= U_\mu U^\nu\nabla_\nu \xi^\mu\\
+                    &= U^\mu U^\nu \nabla_\mu \xi_\nu\\
                     &= 0
                 \end{align}
                 par la condition de Killing. On a utilisé le fait que $\nabla_\mu g_{\nu\gamma} = 0$.
@@ -5294,17 +5306,17 @@
             Dans le but de s'exercer, montrons que ces quantités sont bien constante sur des géodésiques. 
             \comp
             
-            Pour définition de temps propre, sur une géodésique de genre temps, nous devons avoir
+            Par définition de temps propre, sur une géodésique de genre temps, nous devons avoir $g(U,U)=-1$ donc
             \begin{equation}
-                1 = \left( 1-\frac{2GM}{r} \right)\dot{t}^2-\left( 1-\frac{2GM}{r} \right)^{-1}\dot{r}^2\dot{\phi}^2
+                1 = \left( 1-\frac{2GM}{r} \right)\dot{t}^2-\left( 1-\frac{2GM}{r} \right)^{-1}\dot{r}^2-\dot{\phi}^2
             \end{equation}
-            tandis que pour une géodésique de genre lumière,
+            tandis que pour une géodésique de genre lumière $g(U,U)=0$,
             \begin{equation}
-                0 = \left( 1-\frac{2GM}{r} \right)\dot{t}^2-\left( 1-\frac{2GM}{r} \right)^{-1}\dot{r}^2\dot{\phi}^2.
+                0 = \left( 1-\frac{2GM}{r} \right)\dot{t}^2-\left( 1-\frac{2GM}{r} \right)^{-1}\dot{r}^2-\dot{\phi}^2.
             \end{equation}
             On peut résumer ces deux cas en écrivant
             \begin{equation}
-                \theta = \left( 1-\frac{2GM}{r} \right)\dot{t}^2-\left( 1-\frac{2GM}{r} \right)^{-1}\dot{r}^2\dot{\phi}^2
+                \theta = \left( 1-\frac{2GM}{r} \right)\dot{t}^2-\left( 1-\frac{2GM}{r} \right)^{-1}\dot{r}^2-\dot{\phi}^2
             \end{equation}
             avec 
             \begin{equation}
@@ -5334,26 +5346,26 @@
             \end{align}
             On distingue deux cas :
             \begin{itemize}[label = \textbullet]
-                \item $\boldsymbol{\theta = 1}$ (planète/particule massive) : on voit que 
+                \item $\bm{\theta = 1}$ (planète/particule massive) : on voit que 
                 \begin{align}
                     V(R) &= -\frac{GM}{r}\theta+\frac{L^2}{2r^2}\left( 1-\frac{2GM}{r} \right)\\
                     &= V_N(r)+\underbrace{\frac{L^2}{2r^2}\frac{2GM}{r}}_{\text{correction}}
                 \end{align}
                 Il donc une correction sur la partir du moment angulaire. Cette correction relativiste sur le potentiel gravitationnel se manifeste en une force $\sim\nicefrac{1}{r^3}$. 
-                \item $\boldsymbol{\theta = 0}$ (rayon lumineux) : dans ce cas, le potentiel est donnée par
+                \item $\bm{\theta = 0}$ (rayon lumineux) : dans ce cas, le potentiel est donnée par
                 \begin{equation}
                     V(r) = \frac{L^2}{2r^2}\left( 1-\frac{2GM}{rc^2} \right).
                 \end{equation}
-                On peut voir qu'il n'y a pas plus de terme avec le potentiel newtonnien, cette partie disparaît complètement.
+                On peut voir qu'il n'y a plus de terme correspondant au potentiel newtonnien, cette partie disparaît complètement lorsque l'on considère non-massive.
             \end{itemize}
             
             %schéma eliott
             
             Étudions plus en détails le cas où $\theta=1$.
             \begin{itemize}[label = \textbullet]
-                \item $\boldsymbol{L^2>16\left( \frac{GM}{c^} \right)^2}$ :
+                \item $\bm{L^2 > 16\left( \frac{GM}{c^2} \right)^2}$ : 
                 \begin{itemize}[label = $\triangleright$]
-                    \item $\boldsymbol{\mathscr{E}<0}$ : la trajectoire est bornée et périodique en la variable radiale mais plus fermée (plus comme dans le cas newtonnien). Ceci veut dire que, sur une période du mouvement radiale l'angle azimutale $\phi$ évoluera comme 
+                    \item $\bm{\mathscr{E}<0}$ : la trajectoire est bornée et périodique en la variable radiale mais plus fermée (plus comme dans le cas newtonnien). Ceci veut dire que, sur une période du mouvement radiale l'angle azimutale $\phi$ évoluera comme 
                     \begin{equation}
                         \phi\to\phi+\Delta\phi.
                     \end{equation}
@@ -5400,9 +5412,9 @@
                     Effectivement,
                     \comp
                     
-                    \item $\boldsymbol{\mathscr{E}>0}$ : on a une trajectoire de type hyperbolique 
+                    \item $\bm{\mathscr{E}>0}$ : on a une trajectoire de type hyperbolique 
                 \end{itemize}
-                \item $\boldsymbol{12\left( \frac{GM}{c^} \right)^2<L^2<16\left( \frac{GM}{c^2} \right)^2}$ : les trajectoires sont les même que précédemment mais il en existe certaine qui n'ont pas de $r_m$ (crash dans l'astre central).
+                \item $\bm{12\left( \frac{GM}{c^2} \right)^2<L^2<16\left( \frac{GM}{c^2} \right)^2}$ : les trajectoires sont les même que précédemment mais il en existe certaine qui n'ont pas de $r_m$ (crash dans l'astre central).
                 
                 %schéma eliott
                 
@@ -5413,7 +5425,7 @@
                 
                 \comp
                 
-                \item $\boldsymbol{L^2<12\left( \frac{GM}{c^2} \right)^2}$ : 
+                \item $\bm{L^2<12\left( \frac{GM}{c^2} \right)^2}$ : 
                 
                 %schéma eliott
                 
@@ -5486,7 +5498,7 @@
             \begin{equation}
                 \lim\limits_{y\to0^+} \arg(x+iy) = 0 \neq 2\pi = \lim\limits_{y\to0^-} \arg(x+iy).
             \end{equation}
-            La fonction argument n'est pas continue le long de la demi-droite $[0,+\infty]$ (coupure). On peut utiliser d'autre détermination de l'argument de manière déplacer et à changer la forme de cette coupure à volonté mais il n'est pas possible de ne plus en avoir. En translatant la détermination principale, on peu par exemple faire en sorte que la coupure soit $[-\infty,0]$. Nous prendrons ces cas pour la suite.
+            La fonction argument n'est pas continue le long de la demi-droite $[0,+\infty]$ (coupure). On peut utiliser d'autre détermination de l'argument de manière à déplacer et à changer la forme de cette coupure à volonté mais il n'est pas possible de ne plus en avoir. En translatant la détermination principale, on peut par exemple faire en sorte que la coupure soit $[-\infty,0]$. Nous prendrons ces cas pour la suite.
             
             %schéma eliott
             
@@ -5495,11 +5507,11 @@
                 \sqrt{z_1} &= i\sqrt{\abs{z_1}}\\
                 \sqrt{z_2} &= -i\sqrt{\abs{z_2}}
             \end{align}
-            avec $a,b\in\mathbb{R}$ et $a<b$. Il y a donc une discontinuité de signe. Dans le cas de la racine de deux nombres complexe, on a 
+            Il y a donc une discontinuité de signe. Dans le cas de la racine de deux nombres complexe, on a 
             \begin{equation}
                 \sqrt{(z-a)(z-b)} = \sqrt{\abs{z-a}\cdot\sqrt{\abs{z-b}}}e^{\frac{i}{2}\left( \arg(z-a)-\arg(z-b) \right)}
             \end{equation}
-            Il y a donc une coupure sur $[-\infty,a]$ (provenant de la fonction $\arg(z-a)$) et une coupure sur $[-\infty,b]$ (provenant de $\arg(z-b)$). Sur la demi-droite $\{x\in\mathbb{R}|x<a\}$ il y deux discontinuités de signe et donc l'effet s'annule. La coupure restante est sur l'intervalle $[a,b]$.\\
+            avec $a,b\in\mathbb{R}$ et $a<b$. Il y a donc une coupure sur $[-\infty,a]$ (provenant de la fonction $\arg(z-a)$) et une coupure sur $[-\infty,b]$ (provenant de $\arg(z-b)$). Sur la demi-droite $\{x\in\mathbb{R}|x<a\}$ il y deux discontinuités de signe et donc l'effet s'annule. La coupure restante est sur l'intervalle $[a,b]$.\\
             
             Considérons la fonction
             \begin{equation*}
@@ -5708,7 +5720,7 @@
         \end{equation}
         dans le cas d'un\textit{orbite haute}, ce sont les effets de la relativité générale qui dominent : $$d\tau_E>d\tau_R$$. Ce résultat est à comparer avec le décalage des fréquences que nous avons discuté plus tôt (l'effet du décalage vers le bleu du au champ de gravitation l'emporte, donc l'horloge embarquée avance).\\
         
-        Les ordres de grandeur typiques des effets du champ de gravitation sur le temps sont $\sim10^{-9}$. Ceci est particulièrement pour le système de GPS par exemple. Pour repérer la position d'un émetteur sur la Terre, plusieurs GPS mesurent la distance entre leur position et celle de l'émetteur. Si $\Delta x$ est la résolution spatiale voulue sur Terre et que $L$ est une distance typique mesurée par le satellite, alors
+        Les ordres de grandeur typiques des effets du champ de gravitation sur le temps sont $\sim10^{-9}$. Ceci est particulièrement important pour le système de GPS par exemple. Pour repérer la position d'un émetteur sur la Terre, plusieurs GPS mesurent la distance entre leur position et celle de l'émetteur. Si $\Delta x$ est la résolution spatiale voulue sur Terre et que $L$ est une distance typique mesurée par le satellite, alors
         \begin{equation}
             \frac{\Delta x}{L}\sim\frac{2\centi\meter}{20~000\kilo\meter}\sim10^{-9}
         \end{equation}
@@ -5732,8 +5744,8 @@
             Dans un premier temps, on pourrait être tenter de dire que la métrique de Schwarzschild n'est définie que pour les étoiles dont le rayon est supérieur au rayon de Schwarzschild, c'est d'ailleurs le cas la plupart du temps (pour le soleil : $R_S\sim 1.5\kilo\meter$). Pour résumer :
             
             \begin{itemize}[label = \textbullet]
-                \item $\boldsymbol{R>R_S}$ : lorsque $r>R$ la solution aux équations d'Einstein est la métrique de Schwarzschild et lorsque $r<R$ la métrique de Schwarzschild n'est plus valable car nous ne sommes plus dans le vide.
-                \item $\boldsymbol{R<R_S}$ : lorsque $r>R_S$ la métrique de Schwarzschild semble bien définie mais diverge lorsque $r\to R_S$. Lorsque $R<r<R_S$, la métrique de Schwarzschild semble non-définie (non-physique) même si l'on se trouve quand même dans le vide. Lorsque $r<R$ la métrique de Schwarzschild n'est plus valable car nous ne somme plus dans le vide.
+                \item $\bm{R>R_S}$ : lorsque $r>R$ la solution aux équations d'Einstein est la métrique de Schwarzschild et lorsque $r<R$ la métrique de Schwarzschild n'est plus valable car nous ne sommes plus dans le vide.
+                \item $\bm{R<R_S}$ : lorsque $r>R_S$ la métrique de Schwarzschild semble bien définie mais diverge lorsque $r\to R_S$. Lorsque $R<r<R_S$, la métrique de Schwarzschild semble non-définie (non-physique) même si l'on se trouve quand même dans le vide. Lorsque $r<R$ la métrique de Schwarzschild n'est plus valable car nous ne somme plus dans le vide. Nous verrons que si $R<R_S$ alors l'étoile s'effondre et donc la métrique de Schwarzschild est définie dans toute la région $r<R_S$.
                 \comp
             \end{itemize}
             
@@ -5806,8 +5818,8 @@
             \end{defn}
             Notons que 
             \begin{align}
-                u_1 &= t-r_*(r)\\
-                u_2 &= t+r_*(t)
+                u_1 &= t+r_*(r)\\
+                u_2 &= t-r_*(t)
             \end{align}
             Donc $u_1=\text{cste}$ et $u_1=\text{cste}$.\\
             
@@ -5837,16 +5849,16 @@
             \begin{equation}
                 ds^1 = -\left( 1-\frac{2M}{r} \right)~du^2_1 + 2du_1dr+r^2d\Omega^2
             \end{equation}
-            Ces coordonnées montrent qu'il n'y a aucune singularité en $r=2M$ : ce sont uniquement les coordonnées de Schwarzschild qui sont singulière en $r=2M$. C'est une singularité apparente comme pour la singularité des coordonnées polaires dans le plan (l'angle polaire n'est pas définit lorsque le rayon es nul).\\
+            Ces coordonnées montrent qu'il n'y a aucune singularité en $r=2M$ : ce sont uniquement les coordonnées de Schwarzschild qui sont singulière en $r=2M$. C'est une singularité apparente comme pour la singularité des coordonnées polaires dans le plan (l'angle polaire n'est pas définit lorsque le rayon est nul).\\
             
             % schéma eliott
             
             On peut diviser l'espace en deux régions :
             \begin{itemize}[label = \textbullet]
-                \item \textbf{région I} $(\boldsymbol{r>2M})$ :  Cette région est asymptotiquement plate. Pour un observateur extérieur, les cônes de lumières se redressent du coté du trou noir au fur et à mesure que l'on s'en approche de manière à ce que les géodésiques ne pénètrent jamais l'horizon. Pour un observateur suivant une géodésique entrante, c'est le coté opposé du cône de lumière qui devient verticale en s'approchant de $r=2M$. Si l'on franchi l'horizon en venant de la région I, on pénètre dans la région $II$. 
-                \item \textbf{région II} $(\boldsymbol{r<2M})$ : Une fois l'horizon passée, les cônes de lumière continuent à se refermer ce qui implique que toutes les trajectoires vont vers les $r$ décroissants.
+                \item \textbf{région I} $(\bm{r>2M})$ :  Cette région est asymptotiquement plate. Pour un observateur extérieur, les cônes de lumières se redressent du coté du trou noir au fur et à mesure que l'on s'en approche de manière à ce que les géodésiques ne pénètrent jamais l'horizon. Pour un observateur suivant une géodésique entrante, c'est le coté opposé du cône de lumière qui devient verticale en s'approchant de $r=2M$. Si l'on franchi l'horizon en venant de la région I, on pénètre dans la région $II$. 
+                \item \textbf{région II} $(\bm{r<2M})$ : Une fois l'horizon passée, les cônes de lumière continuent à se refermer ce qui implique que toutes les trajectoires vont vers les $r$ décroissants.
             \end{itemize}
-            Lorsque l'on dépasse l'horizon, les deux première composantes de ma métrique de Schwarzschild changent de signe donc $r$ de vient une coordonnée temporelle $t$ devient une coordonnée spatiale. Ceci implique que le champ de gravitation n'est pas statique quand $r<2M$, la métrique n'est plus invariante par rotation. La singularité $r=0$ est dans le futur de tout les observateurs. Il est faut de dire que l'on se fait attiré très fort par la gravité au point de ne plus pouvoir sortit. L'observateur va simplement vers son futur. Ceci décrit une cosmologie inverse de \textit{Big Crunch} à savoir une compression qui a lieu partout à la fois dans le futur. C'est l'inverse d'un \textit{Big Bang}, c'est-à-dire une explosion qui a lieu partout à la fois dans le passé. De cette manière, l'intérieur d'un trou noir de Schwarzschild décrit une cosmologie inversée pour laquelle le futur de tout les observateurs et dans la singularité en $r=0$. Notons que $r=0$ n'est pas une singularité apparente comme celle en $r=2M$ pour les coordonnées de Schwarzschild. Ceci peut être vu en observant que les invariants de courbure divergent : c'est une vraie singularité au-delà de laquelle les géodésiques ne peuvent pas êtres continuées. On dit que c'est un \textit{singularité de genre espace} car elle est partout dans l'espace en un point du temps.\\
+            Lorsque l'on dépasse l'horizon, les deux première composantes de ma métrique de Schwarzschild changent de signe donc $r$ de vient une coordonnée temporelle $t$ devient une coordonnée spatiale. Ceci implique que le champ de gravitation n'est pas statique quand $r<2M$, la métrique n'est plus invariante par rotation. La singularité $r=0$ est dans le futur de tout les observateurs. Il est faut de dire que l'on se fait attiré très fort par la gravité au point de ne plus pouvoir sortit; l'observateur va en fait simplement vers son futur. Ceci décrit une cosmologie de \textit{Big Crunch} à savoir une compression qui a lieu partout à la fois dans le futur. C'est l'inverse d'un \textit{Big Bang}, c'est-à-dire une explosion qui a lieu partout à la fois dans le passé. De cette manière, l'intérieur d'un trou noir de Schwarzschild décrit une cosmologie inversée pour laquelle le futur de tout les observateurs et dans la singularité en $r=0$. Notons que $r=0$ n'est pas une singularité apparente comme celle en $r=2M$ pour les coordonnées de Schwarzschild. Ceci peut être vu en observant que les invariants de courbure divergent : c'est une vraie singularité au-delà de laquelle les géodésiques ne peuvent pas êtres continuées. On dit que c'est un \textit{singularité de genre espace} car elle est partout dans l'espace en un point du temps.\\
             
             % schéma de eliott
             
@@ -5883,7 +5895,7 @@
                 Les \textit{coordonnées de Kruskal-Szekeres} sont définies comme
                 \begin{align}
                     U ~&\hat{=}~ e^{\frac{u_1}{4M}}\\
-                    V ~&\hat{=}~ -e^{*\frac{u_2}{4M}}
+                    V ~&\hat{=}~ -e^{\frac{u_2}{4M}}
                 \end{align}
             \end{defn}
             
@@ -5897,7 +5909,7 @@
             \begin{equation}
                 dUdV = -\frac{du_1}{4M}\frac{du_2}{4M}UV = -\frac{du_1du_2}{32M^2}e^{-\frac{r}{2M}}\left( 1-\frac{2M}{r} \right)
             \end{equation}
-            ce qui permet de réécrire la métrique dans les coordonnées de Krusal/Szekeres comme
+            ce qui permet de réécrire la métrique dans les coordonnées de Krusal-Szekeres comme
             \begin{equation}
                 ds^2 = 32M^2e^{-\frac{r}{2M}}dUdV+r^2d\Omega^2.
             \end{equation}
@@ -5909,7 +5921,37 @@
             
             % schéma eliott
             
-            % schéma eliott
+            \begin{figure}[H]
+                \centering
+                \begin{tikzpicture}[scale = 1.2]
+                    \draw[->,very thick] (-3,-3) -- (3,3) node[above right]{$V$};
+                    \draw[->,very thick] (3,-3) -- (-3,3) node[above left]{$U$};
+                    \draw[domain=-2:2,smooth,variable=\x,thick] plot({\x},{sqrt(3+\x*\x))+0.5});
+                    \draw (0,2.1) node{$r=0$};
+                    \draw[domain=-2:2,smooth,variable=\x,thick] plot({\x},{-sqrt(3+\x*\x))-0.5});
+                    \draw (0,-2.1) node{$r=0$};
+                    
+                    \draw (-3,0) node{\textbf{IV}};
+                    \draw[very thick] (-3,0) circle (0.3);
+                    \draw (3,0) node{\textbf{I}};
+                    \draw[very thick] (3,0) circle (0.3);
+                    \draw (0,-3) node{\textbf{III}};
+                    \draw[very thick] (0,-3) circle (0.3);
+                    \draw (0,3) node{\textbf{II}};
+                    \draw[very thick] (0,3) circle (0.3);
+                    
+                    \draw[domain=-2.8:2.8,smooth,variable=\x,dashed] plot({sqrt(0.3+\x*\x))},{\x});
+                    \draw[domain=-2.8:2.8,smooth,variable=\x,dashed] plot({sqrt(1+\x*\x))},{\x});
+                    \draw[domain=-2.8:2.8,smooth,variable=\x,dashed] plot({sqrt(2+\x*\x))},{\x});
+                    \draw[domain=-2.8:2.8,smooth,variable=\x,dashed] plot({sqrt(3+\x*\x))},{\x});
+                    \draw[domain=-2.8:2.8,smooth,variable=\x,dashed] plot({sqrt(4+\x*\x))},{\x});
+                    \draw (3.8,-3) node{$r=cste$};
+                    
+                    \draw[dashed] (-3,-1) -- (3,1);
+                    \draw (-3,-1.1) node{$t=cste$};
+                \end{tikzpicture}
+                \caption{Diagramme de Kruskal-Szekeres}
+            \end{figure}
             
         \subsection{Pont d'Einstein-Rosen}
         

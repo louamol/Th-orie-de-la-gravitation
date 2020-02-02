@@ -2,17 +2,14 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
-
-% AJOUTS POUR LA POLICE
+% AJOUTS GENERAUX (base)
+\usepackage{fullpage} % mise ne page
 \usepackage{amsmath,amssymb,amsthm,amsfonts,amstext}
 \usepackage{mathrsfs} % commande \mathscr
 \usepackage{pifont} % symboles spéciaux supplémentaires
 %\usepackage{fouriernc} % police de textbook
 %\usepackage{lmodern} % ajoute 72 type de polices d'adobe
-
-% AJOUTS GENERAUX (base)
-\usepackage{fullpage} % mise ne page
-%\usepackage[top=2.4cm, bottom=2.4cm, left=1.5cm, right=1.5cm]{geometry}
+%\usepackage[left=2.3cm,right=2.3cm,top=3.2cm,bottom=3.2cm,footskip=1cm,marginparwidth=1.5cm]{geometry}
 \usepackage{latexsym} % liste énorme de symboles
 \usepackage{biblatex}
 \usepackage{hyperref}
@@ -43,6 +40,7 @@
 \usepackage{enumitem} % améliore l'env enumerate, ...
 \usepackage{float} % permet de fixer les figures avec [H]
 %\usepackage{calrsfs} % \mathcal devient très caligraphié
+\usepackage{bm} % meilleur boldsymbol
 
 % PAS ENCORE CLASSE
 \usepackage{setspace}
@@ -69,6 +67,8 @@
 \newtheorem{law}[thm]{Loi}
 \newtheorem{propri}[thm]{Propriété}
 \newtheorem{prin}[thm]{Principe}
+
+
 
 \theoremstyle{definition}
 \newtheorem{defn}{Définition}[chapter]
