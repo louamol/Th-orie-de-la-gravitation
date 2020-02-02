@@ -169,7 +169,7 @@
             L'utilisation même des vecteurs en physique est une conséquence de l'invariance par rotation des lois de la physique et non l'inverse. C'est d'ailleurs ce qui différencie un vecteur d'un triplet de nombres : les lois de transformation des composantes d'un vecteur sous changement de base sont bien précises (transformation linéaire sous le groupe de symétrie), alors qu'un triplet de nombre n'a aucune propriété de ce type qui lui est imposée a priori.
         \end{rmk}
         
-        \begin{defn}
+        \begin{definition}
             Si le référentiel $(\vv{x}',t')$ est vu comme se déplaçant à une vitesse $\vv{v}$ dans le référentiel $(\vv{x},t)$ alors la \textit{transformation de Galilée} permet de passer de $(x,t)$ à $(\vv{x}',t')$ comme suit:
             \begin{subequations}\label{TSL}
             \begin{empheq}[left=\empheqlbrace]{align}
@@ -177,7 +177,7 @@
                 t' &= t
             \end{empheq}
             \end{subequations}
-        \end{defn}
+        \end{definition}
         
         \begin{prin}[de relativité]
         \begin{leftbar}
@@ -201,21 +201,21 @@
             
             Avant de définir le groupe de symétrie (groupe de Poincaré), commençons par définir l'espace-temps de cette relativité. Après ca, nous définirons un sous-groupe du groupe de Poincaré qui a une importance capitale.
             
-            \begin{defn}
+            \begin{definition}
                 L'\textit{espace-temps de Minkowski} (ou \textit{espace-temps de Poincaré-Minkowski}) est l'espace euclidien à quatre dimension $\mathbb{R}^4$ munit de la pseudo-métrique de Minkowski $\eta$ de signature $(-,+,+,+)$.
-            \end{defn}
+            \end{definition}
             
-            \begin{defn}
+            \begin{definition}
                 On appelle \textit{évènement} de coordonnées $x^\mu$ et on note $\underline{x}$, un point de coordonnées $(x^0,x^1,x^2,x^3)$ dans l'espace-temps.
-            \end{defn}
+            \end{definition}
             
             Un évènement peut désigner n'importe quelle action considérée comme instantanée, comme l'émission d'un signal lumineux, la désintégration d'une particule, ... Comme pour n'importe quel espace vectoriel normé, la norme découle du produit scalaire. Dans notre cas, la pseudo-métrique est dite hyperbolique ce qui a des conséquences bien particulières que nous verrons dans la suite.\\
             
             On peut maintenant définir le groupe formé par l'ensemble des transformations qui préservent cette métrique.
-            \begin{defn}
+            \begin{definition}
                 Le \textit{groupe de Lorentz} (ou \textit{groupe de Lorentz homogène}) est définit comme
                 $$O(3,1)~\hat{=}~\left\{\Lambda\in M_{4\text{x}4}(\mathbb{R})~\big|~\Lambda^T\eta\Lambda = \eta\right\}$$
-            \end{defn}
+            \end{definition}
             
             Le groupe de Lorentz agit linéairement sur l'espace-temps comme
             \begin{equation}
@@ -232,13 +232,13 @@
             \end{equation}
             
             La relativité einsteinienne est également invariante sous les translations spatiales et temporelles. Si l'on ajoute ces dernières transformations au groupe de Lorentz, on obtient le groupe de symétrie de la relativité einsteinienne : le groupe de Poincaré.
-            \begin{defn}
+            \begin{definition}
                 Le \textit{groupe de Poincaré} $ISO(3,1)$ est le groupe formé par le groupe de Lorentz, les translations dans le temps et les translations dans l'espace.
                 \begin{equation}
                     ISO(3,1) ~\hat{=}~ \mathbb{R}^{3,1}\rtimes O(3,1)
                 \end{equation}
                 Ce groupe est parfois appelé \textit{groupe de Lorentz affine} ou \textit{groupe de Lorentz inhomogène}.
-            \end{defn}
+            \end{definition}
             
             Ce groupe agit sur les coordonnée de l'espace-temps comme
             \begin{equation}
@@ -299,17 +299,17 @@
                 %ce qui est absurde car on ne peut pas passer continûment de $\Lambda^0_{~0} \geq 1$ à $\Lambda^0_{~0} \leq -1$ ou de $\det \Lambda = 1$ à $\det \Lambda = -1$. 
                 Donc $L$ est nécessairement une des quatre composantes explicitées.
             \end{proof}
-            \begin{defn}
+            \begin{definition}
                 On dit qu'une transformation de Lorentz est \textit{propre} (\textit{impropre}) si $\text{det}(\Lambda) = 1$ ($\det(\Lambda) = -1$) et \textit{orthochrone} (\textit{non-orthochrone}) si $\Lambda^0_{~0}\geq1$ ($\Lambda^0_{~0}\leq-1$). 
-            \end{defn}
+            \end{definition}
             Notons que parmi les quatre composantes connexes du groupe de Lorentz, seul le groupe de Lorentz propre orthochrone (groupe des transformations de Lorentz propres orthochrones) est un groupe car c'est le seule à contenir l'identité. De plus, c'est un sous-groupe normal.
             
-            \begin{defn}
+            \begin{definition}
                 Le \textit{groupe de Lorentz propre} est définit comme
                 $$SO(3,1) ~\hat{=}~ \left\{\Lambda\in O(3,1)~\big|~\text{det}(\Lambda) = 1\right\}.$$
                  Le \textit{groupe de Lorentz propre orthochrone} est définit comme
                 $$L^\uparrow_+ ~\hat{=}~ \left\{\Lambda\in SO(3,1)~\big|~\Lambda^0_{~0}\geq1\right\}.$$
-            \end{defn}
+            \end{definition}
             
             \begin{prop}\begin{leftbar}
                 Le groupe de Lorentz est formé par les transformations de Lorentz propres orthochrones, le renversement du temps $T$ ($t'= -t$) et la parité $P$ ($\vv{x}' = -\vv{x}$).
@@ -320,7 +320,7 @@
             
             Étant donné que le renversement du temps $T$ et la parité $P$ permettent de passer de $L^\uparrow_+$ aux autres composantes connexes, l'essentiel se trouve dans $L^\uparrow_+$. Ce groupe contient les transformations spéciales de Lorentz et les rotations statiques de l'espace. Nous allons voir que ce groupe est composé des rotations et d'autres transformations de Lorentz appelées transformations spéciales de Lorentz.
             
-            \begin{defn}
+            \begin{definition}
                 Si le référentiel $(\vv{x}',t')$ est vu comme se déplaçant à une vitesse $v$ selon l'axe des $x$ dans le référentiel $(\vv{x},t)$ alors la \textit{transformation spéciale de Lorentz}  (\textit{T.S.L.} ou \textit{boost}) de $(\vv{x},t)$ à $(\vv{x}',t')$ a la forme
                 \begin{subequations}\label{TSL}
                 \begin{empheq}[left=\empheqlbrace]{align}
@@ -331,7 +331,7 @@
                 \end{empheq}
                 \end{subequations}
                 où $\gamma(v)=\frac{1}{\sqrt{1-v^2}}$.
-            \end{defn}
+            \end{definition}
             
             \begin{rmk}
                 Nous avons définit les transformations spéciales de Lorentz directement par une forme explicite qui semble venir de nulle part. Nous verrons après qu'il existe plusieurs manières de trouver l'expression des transformations de Lorentz dont certaines ne font même pas référence à la lumière. Par exemple dans \cite{leblond}, il est démontré que l'on peut trouver la forme explicite des transformations de Lorentz juste à partir des quatre hypothèses suivantes : homogénéité de l'espace-temps, isotropie de l'espace-temps, l'ensemble des changements de référentiels possède une structure de groupe et le principe de causalité.
@@ -426,7 +426,7 @@
             
             Nous avons vu comment faire pour trouver la forme la plus générale des T.S.L. à partir du cas $\vv{v} = (v,0,0)$, mais comment faire pour trouver la forme de cette dernière dans un premier temps ? Il existe plusieurs manières de trouver la forme des transformations de Lorentz. Une des manières les plus courantes est d'imposer l'invariance de la vitesse de la lumière en faisant un changement de référentiel. En supposant que le temps ne soit pas absolu, on trouve alors la manière dont se dilatent les intervalles de temps et le reste en découle. Cette façon de procéder a l'avantage d'être simple et intuitive mais donne l'impression que la relativité restreinte concerne principalement la lumière, ce qui est faux. La relativité restreinte concerne toute la cinématique en physique. Le terme "restreint" désignant cette théorie est donc assez mal choisi étant donné qu'elle est indépendante de l'interaction considérée et est de ce fait plus générale que la "relativité générale" qui est une théorie de la gravitation gravitationnelle. Ce nom a été historiquement donné pour désigner le fait qu'elle ne comprenait pas la gravitation, ce qui la rend paradoxalement beaucoup plus générale.
             
-            \begin{defn}
+            \begin{definition}
                 On appelle \textit{intervalle d'espace-temps} entre deux évènements $P_1$ et $P_2$ respectivement de coordonnées $x_1^\mu$ et $x_2^\mu$ la quantité
                 \begin{align}
                     \underline{P_1P_2}^2&~\hat{=}~ \eta_{\alpha\beta}(x_2^\alpha-x_1^\alpha)(x_2^\beta-x_1^\beta) \\
@@ -440,7 +440,7 @@
                     \item de \textit{genre lumière} si $\underline{P_1P_2}^2=0$
                     \item de \textit{genre espace} si $\underline{P_1P_2}^2>0$
                 \end{itemize}
-            \end{defn}
+            \end{definition}
             
             \begin{prop}\begin{leftbar}
                 Soient deux évènements $P_1$ et $P_2$ respectivement de coordonnées $x_1^\mu$ et $x_2^\mu$ et l'intervalle d'espace-temps $\underline{u}^2 = \eta_{\mu\nu}x_1^\mu x_2^\nu$.
@@ -470,12 +470,12 @@
         \subsection{Vitesse et rapidité}
         
             Nous voudrions maintenant définir une notion de vitesse. Une première idée pourrait être de simplement de dériver la position en fonction du temps $t$.
-            \begin{defn}
+            \begin{definition}
                 On appelle \textit{vitesse ordinaire} la quantité
                 \begin{equation}
                 v^\mu ~\hat{=}~ \frac{dx^\mu}{dt} = (1,\vv{v})
                 \end{equation}
-            \end{defn}
+            \end{definition}
             Mais cette quantité n'est pas un quadri-vecteur. De manière générale, un tenseur dérivé par un scalaire (invariant) donne toujours un vecteur mais ici nous avons
             \begin{equation}
                 dx^0 = \gamma d\tau
@@ -490,12 +490,12 @@
                 v^\mu = \frac{dx^\mu}{dt} = \gamma \frac{dx^\mu}{d\tau}.
             \end{equation}
             et comme $\tau$ est un scalaire, $\frac{dx^\mu}{d\tau}$ est un quadri-vecteur.
-            \begin{defn}
+            \begin{definition}
                 On appelle \textit{quadri-vitesse} le quadri-vecteur
                 \begin{equation}
                     U^\alpha(\tau) ~\hat{=}~ \frac{dx^\alpha}{d\tau}.
                 \end{equation}
-            \end{defn}
+            \end{definition}
             La quadri-vitesse d'un point est donc définie comme étant la tangente à sa ligne d'univers.\\
             On peut montrer par développement direct que 
             \begin{equation}
@@ -546,12 +546,12 @@
             
             La loi de transformation des vitesses obtenue n'est pas très compliquée mais elle peut être encore plus simple pour une paramétrisation de la vitesse bien choisie.
             
-            \begin{defn}
+            \begin{definition}
                 La \textit{rapidité} $\varphi$ est définie par
                 \begin{equation}
                     v~\hat{=}~\th{\varphi}.
                 \end{equation}
-            \end{defn}
+            \end{definition}
             
             La fonction tangente hyperbolique 
             $$\text{th}:\mathbb{R}\to~ ]-1,1[$$ 
@@ -592,13 +592,13 @@
             Dans le référentiel de la galaxie, l'observateur qui se déplace n'est pas non plus vu comme allant à une vitesse supra-luminique à cause la dilatation du temps.\\
             
             On peut également définir l'impulsion.
-            \begin{defn}
+            \begin{definition}
                 On appelle \textit{quadri-impulsion} (ou \textit{énergie-impulsion}) le quadri-vecteur 
                 \begin{equation}
                     P^\alpha = mU^\alpha
                 \end{equation}
                 où $m$ est la masse de l'objet considéré.
-            \end{defn}
+            \end{definition}
             En développant, on trouve que
             \begin{equation}
                 P^\alpha = m U^\alpha = (\gamma m,\gamma m\vv{v}) = (E,\vv{p}).
@@ -637,12 +637,12 @@
         \subsection{Quadri-accélération}
         
             En dérivant à nouveau par rapport au temps propre $\tau$, on peut introduire un nouveau quadri-vecteur correspondant cette fois à l'accélération.
-            \begin{defn}
+            \begin{definition}
                 On appelle \textit{quadri-accélération} le quadri-vecteur
                 \begin{equation}
                     A^\alpha ~\hat{=}~ \frac{d^2x^\alpha}{d\tau^2}.
                 \end{equation}
-            \end{defn}
+            \end{definition}
             On peut montrer par un développement direct que, à $1+1$ dimensions,
             \begin{equation}
                 A^\alpha = \frac{d^2x^\alpha}{d\tau^2} = \frac{dU^\alpha}{d\tau} = \gamma\frac{dU^\alpha}{dt} = \left( \frac{v}{(1-v^2)^{\frac{5}{2}}}\frac{dv}{dt}, \frac{v^2}{(1-v^2)^{\frac{5}{2}}}\frac{dv}{dt} +\gamma \frac{dv}{dt}\right)
@@ -650,9 +650,9 @@
         
             Tout en considérant des référentiels inertiels, rien n'empêche de considérer des objets qui accélèrent dans ces référentiels. Pour simplifier les calculs qui suivent, on considère le cas où les mouvements se font uniquement selon $x$. Le mouvement uniformément accéléré est défini en relativité einsteinienne comme la ligne d'univers telle qu'un observateur qui la suivrait ressente une accélération constante.
             
-            \begin{defn}
+            \begin{definition}
                 On appelle \textit{accélération propre}, l'accélération dans le référentiel tangent à la ligne d'univers d'un mouvement uniformément accéléré, c'est-à-dire le référentiel dans lequel l'observateur est immobile à l'instant considéré. C'est l'accélération ressentie par l'observateur.
-            \end{defn}
+            \end{definition}
             
             Supposons que l'observateur en MRUA suivent la trajectoire $(t(\tau),x(\tau))$ où $\tau$ est le temps propre, vu d'un référentiel $\mathcal{R}$ fixe de coordonnées $(t,x)$. A chaque instant $\tau$, on a un référentiel $\mathcal{R}_{\tau}$ obtenu par un boost de vitesse
             \begin{equation}
@@ -1102,19 +1102,19 @@
                     V(z_B)-V(z_A) = GM\left( \frac{1}{z_A+h} -\frac{1}{z_A}\right)=-\frac{GM}{z^2_A}h+\order{H^2} = g(z_A)h +\order{h^2}
                 \end{equation}
                 où $g$ est e champ de gravitation local. Nous obtenons $\delta V\sim gh$.
-                \begin{defn}
+                \begin{definition}
                     On définit le \textit{paramètre de relativité} comme le rapport
                     \begin{equation}
                         \Xi = \frac{\abs{V}}{c^2}.
                     \end{equation}
                     où $\abs{V}$ est l'échelle de potentiel considérée.
-                \end{defn}
-                \begin{defn}
+                \end{definition}
+                \begin{definition}
                 La \textit{limite de champ faible} exprime le fait que l'approximation newtonienne et bonne, c'est-à-dire que
                 \begin{align}
                     \Xi\ll1.
                 \end{align}
-                \end{defn}
+                \end{definition}
                 Dans notre cas, $\frac{gh}{c^2}\ll1$.\\
             
                 On considère un champ de gravitation constant $\vv{g}=-g\vv{u}_z$ dans le référentiel $\R$ et deux observateurs : $E$ (émetteur) situé à un hauteur $z_E$ et $R$ (récepteur) situé à une hauteur $z_R = z_E+h$. Supposons que l'émetteur émette un signal, de période $(\delta t)_E = t_2^E-t_1^E$. Le signal est reçu par un le récepteur aux temps $t_1^R,t_2^R$, il observe donc une période $(\delta t)_R = t_2^R-t_1^R$. En vertu du principe d'équivalence, ce champ de gravitation est équivalent à un observateur uniformément accéléré dans la direction $\vv{u}_z$. De ce point de vue, $E$ et $R$ ont les positions
@@ -1211,17 +1211,17 @@
             Notons $\M$ l'espace-temps. Quelle que soit sa nature, il doit être possible de "mettre" un système de coordonnées sur cet espace. L'espace-temps doit donc en quelque sorte être assimilable à $\mathbb{R}^4$. Rien ne dit qu'il doit exister une bijection de l'espace-temps de $\M$ dans $\mathbb{R}^4$ mais on doit en tout cas pouvoir couvrir $\M$ de domaines qui sont en bijection avec $\mathbb{R}^4$. C'est ici qu'intervient la notion de \textit{variété}.\\
             
             On commence par définir les fonctions qui font l'intermédiaire entre un ensemble quelconque (ici $\M$) et $\mathbb{R}^n$.
-            \begin{defn}
+            \begin{definition}
                 Une \textit{carte locale} $(U,\varphi)$ de dimension $n$ pour un ensemble $\M$ est une bijection
                 \begin{equation}
                     \varphi:U\to\varphi(U) \subset\mathbb{R}^n
                 \end{equation}
                 où $U$ est un sous-ensemble de $\M$ appelé \textit{domaine de carte} et $\varphi(U)$ un ouvert de $\mathbb{R}^n$. La fonction $\varphi$ est appellée \textit{application de coordonnées}.
-            \end{defn}
+            \end{definition}
             
             Ce nom se justifie par le fait que notre fonction $\varphi$ est entièrement déterminée par ses coordonnées telles que $\varphi = (x^1, x^2, \ldots, x^n)$ où $x^i: U \to \mathbb{R}$ quel que soit $i$. Pour pouvoir couvrir tout l'espace-temps, nous avons besoin d'un ensemble de cartes dont les domaines recouvrent $\M$.
             
-            \begin{defn}
+            \begin{definition}
                 Un \textit{atlas différentiable} $\A$ de dimension $n$ pour un ensemble $\M$ est une collection 
                 \begin{equation}
                     \A = \left\{ (U_i,\varphi_i)~|~i\in I \right\}
@@ -1235,7 +1235,7 @@
                         \end{equation}
                         est différentiable (de classe $C^\infty$).
                 \end{enumerate}
-            \end{defn}
+            \end{definition}
             
             Notons que nous travaillerons uniquement avec des applications différentiables. Pourquoi ne pas imposer directement que les applications de coordonnées soient différentiables ? A priori, $\M$ est juste un ensemble et ne comporte aucune structure supplémentaire, cette notion n'aurait donc pas de sens. De plus, nous verrons qu'un changement de carte correspond à un changement de référentiel. Les changements de carte doivent donc être différentiables afin de pouvoir écrire les lois de la physique (EDP) dans tous les référentiels. Ceci justifie l'utilisation de variétés dites "différentiables", et pas d'un autre type de variété.
             
@@ -1245,9 +1245,9 @@
             
             La prochaine définition demande de connaître plusieurs notions mathématiques que nous ne traiterons pas en détail dans ces notes.
             
-            \begin{defn}
+            \begin{definition}
                 Une \textit{variété différentiable} $(\M,\A)$ de dimension $n$ est un ensemble $\M$ munit d'un atlas différentiable de dimension $n$ tel que la topologie canonique associée soit séparée au sens de Hausdorff et à base dénombrable.
-            \end{defn}
+            \end{definition}
             
             Revenons sur les notions impliquées dans cette définition. Il possible de montrer qu'un ensemble de domaines de carte forme une topologie, on l'appelle \textit{topologie canonique}. On veut que cette topologie soit \textit{séparée au sens de Hausdorff}. Cela signifie que si l'on prend deux points $a, b \in \M$, il doit exister deux ouverts disjoints $U$ et $V$ tels que $a \in U$ et $b \in V$. Cela permet d'éviter le "dédoublement" de points. Pour finir, la topologie canonique doit aussi être \textit{à base dénombrable}, c'est-à-dire qu'il doit exister un ensemble dénombrable d'ouverts tels que n'importe quel autre ouvert peut s'exprimer comme une union (au plus dénombrable) d'ouverts de cet ensemble. Cette condition assure une certaine cohérence entre la dimension de la variété et l'ensemble en question. Sans cela, il serait, par exemple, possible de munir l'ensemble $\mathbb{R}^2$ d'un atlas de sorte à obtenir une variété différentiable de dimension $1$.
             
@@ -1274,13 +1274,13 @@
             \right).
             \end{equation}
             
-            \begin{defn}
+            \begin{definition}
                 Si $x$ est une carte locale en $P\in\M$, alors on appelle \textit{coordonnées locales} du point $P$ les applications $x^\mu$ telles que \ref{eq:coordloc}.
-            \end{defn}
+            \end{definition}
             
             On utilise la notation $(x^\mu(P)) \equiv (x^0(P),x^1(P),x^2(P),x^3(P))$. De manière générale, lorsque que le contexte est clair, on ne note pas la dépendance en le point de l'espace-temps. Par exemple, $g_{\mu\nu}(P)\equiv g_{\mu\nu}$. Gardons bien à l'esprit que les coordonnées locales $x^\mu$ sont des applications et que les $x^\mu(P)$ sont des nombres réels. 
             
-            \begin{defn}
+            \begin{definition}
                 On dit que le système de coordonnées $z$ est \textit{localement plat} en $P$ si $(z,U)$ est une carte locale telle que $P\in U$ et 
                 \begin{subequations}\label{locin}
                 \begin{empheq}[left=\empheqlbrace]{align}
@@ -1289,7 +1289,7 @@
                 \end{empheq}
                 \end{subequations}
                 On note l'application de coordonnée $z_P$.
-            \end{defn}
+            \end{definition}
             
             Si $z_P$ est un système de coordonnées localement plat en $P$, et $Q\in U$ alors $z_P^\alpha(Q)$ sont les coordonnées de $Q$ dans le système de coordonnées localement inertiel en $P$.\\
             
@@ -1298,12 +1298,12 @@
                 x'^\mu(P) = (x'\circ x^{-1})(x^\mu(P))
             \end{equation}
             
-            \begin{defn}
+            \begin{definition}
                 Une \textit{ligne d'univers} est une courbe différentiable dans la variété, c'est-à-dire une application
                 \begin{equation}
                     \gamma : I\subset\mathbb{R} \to \M.
                 \end{equation}
-            \end{defn}
+            \end{definition}
             On peut directement obtenir une courbe dans $\mathbb{R}^4$ à partir de celle dans $\mathcal{M}$.
             \begin{equation}
                 x^\mu(\lambda)\equiv(x\circ\gamma)(\lambda)
@@ -1320,12 +1320,12 @@
             \end{equation}
             où l'on a utilisé $\ref{eq:chgtref}$. On obtient une expression de $\eta_{\mu\nu}$ généralisée (aux référentiels non-localement inertiels). Même si cela peut paraître claire, nous définirons mieux les objets du type $dz^\alpha_P$ dans le suite, cela justifiera cette loi de transformation.
             
-            \begin{defn}
+            \begin{definition}
                 Si $z$ est un système de coordonnées localement inertiel en $P$ et $x$ un autre système de coordonnée en $P$, on définit le \textit{tenseur métrique} comme
                 \begin{equation}
                     g_{\mu\nu}(P)~\hat{=}~\eta_{\alpha\beta}\frac{\p z^\alpha_P}{ \p x^\mu}\frac{\p z^\beta_P}{\p x^\nu}
                 \end{equation}
-            \end{defn}
+            \end{definition}
             Notons bien que le tenseur métrique dépend du point de l'espace-temps en lequel il est considéré.\\
             La relation \ref{eq:met} devient
             \begin{equation}
@@ -1420,13 +1420,13 @@
             \end{align}
             Ce nombre est en fait lié a ce que l'on appelle un invariant de courbure.
             
-            \begin{defn}
+            \begin{definition}
                 En dimension $D$ le \textit{nombre d'invariants de courbure} est 
                 \begin{align}
                     \mathscr{N}_D ~&\hat{=}~  \frac{D^2(D^2-1)}{12}+\frac{1}{2}D(D+1)-D^2\\
                 &= \frac{1}{12}D(D-1)(D-2)(D+3)
                 \end{align}
-            \end{defn}
+            \end{definition}
             Nous verrons dans la suite ce qu'est un invariant de courbure.\\
             Étudions le résultats pour quelques valeurs de $D$.
             \begin{itemize}[label = \textbullet]
@@ -1468,9 +1468,9 @@
     
         \subsection{Trajectoire d'un particule test ponctuelle}
         
-            \begin{defn}
+            \begin{definition}
                 On dit qu'une particule est une \textit{particule test} lorsqu'elle n'a pas de rétro-action sur la champ considéré (ici le champ de gravitation).
-            \end{defn}
+            \end{definition}
             
             Dans notre cas, une particule test a donc une masse non-nulle (de manière à être sujette à la l'interaction gravitationnelle) mais on suppose que la champ gravitationnelle généré par cette masse est négligeable.
             
@@ -1503,12 +1503,12 @@
             
             On voit que les symboles $\Gamma^\mu_{\rho\nu}$ jouent un rôle important dans cette équation.
             
-            \begin{defn}
+            \begin{definition}
                 On appelle \textit{symboles de Christoffel} les symboles
                 \begin{equation}
                     \Gamma^\rho_{\mu\nu} ~\hat{=}~ \frac{\p x^\rho}{\p z^\alpha_P}\frac{\p^2 z^\alpha_P}{\p x^\mu\p x^\nu}.
                 \end{equation}
-            \end{defn}
+            \end{definition}
             
             \begin{prop}\begin{leftbar}\label{prop:propgamma}
                 Le symboles de Christoffel ont les propriétés suivantes.
@@ -1571,9 +1571,9 @@
             
             D'après cette proposition, on constate que l'équation du mouvement d'une particule en chute libre peu s'écrire uniquement en terme de la métrique. Ceci suggère que la métrique code totalement le champ de gravitation.
             
-            \begin{defn}
+            \begin{definition}
                 Les systèmes de coordonnées où $\Gamma^\mu_{\nu\rho}(P) = 0$ sont dits \textit{systèmes de coordonnées localement inertiels}.
-            \end{defn}
+            \end{definition}
             
             \begin{rmk}
                 A priori, il n'y a pas de raison mathématique pour que le notions ce système localement plat et inertiel soient les mêmes. C'est le principe d'équivalence qui implique que ces notions doivent êtres les mêmes. C'est pour cette raison que ces deux notions ont été confondue jusqu'ici.
@@ -1663,17 +1663,17 @@
                 
                 On peut se poser la question suivante : comment définir le déplacement en physique ? Imaginons être dans le vide, comment savoir si on se déplace ou pas ? S'il y a un champ dans cette région de l'espace (champ de densité de masse, champ électrique, ...), on peut dire que l'on est en mouvement si on observe une variation de ce champ. On pourrait aussi déduire que c'est le champ qui se déplace et que nous sommes fixe.  Si le champ est réparti dans tout l'espace, c'est une notion équivalente. Pour cela, on introduit la notion de vecteur tangent à un point d'une variété. Intuitivement, un vecteur tangent va être un objet permettant de mesurer la variation d'un champ $f:\M\to\mathbb{R}$ dans la direction du vecteur entre deux points très proches. Mathématiquement, on parle d'opérateur différentiel de premier ordre.
                 
-                \begin{defn}
+                \begin{definition}
                     Soit $\M$ une variété différentiable et $P\in\M$. Un \textit{vecteur tangent} à $\M$ en $P$ est une application linéaire $X_P:C^\infty(\M,\mathbb{R})\to\mathbb{R}$ telle que
                     \begin{equation}
                         X_P(fg) = X_P(f)g+fX_P(g)
                     \end{equation}
                     pour tout $f,g\in C^\infty(\M,\mathbb{R})$. Cette identité est appelée \textit{règle de Leibniz}.
-                \end{defn}
+                \end{definition}
                 
-                \begin{defn}
+                \begin{definition}
                     L'\textit{espace tangent} à $\M$ en $P$, noté $T_P\M$, est définit comme l'ensemble des vecteurs tangents à $\M$ en $P$.
-                \end{defn}
+                \end{definition}
                 
                 \begin{prop}
                 \begin{leftbar}
@@ -1706,7 +1706,7 @@
                 \end{leftbar}\end{prop}
                 
                 Cette définition abstraite de vecteur tangent rend le concept difficile à comprendre intuitivement. Si l'on se donne une ligne d'univers, on peut définir la notion de vecteur tangent à la ligne d'univers qui est plus intuitive.
-                \begin{defn}
+                \begin{definition}
                     Soit une courbe différentiable $(\gamma)$ sur $\M$ de paramètre $t\in\mathbb{R}$. Si $f\in C^\infty(\M,\mathbb{R})$, on peut définir le \textit{vecteur tangent} à $\gamma$ en $\gamma(s)$ comme l'opérateur différentiel qui associe à $f$ sa dérivée le long de $\gamma$ évaluée en $\gamma(s)$:
                     \begin{equation}
                     \dot{\gamma}(s):\left(
@@ -1716,7 +1716,7 @@
                     \end{array}
                     \right).
                     \end{equation}
-                \end{defn}
+                \end{definition}
                 
                 On vérifie facilement que $\dot{\gamma}(s)$ est bien un vecteur tangent. En effet, si $(U,\varphi)$ est une carte locale telle que $\gamma(s)\in U$, on peut écrire $\dot{\gamma}(s)$ on peut voir que
                 \begin{equation}
@@ -1734,7 +1734,7 @@
                 \end{equation*}
                 est une application différentiable, il y a une manière naturelle de définir une application entre les espaces tangents $T_P\M$ et $T_{\phi(P)}\N$. C'est la différentielle de l'application (ou "pushforward").
                 
-                \begin{defn}
+                \begin{definition}
                     Soit $\phi\in C^\infty(\M,\N)$, la \textit{différentielle de l'application} $\phi$ en $P\in\M$ est l'application linéaire
                     \begin{equation}
                         \phi_{*P}:\left(
@@ -1749,7 +1749,7 @@
                         \phi_{*P}(X)(f) = X(f\circ\phi)
                     \end{equation}
                     pour tout $X\in T_P\M$ et $f\in C^{\infty}(\N,\mathbb{R})$.
-                \end{defn}
+                \end{definition}
                 
                 La différentielle de l'application est une application linéaire entre deux espaces vectoriels de dimensions $m$ et $n$ respectivement. Elle associe à tout vecteur tangent à $\M$ en $P$ un vecteur tangent $\N$ en $\phi(P)$.
                 
@@ -1787,9 +1787,9 @@
                 \end{equation}
                 Ces forme linéaire sont parfois appelées covecteurs.
                 
-                \begin{defn}
+                \begin{definition}
                     L'\textit{espace cotangent} à $\M$ en $P$ est le dual de l'espace tangent $\M$ en $P$, noté $(T_P\M)^*$.
-                \end{defn}
+                \end{definition}
                 
                 Pour rappel, si $\{e_\mu\}$ est une base de l'espace tangent $T_P\M$, on peut construire une unique base $\{e^\mu\}$ de $(T_P\M)^*$ associée à $\{e_\mu\}$ telle que
                 \begin{equation}
@@ -1804,13 +1804,13 @@
                     \omega(e_\mu) = \omega_\nu e^\nu(e_\mu) = \omega_\nu \delta^\nu_\mu = \omega_\mu.
                 \end{equation}
                 
-                \begin{defn}
+                \begin{definition}
                     A toute fonction $f\in C^\infty(\M,\mathbb{R})$ on peut faire correspondre un élément de l'espace dual $df_P\in(T_P\M)^*$ définit comme
                     \begin{equation}
                         df_P(X_P) = X_P[f]
                     \end{equation}
                     pour tout $X_P\in T_P\M$. Cette application est appelée la $\textit{différentielle}$ de $f$.
-                \end{defn}
+                \end{definition}
                 Faire agir la différentielle d'une fonction sur un vecteur tangent revient à faire agir ce vecteur tangent sur la fonction.\\
                 
                 Pour l'espace tangent, nous avions vu que la donnée de coordonnées permet de définir une base naturelle. De la même manière, la donnée de coordonnées permet de définir une base naturelle de l'espace cotangent. Pour rappel, les coordonnée locales $x^\mu$ sont des applications de $\M$ dans $\mathbb{R}$ différentiables ce qui permet de considérer la différentielle de ses applications.
@@ -1869,7 +1869,7 @@
                 
                 Si $\phi:\M\to\N$ est différentiable, on peut définir la différentielle de l'application $\phi$ entre les espaces tangents de $\N$ et $\M$, notée $\phi_*$, comme vu dans la section précédente. Maintenant que nous étudions les espaces tangents duaux, on peut définir, à partir de $\phi_*$, une application qui associe à chaque forme linéaire de $(T_{\phi(P)}\N)^*$ une forme linéaire de $(T_P\M)^*$. C'est la transposée de l'application (ou "pullback").
                 
-                \begin{defn}
+                \begin{definition}
                     Soit $\phi\in C^\infty(\M,\N)$, la \textit{transposée de l'application} $\phi$ en $P\in\M$ est l'application linéaire
                     \begin{equation}
                         \phi^{*P}:\left(
@@ -1884,7 +1884,7 @@
                         \phi^{*P}(\omega)(X) = \omega(\phi_{*P}(X))
                     \end{equation}
                     pour tout $\omega\in (T_{\phi(P)})^*$ et $X\in T_P\M$.
-                \end{defn}
+                \end{definition}
             
             \subsection{Tenseurs}
                 
@@ -1893,7 +1893,7 @@
                     \Pi^q_p ~\hat{=}~ \underbrace{(T_P\M)^*\times\dots\times (T_P\M)^*}_{\text{$p$ facteurs}}\times\underbrace{T_P\M\times\dots\times T_P\M}_{\text{$q$ facteurs}}.
                 \end{equation}
                 
-                \begin{defn}
+                \begin{definition}
                     Un $\tens{p}{q}$-\textit{tenseur} (ou \textit{tenseur} de type $(p,q)$) en $P$ est une application linéaire en chaque argument
                     \begin{equation}
                         T:\left(
@@ -1903,7 +1903,7 @@
                     \end{array}
                     \right).
                     \end{equation}
-                \end{defn}
+                \end{definition}
                 
                 Par définition,
                 \begin{itemize}[label = \textbullet]
@@ -1915,12 +1915,12 @@
                     \end{equation}
                 \end{itemize}
                 
-                \begin{defn}
+                \begin{definition}
                     L'\textit{espace des tenseurs} de type $(p,q)$ en $P$ est noté
                     \begin{equation}
                         T^{(p,q)}_P\M = \underbrace{T_P\M\otimes\dots\otimes T_P\M}_{\text{$p$ facteurs}}\otimes \underbrace{(T_P\M)^*\otimes\dots\otimes (T_P\M)^*}_{\text{$q$ facteurs}}.
                     \end{equation}
-                \end{defn}
+                \end{definition}
                 
                 On écrit $X_1\otimes\dots\otimes X_p\otimes\omega^1\otimes\omega^q$ le tenseur qui envois $(\eta^1,\dots,\eta^p,Y_1,\dots,Y_p)$ sur
                 \begin{equation}
@@ -1937,12 +1937,12 @@
                     Calculer le nombre de tenseurs linéairement indépendants revient à calculer le nombre de manière de faire le produit tensoriel de $p$ vecteurs avec à chaque fois $n$ choix par vecteurs. On trouve bien $n^p$.
                 \end{proof}
                 
-                \begin{defn}
+                \begin{definition}
                     Soit $\{e_\mu\}$ une base de $T_P\M$ et $\{e^\mu\}$ la base duale de $(T_P\M)^*$. Si $T$ est un tenseur de type $(p,q)$, on appelle \textit{composantes du tenseur} $T$ les nombres
                     \begin{equation}
                         T\indices{^{\mu_1\dots\mu_p}_{\nu_1\dots\nu_q}}~\hat{=}~T(e^{\mu_1},\dots,e^{\mu_p},e_{\nu_1},\dots,e_{\nu_q})\in\mathbb{R}.
                     \end{equation}
-                \end{defn}
+                \end{definition}
                 
                 \begin{prop}\begin{leftbar}
                     Si $T$ est un tenseur de type $(p,q)$, alors
@@ -1996,9 +1996,9 @@
                     donc les $\omega_\mu$ sont bien des tenseurs de type $(0,1)$. Le cas générale est direct en utilisant la linéarité du produit tensoriel.
                 \end{proof}
                 
-                \begin{defn}
+                \begin{definition}
                     Un tenseur de type $(1,0)$ est appelé \textit{vecteur} et un tenseur de type $(0,1)$ est appelé \textit{1-forme}.
-                \end{defn}
+                \end{definition}
                 
                 \begin{prop}\begin{leftbar}
                     L'espace tangent est un espace de vecteurs, c'est-à-dire que les vecteur tangent se transforment bien comme des vecteurs.
@@ -2106,25 +2106,25 @@
                 
                 Les composantes de tenseurs possèdent des propriétés de symétrie par rapport à une partie de leurs indices. Les définitions suivantes énoncent différentes propriétés possibles. Ces définitions sont utiles uniquement si elles sont accompagnées de propositions qui disent que de tels tenseurs existent et que ces propriétés sont indépendantes de la base choisie. Nous supposerons que c'est le cas.
                 
-                \begin{defn}
+                \begin{definition}
                     On appelle \textit{tenseur covariant complètement symétrique} un tenseur $t$ satisfaisant à
                     \begin{equation}
                             t_{a_1\dots a_p} = t_{a_{\sigma(1)}\dots a_{\sigma(p)}}
                     \end{equation}
                     pour tout $\sigma\in S_p$. Lorsque tous les indices sont contravariants, c'est un \textit{tenseur contravariant complètement symétrique}.
-                \end{defn}
+                \end{definition}
                 
-                \begin{defn}
+                \begin{definition}
                     On appelle \textit{tenseur covariant complètement anti-symétrique} un tenseur $t$ satisfaisant à
                     \begin{equation}
                             t_{a_1\dots a_p} = \varepsilon(\sigma)t_{a_{\sigma(1)}\dots a_{\sigma(p)}}
                     \end{equation}
                     pour tout $\sigma\in S_p$. Lorsque tous les indices sont contravariants, c'est un \textit{tenseur contravariant complètement anti-symétrique}.
-                \end{defn}
+                \end{definition}
                 
                 Il est aussi possible que des tenseurs soient symétriques (ou anti-symétriques) seulement sous permutation d'une certaine partie de leurs indices. Ou encore, comme on l'a vu avec l'identité de Bianchi, que des tenseurs satisfassent une condition mettant en jeu une certaine combinaison linéaire de composantes.\\
                 
-                \begin{defn}
+                \begin{definition}
                     Soit $t$ un tenseur de type d'ordre $p$. On introduit les notations suivantes: la \textit{partie symétrique} de $t$ est 
                     \begin{equation}
                         t_{(a_1\dots a_p)} ~\hat{=}~ \frac{1}{p!} \sum_{\sigma\in S_p}t_{a_{\sigma(1)}\dots a_{\sigma(p)}}.
@@ -2133,7 +2133,7 @@
                     \begin{equation}
                         t_{[a_1\dots a_p]} ~\hat{=}~ \frac{1}{p!} \sum_{\sigma\in S_p}\varepsilon(\sigma) t_{a_{\sigma(1)}\dots a_{\sigma(p)}}.
                     \end{equation}
-                 \end{defn}
+                 \end{definition}
                 
                 \begin{prop}\begin{leftbar}
                     Soit $t$ un tenseur d'ordre $p$.
@@ -2230,17 +2230,17 @@
                 
                 Comme il a déjà été mentionné, la donnée d'un système de coordonnées rend les notion de tenseur et de coordonnée de tenseur équivalentes. Pour les tenseurs d'ordre $2$, on peut associer une matrice dont les éléments sont les composantes du tenseur.\\
                 
-                \begin{defn}
+                \begin{definition}
                     Soit un tenseur $t$ d'ordre $2$. On dit que ce tenseur est \textit{non-dégénéré} si la matrice de ses composantes est inversible.
-                \end{defn}
+                \end{definition}
                 
                 Remarquons que la notion de dégénérescence dépend du point $P$ considéré.
                 
             \subsection{Tenseur métrique}
                 
-                \begin{defn}
+                \begin{definition}
                     Un \textit{tenseur métrique} est un tenseur de type $(0,2)$ non-dégénéré et complètement symétrique.
-                \end{defn}
+                \end{definition}
                 
                 \begin{prop}\begin{leftbar}
                     Le tenseur métrique définit, en chaque point $P\in\M$, un pseudo-produit scalaire sur $T_P\M$.
@@ -2348,9 +2348,9 @@
         
             La notion de $p$-forme ne nécessite pas de tenseur métrique.
             
-            \begin{defn}
+            \begin{definition}
                 Une $p$\textit{-forme} (ou \textit{forme différentielle d'ordre $p$}) est un tenseur de type $(0,p)$ complètement anti-symétrique. On note, $\Omega_P^p(\M)$ l'espace des $p$-formes sur $\M$ en $P$.
-            \end{defn}
+            \end{definition}
             
             \begin{rmk}
                 La condition $p\leq n$ s'explique par le fait qu'il n'est pas possible d'anti-symétriser une quantité qui a plus d'indices que le nombres de valeurs que peuvent prendre ces indices, c'est-à-dire si $n<p$. Nous vérifierons plus tard que $dim(\Omega_P^p(\M)) = {p \choose n}$ ce qui n'est définis que si $n\leq p$.
@@ -2370,12 +2370,12 @@
                 &= \frac{1}{p!}\omega_{a_1\dots a_p} \left( \sum_{\sigma\in S_p}\varepsilon(\sigma)  e^{a_{\sigma(1)}}\otimes\dots\otimes e^{a_{\sigma(p)}}\right)\label{eq:pformebase}
             \end{align}
             
-            \begin{defn}
+            \begin{definition}
                 On définit la notation suivante pour les vecteurs de base $\{e^a\}$.
                 \begin{equation}
                     e^{a_1}\wedge \dots\wedge e^{a_{p}} ~\hat{=}~ \sum_{\sigma\in S_p}\varepsilon(\sigma)e^{a_{\sigma(1)}}\otimes\dots\otimes e^{a_{\sigma(p)}}.
                 \end{equation}
-            \end{defn}
+            \end{definition}
             
             Notons que pour tout $\sigma\in S_p$,
             \begin{equation}
@@ -2439,7 +2439,7 @@
             
             Définissons un produit pour les formes différentielles.
             
-            \begin{defn}
+            \begin{definition}
                 On définit le \textit{produit extérieur} entre une $p$-forme et une $q$-forme comme
                 \begin{equation}
                 \wedge:\left(
@@ -2453,16 +2453,16 @@
                 \begin{equation}
                     \omega\wedge\eta ~\hat{=}~ \frac{1}{p!q!}\omega_{[a_1\dots a_p}\eta_{a_{p+1}\dots a_{p+q}]}~e^{a_1}\wedge \dots\wedge e^{a_{p+q}}.
                 \end{equation}
-            \end{defn}
+            \end{definition}
             
             Si l'on compare la définition qui précède avec celle de $(p+q)$-forme, nous pouvons voir que
             \begin{equation}
                 (\omega\wedge\eta)_{a_1\dots a_{p+q}} = \frac{(p+q)!}{p!q!}\omega_{[a_1\dots a_p}\eta_{a_{p+1}\dots a_{p+q}]}
             \end{equation}
             
-            \begin{defn}
+            \begin{definition}
                 L'ensemble des $p$-formes pour $p\leq n$ munit du produit extérieur est appelé \textit{algèbre extérieure} (ou \textit{algèbre de Grassmann}).
-            \end{defn}
+            \end{definition}
             
             \begin{exmp}${}$
             \begin{itemize}[label = \textbullet]
@@ -2530,7 +2530,7 @@
             \end{equation}
             Ceci est nécessaire pour la définition de dérivée extérieure.
             
-            \begin{defn}
+            \begin{definition}
                 La \textit{dérivée extérieur} fait correspondre une $p$-forme à une $p+1$ forme de manière linéaire comme
                 \begin{equation}
                 d:\left(
@@ -2544,7 +2544,7 @@
                 \begin{equation}
                     d\omega ~\hat{=}~ \frac{1}{p!} d\omega_{\mu_1\dots\mu_p}\wedge dx^{\mu_1}\wedge \dots\wedge dx^{\mu_p}.
                 \end{equation}
-            \end{defn}
+            \end{definition}
             
             En utilisant \ref{eq:propdiffomega}, on voit que la dérivée extérieure s'exprime sur la base naturelle de l'espace cotangent comme
             \begin{equation}
@@ -2719,13 +2719,13 @@
             
             Un champ de vecteur $X$ sur une variété différentiable $\M$ peut être vu comme le champ des vitesses d'un ensemble de particule ou d'un fluide qui se déplace dans $\M$. Si l'on se donne un point $P\in\M$, la particule qui passe par se point a une trajectoire unique définie par le champ de vecteur.
             
-            \begin{defn}
+            \begin{definition}
              Soit $X$ un champ de vecteur sur $\M$. Une \textit{courbe intégrale} du champ $X$ est un couple $(I,\gamma)$ où est un ouvert de $\mathbb{R}$ contenant 0 et où $\gamma:I\to\M$ est une courbe différentiable telle que
              \begin{equation}
                  \dot{\gamma}(t) = X_{\gamma(t)}.
              \end{equation}
              Le point $P = \gamma(0)$ est la \textit{condition initiale} de $\gamma$.
-            \end{defn}
+            \end{definition}
             
             Dans des coordonnées locales $x^\mu$, si $X = X^\mu\p_\mu$ et que le courbe intégrale $\gamma$ a les coordonnées $x^\mu(t)$, on a la relation
             \begin{align}
@@ -2742,7 +2742,7 @@
             
             Localement, on peut recouvrir $\M$ de courbes intégrales de sorte à pouvoir décrire $\M$ uniquement en terme de ces dernières.
             
-            \begin{defn}
+            \begin{definition}
                 Un \textit{groupe à un paramètre $\phi$ de difféomorphismes locaux} de $\M$ est une application différentiable
                 \begin{equation}
                 \phi:\left(
@@ -2759,7 +2759,7 @@
                     \item $\phi_t:\mathcal{D}_t\to\mathcal{D}_{-t}$ est un difféomorphisme pour tout $t\in\mathbb{R}$
                     \item $(\phi_s\circ\phi_t)(t) = \phi_{s+t}(P)$ pour tout $P$ dans le domaine de $\phi_s\circ\phi_t$ et pour tout $r,s\in\mathbb{R}$
                 \end{enumerate}
-            \end{defn}
+            \end{definition}
             
             Ces difféomorphisme font correspondre à chaque tenseur $T$ de type $(p,q)$ en $P$ à $\phi_{t*}T$ en $\phi_t(P)$. Prenons le difféomorphisme $\phi_t$. Le point $Q = \phi_{-t}(P)$ est envoyé sur $(\phi_{t}\circ\phi_{-t})(P) = P$ donc la différentielle de l'application $\phi_t$ permet de passe de l'espace tangent en $Q$ à l'espace tangent en $P$
             \begin{equation}
@@ -2769,12 +2769,12 @@
             
             \comp
             
-            \begin{defn}
+            \begin{definition}
                 La \textit{dérivée de Lie} $\L_X T$ du champ tensoriel $T$ par rapport à $X$ est définie comme
                 \begin{equation}
                     \L_X T (P) = \lim\limits_{t\to0} \frac{1}{t}\left(T(P)-\phi_{t*}T(P) \right).
                 \end{equation}
-            \end{defn}
+            \end{definition}
             
             \begin{prop}
             \begin{leftbar}
@@ -2799,21 +2799,21 @@
         
             \subsection{Dérivée covariante}
         
-                \begin{defn}
+                \begin{definition}
                     Les \textit{symboles de connexion} $\Gamma^\mu_{\nu\rho}$ sont tels que la loi de transformation est, par hypothèse,
                     \begin{equation}
                         \Gamma'^\mu_{\nu\rho} = \Gamma^\kappa_{\theta\sigma}\frac{\p x^\sigma}{\p x'^\nu} \frac{\p x'^\mu}{\p x^\kappa}\frac{\p x^\theta}{\p x'^\nu} +  \frac{\p x'^\mu}{\p x^\kappa}\frac{\p^2 x^\kappa}{\p x'^\nu\p x'^\rho}
                     \end{equation}
-                \end{defn}
+                \end{definition}
                 
                 Ces symboles n'ont, a priori, rien à voir avec les symboles de Christoffel. Rappelons de nouveau que la discussion qui suit ne nécessite pas de métrique, on se permet donc de ne pas donner d'ordre aux indices des tenseurs.
                 
-                \begin{defn}
+                \begin{definition}
                     Soit $t\in T_P^{(p,q)}\M$ de coordonnées $t^{\mu_1\dots\mu_p}_{\nu_i\dots\nu_q}$, on définit la \textit{dérivée covariante} de $t$, notée $\nabla t$, comme le tenseur de composantes
                     \begin{equation}
                         \nabla_\mu t^{\mu_1\dots\mu_p}_{\nu_i\dots\nu_q} ~\hat{=}~ \p_\mu t^{\mu_1\dots\mu_p}_{\nu_i\dots\nu_q}+\sum_{r=1}^p \Gamma^{\mu_r}_{\mu\rho_r}t^{\mu_1\dots\mu_{r-1}\rho_r\mu_{r+1}\dots\mu_p}_{\nu_i\dots\nu_q} - \sum_{r=1}^q \Gamma^{\rho_r}_{\mu\nu_r}t^{\mu_1\dots\mu_p}_{\nu_i\dots\nu_{r-1}\rho_r\nu_{r+1}\dots\nu_q}
                     \end{equation}
-                \end{defn}
+                \end{definition}
                 
                 L'opérateur $\nabla_\mu t^{\mu_1\dots\mu_p}_{\nu_i\dots\nu_q}$ décrit comment on doit prendre le variation du champ $t$ :  on doit tenir compte de sa variation propre (premier terme) mais aussi de la modification des composantes par transport parallèle du fait que la base locales est susceptible de changer lorsque l'on migre d'un point $P\in\M$ à un point $P+dP$ tout proche. Cet opérateur réalise la connexion (affine) entre les différents espaces tangents à la variété.
                 
@@ -2987,13 +2987,13 @@
             
             \subsection{Torsion}
             
-                \begin{defn}
+                \begin{definition}
                     Soient une $\{e^a\}$ une base de $T_P\M$, $\{e^a\}$ la base réciproque de $(T_P\M)^*$ et les coefficients de connexion $\Gamma$. Le \textit{tenseur de torsion} est
                     \begin{equation}
                         T ~\hat{=}~ de+\Gamma\wedge e
                     \end{equation}
                     en notation matricielle.
-                \end{defn}
+                \end{definition}
                 
                 \begin{prop}\begin{leftbar}
                     Les composantes du tenseur de torsion sont
@@ -3225,7 +3225,7 @@
                 
                 On voudrait associer à chaque point $P$ de $\M$, un espace vectoriel. Pour commencer, on se limite au cas particulier de l'esapce tangent.
                 
-                \begin{defn}
+                \begin{definition}
                     Le fibré tangent $T\M$ d'une variété différentiable $\M$ est l'ensemble
                     \begin{equation}
                         T\M = \bigcup_{P\in\M}T_P\M = \bigcup_{P\in\M}\left\{ (P,X)|P\in\M, X\in T_P\M \right\}
@@ -3239,7 +3239,7 @@
                     \end{array}
                     \right).
                     \end{equation}
-                \end{defn}
+                \end{definition}
                 
                 Une propriété remarquable du fibré tangent est qu'il lui-même être vu comme un variété.
                 
@@ -3253,7 +3253,7 @@
                 
                 Le fibré tangent permet d'associer un espace vectoriel à chaque point de la variété, l'espace vectoriel est ici le cas particulier de l'espace tangent. L'espace tangent étant naturellement associé à un point de la variété cette notion est assez naturelle. On peut généraliser ce principe pour n'importe quel type d'espace vectoriel, plus seulement l'espace tangent. On appelle ca le fibré vectoriel.
                 
-                \begin{defn}
+                \begin{definition}
                     Un \textit{fibré vectoriel} réel $\F$ de dimension $k$ sur la variété différentiable $\M$ est de projection $\pi:\F\to\M$ est une variété différentiable telle que pour tout $P\in\M$ il existe un voisinage $U\subset\M$ autour de $P$ tel que $\pi^{-1}(U)$ est difféomorphe à $U\times \mathbb{R}^k$ avec les propriétés suivantes
                     \begin{enumerate}[label = \textit{\roman*)}]
                         \item le diagramme suivant commute
@@ -3270,27 +3270,27 @@
                         où $\varphi_U$ est un difféomorphisme et $\pi_1$ est la projection sur le premier facteur.
                         \item toute composition $\varphi_V\circ\varphi_U^{-1} : (U\cap V)\times \mathbb{R}^k\to (U\cap V)\times \mathbb{R}^k$ où $U$ et $V$ sont disjoints, est linéaire en le second facteur.
                     \end{enumerate}
-                \end{defn}
+                \end{definition}
                 
                 La première propriété a pour but d'assurer que la projection $\pi:\F\to\M$ est différentiable. La seconde propriété implique que la structure d'espace vectoriel est conservée par les applications $\varphi_V\circ\varphi_U^{-1}$. On peut voir $\F$ comme une famille d'espaces vectoriels réels de dimension $k$ paramétrisée par $\M$.\\
                 
-                \begin{defn}
+                \begin{definition}
                     L'espace vectoriel qui est associé à un point $P\in\M$ est appelé la \textit{fibre} en ce point. L'ensemble des fibres forme donc le fibré vectoriel.
-                \end{defn}
+                \end{definition}
                 
-                \begin{defn}
+                \begin{definition}
                     Soit un fibré vectoriel $\F$ de projection $\pi:\F\to\M$. Une \textit{section} de ce fibré vectoriel est une application différentiable $s:M\to\F$ telle que $\pi\circ s = id$ sur $\M$.
-                \end{defn}
+                \end{definition}
                 
                 On peut définir plus rigoureusement toute une série de termes.
-                \begin{defn}${}$
+                \begin{definition}${}$
                     \begin{itemize}[label = \textbullet]
                         \item un \textit{champ scalaire} est une section pour $\F = \mathbb{R}$
                         \item un \textit{champ vectoriel} est une section du fibré tangent
                         \item un \textit{champ tensoriel} est une section pour $\F = T_P^{(p,q)}\M$.
                         \item un \textit{champ de $1$-formes} est une section pour $\F = \Omega^1(\M)$
                     \end{itemize}
-                \end{defn}
+                \end{definition}
                 
                 Notons que ce formalisme n'est pas valable que pour la relativité générale mais aussi dans d'autres théories.
                 
@@ -3301,9 +3301,9 @@
                     \end{itemize}
                 \end{exmp}
                 
-                \begin{defn}
+                \begin{definition}
                     Un \textit{fibré principal} est un fibré qui est aussi un groupe.
-                \end{defn}
+                \end{definition}
                 
                 Dans notre cas nous aurons souvent $\F_P = T_P^{(p,q)}\M$ mais les discussions qui suivent ne dépendent pas de ce choix.\\
                 
@@ -3318,13 +3318,13 @@
                 
                 Ce genre de transformation peut changer la forme des loi de la physique mais la physique en tant que telle reste la même. On sous-entend par là que comme les lois de la physique dépendent des sections elle-mêmes mais pas de la manière dont on écrit ces sections. Pour pouvoir décrire une section, il faut spécifier une base mais ce choix ne joue aucun rôle fondamental. On a discuté l'exemple d'un changement de base dans $\F_P$, ce qui correspond en fait à un changement de référentiel, mais on peut en fait s'autoriser toute une série de transformations plus générale encore cela.
                 
-                \begin{defn}
+                \begin{definition}
                     Soit $\{e_a(P)\}$ une base de $\F_P$ et $s = s^a(P)e_a$ une section, on appelle \textit{transformation de jauge} les transformations de type
                     \begin{equation}
                     s'^a = M^a_{~~b}s^b
                     \end{equation}
                     où $M\in G\subset GL(dim(\F_P),\mathbb{R})$. $G$ est appelé le \textit{groupe de structure du fibré} (ou \textit{groupe de jauge}).
-                \end{defn}
+                \end{definition}
                 
                 Les transformations de jauge décrivent les fameuse symétries de jauge qui, comme nous l'avons mentionné précédemment, ne sont en fait pas des symétries à proprement parlé.
                 
@@ -3346,9 +3346,9 @@
                 \end{equation}
                  mais $s(P)\in\F_P$ et $s(Q)\in\F_Q$ et soustraire des vecteurs qui ne sont pas au même point n'a pas de sens. En géométrie euclidienne ce problème n'existe pas car l'équipollence des vecteurs permet de pouvoir ramener n'importe quels vecteurs au même point. Comme l'espace de la géométrie euclidienne est plat, les vecteurs ne changent pas quand on les translate. Dans notre cas, il faut tenir compte de la courbure de l'espace pour pouvoir transformer les vecteurs correctement quand on les ramènes au même point, c'est ce rôle que joue les symboles de connexion. Considérons une sphère et deux vecteurs $v_1$ et $v_2$ et deux points différent cette sphère. Pour pourvoir soustraire ces vecteurs, il faut ramener $v_2$ au même point que $v_1$ (ou l'inverse). Si l'on fait juste une translation de $v_2$ on perd les propriétés du vecteurs. Par exemple, si $v_2$ est tangent à la sphère, le vecteur résultant ne le sera plus. Il faut adapté la notion de translation sur la sphère en tenant compte de la courbure. S'il on connaît comment s'exprime un vecteur "bien translaté" en fonction du vecteur d'origine dans une base donnée c'est bon. Les coefficients de la combinaison linéaire jouerais le rôle de connexion (symboles de connexion). Il est clair que ces symboles sont intrinsèque à la surface considérée, ici la sphère. L'idée est la même pour l'espace-temps. En d'autres termes, cet exercice de transport parallèle dans l'espace-temps doit être fait pas un certain isomorphisme. Il faut donc se donner un isomorphisme entre fibres $\F_P$ et $\F_Q$ "proches" (lorsque $P$ et $Q$ sont proches). Cet isomorphisme donnera la notion de transport parallèle. Faisons une tentative.
                  
-                 \begin{defn}
+                 \begin{definition}
                     Soit $\S_{P\to Q}$ l'\textit{opérateur de transport parallèle infinitésimal} un isomorphisme entre $\F_P$ et $\F_Q$.
-                 \end{defn}
+                 \end{definition}
                  
                  D'après le raisonnement expliqué précédemment, on a alors
                  \begin{equation}\label{eq:derivsec}
@@ -3376,9 +3376,9 @@
                  
                  Après cette approche intuitive, voyons maintenant une approche plus axiomatique de la même notion.
                  
-                 \begin{defn}
+                 \begin{definition}
                     On note $\Sigma^p$ l'espace des $p$-formes à valeur dans les sections.
-                 \end{defn}
+                 \end{definition}
                  
                  Notons que, d'après cette définition, $\Sigma^0$ est l'espace des sections elles-mêmes. Nous avons donc
                  \begin{equation}
@@ -3401,7 +3401,7 @@
                     \end{equation}
                 \end{exmp}
                 
-                \begin{defn}
+                \begin{definition}
                     Une \textit{connexion} est une application
                     \begin{equation}
                     \nabla:\left(
@@ -3416,7 +3416,7 @@
                         \nabla(fs) = df\otimes s+f\nabla s
                     \end{equation}
                     pour toute fonction $f:\M\to\mathbb{R}$ et pour tout $s\in\Sigma^0$.
-                \end{defn}
+                \end{definition}
                 
                 Notons que $\nabla$ est à valeur dans $\Sigma^1$ var la dérivation est fonctionnelle. Si $S\in T_P\M$,
                 \begin{align}
@@ -3431,13 +3431,13 @@
                     &= ds^a\otimes e_a+s^a\nabla e_a
                 \end{align}
             donc $\nabla s$ est fixée, quelque soit $s$, si l'on connaît $\nabla e_a$. 
-            \begin{defn}
+            \begin{definition}
                 Les \textit{$1$-forme de la connexion} sont les  $1$-forme $\Gamma^b_a\in\Omega^1(\M)$ à valeur dans l'espace des sections qui permettent la décomposition
                 \begin{equation}
                     \nabla e_a = \Gamma^b_a \otimes e_b.
                 \end{equation}
                 On note $\Gamma$ la matrice des $1$-forme de la connexion.
-             \end{defn}
+             \end{definition}
              
             D'après ce que l'on a vu ci-dessus,
             \begin{equation}
@@ -3570,7 +3570,7 @@
         
         \section{Lignes droites et géodésiques}
         
-            \begin{defn}
+            \begin{definition}
                 Soit $(I,\gamma)$ une courbe $C^\infty$ dans $\M$, $I$ est  un intervalle ouvert de $\mathbb{R}$ et $\gamma:I\to\M$ une application $C^\infty$. Pour tout $\lambda\in I$, on définit un vecteur tangent à $\M$ au point $\gamma(\lambda)$, appelé \textit{vecteur tangent à la courbe} $\gamma$ en $\lambda$, on le note $\dot{\gamma}(\lambda)$.
                 \begin{equation}
                     \dot{\gamma}:\left(
@@ -3584,7 +3584,7 @@
                     \begin{equation}
                          \dot{\gamma}(\lambda)(f) ~\hat{=}~ \frac{d}{dt}f(\gamma(t))|_{t=\lambda}.
                     \end{equation}
-            \end{defn}
+            \end{definition}
             
             On voit bien que c'est un vecteur de l'espace tangent car $f\circ\gamma$ est une fonction $C^\infty$ et la dérivée $\frac{d}{dt}$ satisfait à la règle de Leibniz.
             
@@ -3649,13 +3649,13 @@
             \end{align}
             et cette équation différentielle est toujours solvable. Il existe toujours une solution $\lambda'(\lambda)$.
             
-            \begin{defn}
+            \begin{definition}
                 Le paramètre permettant de réduire l'équation d'une droite à 
                 \begin{equation}
                     \nabla_U U = 0
                 \end{equation}
                 est appelé \textit{paramètre affine}.
-            \end{defn}
+            \end{definition}
             
             \begin{prop}\begin{leftbar}
                 Soient $\lambda_1$ et $\lambda_2$ deux paramètres affines d'une courbe $\mathscr{C}$. Il existe $\alpha,\beta\in\mathbb{R}$ tels que
@@ -3678,9 +3678,9 @@
             
             Pour certaines courbes, le paramètre affine correspond à une quantité physique bien connue : le temps propre.
             
-            \begin{defn}
+            \begin{definition}
                 Une \textit{géodésique} est une courbe qui extrémalise la distance entre deux point.
-            \end{defn}
+            \end{definition}
             
             \begin{exmp}
                 En géométrie euclidienne, la distance entre deux points $P$ et $Q$ est donnée par 
@@ -3698,14 +3698,14 @@
                 en coordonnées sphériques. Les courbes qui extrémalisent cette distance sont les grands cercles (cercle issus de l'intersection d'un plan passant par le centre avec la sphère). Dans le cas de la Terre par exemple, il n'est en effet pas possible de marcher tout droit sans se déplacer sur un grand cercle. L'expression "marcher tout droit" signifiant marcher sans changer sa direction dans ce cas-ci (vecteurs tangents co-linéaires). On voit que les géodésiques sont l'équivalent (ou la généralisation) des lignes droites dans les espaces euclidiens.
             \end{exmp}
             
-            \begin{defn}
+            \begin{definition}
                 En signature Minkowskienne, on considère 3 types de courbe :
                 \begin{itemize}[label = \textbullet]
                     \item de \textit{genre temps} : si $g(U,U)<0$
                     \item de \textit{genre lumière} : si $g(U,U)=0$
                     \item de \textit{genre espace} : si $g(U,U)>0$
                 \end{itemize}
-            \end{defn}
+            \end{definition}
             
             \begin{exmp}
                 En relativité restreinte, la distance est donnée par
@@ -3773,14 +3773,14 @@
                 Les deux dernier termes s'annulent car $\lambda$ est un paramètre affine et le terme $\left(\nabla_Ug\right)(U,U)$ s'annule car la dérivée covariante réserve la métrique. On conclu que $g(U,U)$ ne dépend pas du paramètre $\lambda$.
             \end{proof}
             
-            \begin{defn}
+            \begin{definition}
                 Il existe trois familles de géodésiques qualitativement distinctes :
                 \begin{itemize}[label = \textbullet]
                     \item $g(U,U)<0$ : \textit{géodésique de genre temps}, on peut alors normaliser la paramètre affine pour que $g(U,U) = -1$, le paramètre affine renormalisé est identifié avec le temps propre. Le principe d'équivalence implique que les lignes d'univers des particules soumises uniquement au champ de gravitation sont de genre temps.
                     \item $g(U,U)=0$ : \textit{géodésique de genre lumière}, le principe d'équivalence implique que ce sont les lignes d'univers des particules de masse nulle.
                     \item $g(U,U)>0$ : \textit{géodésique de genre espace}, on peut alors normaliser la paramètre affine pour que $g(U,U) = 1$, le paramètre affine renormalisé est l'abscisse curviligne le long de la géodésique.
                 \end{itemize}
-            \end{defn}
+            \end{definition}
             
             \begin{prop}\begin{leftbar}
                 Les géodésiques de genre temps extrémalisent l'action
@@ -3925,12 +3925,12 @@
                     En électromagnétisme, cette question revient à se demander à quelle condition il existe une jauge dans laquelle le potentiel vecteur est nul. Supposons que $A^\mu = 0$. Cela implique automatiquement que $\vv{E} = 0 = \vv{B}$ ou encore $F = dA = 0$. Ainsi, il existe une $0$-forme (fonction) $\alpha$ telle que $A = d\alpha$, ou encore $A_\mu = \p_\mu\alpha$. Dans le cas générale, on cherche donc une généralisation du champ électromagnétique. Ce que l'on appelle la courbure.
                 \end{exmp}
                 
-                \begin{defn}
+                \begin{definition}
                     On définit la \textit{courbure} commme la matrice de $2$-formes
                     \begin{equation}
                         \mathscr{R}~\hat{=}~d\Gamma + \Gamma\wedge\Gamma.
                     \end{equation}
-                \end{defn}
+                \end{definition}
                 Notons bien que le terme $\Gamma\wedge\Gamma$ n'est pas nul car ce n'est pas le produit extérieur de deux $1$-formes, c'est une notation matricielle pour
                 \begin{equation}
                     \mathscr{R}^a_{~b} = d\Gamma^a_{~b} + \Gamma^a_{~c}\wedge\Gamma^c_{~b}
@@ -4264,13 +4264,13 @@
                     \mathscr{R}^\rho_{~\sigma\mu\nu}\to R^\rho_{~\sigma\mu\nu}
                 \end{equation*}
                 
-                \begin{defn}
+                \begin{definition}
                     Le tenseur de composantes 
                     \begin{equation}
                         R^\rho_{~\sigma\mu\nu} = \p_\rho\Gamma^\mu_{\sigma \nu}-\p_\sigma\Gamma^\mu_{\rho\nu} + \Gamma^\mu_{\rho \theta}\Gamma^\theta_{\sigma\nu}-\Gamma^\mu_{\sigma \theta}\Gamma^\theta_{\rho\nu}
                     \end{equation}
                     est de type $(3,1)$ est appelé $\textit{tenseur de Riemann}$.
-                \end{defn}
+                \end{definition}
                 
                 \begin{prop}\begin{leftbar}
                     Le tenseur de Riemann a les propriétés suivantes:
@@ -4354,12 +4354,12 @@
         
     \section{Tenseur de Ricci et tenseur d'Einstein}
         
-        \begin{defn}
+        \begin{definition}
             On définit le \textit{tenseur de Ricci} comme étant le tenseur de composantes
             \begin{equation}
                 R_{\mu\nu} ~\hat{=}~ R^\rho_{~\mu\rho\nu}.
             \end{equation}
-        \end{defn}
+        \end{definition}
         
         \begin{prop}\begin{leftbar}
             Le tenseur de Ricci a les propriétés suivantes :
@@ -4382,19 +4382,19 @@
         
         Notons que le tenseur de Ricci contient de l'information sur la géométrie de l'espace-temps mais tout de même moins que le tenseur de Riemann.
         
-         \begin{defn}
+         \begin{definition}
             Le \textit{scalaire de Ricci} est définit comme
             \begin{equation}
                 R ~\hat{=}~ R^\mu_{~\mu}.
             \end{equation}
-        \end{defn}
+        \end{definition}
         
-        \begin{defn}
+        \begin{definition}
             Le \textit{tenseur d'Einstein} est définit comme
             \begin{equation}
                 G_{\mu\nu} ~\hat{=}~ R_{\mu\nu}-\frac{1}{2}Rg_{\mu\nu}.
             \end{equation}
-        \end{defn}
+        \end{definition}
         
         \begin{prop}\begin{leftbar}
             Le tenseur d'Einstein a les propriétés suivantes :
@@ -4547,9 +4547,9 @@
         
             On peut imposer un grands nombre de conditions sur l'énergie. Nous en détaillerons trois des plus courantes.
             
-            \begin{defn}
+            \begin{definition}
                 \textit{Condition faible} : un observateur local mesure toujours une densité d'énergie positive.
-            \end{defn}
+            \end{definition}
             
             Si un observateur est au repos, cette condition impose que $T^{00}\geq 0$. De manière générale, si $U^\mu$ est la quadri-vitesse de l'observateur, cela revient à imposer $T_{\mu\nu}U^\mu U^\nu \geq 0$ pour tout quadri-vecteur $U$ de genre temps. La condition faible sur l'énergie est donc équivalent à imposer 
             \begin{equation}
@@ -4570,9 +4570,9 @@
                 \comp
             \end{exmp}
             
-            \begin{defn}
+            \begin{definition}
                 \textit{Condition dominante} : en plus de la condition faible, tout observateur voit un flux d'énergie décrit par un vecteur de genre temps.
-            \end{defn}
+            \end{definition}
             
             Ceci signifie que l'énergie "se déplace" moins vite que la lumière. Si un observateur est caractérisé par une quadri-vitesse $U^\mu$, le flux d'énergie qu'il observe est $T^{\mu\nu}U_\nu$. La condition dominante impose donc que ce quadri-vecteur soit de genre temps pour tout $U$ de genre temps. C'est-à-dire
             \begin{equation}
@@ -4590,13 +4590,13 @@
                 \comp
             \end{exmp}
             
-            \begin{defn}
+            \begin{definition}
                 \textit{Condition forte} : on impose la relation
                 \begin{equation}
                     T_{\mu\nu}U^\mu U^\nu \leq \frac{T}{2} U^2\qquad \forall U^2\leq0
                 \end{equation}
                 où $T = T^\mu_{~\mu}$.
-            \end{defn}
+            \end{definition}
         
             Cette condition traduit le fait que la force de gravitation est attractive. Elle est utile pour certains calcul mais elle n'est pas respectée dans le nature (par exemple par l'énergie noire).
 
@@ -4680,9 +4680,9 @@
                 R_{\mu\nu}-\frac{1}{2}Rg_{\mu\nu} = \kappa^2 T_{\mu\nu}
             \end{equation}
             
-            \begin{defn}
+            \begin{definition}
                 $R_{\mu\nu} = 0$ est appelée la \textit{condition de Ricci plat}.
-            \end{defn}
+            \end{definition}
             
             \begin{prop}\begin{leftbar}
                 Dans le vide, l'équation d'Einstein est équivalente à la \textit{condition de Ricci plat}.
@@ -5735,12 +5735,12 @@
                 ds^2 = -\left( 1-\frac{2M}{r} \right)dt^2 + \left( 1-\frac{2M}{r} \right)^{-1}dr^2 + r^2d\Omega^2
             \end{equation}
             avec $d\Omega^2 = d\theta^2+\sin^2\theta d\phi^2$. Lorsque l'on considère une étoile de rayon $R$, cette métrique est bien définie dans le vide, c'est-à-dire lorsque $r>R$. Pour $r<R$, le tenseur énergie-impulsion n'est plus identiquement nul. Dans ce cas, il faudrait trouver le tenseur-impulsion qui décrit l'intérieur stellaire et résoudre à nouveau les équations d'Einstein dont le second membre est maintenant non-nul. Notons que la métrique ne dépend que de la masse $M$ de l'étoile et pas de son rayon $R$. En particulier, la métrique ne dépend pas de la densité l'étoile. Cependant, on voit que la métrique diverge lorsque $r\to2M$ donc que se passe-t-il si $R$ est assez petit pour permettre $r\leq2M$ ? 
-            \begin{defn}
+            \begin{definition}
                 Le rayon de Schwarszchild est définit comme  
                 \begin{equation}
                     R_S =\frac{2GM}{c^2}.
                 \end{equation}
-            \end{defn}
+            \end{definition}
             Dans un premier temps, on pourrait être tenter de dire que la métrique de Schwarzschild n'est définie que pour les étoiles dont le rayon est supérieur au rayon de Schwarzschild, c'est d'ailleurs le cas la plupart du temps (pour le soleil : $R_S\sim 1.5\kilo\meter$). Pour résumer :
             
             \begin{itemize}[label = \textbullet]
@@ -5790,12 +5790,12 @@
             \caption{Géodésiques radiales de genre lumière entrantes et sortantes}
             \end{figure}
              
-            \begin{defn}
+            \begin{definition}
                 On définit la \textit{coordonnée de la tortue} comme
                 \begin{equation}
                     r_*(r) ~\hat{=}~ r+2M\ln\left( \frac{r-2M}{2M} \right).
                 \end{equation}
-            \end{defn}
+            \end{definition}
              
             En terme de la coordonnée de la tortue, la coordonnée $t$ s'exprime comme
             \begin{equation}
@@ -5803,7 +5803,7 @@
             \end{equation}
              avec le signe + pour une géodésique entrante et le signe - pour une géodésique sortante.
              
-            \begin{defn}
+            \begin{definition}
                 On définit les \textit{coordonnées de genre lumière}
                 \begin{align}
                     t_1 ~&\hat{=}~ t+r_*(r)-r\\
@@ -5815,7 +5815,7 @@
                     u_2 ~&\hat{=}~ t_2+r
                 \end{align}
                 pour une géodésique sortante.
-            \end{defn}
+            \end{definition}
             Notons que 
             \begin{align}
                 u_1 &= t+r_*(r)\\
@@ -5827,9 +5827,9 @@
             
             Dans un premier temps, étudier les géodésiques rentrantes. On peut voir que $t\to\infty$ lorsque $r\to 2M^+$ donc pour les observateurs qui restent à $r> 2M$, la géodésique entrante ne traverse jamais $r=2M$.
             
-            \begin{defn}
+            \begin{definition}
                 La sphère de rayon $r=2M$ est appellée \textit{horizon}.
-            \end{defn}
+            \end{definition}
             
             % schéma eliott
             
@@ -5891,13 +5891,13 @@
             
             On a pu voir qu'il y a deux régions différentes telles que $r<2M$ et deux régions différentes telles que $r>2M$ donc la coordonnés radiale $r$ n'est pas une bonne coordonnée. On peut montrer que n'importe quel fonction des coordonnées $u_1$ et $u_2$ préserve les propriétés importantes de ces coordonnées. Définissons un nouveau type de coordonnées qui permet d'éliminer la singularité et donc de mieux représenter les trous de ver.
             
-            \begin{defn}
+            \begin{definition}
                 Les \textit{coordonnées de Kruskal-Szekeres} sont définies comme
                 \begin{align}
                     U ~&\hat{=}~ e^{\frac{u_1}{4M}}\\
                     V ~&\hat{=}~ -e^{\frac{u_2}{4M}}
                 \end{align}
-            \end{defn}
+            \end{definition}
             
             On peut directement voir que 
             \begin{align}

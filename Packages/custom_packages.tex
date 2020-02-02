@@ -6,6 +6,8 @@
 \usepackage{fullpage} % mise ne page
 \usepackage{amsmath,amssymb,amsthm,amsfonts,amstext}
 \usepackage{mathrsfs} % commande \mathscr
+\usepackage{mathtools}
+\usepackage{thmtools}
 \usepackage{pifont} % symboles spéciaux supplémentaires
 %\usepackage{fouriernc} % police de textbook
 %\usepackage{lmodern} % ajoute 72 type de polices d'adobe
@@ -50,6 +52,13 @@
 \usepackage{framed}
 \usepackage{transparent}
 
+\usepackage{color}
+%\usepackage{dsfont}                             % math font for number spaces etc.
+\usepackage{helvet}                             % sans serif font
+%\usepackage{inconsolata}                            % for drawings.
+%\usepackage{stmaryrd}
+\usepackage{mdframed}                               % shaded environments 
+
 % SETUP PACKAGES ---------------------------------
 \setlength{\parindent}{0cm}
 \bibliography{bibliography.bib}
@@ -68,7 +77,23 @@
 \newtheorem{propri}[thm]{Propriété}
 \newtheorem{prin}[thm]{Principe}
 
+\definecolor{shadecolor}{gray}{0.80}
+\declaretheoremstyle[
+headfont=\normalfont\bfseries,
+notefont=\mdseries, notebraces={(}{)},
+bodyfont=\normalfont,
+postheadspace=0.5em,
+spaceabove=0pt,
+mdframed={
+  skipabove=8pt,
+  skipbelow=6pt,
+  hidealllines=true,
+  backgroundcolor={shadecolor},
+  innerleftmargin=4pt,
+  innerrightmargin=4pt}
+]{shaded}
 
+\declaretheorem[style=shaded,within=section]{definition}
 
 \theoremstyle{definition}
 \newtheorem{defn}{Définition}[chapter]
