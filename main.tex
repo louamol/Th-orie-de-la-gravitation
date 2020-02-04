@@ -610,7 +610,7 @@
             \begin{equation}
                 P^\alpha = m U^\alpha = (\gamma m,\gamma m\vv{v}) = (E,\vv{p}).
             \end{equation}
-            Ce quadri-vecteur est appelé énergie impulsion car sa partie spatiale correspond à l'impulsion classique multipliée par $\gamma$ (la partie spatiale correspond en fait à la quantité de mouvement mais on l'appelle souvent impulsion par anglicisme). La première composante est appelée \textit{énergie relativiste} et le second \textit{impulsion relativiste}.
+            Ce quadri-vecteur est appelé énergie impulsion car sa partie spatiale correspond à l'impulsion classique multipliée par $\gamma$ (la partie spatiale correspond en fait à la quantité de mouvement mais on l'appelle souvent impulsion par anglicisme). La première composante est appelée \textit{énergie relativiste} et le second \textit{impulsion relativiste}. Dans le cas où $v\ll 1$, on retrouve $p^0=m+\frac{1}{2}mv^2$ (énergie de reste + énergie cinétique) et $\vv{p} = m\vv{v}$ (quantité de mouvement newtonnienne).
             
             \begin{prop}\begin{leftbar}
                 Nous avons l'égalité suivante.
@@ -1990,6 +1990,12 @@
                     \end{itemize}
                 \end{exmp}
                 
+                \begin{leftbar}
+                \begin{prop}
+                    Le delta de Kronecker définit un tenseur qui ont la particularité d'avoir les mêmes composantes dans n'importe quelle base.
+                \end{prop}
+                \end{leftbar}
+                
                 La propriété fondamentale des tenseurs est la loi de transformation de leurs composantes.
                 
                 \begin{prop}\begin{leftbar}
@@ -2359,7 +2365,7 @@
                     \end{align}
                 \end{proof}
         
-        \section{$p$-formes et produit extérieur}
+        \section{Formes différentielles}
         
             La notion de $p$-forme ne nécessite pas de tenseur métrique.
             
@@ -2368,8 +2374,10 @@
             \end{definition}
             
             \begin{rmk}
-                La condition $p\leq n$ s'explique par le fait qu'il n'est pas possible d'anti-symétriser une quantité qui a plus d'indices que le nombres de valeurs que peuvent prendre ces indices, c'est-à-dire si $n<p$. Nous vérifierons plus tard que $dim(\Omega_P^p(\M)) = {p \choose n}$ ce qui n'est définis que si $n\leq p$.
+                Notons qu'il n'est pas possible de construire une quantité complètement anti-syétrique qui n'est pas identiquement nulle si $p > n$. Nous supposerons donc toujours que $p\leq n$.
             \end{rmk}
+            
+            Les formes différentielles constituent un intéret particulier car elles peuvent être différenciées et intégrées sans avoir besoin de munir la variété d'une structure supplémentaire, ce que nous verrons dans la suite.\\
             
              L'espace des $p$-formes $\Omega_P^p(\M)$ est un sous-espace vectoriel de $T_P^{(0,p)}(\M)$. A long terme, nous cherchons à obtenir une notion de dérivée pour les tenseurs, la simple dérivée des composantes ne donnant plus un tenseur (on le vérifiera dans la suite). On peut relativement facilement définir une notion de dérivée pour les $p$-formes, c'est la dérivée extérieur. Cette notion est définie à partir d'une opération entre les $p$-formes appellée produit extérieur.\\
             
@@ -2524,6 +2532,26 @@
                 \end{align}
                 La dernière égalité vient du fait que chaque vecteur qui somme avec les mêmes indices que $\eta$ doit a été permuté avec $p$ autres vecteurs.
             \end{proof}
+            
+            Comme nous l'avons montré plus haut, 
+            \begin{equation}
+            dim(\Omega^p_P(\M)) = {p\choose n}
+            \end{equation}
+            et donc $dim(\Omega^p_P(\M)) = dim(\Omega^{n-p}_P(\M))$, c'est la \textit{dualité de Hodge}. On peut associer à toute $p$-forme $\omega$ une $(n-p)$-forme $*\omega$ comme
+            \begin{equation}
+            (*\omega)_{\mu_1\dots\mu_{n-p}}=\frac{1}{p!} \varepsilon^{\nu_1\dots\nu_p}_{\hspace{1cm}\mu_1\dots\mu_{n-p}}\omega_{\nu_1\dots\nu_p}
+            \end{equation}
+            où $\varepsilon$ est le tenseur complètement anti-symétrique de Levi-Civita.
+            
+            Cette opération ne dépend pas de la métrique, contrairement aux autres opérations que nous définis et que nous définirons dans la suite. Notons que la dualité à laquelle on réfère ici est différente de la dualité entre esapces vectoriels. Cependant, on peut quand même définir l'action d'une forme linéaire définir par une $(n-p)$-forme $\omega^{(n-p)}$ sur une $p$-forme $\eta^{(p)}$ comme
+            \begin{equation}
+            *(\omega^{(n-p)}\wedge\omega^{(n-p)})\in\mathbb{R}.
+            \end{equation}
+            Pour un espace euclidien de dimension 3, le dual de Hodge d'une $1$-forme donne une autre $1$-forme : si $U,V$ sont des $1$-formes, alors
+            \begin{equation}
+            *(U\wedge V)^i=\varepsilon\indices{_i^j^k} U_j V_k
+            \end{equation}
+            Or, pour un espace euclidien de dimension 3, il y a une correspondance $1-1$ entre les $1$-formes et les vecteurs. Nous avons trouvé une application un vecteur à chaque paire de vecteurs : c'est le produit vectoriel.
         
         \section{Dérivée extérieur}
         
@@ -2715,7 +2743,7 @@
                 \begin{equation}\label{eq:maxwellgrav}
                     dF = 0
                 \end{equation}
-                Comme cette équation est valable dans tout les système de coordonnées, nous avons obtenu les équation de Maxwell homogènes en présence d'un champ de gravitation.\\
+                Comme cette équation est valable dans tout les systèmes de coordonnées, nous avons obtenu les équation de Maxwell homogènes en présence d'un champ de gravitation.\\
                 
                 Comme nous l'avons vu ci-dessus, s'il existe une $1$-forme $A$ telle que $F = dA$, alors
                 \begin{equation}
@@ -2725,10 +2753,48 @@
                 \begin{equation}
                     dF = d^2A = 0.
                 \end{equation}
-                Inversement, si $dF = 0$, est-ce qu'il existe toujours une $1$-forme $A$ telle que $F = dA$ ? La réponse est oui, si la variété a une topologie triviale. Dans ce cas, on dit que $F$ est une forme exacte.
             \end{exmp}
             
-            La dérivée extérieure permet de généraliser le théorème de Stokes pour les variétés différentiables orientables.
+            \begin{definition}
+            	On dit qu'une $p$-forme $\omega$ est \textit{fermée} si $d\omega=0$. On note $Z^p(\M)$ l'espace des $p$-formes fermées sur $\M$.
+            \end{definition}
+            
+            \begin{definition}
+            	On dit qu'une $p$-forme $\omega$ est \textit{exacte} s'il existe une $(p-1)$-forme $\sigma$ telle que $\omega = d\sigma$. On note $B^p(\M)$ l'espace des $p$-formes exactes sur $\M$.
+            \end{definition}
+            
+            Remarquons que $Z^p(\M)$ et $B^p(\M)$ sont des espaces vectoriels et que toutes les formes exactes sont fermées (l'inverse n'est pas vrai) donc
+            
+            \begin{equation}
+            	B^p(\M)\subset Z^p(\M).
+            \end{equation}
+            
+            Dans le but d'étudier les formes qui sont fermées mais pas exactes nous condidérons le quotient des ses espaces.
+            
+            
+            \begin{definition}
+            	On appel $p$-ème \textit{cohomologie de De Rham} l'espace vectoriel quotient
+            	\begin{equation}
+            		H^p(\M)\equiv \frac{Z^p(\M)}{B^p(\M)}.
+            	\end{equation}
+            \end{definition}
+            
+            Pour rappel, si $E$ et $F$ sont des espaces vectoriels tels que $F\subset F$ alors l'espace vectoriel $E/F$ est l'ensemble des classes d'équivalence définies par la relation $v_1\sim v_2 \Leftrightarrow v_1-v_2\in F$ pour tout $v_1,v_2\in V$. Une autre manière de décrire ces classes est $[v]=v+F$ pour tout $v\in V$. Dans notre cas particulier, les classes d'équivalence sont donc $[\omega] = \omega+d\sigma$ où $\omega\in Z^p(\M)$ et $\sigma$ est une $(p-1)$-forme de sorte que $d\sigma\in B^p(\M)$. On voit bien que si  $\omega\in Z^p(\M)$ alors $\omega+d\sigma\in Z^p(\M)$ aussi quelque soit $\sigma$. Les $p$-formes fermées mais pas exactes sont donc toujours définies modulo une forme exacte. $H^p(\M)$ est donc l'espace des $p$-formes fermées modulo le sous-espace des $p$-forme exactes. On peut montrer que cet espace dépend uniquement de la topologie de $\M$.
+            
+            \begin{exmp}
+            	L'esapce de Minkowsky est topologiquement équivalent à $\mathbb{R}^4$ de sorte que $H^0(\M)=\mathbb{R}$ et $H^p(\M)$ est nul pour $p>0$. On en conclu que toute les formes fermées sont exactes (sauf pour les $0$-formes qui ne peuvent jamais êtres exactes). C'est précisément pourquoi l'existence d'un potentiel vecteur est essurée en électromgnétisme.
+            \end{exmp}
+            
+            \begin{definition}
+            	La dimension de $H^p(\M)$ s'appelle le $p$-ème \textit{nombre de Betti} et est noté $b_p(\M)$.
+            \end{definition}
+            
+            Comme $H^p(\M)$ dépend uniquement de la topologie de $\M$, on peut aussi déduire des propritétés topologiques de la variétés à partir des ses cohomologies de De Rham. Il est, par exemple, possible de calculer la caractéristique d'Euler comme
+            
+            
+            \begin{equation}
+            \chi(\M) = \sum_{p=0}^n (-1)^p b_p(\M).
+            \end{equation}
             
         \section{Dérivée de Lie}
             
@@ -5978,10 +6044,3 @@
             
             
 \end{document}
-
-
-% relire la aprtie Unités du début une fois qu'on a plus avancé pour vérifier si tout est correct
-
-% eliott : perectionner les schémas de dilatation du temps et de contraction des longueurs + un diagramme avec les deux
-
-% rajouter la forme x' = Lambda x + a des transformationde Poincaré
