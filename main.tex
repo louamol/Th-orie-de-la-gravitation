@@ -1267,7 +1267,7 @@
             Revenons sur les notions impliquées dans cette définition. Il possible de montrer qu'un ensemble de domaines de carte forme une topologie, on l'appelle \textit{topologie canonique}. On veut que cette topologie soit \textit{séparée au sens de Hausdorff}. Cela signifie que si l'on prend deux points $a, b \in \M$, il doit exister deux ouverts disjoints $U$ et $V$ tels que $a \in U$ et $b \in V$. Cela permet d'éviter le "dédoublement" de points. Pour finir, la topologie canonique doit aussi être \textit{à base dénombrable}, c'est-à-dire qu'il doit exister un ensemble dénombrable d'ouverts tels que n'importe quel autre ouvert peut s'exprimer comme une union (au plus dénombrable) d'ouverts de cet ensemble. Cette condition assure une certaine cohérence entre la dimension de la variété et l'ensemble en question. Sans cela, il serait, par exemple, possible de munir l'ensemble $\mathbb{R}^2$ d'un atlas de sorte à obtenir une variété différentiable de dimension $1$.
             
             \begin{rmk}
-                Pour être rigoureux, on distingue la notion de structure différentiable et de variété différentiable. Une structure différentiable est une classe d'équivalence d'atlas différentiables. On dit que deux atlas sont équivalents si toutes leurs cartes sont compatibles, c'est-à-dire si l'union des deux atlas forme toujours un atlas différentiable. Notons que la donnée d'un atlas suffit à définir une classe d'équivalence. On définit alors une variété différentiable comme étant un ensemble munit d'une structure différentiable et dont la topologie canonique respecte les propriétés énoncées ci-dessus. Si l'on a une application $a$ entre deux variétés, on dit que $a$ est un homéomorphisme (notion d'équivalence pour les topologies) si $a$ est bijective et bicontinue. Les deux variétés sont alors homéomorphes. Si en plus $a$ est bidifférentiable, c'est un difféomorphisme et les variétés sont difféomorphes (notion d'équivalence pour les variétés différentiables). Si deux variétés sont difféomorphes elles sont aussi homéomorphes mais pas le contraire. Ceci permet au même ensemble d'avoir la même topologie canonique mais des structures différentiables non-difféomorphes. Par exemple il a été montré (Milnor, 1956) que la sphère $S^7$ munit de la topologie induite par la topologie usuelle de $\mathbb{R}^8$ possède 28 structures de variétés différentiables non-difféomorphes.
+                Pour être rigoureux, on distingue la notion de structure différentiable et de variété différentiable. Une structure différentiable est une classe d'équivalence d'atlas différentiables. On dit que deux atlas sont équivalents si toutes leurs cartes sont compatibles, c'est-à-dire si l'union des deux atlas forme toujours un atlas différentiable. Notons que la donnée d'un atlas suffit à définir une classe d'équivalence. On définit alors une variété différentiable comme étant un ensemble munit d'une structure différentiable et dont la topologie canonique respecte les propriétés énoncées ci-dessus. Si l'on a une application $a$ entre deux variétés, on dit que $a$ est un homéomorphisme (notion d'équivalence pour les topologies) si $a$ est bijective et bicontinue. Les deux variétés sont alors homéomorphes. Si en plus $a$ est bidifférentiable, c'est un difféomorphisme et les variétés sont difféomorphes (notion d'équivalence pour les variétés différentiables). Si deux variétés sont difféomorphes elles sont aussi homéomorphes mais pas le contraire. Ceci permet au même ensemble d'avoir la même topologie canonique mais des structures différentiables non-difféomorphes. Par exemple, il a été montré (Milnor, 1964) que la sphère $S^n$ munit de la topologie induite par la topologie usuelle de $\mathbb{R}^{n+1}$ possède 28 structures de variétés différentiables non-difféomorphes pour $n=7$, une seule pour $n<7$ et un nombre qui croit rapidment pour $n>7$.
             \end{rmk}
             
             \begin{rmk}
@@ -1276,6 +1276,10 @@
             
             \begin{rmk}
                 On définit une variété différentiable à bord de la même manière mais en remplaçant $\mathbb{R}^n$ par le demi-espace $\mathbb{R}^{n+}=\left\{(x_1,\dots,x_n)\in\mathbb{R}^n|x_1\geq 0\right\}$. Le bord, noté $\p\M$, est l'ensemble des points dont l'image par une application de coordonnée est sur le bord de $\mathbb{R}^{n+}$. Dans ce cas, $\p\M$ est une variété différentiable de dimension $n-1$ sans bord.
+            \end{rmk}
+            
+            \begin{rmk}
+            	Même si nous le ferons parfois pour définir certaines variétés (e.g. la sphère), il n'est pas nécessaire de voir une variété comme un espace "plongé" dans un espace plus grand. Une variété a une existence individuelle. Le terme "plongement" correspond à un concept bien précis en géométrie différentielle, nous désignons ici l'idée intuituve. On peut cependant montrer que toute variété de dimension $n$ peut être vue comme plongée dans $\mathbb{R}^{2n}$ (version forte du théorème de plongement de Whitney) mais dans le cas de la relativité générale, on considère que l'espace-temps à quatre dimension qui n'est pas plongé dans un espace de dimension supérieure.
             \end{rmk}
             
             Si l'on suppose que l'espace-temps est une variété différentiable, quel que soit $P\in\M$ un évènement, on a alors un domaine de carte $U$ avec $P\in U$ et une application de coordonnées
@@ -1785,7 +1789,56 @@
                 \end{equation*}
                 on a $\M=\N$ et $\phi = Id$. Dans ce cas, la matrice de changement de base est $\text{Jac}(y\circ x^{-1})$.\\
                 
-                Si $\phi$ est un difféomorphisme, on peut montrer que $\phi_*$ est isomorphisme linéaire. Des variétés qui sont difféomorphes ont donc des espaces tangent isomorphes. Réciproquement, si il existe un point $P\in\M$ tel que, en $P$, $\phi_*$ est un isomorphisme, alors il existe une voisinage $U$ autour de $P$ tel que $\phi$ restreint à ce voisinage soit un difféomorphisme de $U$ à $\phi(U)$.
+                Si $\phi$ est un difféomorphisme, on peut montrer que $\phi_*$ est isomorphisme linéaire. Des variétés qui sont difféomorphes ont donc des espaces tangent isomorphes. Réciproquement, si il existe un point $P\in\M$ tel que, en $P$, $\phi_*$ est un isomorphisme, alors il existe une voisinage $U$ autour de $P$ tel que $\phi$ restreint à ce voisinage soit un difféomorphisme de $U$ à $\phi(U)$.\\
+                
+                Un champ de vecteur $X$ sur une variété différentiable $\M$ est l'association d'un vecteur tangent de $T_P\M$ à chaque (ou un sous-ensemble) point $p\in\M$, cela peut être vu comme un champ de vitesses d'un ensemble de particule ou d'un fluide qui se déplace dans $\M$. Il est claire que, si l'on se donne un courbe différentiable sur $\M$, cette courbe définit un champ de vecteurs en associant à chaque point le long de la courbe le vecteur tangent à la courbe en ce point-là. Inversément, si l'on se donne un champ de vecteur sur $\M$ et un point $P\in\M$, il existe une seule courbe passant par ce point dont les vecteurs tangents sont donnés par ce champ de vecteurs. En revenant à l'analogie avec des particules : la particule qui passe par se point a une trajectoire unique définie par le champ de vecteur.
+            
+            \begin{definition}
+             Soit $X$ un champ de vecteur sur $\M$. Une \textit{courbe intégrale} du champ $X$ est un couple $(I,\gamma)$ où est un ouvert de $\mathbb{R}$ contenant 0 et où $\gamma:I\to\M$ est une courbe différentiable telle que
+             \begin{equation}
+                 \dot{\gamma}(t) = X_{\gamma(t)}.
+             \end{equation}
+             Le point $P = \gamma(0)$ est la \textit{condition initiale} de $\gamma$.
+            \end{definition}
+            
+            Dans des coordonnées locales $x^\mu$, si $X = X^\mu\p_\mu$ et que le courbe intégrale $\gamma$ a les coordonnées $x^\mu(t)$, on a la relation
+            \begin{align}
+                \dv{\gamma^\mu}{t} = X^\mu(x^1(t),\dots,x^n(t)).
+            \end{align}
+            
+            Le théorème de Cauchy pour les fonctions lipschitziennes assure qu'une telle équation différentielle possède toujours une solution et qu'elle est unique pour une condition initiale donnée.
+            
+            \begin{prop}
+            \begin{leftbar}
+                Soit $X$ un champ de vecteurs sur $\M$. Pour tout $P\in\M$, il existe $\varepsilon>0$ et une unique courbe intégrale de $X$, $\gamma:(-\varepsilon,\varepsilon)\to\M$ de condition initiale $P$.
+            \end{leftbar}
+            \end{prop}
+            
+            \begin{definition}
+            	Un \textit{invariant} pour le champ de vecteurs $X$ est une fonction le long des courbes intégrales de $X$. Si $x^\mu(t)$ sont les coordonnées d'une telle courbe passant par $x^\mu(0)$ et que $f\in C^\infty(\M,\mathbb{R})$ est un invariant alors
+            	\begin{equation}
+            		f(x^\mu(t)) = f(x^\mu(0))
+            	\end{equation}
+            	pour tout $t$.
+            \end{definition}
+            
+            Par définition de courbe intégrale, cette condition est equivalente à 
+            \begin{equation}
+            V(f) = 0.
+            \end{equation}
+            
+            \begin{exmp}
+            	Soit $\M=\mathbb{R}^2$, les application de coordonnées $x,y$ et le champ de vecteurs
+            	\begin{equation}
+            		V = x\pdv{}{x}+\pdv{}{y}.
+            	\end{equation}
+            	Les courbes intégrales satisfont aux équations
+            	\begin{align}
+            		\dot{x}(t) &= x(t) \\
+            		\dot{y}(t) &= 1
+            	\end{align}
+            	la fonction $f=xe^{-y}$ est un invariant de $V$.
+            \end{exmp}
                 
                 
             
@@ -2779,10 +2832,10 @@
             	\end{equation}
             \end{definition}
             
-            Pour rappel, si $E$ et $F$ sont des espaces vectoriels tels que $F\subset F$ alors l'espace vectoriel $E/F$ est l'ensemble des classes d'équivalence définies par la relation $v_1\sim v_2 \Leftrightarrow v_1-v_2\in F$ pour tout $v_1,v_2\in V$. Une autre manière de décrire ces classes est $[v]=v+F$ pour tout $v\in V$. Dans notre cas particulier, les classes d'équivalence sont donc $[\omega] = \omega+d\sigma$ où $\omega\in Z^p(\M)$ et $\sigma$ est une $(p-1)$-forme de sorte que $d\sigma\in B^p(\M)$. On voit bien que si  $\omega\in Z^p(\M)$ alors $\omega+d\sigma\in Z^p(\M)$ aussi quelque soit $\sigma$. Les $p$-formes fermées mais pas exactes sont donc toujours définies modulo une forme exacte. $H^p(\M)$ est donc l'espace des $p$-formes fermées modulo le sous-espace des $p$-forme exactes. On peut montrer que cet espace dépend uniquement de la topologie de $\M$.
+            Pour rappel, si $E$ et $F$ sont des espaces vectoriels tels que $F\subset E$ alors l'espace vectoriel $E/F$ est l'ensemble des classes d'équivalence définies par la relation $v_1\sim v_2 \Leftrightarrow v_1-v_2\in F$ pour tout $v_1,v_2\in V$. Une autre manière de décrire ces classes est $[v]=v+F$ pour tout $v\in V$. Dans notre cas particulier, les classes d'équivalence sont donc $[\omega] = \omega+d\sigma$ où $\omega\in Z^p(\M)$ et $\sigma$ est une $(p-1)$-forme de sorte que $d\sigma\in B^p(\M)$. On voit bien que si  $\omega\in Z^p(\M)$ alors $\omega+d\sigma\in Z^p(\M)$ aussi quelque soit $\sigma$. Les $p$-formes fermées mais pas exactes sont donc toujours définies modulo une forme exacte. $H^p(\M)$ est donc l'espace des $p$-formes fermées modulo le sous-espace des $p$-forme exactes. On peut montrer que cet espace dépend uniquement de la topologie de $\M$.
             
             \begin{exmp}
-            	L'esapce de Minkowsky est topologiquement équivalent à $\mathbb{R}^4$ de sorte que $H^0(\M)=\mathbb{R}$ et $H^p(\M)$ est nul pour $p>0$. On en conclu que toute les formes fermées sont exactes (sauf pour les $0$-formes qui ne peuvent jamais êtres exactes). C'est précisément pourquoi l'existence d'un potentiel vecteur est essurée en électromgnétisme.
+            	L'esapce de Minkowsky est topologiquement équivalent à $\mathbb{R}^4$ de sorte que $H^0(\M)=\mathbb{R}$ et $H^p(\M)$ est nul pour $p>0$. On en conclu que toute les formes fermées sont exactes (sauf pour les $0$-formes qui ne peuvent jamais êtres exactes). C'est précisément pourquoi l'existence d'un potentiel vecteur est assurée en électromagnétisme.
             \end{exmp}
             
             \begin{definition}
@@ -2798,30 +2851,7 @@
             
         \section{Dérivée de Lie}
             
-            Un champ de vecteur $X$ sur une variété différentiable $\M$ peut être vu comme le champ des vitesses d'un ensemble de particule ou d'un fluide qui se déplace dans $\M$. Si l'on se donne un point $P\in\M$, la particule qui passe par se point a une trajectoire unique définie par le champ de vecteur.
-            
-            \begin{definition}
-             Soit $X$ un champ de vecteur sur $\M$. Une \textit{courbe intégrale} du champ $X$ est un couple $(I,\gamma)$ où est un ouvert de $\mathbb{R}$ contenant 0 et où $\gamma:I\to\M$ est une courbe différentiable telle que
-             \begin{equation}
-                 \dot{\gamma}(t) = X_{\gamma(t)}.
-             \end{equation}
-             Le point $P = \gamma(0)$ est la \textit{condition initiale} de $\gamma$.
-            \end{definition}
-            
-            Dans des coordonnées locales $x^\mu$, si $X = X^\mu\p_\mu$ et que le courbe intégrale $\gamma$ a les coordonnées $x^\mu(t)$, on a la relation
-            \begin{align}
-                \dv{\gamma^\mu}{t} = X^\mu(x^1(t),\dots,x^n(t)).
-            \end{align}
-            
-            Le théorème de Cauchy pour les fonctions lipschitziennes assure qu'une telle équation différentielle possède toujours une solution et qu'elle est unique pour une condition initiale donnée.
-            
-            \begin{prop}
-            \begin{leftbar}
-                Soit $X$ un champ de vecteurs sur $\M$. Pour tout $P\in\M$, il existe $\varepsilon>0$ et une unique courbe intégrale de $X$, $\gamma:(-\varepsilon,\varepsilon)\to\M$ de condition initiale $P$.
-            \end{leftbar}
-            \end{prop}
-            
-            Localement, on peut recouvrir $\M$ de courbes intégrales de sorte à pouvoir décrire $\M$ uniquement en terme de ces dernières.
+            Nous avons vu que la donnée d'un champ de vecteurs et d'un point $P\in\M$ définit une unique courbe passant par $P$ : la courbe intégrale de condition initiale $P$. Localement, on peut recouvrir $\M$ de courbes intégrales de sorte à pouvoir décrire $\M$ uniquement en terme de ces dernières.
             
             \begin{definition}
                 Un \textit{groupe à un paramètre $\phi$ de difféomorphismes locaux} de $\M$ est une application différentiable
