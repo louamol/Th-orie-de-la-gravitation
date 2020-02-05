@@ -2507,11 +2507,11 @@
             \begin{equation}
                 \omega = \sum_{1\leq a_1<\dots<a_p\leq n} \omega_{a_1\dots a_p}~e^{a_1}\wedge\dots \wedge e^{a_p}
             \end{equation}
-            ou encore, en utilisant la convention de sommation,
+            Pour utiliser la convention de sommation, on peut reformuler l'expression précédente comme une somme sur toutes les valeurs de chaque indice. Cette opération fait apparaitre des $[\dots]$ que l'on peut enlever, par propriété d'anti-symétrie des composantes $\omega_{a_1\dots a_p}$.
             \begin{equation}
-                \omega = \frac{1}{p!} \omega_{a_1\dots a_p}~e^{a_1}\wedge\dots \wedge e^{a_p}
+                \omega = \frac{1}{p!} \omega_{[a_1\dots a_p]}~e^{a_1}\wedge\dots \wedge e^{a_p} = \frac{1}{p!} \omega_{a_1\dots a_p}~e^{a_1}\wedge\dots \wedge e^{a_p}
             \end{equation}
-            où le facteur $\frac{1}{p!}$ tient compte du fait que l'on somme sur toutes le valeurs possibles des indices.\\
+            où le facteur $\frac{1}{p!}$ tient compte du fait que l'on somme sur toutes le valeurs possibles des indices. Nous utiliserons cette écriture pour les formes différentielles.\\
             
             Définissons un produit pour les formes différentielles.
             
@@ -2806,6 +2806,19 @@
                 \begin{equation}
                     dF = d^2A = 0.
                 \end{equation}
+                Notons que ce formalisme rend également l'invariance de jauge évidente. En effet, considérons une $0$-forme (c'est-à-dire simplement une fonction) quelconque $\lambda$. Dans ce cas, $d\lambda$ est une $1$-forme et si $A$ est la $1$-forme du potentiel vecteur tel que $dA = F$ alors 
+				\begin{equation}\label{eq:chgtjaugeelec}
+					A'\equiv A+d\lambda
+				\end{equation}
+                est également un potentiel vecteur pour le même tenseur électromagnétique :
+                \begin{equation}
+                	dA' = dA + d^2\lambda = dA = F.
+                \end{equation}
+                L'ajout d'une $1$-forme $d\lambda$ au potentiel vecteur ne change donc pas le tenseur électromagnétique et donc ne change pas non plus les champ électrique et magnétique. Si l'on écrit la relation \ref{eq:chgtjaugeelec} en terme des composantes on trouve
+                \begin{equation}
+                	A'_\mu = A + \p_\mu\lambda.
+                \end{equation}
+                C'est bien la forme classique d'un chagement de chauge en électromagnétisme.
             \end{exmp}
             
             \begin{definition}
@@ -2842,7 +2855,7 @@
             	La dimension de $H^p(\M)$ s'appelle le $p$-ème \textit{nombre de Betti} et est noté $b_p(\M)$.
             \end{definition}
             
-            Comme $H^p(\M)$ dépend uniquement de la topologie de $\M$, on peut aussi déduire des propritétés topologiques de la variétés à partir des ses cohomologies de De Rham. Il est, par exemple, possible de calculer la caractéristique d'Euler comme
+            Comme $H^p(\M)$ dépend uniquement de la topologie de $\M$, on peut aussi déduire des propritétés topologiques de la variétés à partir des ses cohomologies de De Rham. Il est par exemple possible de calculer la caractéristique d'Euler comme
             
             
             \begin{equation}
