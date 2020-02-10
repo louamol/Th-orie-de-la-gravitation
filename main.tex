@@ -1274,15 +1274,22 @@
                  Nous verrons dans l'on peut définir la notion de différentiabilité  pour une application entre deux variétés. On peut alors montrer que le fait d'imposer que les changements de carte soient différentiables implique que les carte sont aussi différentiables. Une variéte est donc localement difféomorphe à $\mathbb{R}^n$.
             \end{rmk}
             
-            \begin{rmk}
-                On définit une variété différentiable à bord de la même manière mais en remplaçant $\mathbb{R}^n$ par le demi-espace $\mathbb{R}^{n+}=\left\{(x_1,\dots,x_n)\in\mathbb{R}^n|x_1\geq 0\right\}$. Le bord, noté $\p\M$, est l'ensemble des points dont l'image par une application de coordonnée est sur le bord de $\mathbb{R}^{n+}$. Dans ce cas, $\p\M$ est une variété différentiable de dimension $n-1$ sans bord.
-            \end{rmk}
             
             \begin{rmk}
             	Même si nous le ferons parfois pour définir certaines variétés (e.g. la sphère), il n'est pas nécessaire de voir une variété comme un espace "plongé" dans un espace plus grand. Une variété a une existence individuelle. Le terme "plongement" correspond à un concept bien précis en géométrie différentielle, nous désignons ici l'idée intuituve. On peut cependant montrer que toute variété de dimension $n$ peut être vue comme plongée dans $\mathbb{R}^{2n}$ (version forte du théorème de plongement de Whitney) mais dans le cas de la relativité générale, on considère que l'espace-temps à quatre dimension qui n'est pas plongé dans un espace de dimension supérieure.
             \end{rmk}
             
-            Si l'on suppose que l'espace-temps est une variété différentiable, quel que soit $P\in\M$ un évènement, on a alors un domaine de carte $U$ avec $P\in U$ et une application de coordonnées
+            \begin{prin}
+            \begin{leftbar}
+            	L'espace-temps, c'est-à-dire la collection de tout les évènements, est la donnée d'un couple $(\M,g)$ où $\M$ est une variété différentiable et $g$ est une métrique Lorentzienne sur $\M$.
+            \end{leftbar}
+            \end{prin}
+            
+            \begin{rmk}
+            	La notion de tenseur métrique sera définie dans le chapitre suivant.
+            \end{rmk}
+            
+            Dans ce cas, quel que soit $P\in\M$ un évènement, on a alors un domaine de carte $U$ avec $P\in U$ et une application de coordonnées
             
             \begin{equation}\label{eq:coordloc}
             x:\left(
@@ -2420,7 +2427,9 @@
         
         \section{Formes différentielles}
         
-            La notion de $p$-forme ne nécessite pas de tenseur métrique.
+        	\subsection{Généralités}
+        
+            La notion de forme différentielle ne nécessite pas de tenseur métrique.
             
             \begin{definition}
                 Une $p$\textit{-forme} (ou \textit{forme différentielle d'ordre $p$}) est un tenseur de type $(0,p)$ complètement anti-symétrique. On note, $\Omega_P^p(\M)$ l'espace des $p$-formes sur $\M$ en $P$.
@@ -2511,7 +2520,9 @@
             \begin{equation}
                 \omega = \frac{1}{p!} \omega_{[a_1\dots a_p]}~e^{a_1}\wedge\dots \wedge e^{a_p} = \frac{1}{p!} \omega_{a_1\dots a_p}~e^{a_1}\wedge\dots \wedge e^{a_p}
             \end{equation}
-            où le facteur $\frac{1}{p!}$ tient compte du fait que l'on somme sur toutes le valeurs possibles des indices. Nous utiliserons cette écriture pour les formes différentielles.\\
+            où le facteur $\frac{1}{p!}$ tient compte du fait que l'on somme sur toutes le valeurs possibles des indices. Nous utiliserons cette écriture pour les formes différentielles.
+            
+		\subsection{Produit extérieur}
             
             Définissons un produit pour les formes différentielles.
             
@@ -2606,7 +2617,7 @@
             \end{equation}
             Or, pour un espace euclidien de dimension 3, il y a une correspondance $1-1$ entre les $1$-formes et les vecteurs. Nous avons trouvé une application un vecteur à chaque paire de vecteurs : c'est le produit vectoriel.
         
-        \section{Dérivée extérieur}
+        \subsection{Dérivée extérieur}
         
             Comme nous l'avons dit, le but est de construire une notion de dérivée pour les tenseurs. Le premier réflexe est d'essayer en utilisant la dérivée classique. Soit $V\in T_P\M$ tel que $V = V^\mu \p_\mu$. On définit l'objet à deux indices suivant.
             \begin{equation}
@@ -2814,11 +2825,10 @@
                 \begin{equation}
                 	dA' = dA + d^2\lambda = dA = F.
                 \end{equation}
-                L'ajout d'une $1$-forme $d\lambda$ au potentiel vecteur ne change donc pas le tenseur électromagnétique et donc ne change pas non plus les champ électrique et magnétique. Si l'on écrit la relation \ref{eq:chgtjaugeelec} en terme des composantes on trouve
+                L'ajout d'une $1$-forme $d\lambda$ au potentiel vecteur ne change donc pas le tenseur électromagnétique et donc ne change pas non plus les champ électrique et magnétique. Si l'on écrit la relation \ref{eq:chgtjaugeelec} en terme des composantes on retrouve la forme classique d'un chagement de chauge en électromagnétisme :
                 \begin{equation}
                 	A'_\mu = A + \p_\mu\lambda.
                 \end{equation}
-                C'est bien la forme classique d'un chagement de chauge en électromagnétisme.
             \end{exmp}
             
             \begin{definition}
@@ -2861,6 +2871,14 @@
             \begin{equation}
             \chi(\M) = \sum_{p=0}^n (-1)^p b_p(\M).
             \end{equation}
+            
+            \subsection{Théorème de Stokes}
+            
+            	\comp
+            
+				\begin{definition}
+                On définit une variété différentiable à bord de la même manière mais en remplaçant $\mathbb{R}^n$ par le demi-espace $\mathbb{R}^{n+}=\left\{(x_1,\dots,x_n)\in\mathbb{R}^n|x_1\geq 0\right\}$. Le bord, noté $\p\M$, est l'ensemble des points dont l'image par une application de coordonnée est sur le bord de $\mathbb{R}^{n+}$. Dans ce cas, $\p\M$ est une variété différentiable de dimension $n-1$ sans bord.
+            \end{definition}            
             
         \section{Dérivée de Lie}
             
@@ -2920,6 +2938,8 @@
             
         
         \section{Dérivée covariante et connexion}
+        
+        	Nous avons vu que, à part part pour l'espace-temps de Minkowsky, la dérivée partielle d'un tenseur n'est pas un tenseur. On cherche donc une notion de dérivée "adaptée" pour les tenseurs, c'est-à-dire un opérateur qui se réduit à faire une dérivée partielle dans le cas d'un d'un espace-temps plat et qui se transforme comme un tenseur sur une variété quelconque.
         
             \subsection{Dérivée covariante}
         
@@ -3334,6 +3354,8 @@
                         qui est unique car $\chris{\rho}{\mu}{\nu}$ est définit univoquement à partir de la métrique.
                     \end{enumerate}
                 \end{proof}
+                
+			Notons bien que de manière générale les symboles de connexion ne doivent pas s'écrire à partir de la métrique.         
                 
                 \begin{rmk}
                     On parle de géométrie riemannienne mais il s'agit en fait de géométrie pseudo-riemannienne car la variété de l'esapce-temps est munie d'une pseudo-métrique.
