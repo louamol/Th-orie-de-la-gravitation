@@ -1,0 +1,591 @@
+\chapter{Équation d'Einstein}
+
+    
+        
+    \section{Tenseur de Ricci et tenseur d'Einstein}
+        
+        \begin{definition}
+            On définit le \textit{tenseur de Ricci} comme étant le tenseur de composantes
+            \begin{equation}
+                R_{\mu\nu} ~\hat{=}~ R^\rho_{~\mu\rho\nu}.
+            \end{equation}
+        \end{definition}
+        
+        \begin{prop}\begin{leftbar}
+            Le tenseur de Ricci a les propriétés suivantes :
+            \begin{enumerate}[label = \textit{\roman*)}]
+                \item c'est un tenseur symétrique : $R_{\mu\nu} = R_{\nu\mu}$
+                \item c'est la seule contraction non-nulle des composantes du tenseur de Riemann
+            \end{enumerate}
+        \end{leftbar}\end{prop}
+        
+        \begin{proof}${}$
+            \begin{enumerate}[label = \textit{\roman*)}]
+                \item Cette propriété se déduit directement de la première identité de Bianchi.
+                \begin{align}
+                    R_{\mu\nu\mu\rho}+R_{\mu\rho\nu\mu}+\underbrace{R_{\mu\mu\rho\nu}}_{0} &= 0\\
+                    \Leftrightarrow\qquad R_{\nu\rho} - R_{\rho\nu} &= 0
+                \end{align}
+                \item En utilisant les propriétés de symétrie et d'anti-symétrie des indices de $R$, on voit que la contraction des indices $1-2$ et $3-4$ sont nulles. Et par symétrie, la contraction des indices $2-4$,$1-4$ et $2-3$ sont les mêmes que le tenseur de Ricci modulo le signe.
+            \end{enumerate}
+        \end{proof}
+        
+        Notons que le tenseur de Ricci contient de l'information sur la géométrie de l'espace-temps mais tout de même moins que le tenseur de Riemann.
+        
+         \begin{definition}
+            Le \textit{scalaire de Ricci} est défini comme
+            \begin{equation}
+                R ~\hat{=}~ R^\mu_{~\mu}.
+            \end{equation}
+        \end{definition}
+        
+        \begin{definition}
+            Le \textit{tenseur d'Einstein} est défini comme
+            \begin{equation}
+                G_{\mu\nu} ~\hat{=}~ R_{\mu\nu}-\frac{1}{2}Rg_{\mu\nu}.
+            \end{equation}
+        \end{definition}
+        
+        \begin{prop}\begin{leftbar}
+            Le tenseur d'Einstein a les propriétés suivantes :
+            \begin{enumerate}[label = \textit{\roman*)}]
+                \item c'est un tenseur symétrique : $G_{\mu\nu} = G_{\nu\mu}$
+                \item on a la relation :
+                \begin{equation}
+                    \nabla_\mu G^{\mu\nu} = 0
+                \end{equation}
+            \end{enumerate}
+        \end{leftbar}\end{prop}
+        
+        \begin{proof}${}$
+            \begin{enumerate}[label = \textit{\roman*)}]
+                \item Direct par la symétrie de $g$ et de $R$.
+                \item D'après la deuxième identité de Bianchi, 
+                \begin{align}
+                    0& =\nabla_\mu R_{\nu\rho\sigma\theta} + \nabla_\theta R^\nu_{~\theta\rho\mu}+\nabla_\sigma R_{\nu\rho\theta\mu} \\
+                    &= \nabla_\mu R_{\theta\rho}+\nabla_\mu R^\nu_{~\theta\rho\mu} - \nabla_\rho R_{\theta\mu} \\
+                    &= \nabla_\mu R + g^{\theta\rho} \nabla_\nu R^\nu_{~\theta\rho\mu} - \nabla_\rho R_{\rho\mu} 
+                \end{align}
+                \begin{align}
+                    g^{\theta\rho} \nabla_\nu R^\nu_{~\theta\rho\mu} &= \nabla_\nu (g^{\theta\rho}R^\nu_{~\theta\rho\mu}) \\
+                    &= \nabla^\nu (g^{\theta\rho}R_{~\nu\theta\rho\mu})\\
+                    &= -\nabla^\nu R_{\nu\mu}
+                \end{align}
+                Nous obtenons 
+                \begin{align}
+                    0 &= \nabla_\mu R -\nabla^\nu R_{\nu\mu} - \nabla_\rho R_{\rho\mu}\\
+                    &= \p_\mu R -2\nabla^\rho R_{\rho\mu}
+                \end{align}
+                car la dérivée covariante d'un scalaire revient à faire la dérivée normale. D'autre part, si on développe l'expression de $G_{\mu\nu}$,
+                \begin{align}
+                    \nabla^\mu G_{\mu\nu} &= \nabla^\mu \left(R_{\mu\nu}-\frac{1}{2}Rg_{\mu\nu}\right)\\
+                    &= \nabla^\mu R_{\mu\nu}-\frac{1}{2}\nabla^\mu Rg_{\mu\nu}-\frac{1}{2}R \underbrace{\nabla^\mu g_{\mu\nu}}_{0}\\
+                    &= \nabla^\mu R_{\mu\nu} -\frac{1}{2}g_{\mu\nu}\p^\mu R \\
+                    &= \nabla^\mu R_{\mu\nu} -\frac{1}{2}\p_\nu R 
+                \end{align}
+                ce qui fait bien $0$ par ce qui précède.
+            \end{enumerate}
+        \end{proof}
+        
+        Ces propriétés sont des versions contractées des identités de Bianchi.
+                
+    \section{Équations de champ}
+    
+        \subsection{Tenseur énergie-impulsion}
+        
+            On cherche une équation de la forme
+            \begin{equation*}
+                \textbf{source du champ de gravitation} = \textbf{champ de gravitation}
+            \end{equation*}
+            qui relie un terme de source à la géométrie de l'espace-temps. En mécanique newtonienne, la source du champ de gravitation est la masse. Dans notre cas, on cherche un tenseur pour trouver une équation tensorielle. En relativité restreinte, il y a l'équivalence masse-énergie, la masse étant la composante $00$ du tenseur énergie-impulsion $T^{\mu\nu}$. Ce tenseur caractérise le contenu en énergie et en impulsion de la matière et du champ électro-magnétique, il a deux propriétés fondamentales : il est symétrique et conservé : $\p_\alpha T^{\alpha\beta} = 0$. En présence de gravité, cette l'équation de conservation devient
+            \begin{equation}
+                \nabla_\mu T^{\mu\nu} = 0.
+            \end{equation}
+            Cette équation sera satisfaite dès que les équations du mouvement pour la matière ou le rayonnement (encore à déterminer) sont satisfaites.\\
+            
+            En relativité générale, il n'y a pas de notion d'invariance par translation et donc pas de conservation de l'énergie. Cependant, l'équation que l'on vient de voir est bien satisfaite, mais elle ne permet pas la construction d'une quantité $E$ qui est conservée dans tous les référentiels. La différence fondamentale entre le champ de gravitation et les autres champs est qu'il n'a pas de tenseur énergie-impulsion qui lui est associé. Supposons que ce soit le cas: par le principe d'équivalence, il n'y a pas de gravité dans des coordonnées localement plates et donc le tenseur énergie-impulsion du champ de gravitation serait nul dans cette base de coordonnées. Ce qui entraîne donc qu'il serait également nul dans tous les autres référentiels.
+            
+            \begin{exmp}
+                Pour le champ électro-magnétique, 
+                \begin{equation}
+                    T^{\mu\nu} = F^{\mu\rho}F^{\nu}_{~\rho}-\frac{1}{4}F^{\rho\sigma}F_{\rho\sigma}g^{\mu\nu}.
+                \end{equation}
+            \end{exmp}
+            
+            \begin{exmp}
+                Pour une particule ponctuelle de masse $m$, le tenseur énergie-impulsion est
+                \begin{equation}
+                    T^{\mu\nu}(x) = m\int U^\mu(\tau)U^\nu(\tau)\frac{\delta\left(x-\hat{x}(\tau)\right)}{\sqrt{\abs{\det(g)}}} ~d\tau
+                \end{equation}
+                où $\hat{x}(\tau)$ est la ligne d'univers de la particule. En relativité restreinte, $\det(g) = \det(\eta) = 1$ et
+                \begin{equation}
+                    U^\mu = \left( \frac{dx^0}{d\tau},\frac{dx^1}{d\tau} \right) = \gamma(1,\vv{v}).
+                \end{equation}
+                donc la composante $T^{00}$ est
+                \begin{align}
+                    T^{00}(t\vv{x}) &= m\int\gamma^2 \delta(t-\hat{x}^0(\tau))\delta(\vv{x}-\hat{\vv{x}}(\tau)) \frac{dt}{\gamma} \\
+                    &= m\gamma \delta(\vv{x}-\hat{\vv{x}}(\tau))
+                \end{align}
+                c'est-à-dire la densité d'énergie au point $\vv{x}$.
+                Les composantes $T^{0i}$ sont
+                \begin{align}
+                    T^{0i}(t,\vv{x}) &= m\int\gamma^2 v^i\delta(t-\hat{x}^0(\tau))\delta(\vv{x}-\hat{\vv{x}}(\tau)) \frac{dt}{\gamma} \\
+                    &= m\gamma v^i \delta(\vv{x}-\hat{\vv{x}}(\tau))
+                \end{align}
+                c'est-à-dire la densité d'impulsion au point $\vv{x}$.\\
+                
+                En présence de gravité, $\det(g)\neq 1$ donc $\delta(\vv{x}-\hat{\vv{x}}(\tau))$ devient
+                \begin{equation} \frac{\delta(\vv{x}-\hat{\vv{x}}(\tau))}{\sqrt{\abs{\det(g)}}}.
+                \end{equation}
+                Montrons que cette fonction se transforme bien comme un scalaire. Si $x'$ est un second système de coordonnées, nous avons d'une part
+                \begin{equation}
+                    \delta(x'(x)) = \frac{\delta(x-x_0)}{\abs{\det\left( \pdv{x'}{x} \right)}}
+                \end{equation}
+                si $x = x_0\Leftrightarrow x' = 0$ et d'autre part
+                \begin{equation}
+                    g'_{\mu\nu}(x) = \pdv{x^\rho}{x'^\mu}\pdv{x^\sigma}{x'^\nu} g_{\rho\sigma}(x)
+                \end{equation}
+                donc
+                \begin{equation}
+                    \sqrt{\abs{\det(g')}} = \sqrt{\abs{\det\left( \pdv{x}{x'}\right)^2 \det(g)}} = \abs{\det\left(\pdv{x}{x'}\right)} \sqrt{\abs{\det(g)}}.
+                \end{equation}
+                On retrouve bien
+                \begin{equation}
+                    \frac{\delta(x'(x))}{\sqrt{\abs{\det(g)}}} = \frac{\delta(x-x_0)}{\sqrt{\abs{\det(g)}}}\frac{1}{\abs{\det\left( \pdv{x'}{x}\right)\det\left( \pdv{x}{x'}\right)}} = \frac{\delta(x-x_0)}{\sqrt{\abs{\det(g)}}}.
+                \end{equation}
+                Donc les $T^{\mu\nu}$ sont bien les composantes d'un tenseur.
+            \end{exmp}
+            
+            \begin{exmp}
+                Les fluides parfaits sont caractérisés par la densité d'énergie $\rho$ et la pression $p$. Si le fluide est au repos, le tenseur énergie-impulsion prend la forme 
+                \begin{equation}
+                    T^{\alpha\beta} = 
+                    \begin{bmatrix}
+                        \rho & 0 & 0 & 0 \\
+                        0 & p & 0 & 0 \\
+                        0 & 0 & p & 0 \\
+                        0 & 0 & 0 & p
+                    \end{bmatrix}
+                \end{equation}
+                Si le fluide est caractérisé par un champ de vitesse $U^\alpha(x)$, le tenseur énergie-impulsion doit être de la forme
+                \begin{equation}
+                    T^{\alpha\beta} = A U^\alpha U^\beta + B \eta^{\alpha\beta}
+                \end{equation}
+                avec $A,B\in\mathbb{R}$. Si $U^\alpha(x) = 0$, le fluide est au repos et on a donc les conditions
+                \begin{subequations}
+                    \begin{empheq}[left=\empheqlbrace]{align}
+                        T^{00} &= A-B = \rho\\
+                        T^{ii} &= B = p
+                    \end{empheq}
+                \end{subequations}
+                ce qui détermine $A$ et $B$. On obtient
+                \begin{equation}
+                    T^{\alpha\beta} = (\rho+p)U^\alpha U^\beta + p \eta^{\alpha\beta}.
+                \end{equation}
+                Cette formule est valable uniquement lorsqu'il n'y a pas de champ de gravitation. Quand il y a un champ de gravitation, l'expression précédente devient
+                \begin{equation}
+                    T^{\alpha\beta} = (\rho+p)U^\alpha U^\beta + p g^{\alpha\beta}.
+                \end{equation}
+                Si l'on modélise le rayonnement, on doit avoir $Tr(T) = 0$. Or, $Tr(T) = T^\mu_{~\mu} = -\rho-p+4p$ donc on retrouve la relation
+                \begin{equation}
+                    \rho = 3p
+                \end{equation}
+                pour le rayonnement. Cet exemple illustre une méthode pour modéliser des processus/champs (ici le rayonnement).
+            \end{exmp}
+        
+        \subsection{Conditions sur l'énergie}
+        
+            On peut imposer un grands nombre de conditions sur l'énergie. Nous en détaillerons trois des plus courantes.
+            
+            \begin{definition}
+                \textit{Condition faible} : un observateur local mesure toujours une densité d'énergie positive.
+            \end{definition}
+            
+            Si un observateur est au repos, cette condition impose que $T^{00}\geq 0$. De manière générale, si $U^\mu$ est la quadri-vitesse de l'observateur, cela revient à imposer $T_{\mu\nu}U^\mu U^\nu \geq 0$ pour tout quadri-vecteur $U$ de genre temps. La condition faible sur l'énergie est donc équivalent à imposer 
+            \begin{equation}
+                T_{\mu\nu}U^\mu U^\nu \geq 0\qquad \forall U^2\leq 0.
+            \end{equation}
+            
+            \begin{rmk}
+                Notons que la condition est valable uniquement pour les observateur dont les quadri-vitesse sont de genre temps : $U^2<0$. Cependant, tout vecteur de genre lumière peut être obtenu comme la limite de vecteurs de genre temps. Ce résultat reste donc valable pour $U^2\leq0$ comme indiqué.
+            \end{rmk}
+            
+            \begin{exmp}
+                Vérifions que c'est valable pour le champ électromagnétique.
+                \comp
+            \end{exmp}
+            
+            \begin{exmp}
+                Pour les fluides parfaits, c'est vrai uniquement si $\rho\geq -p$. En effet,
+                \comp
+            \end{exmp}
+            
+            \begin{definition}
+                \textit{Condition dominante} : en plus de la condition faible, tout observateur voit un flux d'énergie décrit par un vecteur de genre temps.
+            \end{definition}
+            
+            Ceci signifie que l'énergie "se déplace" moins vite que la lumière. Si un observateur est caractérisé par une quadri-vitesse $U^\mu$, le flux d'énergie qu'il observe est $T^{\mu\nu}U_\nu$. La condition dominante impose donc que ce quadri-vecteur soit de genre temps pour tout $U$ de genre temps. C'est-à-dire
+            \begin{equation}
+                (T^{\mu\nu}U_\nu)^2\leq0 \qquad\forall U^2\leq0
+            \end{equation}
+            en plus de la condition faible.
+            
+            \begin{exmp}
+                Vérifions cela pour le champ électromagnétique.
+                \comp
+            \end{exmp}
+            
+            \begin{exmp}
+                Pour les fluides parfaits, cette condition est respectée si $\rho\geq\abs{p}$. En effet,
+                \comp
+            \end{exmp}
+            
+            \begin{definition}
+                \textit{Condition forte} : on impose la relation
+                \begin{equation}
+                    T_{\mu\nu}U^\mu U^\nu \leq \frac{T}{2} U^2\qquad \forall U^2\leq0
+                \end{equation}
+                où $T = T^\mu_{~\mu}$.
+            \end{definition}
+        
+            Cette condition traduit le fait que la force de gravitation est attractive. Elle est utile pour certains calcul mais elle n'est pas respectée dans le nature (par exemple par l'énergie noire).
+
+        \subsection{Équation d'Einstein}
+        
+            Pour rappel, on cherche une équation qui lie la géométrie de l'espace-temps à un terme de source. Autrement dit, cette équation doit relier le tenseur de courbure à la généralisation tensorielle de la masse, c'est-à-dire au tenseur énergie-impulsion. Dans un premier temps, désignons le terme qui dépend du tenseur de courbure par un certain tenseur $H_{\mu\nu}$. Cette équation doit être de la forme
+            \begin{equation}
+                H_{\mu\nu} = \kappa^2 T_{\mu\nu}
+            \end{equation}
+            où $\kappa^2$ est une certaine constante de proportionnalité. Par propriété du tenseur $T$, $H$ doit satisfaire
+            \begin{subequations}
+                \begin{empheq}[left=\empheqlbrace]{align}
+                    H_{\mu\nu} &= H_{\nu\mu}\\
+                    \nabla_\mu H^\mu_{~\nu} &= 0
+                \end{empheq}
+            \end{subequations}
+            Le première équation qu'Einstein a proposée est la suivante:
+            \begin{equation}\label{eq:einstein1}
+                R_{\mu\nu} = \kappa^2 T_{\mu\nu}
+            \end{equation}
+            Dans le vide, $T_{\mu\nu} = 0$ et donc cette équation devient
+            \begin{equation}
+                R_{\mu\nu} = 0.
+            \end{equation}
+            L'équation \ref{eq:einstein1} induit trop de contrainte sur $R$ et est donc fausse. Cependant, dans le vide, elle donne la même prédiction que la version corrigée de l'équation ce qui qui permit déjà de faire des prédictions qui, après avoir été validées, on mit en avant la théorie de la relativité générale.
+            
+            \begin{prin}
+            \begin{leftbar}
+                Le tenseur d'Einstein satisfait à l'équation
+                \begin{equation}
+                    G_{\mu\nu}+\Lambda g_{\mu\nu} = \kappa^2 T_{\mu\nu}.
+                \end{equation}
+                où la constante $\Lambda>0$ est appellée \textit{constante cosmologique}.
+            \end{leftbar}
+            \end{prin}
+            
+            \begin{thm}[équation d'Einstein]\begin{leftbar}
+                
+            \end{leftbar}\end{thm}
+            Nous verrons que, dans le vide, ces équations permettent bien de retrouver la condition $R = 0$ (en notation matricielle pour le tenseur de Riemann). La constante cosmologique joue un rôle fondamental. Elle est notamment responsable de l'expansion de l'univers.\\
+            
+            Ces équations sont essentiellement uniques si l'ont impose que le tenseur $G_{\mu\nu}$ du membre de gauche soit construit uniquement à partir de la métrique, ses dérivées premières et ses dérivées secondes et s'il satisfait
+            \begin{equation}
+                \nabla_\mu G^{\mu\nu} = 0.
+            \end{equation}
+            Si l'ont se trouve en coordonnées localement plates, les dérivées secondes sont les seuls termes non triviaux car $g_{\mu\nu}$ et les dérivées premières de $g_{\mu\nu}$ s'annulent.\\
+            
+            En réalité, ces équations n'ont aucune raison d'être exactes. Ce n'est que les premiers termes dans un développement mettant en jeu des dérivées d'ordre supérieurs. On pourrait donc très bien avoir quelque chose de la forme
+            \begin{equation}
+                \Lambda g_{\mu\nu} + R_{\mu\nu} - \frac{1}{2}Rg_{\mu\nu} + "R^2" + "\nabla^2R" + "\nabla^4 R"+\dots = \kappa^2 T_{\mu\nu}
+            \end{equation}
+            où les termes $"\nabla^iR"$ désigne une quantité proportionnelle au dérivée d'ordre $i$ du tenseur de Riemann (et non du scalaire de Ricci). Premièrement, les termes d'ordre $i$ impaire ne sont pas possibles. Il n'est pas possible de contracté un nombre impaire d'indices de manière à former un tenseur d'ordre paire. Or, l'équation d'Einstein est une relation entre tenseurs d'ordre 2. Deuxièmement, pour que ca soit cohérent au niveau des dimensions, il faut que les termes $"\nabla^i R"$ soit multipliés par quelque chose proportionnel à une longueur $l^i$ car $[\nabla^i]=\frac{1}{L^i}$.
+            \begin{equation}
+                \Lambda g_{\mu\nu} + R_{\mu\nu} - \frac{1}{2}Rg_{\mu\nu} + "R^2" + l^2"\nabla^2R" + l^2"\nabla^4 R"+\dots = \kappa^2 T_{\mu\nu}
+            \end{equation}
+            $l$ serait une longueur caractéristique de la théorie. Ça serait une longueur fondamentale dans une théorie microscopique (quantique) de la gravitation. Par exemple la longueur de Planck ou la taille des cordes. Il n'est pas possible de construire une grandeur proportionnelle à une longueur à partir de $G$ et $c$ uniquement, il faut rajouter $\hbar$ par exemple. Si l'on considère des champ de gravitation pour lesquels
+            \begin{equation}
+                \nabla\sim\frac{1}{L}\ll \frac{1}{l_{\text{Planck}}}
+            \end{equation}
+            où $L$ est une taille typique à laquelle le champ varie, les termes contenant les dérivées supérieures sont complètement négligeables. Cette égalité est donc remarquable non pas parce qu'elle est exacte à toutes les échelles mais parce qu'elle est universelle : les facteurs de proportionnalité qui apparaîtraient devant les termes $"\nabla^iR"$ dépendraient du système de coordonnées choisi tandis que les facteur de proportionnalité qui appairassent dans les équations d'Einstein eux ne dépendent pas du système de coordonnées.\\
+            
+            Discutons un problème majeur de cette équation. Comme il faut que
+            \begin{equation}
+                [\Lambda]=\frac{1}{L^2}
+            \end{equation}
+            la valeur naturelle de $\Lambda$ est $\Lambda\sim \frac{1}{l_{\text{Planck}}^2}$, ce qui est énorme. Or, on observe $\Lambda_{\text{obs}}\sim\frac{10^{-120}}{l_{\text{Planck}}^2}$. Soit un valeur erronée d'un facteur $10^{120}$ par rapport aux prédictions : c'est le problème de la constante cosmologique. La supersymétrie permet de prédire une valeur de $\Lambda_{\text{obs}}\sim\frac{10^{-60}}{l_{\text{Planck}}^2}$ ce qui est déjà nettement mieux, mais toujours extrêmement éloigné de ce que l'on observe. Ça reste un problème totalement incompris à l'heure actuelle. De plus, cette valeur est absolument nécessaire pour permette à un univers macroscopique (comme le nôtre) d'exister. Une explication possible est de supposer que les lois de la physique ne sont pas uniques et qu'il existent plein solution correspondant à plein d'univers. Les nombre de solution peut être estimé, il est discret et astronomiquement grand. C'est la théorie du multivers. On peut alors se demander pourquoi est-ce que l'on observe cette valeur de $\Lambda$ en particulier alors? Comme la valeur de $\Lambda$ observée est précisément la valeur qui rend possible l'existence d'un univers comme le nôtre (d'après la théorie), c'est en fait la seule valeur que l'on peut observer. C'est le principe anthropique.\\
+            
+            On sait $\Lambda$ est non-nulle et positive. Mais ca valeur est tellement petite qu'elle joue un rôle complètement négligeable à n'importe quelle échelle plus petite que celle de l'univers (échelle cosmologique). L'ordre de grandeur des échelles à observer pour que la constante cosmologique joue un rôle est 
+            \begin{equation}
+                l_\Lambda = \frac{1}{\sqrt{\Lambda_{\text{obs}}}}\sim 10^{25}\meter
+            \end{equation}
+            \begin{align}
+                \text{échelle des galaxies} \sim 10^{21}\meter &\to \text{$\Lambda$ complètement négligeable}\\
+                \text{échelle des galaxies} \sim 10^{30}\meter &\to \text{$\Lambda$ joue un rôle crucial}
+            \end{align}
+            
+            Plus encore, les seules théories quantiques de la gravitation connues nécessitent $\Lambda<0$.\\
+            
+            Dans la suite nous travaillerons avec les équations d'Einstein sans constante cosmologique : $\Lambda = 0$.
+            \begin{equation}
+                R_{\mu\nu}-\frac{1}{2}Rg_{\mu\nu} = \kappa^2 T_{\mu\nu}
+            \end{equation}
+            
+            \begin{definition}
+                $R_{\mu\nu} = 0$ est appelée la \textit{condition de Ricci plat}.
+            \end{definition}
+            
+            \begin{prop}\begin{leftbar}
+                Dans le vide, l'équation d'Einstein est équivalente à la \textit{condition de Ricci plat}.
+            \end{leftbar}\end{prop}
+            
+            \begin{proof}
+                Dans le vide, $T_{\mu\nu}=0$ donc
+                \begin{equation}
+                    R_{\mu\nu}-\frac{1}{2}Rg_{\mu\nu} = 0.
+                \end{equation}
+                En prenant la trace de cette équation, on trouve
+                \begin{equation}
+                    R-2R = 0
+                \end{equation}
+                et donc
+                \begin{equation}
+                    R = 0
+                \end{equation}
+                On retrouve alors la condition de Ricci plat:
+                \begin{equation}
+                    R_{\mu\nu} = 0
+                \end{equation}
+            \end{proof}
+            Pour rappel, prendre la trace d'un tenseur n'est pas la même chose que sommer les éléments diagonaux de sa représentation matricielle. Pour un tenseur deux fois covariant $A$ de composantes $A_{\mu\nu}$, 
+            \begin{equation}
+                Tr(A) = A^\mu_{~\mu} = g^{\mu\nu}A_{\nu\mu}.
+            \end{equation}
+            
+            Il faut donc multiplier $A_{\mu\nu}$ par $g^{\nu\mu}$.
+            
+            \begin{exmp}
+                La trace de $g$ est
+                \begin{equation}
+                    Tr(g) = g^\mu_{~\mu} = g^{\mu\nu}g_{\nu\mu} = \delta^\mu_{~\mu} = 4.
+                \end{equation}
+            \end{exmp}
+            
+            
+        \subsection{Limite non-relativiste et de champ faible}
+        
+            Pour rappel, l'équation des géodésique est 
+            \begin{align}
+                \ddot{x}^\mu + \Gamma^\mu_{\nu\rho}\dot{x}^\nu\dot{x}^\rho = 0
+            \end{align}
+            avec
+            \begin{equation}
+                \Gamma^\rho_{\mu\nu} = \frac{1}{2}g^{\rho\sigma}\left( \p_\mu g_{\nu\sigma}+\p_\nu g_{\mu\sigma}-\p_\sigma g_{\mu\nu} \right).
+            \end{equation}
+            Dans le cas classique, cette équation devient
+            \begin{equation}
+                \ddot{x}^i + \Gamma^i_{00} = 0
+            \end{equation}
+            avec
+            \begin{equation}
+                \Gamma^i_{00} = \frac{1}{2}g^{i\sigma}\left( 2\p_0 g_{0i}-\p_i g_{00} \right) = -\frac{1}{2}\p_i g_{00}.
+            \end{equation}
+            Ceci nous donne
+            \begin{equation}
+                \ddot{x}^i = -\Gamma^i_{00} = \frac{1}{2}\p_i g_{00}.
+            \end{equation}
+            D'autre part, en mécanique classique, $\ddot{x}^i = -\p_i\phi$ où $\phi$ est le potentiel gravitationnel. Donc,
+            \begin{equation}
+                g_{00}\approx -1-2\phi.
+            \end{equation}
+            La composante $00$ de l'équation d'Einstein est
+            \begin{equation}
+                R_{00}+\frac{1}{2}R = \kappa^2 T_{00}
+            \end{equation}
+            où $T_{00}\equiv\rho$ est la densité d'énergie (et donc de masse car on est dans le cas non-relativiste). D'autre part, si l'on prend la trace de l'équation d'Einstein, on obtient
+            \begin{align}
+                g^{\nu\mu}R_{\mu\nu} - \frac{1}{2}Rg^{\nu\mu}g_{\mu\nu} &= \kappa^2g^{\nu\mu}T_{\mu\nu}\\
+                \Leftrightarrow \qquad R-\frac{4}{2}R &= \kappa^2 T^\mu_{~\mu}\\
+                \Leftrightarrow\qquad -R &= \kappa^2 \rho
+            \end{align}
+            En utilisant cette relation dans la composante $00$ de l'équation d'Einstein on peut exprimer la première composante du tenseur de Riemann en terme la densité d'énergie.
+            \begin{equation}
+                R_{00} = \frac{1}{2}\kappa^2\rho
+            \end{equation}
+            Dans notre car, le tenseur de Riemann est 
+            \begin{equation}
+                R = d\Gamma + \Gamma\wedge\Gamma \approx d\Gamma
+            \end{equation}
+            car la limite classique ets une limite linéaire et le terme $\Gamma\wedge\Gamma$ n'est pas linéaire. On peut calculer les $R^i_{~j} = R^i_{~0j0}$ à partir de cette approximation comme
+            \begin{align}
+                R^i_{~0j0} =d\Gamma^i_{~j} = \p_j\Gamma^i_{00}-\underbrace{\p_0\Gamma^i_{j0}}_{\approx 0} = -\frac{1}{2}\p_i\p_j g_{00} = \p_i\p_j \phi.
+            \end{align}
+            Le terme avec la dérivée temporelle est proportionnel à $\frac{1}{c^2}$ est peut donc être négligé (comme on l'a fait pour la limite non-relativiste de la trajectoire d'une particule test). Ce terme des effets de propagation. Le champ obtenu sera donc instantané. C'est ce à quoi on s'attend pour une théorie classique.\\
+            
+            Pour finir, la première composante du tenseur de Riemann est obtenue comme
+            \begin{equation}
+                R_{00} = R^i_{~0i0} = \sum_{i=1}^3 \p_i\p_i \phi = \Delta\phi.
+            \end{equation}
+            Ceci nous donne l'équation
+            \begin{equation}
+                \Delta\phi = \kappa^2\rho.
+            \end{equation}
+            Or, en mécanique newtonienne, le laplacien du potentiel gravitationnel a une valeur bien connue : $\Delta\phi = 8\pi G$. Pour que les équations d'Einstein dans la limite non-relativiste et de champ faible soient cohérentes avec celles de Newton, il faut donc que
+            \begin{equation}
+                \kappa^2 = 8\pi G.
+            \end{equation}
+            
+            On peut faire une rapide analyse dimensionnelle afin de retrouver les facteurs $c$ pour repasser au SI. Les unités du tenseur énergie impulsion dépendent de la convention utilisée. Dans ce cours nous prendrons $T_{\mu\nu}$ homogène à une densité d'énergie.
+            \begin{align}
+                [R] &= [R_{\mu\nu}] = \frac{1}{L^2}\\
+                [T_{\mu\nu}] &= \frac{ML^2}{T^2}\frac{1}{L^3} = \frac{M}{LT^2}\\
+                [G] &= \frac{L^3}{MT^2}
+            \end{align}
+            Pour l'équation
+            \begin{equation}
+                R_{\mu\nu}-\frac{1}{2}Rg_{\mu\nu} = c^\alpha 8\pi G T_{\mu\nu}
+            \end{equation}
+            on a
+            \begin{equation}
+                \frac{1}{L^2} = \left(\frac{L}{T}\right)^\alpha \frac{L^3}{MT^2}\frac{M}{LT^2}
+            \end{equation}
+            ce qui donne $\alpha = -4$.
+            
+            \begin{equation}
+                \boxed{R_{\mu\nu}-\frac{1}{2}Rg_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}}
+            \end{equation}
+            
+    \section{Équation de déviation géodésique}
+        
+        Soient deux observateurs situés proches l'un de l'autre dans un champ gravitationnel non-homogène. Si leurs positions n'est pas exactement la même, il arrivera un moment où ces observateurs s'éloigneront l'un de l'autre. Plus le champ de gravitation est fort, plus la distance entre les deux va augmenter rapidement. Ce petite exemple permet de comprendre intuitivement comment est-ce que leur accélérations relatives permet de mesurer le champ de gravitation. L'équation qui relie ces quantités est l'équation de déviation géodésique.\\
+        
+        \subsection{Cas de Newton}
+        
+            En mécanique newtonienne, la composante $i$ de l'accélération est donnée par
+            \begin{equation}
+                \ddot{x}^i = -\p_i\phi.
+            \end{equation}
+            Les trajectoires possibles sont les solutions de cette équation. On considère la famille de solution $x^i(t,v)$ paramétrée par $v$. De cette manière,
+            \begin{equation}
+                \pdv[2]{x^i}{t} = -\p_i\phi(x(t,v)).
+            \end{equation}
+            La séparation entre deux trajectoires voisines est
+            \begin{equation}
+                \delta x^i = \pdv{x^i}{v}\delta v = N^i \delta v
+            \end{equation}
+            si l'on définit $N^i~\hat{=}~\pdv{x^i}{v}$. On peut voir que "l'accélération" de cette quantité est
+            \begin{align}
+                \pdv[2]{N^i}{t} &= \pdv[2]{}{t}\pdv{x^i}{v}\\
+                &= \pdv{}{v}\pdv[2]{x^i}{t}\\
+                &= -\pdv{}{v}\p_i\phi(x(t,v))\\
+                &= -\pdv{x^j}{v}\p_j\p_i\phi\\
+                &= -N^j\p_i\p_j\phi
+            \end{align}
+            L'équation de dérivation géodésique en mécanique newtonienne est donc
+            \begin{equation}
+                \pdv[2]{N^i}{t} = -N^j\p_i\p_j\phi
+            \end{equation}
+            
+        \subsection{Cas relativiste}
+        
+            Considérons une famille de géodésiques $x^\mu(\lambda,v)$ paramétrée par $v$ de paramètre affine $\lambda$. De cette manière,
+            \begin{equation}
+                \ddot{x}^\mu + \Gamma^\mu_{\nu\rho}\dot{x}^\nu\dot{x}^\rho = 0.
+            \end{equation}
+            La séparation entre deux géodésiques voisines est
+            \begin{equation}
+                \delta x^\mu = \pdv{x^\mu}{v}\delta v = N^\mu \delta v
+            \end{equation}
+            si l'on définit $N^\mu~\hat{=}~\pdv{x^\mu}{v}$. Remarquons que $N^\mu$ se transforme comme
+            \begin{equation}
+                N'^\mu = \pdv{x'^\mu}{v} = \pdv{x'^\mu}{x^\nu}\pdv{x^\nu}{v} = \pdv{x'^\mu}{x^\nu}N^\mu
+            \end{equation}
+            donc $N^\mu$ sont les composantes d'un vecteur. Commençons par démontrer une relations qui sera utilise.
+        
+            \begin{prop}\begin{leftbar}
+                Si $V^\mu$ sont les composantes d'un vecteur et que $X,Y$ sont deux champs vectoriels alors
+                \begin{align}
+                    [\nabla_X,\nabla_Y]V^\mu = X^\rho Y^\sigma R^{\mu}_{~\nu\rho\sigma}V^\nu + (\L_X Y)^\sigma\nabla_\sigma V^\mu.
+                \end{align}
+            \end{leftbar}\end{prop}
+            
+            \begin{proof}
+                Premièrement, nous savons que
+                \begin{equation}
+                    \nabla_Y V^\mu = Y^\rho(\p_\rho V^\mu+\Gamma^\mu_{\rho\nu}V^\nu).
+                \end{equation}
+                En prenant la dérivée covariante de cette expression par rapport à $X$, on obtient
+                \begin{align}
+                    \nabla_X \nabla_Y V^\mu &= X^\rho(\p_\rho (\nabla_Y V^\mu)+\Gamma^\mu_{\rho\nu}\nabla_Y V^\nu)\\
+                    &= X^\rho \left( \p_\rho Y^\sigma\p_\sigma V^\mu+Y^\sigma\p_\sigma\p_\rho V^\mu + \p_\rho Y^\sigma \Gamma^\mu_{\sigma\nu} V^\nu + Y^\sigma\p_\rho\Gamma^\mu_{\sigma\nu} V^\nu +Y^\sigma \Gamma^\mu_{\sigma\nu}\p_\rho V^\nu \right)\\
+                    &\hspace{0.5cm}+\Gamma^\mu_{\rho\nu}\left( Y^\sigma\p_\sigma V^\nu + Y^\sigma \Gamma^\nu_{\sigma\theta} V^\theta \right)
+                \end{align}
+                Donc, pour finir,
+                \begin{align}
+                    [\nabla_X,\nabla_Y]V^\mu &= \underbrace{(X^\rho\p_\rho Y^\sigma-Y^\rho\p_\rho X^\sigma)}_{(\L_XY)^\sigma}\nabla_\sigma V^\mu+ X^\rho Y^\sigma R^\mu_{~\nu\rho\sigma} V^\nu\\
+                    &\hspace{0.5cm}+ X^\rho Y^\sigma (\Gamma^\mu_{\sigma\nu}\p_\rho V^\nu-\Gamma^\mu_{\rho\nu}\p_\sigma V^\nu + \Gamma^\mu_{\rho\nu}\p_\sigma V^\nu-\Gamma^\mu_{\sigma\nu}\p_\rho V^\nu )\\
+                    &= X^\rho Y^\sigma R^{\mu}_{~\nu\rho\sigma}V^\nu + (\L_X Y)^\sigma\nabla_\sigma V^\mu
+                \end{align}
+            \end{proof}
+            
+            \begin{prop}[équation de déviation géodésique]\begin{leftbar}
+                Soit $U^\mu(\lambda,v)$ le vecteur tangent à la trajectoire, alors
+                \begin{equation}
+                    \nabla_U\nabla_U N^\mu = R^\mu_{~\nu\rho\sigma}U^\rho N^\sigma U^\nu.
+                \end{equation}
+            \end{leftbar}\end{prop}
+            
+            \begin{proof}
+                Le vecteur $U$ est tangent à la trajectoire, c'est-à-dire que
+                \begin{equation}
+                    U^\mu(\lambda,v) = \pdv{x^\mu}{\lambda}.
+                \end{equation}
+                Dans ce cas,
+                \begin{align}
+                    \nabla_U N^\mu &= U^\nu\nabla_\nu N^\mu\\
+                    &= \pdv{N^\mu}{\lambda}+U^\nu\Gamma^\mu_{\nu\rho}N^\rho\\
+                    &= \pdv{x^\mu}{\lambda}{v} + \Gamma^\mu_{\nu\rho}\pdv{x^\nu}{\lambda}\pdv{x^\rho}{v}
+                \end{align}
+                D'autre part on voit aussi que
+                \begin{align}
+                    \nabla_N U^\mu &= N^\nu \nabla_\nu U^\mu\\
+                    &= N^\nu\p_\nu U^\mu + \Gamma^\mu_{\nu\rho} N^\nu U^\rho\\
+                    &= \pdv{x^\nu}{v}\pdv{x^\mu}{\lambda} + \Gamma^\mu_{\nu\rho}\pdv{x^\nu}{v}\pdv{x^\rho}{\lambda}\\
+                    &= \pdv{}{v}\pdv{x^\mu}{\lambda} + \Gamma^\mu_{\nu\rho}\pdv{x^\nu}{v}\pdv{x^\rho}{\lambda}
+                \end{align}
+                donc
+                \begin{equation}
+                    \nabla_U N^\mu = \nabla_N U^\mu.
+                \end{equation}
+                Ceci permet de réécrire $\nabla_U\nabla_U N$ en terme d'un commutateur comme
+                \begin{equation}
+                    \nabla_U\nabla_U N = \nabla_U\nabla_N U = [\nabla_U,\nabla_N]U+\underbrace{\nabla_N\nabla_U U}_{0}
+                \end{equation}
+                en utilisant le fait que $U$ est une géodésique et donc $\nabla_U U = 0$. En utilisant la proposition précédente, on peut exprimer ce commutateur comme
+                \begin{equation}
+                    [\nabla_U,\nabla_N]U = R^\mu_{~\nu\rho\sigma}U^\rho N^\sigma U^\nu + (\L_U N)^\mu \nabla_\sigma V^\mu
+                \end{equation}
+                Or, dans notre cas,
+                \begin{align}
+                    \L_U N^\mu &= U^\rho\p_\rho N^\mu-N^\rho\p_\rho U^\mu\\
+                    &= \pdv{x^\rho}{\lambda}\pdv{}{x^\rho}\pdv{x^\mu}{v}-\pdv{x^\rho}{v}\pdv{}{x^\rho}\pdv{x^\mu}{\lambda}\\
+                    &= \pdv{x^\mu}{\lambda}{v}-\pdv{x^\mu}{v}{\lambda}\\
+                    &= 0
+                \end{align}
+                Et donc
+                \begin{equation}
+                    \nabla_U\nabla_U N^\mu = R^\mu_{~\nu\rho\sigma}U^\rho N^\sigma U^\nu.
+                \end{equation}
+            \end{proof}
+            Le membre de droite de cette équation est proportionnel à $N$. Ceci implique que si deux géodésiques sont très proches l'une de l'autre, ce membre s'annule et il n'y a pas de champ gravitationnel. On retrouve le principe d'équivalence.\\
+        
+            En contractant le première identité de Bianchi par $U^\rho U^\nu$, on trouve que 
+            \begin{align}
+                U^\rho U^\nu R^\mu_{~\nu\sigma\rho}+\underbrace{U^\rho U^\nu R^\mu_{~\rho\nu\sigma}}_{0}+U^\rho U^\nu R^\mu_{~\sigma\rho\nu} &= 0\\
+                U^\rho U^\nu R^\mu_{~\nu\sigma\rho}+U^\rho U^\nu R^\mu_{~\sigma\rho\nu} &= 0
+            \end{align}
+            ce qui permet de réécrire l'équation de déviation géodésique différemment.\\
+            
+            La limite newtonienne de cette équation se fait en ne considérant que les indices spatiaux et en remplaçant la dérivée covariante, on obtient
+            \begin{equation}
+                \pdv[2]{N^i}{t} = R^i_{~00j}N^j = -R^i_{~0j0}N^j = -\p_i\p_j\phi N^j.
+            \end{equation}

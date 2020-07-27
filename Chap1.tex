@@ -1,0 +1,81 @@
+\chapter{Introduction}
+
+    \section{Interactions fondamentales}
+    
+        Historiquement, il est apparu qu'il y a quatre interactions fondamentales dans la nature : les interactions nucléaires forte et faible, l'interaction électromagnétique et l'interaction gravitationnelle. Les interactions nucléaires ont toutes les deux une faible portée, de l'ordre du fermi ($\sim10^{-15}\meter$), alors que  l'électromagnétisme et la gravitation semblent avoir une portée infinie. De par leur nature, les interactions nucléaires sont essentiellement décrites dans des théories quantiques alors que les deux dernières peuvent être décrites de manière classique. L'électromagnétisme ayant certains effets quantiques, nous pouvons les décrire via l'électrodynamique quantique (QED). Au cours du $20^{\text{ème}}$ siècle, il a été découvert que l'interaction nucléaire faible et l'électromagnétisme pouvaient être vues comme deux faces d'une même pièce : l'interaction électrofaible.\\
+        
+        L'interaction gravitationnelle se distingue des autres à plusieurs niveaux. Premièrement, la gravitation est une interaction extrêmement faible. Pour illustrer cela, imaginons deux électrons séparés d'une distance $r$. Comparons les ordres de grandeur de l'interaction gravitationnelle et de l'interaction électromagnétique : on voit que
+        \begin{equation}
+            \abs{\frac{F_{\text{grav}}}{F_{\text{é-m}}}} = \frac{Gm^2}{r^2}\frac{4\pi\varepsilon_0r^2}{q^2} = \frac{4\pi\varepsilon_0 m^2}{q^2} \approx 2,4\cdot10^{-43}
+        \end{equation}
+        où $m$ est la masse d'un électron. Ce résultat est indépendant de la distance qui sépare les électrons. La force gravitationnelle est donc négligeable au niveau microscopique. Deuxièmement, à l'inverse des autres interactions, la gravité est uniquement cumulative car toutes les masses sont positive. Il n'y a donc pas d'effet d'écrantage. Alors que pour l'électromagnétisme par exemple, il y a des charges positives et négatives ce qui permet à la matière d'être électriquement neutre, ce n'est pas le cas pour la gravitation.\\
+        
+        On dit que la théorie newtonnienne de la gravitation est une théorie classique car elle n'est pas invariante par la relativité einsteinienne (relativité restreinte) mais juste sous le groupe de relativité galiléenne. Il semble important au niveau conceptuel de mettre au point une théorie relativiste de la gravitation. Nous verrons plus tard que cette théorie permet également d'expliquer un grand nombre de phénomènes qui ne sont pas expliqués par la théorie de Newton (avancée du périhélie de Mercure, lentilles gravitationnelles,...). Plus encore, elle prédit l'existence de phénomènes dont nous n'avions pas idée de l'existence : trous noirs, trous de ver, ondes gravitationnelles, \dots\\
+        
+        A ce stade, nous pouvons nous demander quel ordre de grandeur les effets d'une telle théorie devrait avoir. On peut suivre le raisonnement heuristique suivant : soit $\O$ une observable quelconque de la théorie. On note $\O_{\text{Newton}}$ sa valeur prédite par la théorie de Newton et $\O_{\text{rela}}$ sa valeur prédite par une théorie relativiste de la gravitation. Dans ce cas,
+        \begin{equation}
+            \O_{\text{rela}} = (1+\alpha)\O_{\text{Newton}}
+        \end{equation}
+        où $\alpha$ est un terme de correction sans dimension. Si les grandeurs caractéristiques de notre situation sont uniquement la masse $M$, la constante gravitationnelle $G$, une distance $R$ et la vitesse de la lumière $c$, la seule combinaison sans dimension possible de ces grandeurs est 
+        \begin{equation}
+            \varepsilon~\hat{=}~\frac{GM}{Rc^2}.
+        \end{equation}
+        On peut donc s'attendre à ce que les corrections soient proportionnelles à $\varepsilon$ (ou à n'importe quelle puissance de $\varepsilon$).
+        \begin{equation}
+            \alpha\sim\varepsilon+\O(\varepsilon^2)
+        \end{equation}
+        On distingue deux régimes :
+        \begin{itemize}[label=\textbullet]
+            \item $\varepsilon\ll 1$ : les effets relativistes sont négligeables,
+            \item $\varepsilon\sim 1$ : les effets relativistes jouent un rôle important.
+        \end{itemize}
+        Ce raisonnement rapide n'est pas rigoureux mais il permet de se convaincre que les effets d'une théorie relativiste de la gravitation seraient tout à fait observables. 
+        \begin{exmp}
+            Pour le soleil, $M_\odot = 2,0\cdot10^{30}\kilo\gram$ et $R_\odot = 7,0\cdot10^{5}\kilo\meter$ donc $\varepsilon_\odot \sim 10^{-6}$.
+            Les observatoires astronomiques actuels permettent de mesurer ce genre de facteurs jusqu'à cinq chiffres significatifs. 
+        \end{exmp}
+        \begin{exmp}
+            Pour la Terre, $M_\oplus= 6,0\cdot10^{24}\kilo\gram$ et $R_\oplus = 6,4\cdot10^{3}\kilo\meter$ donc $ \varepsilon_\oplus\sim 10^{-9}$.
+        \end{exmp}
+        \begin{exmp}
+            Pour l'univers, $M = 3\cdot10^{52}\kilo\gram$ et $R = 14\cdot10^{9}\text{al}$ donc $ \varepsilon\sim 0.02$
+            ce qui est très important. Tous les modèles cosmologiques à l'échelle de l'univers requièrent donc une théorie relativiste de la gravitation. On verra plus tard que pour tous les trous noirs $\varepsilon = \nicefrac{1}{2}$.
+        \end{exmp}
+        
+        Que se passe-t-il si l'on s'intéresse aux corrections quantiques? On doit alors ajouter $\hbar$ aux grandeurs caractéritiques de la théorie. Dans ce cas, il n'y a qu'une seule combinaison qui donne les unités d'une longueur : la \textit{longueur de Planck}.
+        \begin{equation*}
+            l_{\text{Planck}} ~\hat{=}~ \sqrt{\frac{\hbar G}{c^3}}
+        \end{equation*}
+        Il en découle les différentes grandeurs suivantes :
+        \begin{align*}
+            t_{\text{Planck}} ~&~\hat{=}~~ \frac{l_{\text{Planck}}}{c}, \\
+            M_{\text{Planck}} ~&~\hat{=}~~ \frac{c^2l_{\text{Planck}}},{G} \\
+            E_{\text{Planck}} ~&~\hat{=}~~ M_{\text{Planck}}c^2,
+        \end{align*}
+        dont les ordres de grandeurs sont $E_{\text{Planck}}\sim10^{16}\tera\text{e}\volt$ ce qui est $10^{15}$ fois plus grand que les énergies atteintes au LHC.
+        
+    \section{Unités}
+    
+        Dans le domaine de l'aviation, les deux coordonnées permettant de se repérer sur la surface de la Terre (ici $x$ et $y$) sont mesurées en mètres alors que l'altitude (ici $z$) se mesure en pieds. Il y a donc un certain facteur de conversion $\gamma$ tel que 
+        \begin{equation}
+            z = \gamma x.
+        \end{equation}
+        En physique, nous mesurons les longueurs avec les mêmes unités indépendamment de la direction. Pourquoi cela ? On pourrait croire que c'est simplement par facilité ou pour des raisons historiques mais il y a en fait une raison plus profonde: si les aviateurs peuvent mesurer l'altitude de cette manière c'est qu'il est possible différencier la direction de l'axe $z$ des axes $x$ et $y$, ce sont des directions fondamentalement différentes. Les physiciens n'en sont-ils pas capables ? Le fait que les unités ne dépendent pas de la direction en physique est en fait une conséquence de l'invariance par rotation que l'on impose aux théories physiques. Si une théorie est invariante par rotation, il n'est pas possible de distinguer fondamentalement les différentes directions. Ceci implique qu'elles doivent être mesurées avec les mêmes unités : $\gamma=1$.
+        
+        \begin{leftbar}
+            L'invariance sous rotation dans l'espace des lois de la physique implique un choix naturel d'unités $\gamma = 1$, on mesure les distances avec les mêmes unités quelle que soit la direction.
+        \end{leftbar}
+        
+        Une des différences fondamentales entre la relativité einsteinienne (relativité restreinte) et la relativité de galiléenne est de considérer le temps comme étant une autre direction au même titre qu'une direction spatiale, en principe. Cela ne signifie pas que l'on peut se déplacer dans le temps comme on le ferait dans l'espace mais plutôt qu'au lieu de travailler dans l'espace $\mathbb{R}^3$ avec un paramètre $t$ indépendant(temps absolu), on considère la physique dans l'espace-temps $\mathbb{R}^4$ où les changements de référentiels peuvent mélanger les coordonnées d'espace et de temps d'une manière bien précise. Le facteur de conversion entre les coordonnées de temps et d'espace est $c$.
+        
+        \begin{leftbar}
+            L'invariance sous rotation hyperbolique dans l'espace-temps (invariance de Lorentz) des lois de la physique implique qu'une mesure de distance est, en principe, équivalente à une mesure de temps. Ceci suggère un choix d'unités naturelles $c=1$.
+        \end{leftbar}
+        
+        Nous verrons dans la suite que l'on peut encore une fois généraliser ce principe en introduisant la notion d'espace-temps courbe (différent de $\mathbb{R}^4$, mais toujours à quatre dimensions) dans lequel une mesure de masse et de distance s'équivalent (d'où le fait que $\varepsilon = \nicefrac{1}{2}$ pour tous les trous noirs indépendamment de leur masse).
+        
+        \begin{leftbar}
+            Le principe de la relativité générale implique qu'une mesure de distance est équivalente à une mesure de masse. Ceci impose un choix d'unités naturelles pour lesquelles $G = 1$.
+        \end{leftbar}
+        
+        Remarquons que si temps et distances sont équivalents, distances et masses sont équivalentes et que masses et énergies le sont aussi (par $E = mc^2$), toutes les grandeurs sont équivalentes. Ceci traduit le fait que les unités sont bien une technologie nécessaire pour comparer physique et monde réel mais qu'elles ne sont pas fondamentales. Notons également qu'il n'y a aucune perte d'information lorsque l'on pose les constantes à 1. Les constantes peuvent êtres récupérées à tout moment par analyse dimensionnelle.
